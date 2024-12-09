@@ -78,7 +78,7 @@ function isActive($page) {
 					   				</li> -->
 					   				<li class="search-option">
 					   					<div class="dropdown">
-					   						<button type="button" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search" aria-hidden="true"></i></button>
+					   						<button type="button" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-sarch" aria-hidden="true"></i></button>
 											<!-- <form action="#" class="dropdown-menu">
 												<input type="text" Placeholder="Enter Your Search">
 												<button><i class="fa fa-search"></i></button>
