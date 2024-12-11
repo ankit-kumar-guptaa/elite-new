@@ -53,7 +53,7 @@
         </div>
     </div>
     <div class="enquiry-container mt-3">
-        <button class="btn-enquiry-now">Enquiry Now <i class="fas fa-arrow-right"></i></button>
+        <button class="btn-enquiry-now">Enquiry Now <i class="fa fa-arrow-right"></i></button>
     </div>
 </div>
 
