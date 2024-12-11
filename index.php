@@ -105,6 +105,30 @@
 			</div> <!-- /.our-solution -->
 
 			
+
+			
+			<!-- 
+			=============================================
+				Feature Banner
+			============================================== 
+			-->
+			<div class="feature-banner section-spacing">
+				<div class="opacity">
+					<div class="container">
+						<h2>India’s leading and growing recruitment company. We are serving our IT &amp; Non IT clients since 2010</h2>
+						<a href="#" class="theme-button-one">GET A QUOTES</a>
+					</div> <!-- /.container -->
+				</div> <!-- /.opacity -->
+			</div> <!-- /.feature-banner -->
+
+
+
+
+
+			<?php include 'include/service.php'; ?>
+
+
+
 			
 			<!-- 
 			=============================================
@@ -133,10 +157,11 @@
 											<div class="col-md-6">
 												<select class="form-control" id="exampleSelect1">
 											      <option>Choose Services?</option>
-											      <option>Business Services</option>
-											      <option>Consumer Product</option>
-											      <option>Financial Services</option>
-											      <option>Software Research</option>
+											      <option>Learning & Development</option>
+											      <option>HR Outsourcing for Small Businesses</option>
+											      <option>Welcome to India Services– End to End Support</option>
+											      <option>Start-up Support - Everything at one place</option>
+											      <option>Bad Debts Collection</option>
 											    </select>
 											</div>
 											<div class="col-12"><textarea placeholder="Message"></textarea></div>
@@ -149,11 +174,94 @@
 					</div> <!-- /.container -->
 				</div> <!-- /.overlay -->
 			</div> <!-- /.about-->
+
+
+
+
 		
+
+
+			<?php include 'include/industry-we-cater.php'; ?>
+
+
+
 			
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="theme-title-one">
+						<h2>Our Videos</h2>
+					</div>
+				</div>
+
+				<div class="col-md-6 mt-4">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/cyXADWE7KPo?si=HdGWlQtderd_R_gL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+				</div>
+
+				<div class="col-md-6 mt-4">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/1mHjMNZZvFo?si=RDyUCJxwXNI0h5CB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+
+
+
+			
+		<?php include 'include/counter.php'; ?>
+			
+
+
+
+
+
+
+
+
+
+
+		
+		<?php include 'include/testimonial.php'; ?>
 
 		
 			
+
+			<!--
+			=====================================================
+				Partner Slider
+			=====================================================
+			-->
+			<div class="partner-section bg-color">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3 col-sm-4 col-12">
+							<h6>OUR <br>PARTNERS</h6>
+						</div>
+						<div class="col-md-9 col-sm-8 col-12">
+							<div class="partner-slider">
+								<div class="item"><img src="images/client/1.png" alt=""></div>
+								<div class="item"><img src="images/client/2.png" alt=""></div>
+								<div class="item"><img src="images/client/7.png" alt=""></div>
+								<div class="item"><img src="images/client/4.png" alt=""></div>
+								<div class="item"><img src="images/client/5.png" alt=""></div>
+								<div class="item"><img src="images/client/8.png" alt=""></div>
+								<div class="item"><img src="images/client/9.png" alt=""></div>
+								<div class="item"><img src="images/client/10.png" alt=""></div>
+								<div class="item"><img src="images/client/11.png" alt=""></div>
+								<div class="item"><img src="images/client/12.png" alt=""></div>
+								<div class="item"><img src="images/client/13.png" alt=""></div>
+								<!-- <div class="item"><img src="images/client/14.png" alt=""></div> -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> <!-- /.partner-section -->
+
+
+
+			<h1>In Development Process</h1>
+
+
+
 
 	        
 

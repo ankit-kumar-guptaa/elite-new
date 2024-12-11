@@ -68,7 +68,7 @@
 #form-container {
     position: absolute;
     right: 55px;
-    top: 52%;
+    top: 7%;
     transform: translateY(-50%);
     z-index: 999;
     background: rgba(255, 255, 255, 0.9); 
@@ -236,7 +236,11 @@ form button:active {
 }
 
 
-@media ()
+@media (max-width: 768px) {
+    #form-container {
+       display: none;
+    }
+}
 
 </style>
 

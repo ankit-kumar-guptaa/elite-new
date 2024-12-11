@@ -48,7 +48,7 @@ function isActive($page) {
 					   		<div class="menu-wrapper float-left">
 					   			<nav id="mega-menu-holder" class="clearfix">
 								   <ul class="clearfix">
-									    <li class="<?php echo isActive('index.php'); ?>"><a href="index.php">Home</a></li>
+									    <li class="<?php echo isActive('/'); ?>"><a href="index.php">Home</a></li>
 									    <li class="<?php echo isActive('about.html'); ?>"><a href="about.html">About</a></li>
 									    <li class="<?php echo isActive('services.html'); ?>"><a href="#">Services</a>
 									    	<ul class="dropdown">
