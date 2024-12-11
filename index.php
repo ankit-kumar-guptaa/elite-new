@@ -34,7 +34,7 @@
 				CallOut Banner 
 			============================================== 
 			-->
-			<div class="callout-banner section-spacing">
+			<div class="callout-banner mb-3">
 				<div class="container clearfix">
 					<h3 class="title">Top Manpower Recruitment Consultancy in India</h3>
 					<p>Elite Corporate Solutions offers tailored manpower services for IT and Non-IT sectors. Our expert recruiters provide quality candidates through a vast network across India, ensuring the right fit for your business needs quickly and efficiently.</p>
@@ -45,6 +45,13 @@
 
 
 
+
+			<div class="alert alert-warning text-center" role="alert">
+    We Don't Charge money from Candidates, Be aware of fraudulent Agencies.
+</div>
+
+
+
 			<!-- 
 			=============================================
 				Our Solution
@@ -52,9 +59,19 @@
 			-->
 			<div class="our-solution section-spacing">
 				<div class="container">
+					
 					<div class="theme-title-one">
 						<h2>Our SOLUTIONS</h2>
-					</div> <!-- /.theme-title-one -->
+					</div> <!-- /title-one -->
+
+
+					<div class="alert alert-info text-center" role="alert">
+						We offer professional services in identifying and fulfilling your staffing and recruitment needs.
+						<br>
+						Our recruitment experts with domain specialization ensure you hire the best talents from the industry to keep you ever ready for meeting your business challenges.
+						<br>
+						Outsource your recruitments to find key people faster while freeing your management bandwidth for core management activities.
+					</div>
 					<div class="wrapper">
 						<div class="row">
 							<div class="col-lg-4 col-sm-6 col-12">
@@ -219,6 +236,7 @@
 
 
 
+
 		
 		<?php include 'include/testimonial.php'; ?>
 
@@ -243,7 +261,7 @@
 								<div class="item"><img src="images/client/7.png" alt=""></div>
 								<div class="item"><img src="images/client/4.png" alt=""></div>
 								<div class="item"><img src="images/client/5.png" alt=""></div>
-								<div class="item"><img src="images/client/8.png" alt=""></div>
+								<div class="item"><img src="images/client/3.png" alt=""></div>
 								<div class="item"><img src="images/client/9.png" alt=""></div>
 								<div class="item"><img src="images/client/10.png" alt=""></div>
 								<div class="item"><img src="images/client/11.png" alt=""></div>
@@ -258,53 +276,8 @@
 
 
 
-			<h1>In Development Process</h1>
 
 
 
 
-	        
-
-	        <!-- Scroll Top Button -->
-			<button class="scroll-top tran3s">
-				<i class="fa fa-angle-up" aria-hidden="true"></i>
-			</button>
-			
-
-
-		<!-- Optional JavaScript _____________________________  -->
-
-    	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    	<!-- jQuery -->
-		<script src="vendor/jquery.2.2.3.min.js"></script>
-		<!-- Popper js -->
-		<script src="vendor/popper.js/popper.min.js"></script>
-		<!-- Bootstrap JS -->
-		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-		<!-- Camera Slider -->
-		<script src='vendor/Camera-master/scripts/jquery.mobile.customized.min.js'></script>
-	    <script src='vendor/Camera-master/scripts/jquery.easing.1.3.js'></script> 
-	    <script src='vendor/Camera-master/scripts/camera.min.js'></script>
-	    <!-- menu  -->
-		<script src="vendor/menu/src/js/jquery.slimmenu.js"></script>
-		<!-- WOW js -->
-		<script src="vendor/WOW-master/dist/wow.min.js"></script>
-		<!-- owl.carousel -->
-		<script src="vendor/owl-carousel/owl.carousel.min.js"></script>
-		<!-- js count to -->
-		<script src="vendor/jquery.appear.js"></script>
-		<script src="vendor/jquery.countTo.js"></script>
-		<!-- Fancybox -->
-		<script src="vendor/fancybox/dist/jquery.fancybox.min.js"></script>
-		<!-- Language Stitcher -->
-		<script src="vendor/language-switcher/jquery.polyglot.language.switcher.js"></script>
-		<!-- Google map js -->
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjQLCCbRKFhsr8BY78g2PQ0_bTyrm_YXU"></script>
-		<script src="vendor/sanzzy-map/dist/snazzy-info-window.min.js"></script>
-
-		<!-- Theme js -->
-		<script src="js/theme.js"></script>
-		<!-- <script src="js/map-script.js"></script> -->
-		</div> <!-- /.main-page-wrapper -->
-	</body>
-</html>
+			<?php include 'include/footer.php'; ?>

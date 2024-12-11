@@ -1,15 +1,15 @@
 <div id="theme-main-banner" class="banner-one">
     <!-- Slider Content -->
-    <div data-src="https://www.kotak.com/content/dam/Kotak/herosliderbanner/corporate-benifits-for-online-lead.jpg">
+    <div data-src="https://images.unsplash.com/photo-1513530534585-c7b1394c6d51?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
         <div class="camera_caption">
             <div class="container">
-                <p class="wow fadeInUp animated">Trusted and Reliable Placement Service</p>
+                <p class="wow fadeInUp animated" style="color: #fff;">Trusted and Reliable Placement Service</p>
                 <h1 class="wow fadeInUp animated" data-wow-delay="0.2s">Your Career,<br> Our Commitment</h1>
                 <a href="about.html" class="theme-button-one wow fadeInUp animated" data-wow-delay="0.39s">ABOUT US</a>
             </div> <!-- /.container -->
         </div> <!-- /.camera_caption -->
     </div>
-    <div data-src="https://html.creativegigstf.com/charles/images/home/slide-5.jpg?1733737289521">
+    <div data-src="https://images.pexels.com/photos/27406/pexels-photo-27406.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
         <div class="camera_caption">
             <div class="container">
                 <p class="wow fadeInUp animated">Client first approach With Dedicated Relationship Manager</p>
@@ -18,10 +18,10 @@
             </div> <!-- /.container -->
         </div> <!-- /.camera_caption -->
     </div>
-    <div data-src="https://html.creativegigstf.com/charles/images/home/slide-3.jpg?1733737290020">
+    <div data-src="https://images.unsplash.com/photo-1431540015161-0bf868a2d407?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
         <div class="camera_caption">
             <div class="container">
-                <p class="wow fadeInUp animated">The government they survive artical of fortune</p>
+                <p class="wow fadeInUp animated" style="color: #fff;">The government they survive artical of fortune</p>
                 <h1 class="wow fadeInUp animated" data-wow-delay="0.2s">HIGH-QUALITY MARKET <br> EXPERIENCES</h1>
                 <a href="about.html" class="theme-button-one wow fadeInUp animated" data-wow-delay="0.39s">ABOUT US</a>
             </div> <!-- /.container -->
