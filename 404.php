@@ -61,9 +61,7 @@ include_once 'include/header.php';
 				<h3>Looks like somthing went wrong</h3>
 				<p>The page you are looking for was moved, removed, renamed or might never existed.</p>
 				<div>
-					<a href="index.html" class="theme-button-one">Go Home</a>
-					<span class="or">Or</span>
-					<input type="text" placeholder="Search...">
+					<a href="/" class="theme-button-one">Go Home</a>
 				</div>
 			</div> <!-- /.error-page -->
 
