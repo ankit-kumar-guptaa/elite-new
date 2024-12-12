@@ -2006,3 +2006,69 @@ body .theme-button-one:hover {background:#000f32; }
   background-color: #c38829 !important;
   color: #fff !important;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contact-card {
+  transition: all 0.3s ease;
+  border-left: 4px solid #f5ad3a;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;
+}
+
+.contact-card h4 {
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.contact-card h5 {
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.contact-card i {
+  color: #f5ad3a;
+}
+
+.contact-card ul li {
+  margin-bottom: 0.5rem;
+}
+
+.social-icons a {
+  color: #333;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #f5ad3a;
+}
+
+.theme-title-one {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.theme-title-one h2 {
+  color: #333;
+  margin-bottom: 1rem;
+}
