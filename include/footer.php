@@ -24,7 +24,7 @@
 								<h6 class="title">EXPLORE</h6>
 								<ul>
 									<li><a href="project.html">Home</a></li>
-									<li><a href="about.html">About us</a></li>
+									<li><a href="about">About us</a></li>
 									<li><a href="service.html">Our Solutions</a></li>
 									<li><a href="blog.html">Blog</a></li>
 									<li><a href="contact.html">Contact us</a></li>

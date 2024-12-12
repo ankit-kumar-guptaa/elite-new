@@ -6,11 +6,20 @@
 			</div>
 
 			<?php
-// Function to check if the current page is active
-function isActive($page) {
-    return strpos($_SERVER['REQUEST_URI'], $page) !== false ? 'active' : '';
+// Check if the function is already defined before declaring it
+if (!function_exists('isActive')) {
+    // Function to check if the current page is active
+    function isActive($page) {
+        $currentUri = $_SERVER['REQUEST_URI'];
+        return $currentUri === $page ? 'active' : '';
+    }
 }
 ?>
+
+
+
+
+
 
 			<!-- 
 			=============================================
@@ -48,26 +57,26 @@ function isActive($page) {
 					   		<div class="menu-wrapper float-left">
 					   			<nav id="mega-menu-holder" class="clearfix">
 								   <ul class="clearfix">
-									    <li class="<?php echo isActive('/'); ?>"><a href="index.php">Home</a></li>
-									    <li class="<?php echo isActive('about.html'); ?>"><a href="about.html">About</a></li>
-									    <li class="<?php echo isActive('services.html'); ?>"><a href="#">Services</a>
+									    <li class="<?php echo isActive('/'); ?>"><a href="/">Home</a></li>
+									    <li class="<?php echo isActive('/about'); ?>"><a href="/about">About</a></li>
+									    <li class="<?php echo isActive('/services'); ?>"><a href="/services">Services</a>
 									    	<ul class="dropdown">
-									        	<li><a href="#">Learning & Development</a></li>
-									        	<li><a href="#">HR Outsourcing for Small Businesses</a></li>
-									        	<li><a href="#">Welcome to India Services – End to End Support</a></li>
-									        	<li><a href="#">Start-up Support – Everything at one place</a></li>
-									        	<li><a href="#">Bad Debts Collection</a></li>
+									        	<li><a href="/services/learning-development">Learning & Development</a></li>
+									        	<li><a href="/services/hr-outsourcing">HR Outsourcing for Small Businesses</a></li>
+									        	<li><a href="/services/welcome-india">Welcome to India Services – End to End Support</a></li>
+									        	<li><a href="/services/startup-support">Start-up Support – Everything at one place</a></li>
+									        	<li><a href="/services/bad-debts">Bad Debts Collection</a></li>
 									       </ul>
 									    </li>
-									    <li class="<?php echo isActive('solutions.html'); ?>"><a href="solutions.html">Solutions</a></li>
-									    <li class="<?php echo isActive('jobs.html'); ?>"><a href="#">Jobs</a>
+									    <li class="<?php echo isActive('/solutions'); ?>"><a href="/solutions">Solutions</a></li>
+									    <li class="<?php echo isActive('/jobs'); ?>"><a href="/jobs">Jobs</a>
 									    	<ul class="dropdown">
-									        	<li><a href="#">Current Jobs</a></li>
-									        	<li><a href="#">Submit Resume</a></li>
-									        	<li><a href="#">Login</a></li>
+									        	<li><a href="/jobs/current">Current Jobs</a></li>
+									        	<li><a href="/jobs/submit-resume">Submit Resume</a></li>
+									        	<li><a href="/jobs/login">Login</a></li>
 									       </ul>
 									    </li>
-									    <li class="<?php echo isActive('contact.html'); ?>"><a href="contact.html">Contact</a></li>
+									    <li class="<?php echo isActive('/contact'); ?>"><a href="/contact">Contact</a></li>
 								   </ul>
 								</nav> <!-- /#mega-menu-holder -->
 					   		</div> <!-- /.menu-wrapper -->

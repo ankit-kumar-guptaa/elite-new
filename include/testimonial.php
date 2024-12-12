@@ -3,7 +3,7 @@
       <h2 class="testimonial-title">What Our Customers Say About Us</h2>
       <div class="row g-4">
         <!-- Testimonial 1 -->
-        <div class="col-md-4">
+        <div class="col-md-4 mb-2">
           <div class="testimonial-card">
             <div class="testimonial-stars">
               ★★★★★
@@ -15,7 +15,7 @@
           </div>
         </div>
         <!-- Testimonial 2 -->
-        <div class="col-md-4">
+        <div class="col-md-4 mb-2">
           <div class="testimonial-card">
             <div class="testimonial-stars">
               ★★★★★
@@ -27,7 +27,7 @@
           </div>
         </div>
         <!-- Testimonial 3 -->
-        <div class="col-md-4">
+        <div class="col-md-4 mb-2">
           <div class="testimonial-card">
             <div class="testimonial-stars">
               ★★★★★
