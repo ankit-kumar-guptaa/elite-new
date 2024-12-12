@@ -1,102 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<!-- Basic Meta Tags -->
 		<meta charset="UTF-8">
-		<!-- For IE -->
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<!-- For Resposive Device -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<!-- For Window Tab Color -->
-		<!-- Chrome, Firefox OS and Opera -->
-		<meta name="theme-color" content="#061948">
-		<!-- Windows Phone -->
-		<meta name="msapplication-navbutton-color" content="#061948">
-		<!-- iOS Safari -->
-		<meta name="apple-mobile-web-app-status-bar-style" content="#061948">
-		<title>Elite Corporate Solutions</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		
-
+		<!-- SEO Meta Tags -->
+		<title>About Elite Corporate Solutions - Leading Recruitment Agency in India</title>
+		<meta name="description" content="Learn about Elite Corporate Solutions, a premier recruitment agency in India. Discover our journey, mission, and commitment to connecting top talent with leading organizations.">
+		<meta name="keywords" content="about elite corporate solutions, recruitment company history, top recruitment agency india, HR solutions company, manpower consultancy background">
+		<meta name="author" content="Elite Corporate Solutions">
+		
+		<!-- Open Graph Meta Tags -->
+		<meta property="og:title" content="About Elite Corporate Solutions - Leading Recruitment Agency">
+		<meta property="og:description" content="Discover Elite Corporate Solutions' journey as India's trusted recruitment partner. Learn about our mission and expertise in talent acquisition.">
+		<meta property="og:image" content="https://elitecorporatesolutions.com/images/about-og-image.jpg">
+		<meta property="og:url" content="https://elitecorporatesolutions.com/about">
+		<meta property="og:type" content="website">
+		
+		<!-- Twitter Card Meta Tags -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="About Elite Corporate Solutions - Leading Recruitment Agency">
+		<meta name="twitter:description" content="Discover Elite Corporate Solutions' journey as India's trusted recruitment partner. Learn about our mission and expertise in talent acquisition.">
+		<meta name="twitter:image" content="https://elitecorporatesolutions.com/images/about-twitter-card.jpg">
+		
+		<!-- Canonical URL -->
+		<link rel="canonical" href="https://elitecorporatesolutions.com/about">
 
 		<?php include 'include/assets.php'; ?>
 	</head>
 
 	<body>
 		<div class="main-page-wrapper">
+			<?php include_once 'include/header.php'; ?>
 
-        <?php
-include_once 'include/header.php';
-?>
-
-
-
-
-	<!-- 
-			=============================================
-				Inner Banner
-			============================================== 
-			-->
+			<!-- Inner Banner -->
 			<div class="theme-inner-banner section-spacing">
 				<div class="overlay">
 					<div class="container">
-						<h2>ABOUT</h2>
-					</div> <!-- /.container -->
-				</div> <!-- /.overlay -->
-			</div> <!-- /.theme-inner-banner -->
+						<h2>About Us</h2>
+					</div>
+				</div>
+			</div>
 
-
-			<!-- 
-			=============================================
-				CallOut Banner 
-			============================================== 
-			-->
+			<!-- Callout Banner -->
 			<div class="callout-banner no-bg">
 				<div class="container clearfix">
 					<h3 class="title">Leading Manpower Recruitment Agency in India</h3>
 					<p>Elite Corporate Solutions is your trusted partner in talent acquisition and HR solutions. With years of expertise in the recruitment industry, we connect top talent with leading organizations across India. Our comprehensive recruitment services span IT, Non-IT, and specialized sectors, ensuring the perfect match for both employers and job seekers.</p>
 					<a href="/contact" class="theme-button-one">CONTACT US</a>
 				</div>
-			</div> <!-- /.callout-banner -->
-			
-			
-			
-			<!-- 
-			=============================================
-					About Company Stye Two
-			============================================== 
-			-->
+			</div>
+
+			<!-- About Company Section -->
 			<div class="about-compnay-two no-bg section-spacing">
 				<div class="overlay">
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-6 col-12 text order-lg-last">
 								<div class="theme-title-one">
-									<h2>SHORT HISTORY</h2>
-								</div> <!-- /.theme-title-one -->
-								<p>A tale of a fateful trip that started from this tropic port aboard this tiny ship today still wanted by the government they survive as soldiers of fortune to a deluxe you apartment in the sky to explore strange new worlds to seek out new life and new civilizations to boldly go where no man has gone.</p>
-								<p>You would see the biggest gift would be from me and the card attached would so thank you for being a friend the biggest gift.</p>
-								<img src="images/home/sign-black.png" alt="" class="sign">
-							</div> <!-- /.col- -->
-							<div class="col-lg-6 col-12 order-lg-first">
-								<img src="images/home/15.jpg" alt="" class="left-img">
+									<h2>OUR JOURNEY</h2>
+								</div>
+								<p>Since our establishment, Elite Corporate Solutions has been at the forefront of revolutionizing recruitment practices in India. Our journey began with a vision to bridge the gap between talented professionals and leading organizations, and today we stand as one of India's most trusted recruitment partners.</p>
+								<p>With a deep understanding of various industry sectors and a commitment to excellence, we have successfully placed thousands of professionals in roles that match their skills and aspirations. Our expertise spans across IT, manufacturing, healthcare, finance, and many other sectors.</p>
 							</div>
-						</div> <!-- /.row -->
-					</div> <!-- /.container -->
-				</div> <!-- /.overlay -->
-			</div> <!-- /.about-compnay-two -->
+							<div class="col-lg-6 col-12 order-lg-first">
+								<img src="https://elitecorporatesolutions.com/wp-content/uploads/2022/06/method-1.jpg" alt="Elite Corporate Solutions Office" class="left-img">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
 
-			<!--
-			=====================================================
-				Why We Best
-			=====================================================
-			-->
+
+		
+
+			<!-- Why We Best Section -->
 			<div class="why-we-best">
 				<div class="overlay">
 					<div class="container">
 						<div class="theme-title-one">
-							<h2>WE ARE ALWAYS BEST</h2>
-							<p>A tale of a fateful trip that started from this tropic port aboard this tiny ship today stillers</p>
-						</div> <!-- /.theme-title-one -->
+							<h2>WHY CHOOSE US</h2>
+							<p>Discover what makes Elite Corporate Solutions your ideal recruitment partner</p>
+						</div>
 
 						<div class="wrapper row no-gutters">
 							<div class="col-lg-6 col-12 order-lg-last"><div class="img-box"></div></div>
@@ -104,32 +92,32 @@ include_once 'include/header.php';
 								<ul class="best-list-item">
 									<li>
 										<i class="icon flaticon-puzzle"></i>
-										<h5><a href="#">Best Strategy</a></h5>
-										<p>The Love Boat soon will be making another run plore strange tools enter new worlds.</p>
+										<h5><a href="#">Industry Expertise</a></h5>
+										<p>Deep understanding of various sectors and their unique recruitment needs.</p>
 									</li>
 									<li>
 										<i class="icon flaticon-presentation"></i>
-										<h5><a href="#">High-Quality Services</a></h5>
-										<p>The Love Boat soon will be making another run plore strange tools enter new worlds.</p>
+										<h5><a href="#">Comprehensive Solutions</a></h5>
+										<p>End-to-end recruitment services from talent sourcing to placement and beyond.</p>
 									</li>
 									<li>
 										<i class="icon flaticon-people"></i>
-										<h5><a href="#">Friendly Support</a></h5>
-										<p>The Love Boat soon will be making another run plore strange tools enter new worlds.</p>
+										<h5><a href="#">Dedicated Support</a></h5>
+										<p>Committed team of professionals ensuring seamless recruitment processes.</p>
 									</li>
 								</ul>
-							</div> <!-- /.col- -->
-						</div> <!-- /.wrapper -->
-					</div> <!-- /.container -->
-				</div> <!-- /.overlay -->
-			</div> <!-- /.why-we-best -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
 
-			<!--
-			=====================================================
-				Counter
-			=====================================================
-			-->
+
+
+			
+
+			<!-- Counter Section -->
 			<div class="theme-counter-two section-spacing">
 				<div class="container">
 					<div class="clearfix">
@@ -137,98 +125,145 @@ include_once 'include/header.php';
 							<div class="row">
 								<div class="col-md-3 col-6">
 									<div class="single-counter-box">
-				        				<div class="number"><span class="timer" data-from="0" data-to="30" data-speed="1200" data-refresh-interval="5">0</span>+</div>
-				        				<p>Years of Excellence</p>
-				        			</div> <!-- /.single-counter-box -->
-								</div>  <!-- /.col- -->
+										<div class="number"><span class="timer" data-from="0" data-to="13" data-speed="1200" data-refresh-interval="5">0</span>+</div>
+										<p>Years of Excellence</p>
+									</div>
+								</div>
 								<div class="col-md-3 col-6">
 									<div class="single-counter-box">
-				        				<div class="number"><span class="timer" data-from="0" data-to="100" data-speed="1200" data-refresh-interval="5">0</span>%</div>
-				        				<p>Client Satisfaction</p>
-				        			</div> <!-- /.single-counter-box -->
-								</div>  <!-- /.col- -->
+										<div class="number"><span class="timer" data-from="0" data-to="100" data-speed="1200" data-refresh-interval="5">0</span>%</div>
+										<p>Client Satisfaction</p>
+									</div>
+								</div>
 								<div class="col-md-3 col-6">
 									<div class="single-counter-box">
-				        				<div class="number"><span class="timer" data-from="0" data-to="53" data-speed="1200" data-refresh-interval="5">0</span>k</div>
-				        				<p>Cases Completed</p>
-				        			</div> <!-- /.single-counter-box -->
-								</div>  <!-- /.col- -->
+										<div class="number"><span class="timer" data-from="0" data-to="5000" data-speed="1200" data-refresh-interval="5">0</span>+</div>
+										<p>Successful Placements</p>
+									</div>
+								</div>
 								<div class="col-md-3 col-6">
 									<div class="single-counter-box">
-				        				<div class="number"><span class="timer" data-from="0" data-to="24" data-speed="1200" data-refresh-interval="5">0</span></div>
-				        				<p>Consultants</p>
-				        			</div> <!-- /.single-counter-box -->
-								</div>  <!-- /.col- -->
-							</div> <!-- /.row -->
-						</div> <!-- /.cunter-wrapper -->
-					</div> <!-- /.clearfix -->
-				</div> <!-- /.container -->
-			</div> <!-- /.theme-counter -->
+										<div class="number"><span class="timer" data-from="0" data-to="50" data-speed="1200" data-refresh-interval="5">0</span>+</div>
+										<p>Expert Consultants</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
 
-			<!-- 
-			=============================================
-				Core Values
-			============================================== 
-			-->
+
+
+			<div class="container mb-3">
+				<div class="row">
+					<div class="col-12">
+						<img width="100%" src="https://elitecorporatesolutions.com/wp-content/uploads/2022/06/stratergy.jpg" alt="Elite Corporate Solutions Office" class="left-img">
+					</div>
+				</div>
+			</div>
+
+
+			<!-- Core Values Section -->
 			<div class="core-values">
 				<div class="container">
 					<div class="theme-title-one">
-						<h2>CORE VALUES</h2>
-					</div> <!-- /.theme-title-one -->
+						<h2>OUR CORE VALUES</h2>
+					</div>
 					<div class="wrapper">
 						<div class="core-value-slider">
 							<div class="item">
 								<div class="single-value-block">
 									<div class="image-box">
-										<img src="images/home/17.jpg" alt="">
-										<div class="overlay"><a href="#" class="theme-button-one">READ MORE</a></div>
-									</div> <!-- /.image-box -->
+										<img src="images/home/value1.jpg" alt="Customer Service Excellence">
+										<div class="overlay"></div>
+									</div>
 									<div class="text">
-										<h5><a href="#">Challenging Staff</a></h5>
-										<p>The Love Boat soon will be making other run plore strange tools.</p>
-									</div> <!-- /.text -->
-								</div> <!-- /.single-value-block -->
-							</div> <!-- /.col- -->
+										<h5>Excellent Customer Service</h5>
+										<p>Dedicated to providing exceptional service and quick responsiveness to all our clients and candidates.</p>
+									</div>
+								</div>
+							</div>
 							<div class="item">
 								<div class="single-value-block">
 									<div class="image-box">
-										<img src="images/home/18.jpg" alt="">
-										<div class="overlay"><a href="#" class="theme-button-one">READ MORE</a></div>
-									</div> <!-- /.image-box -->
+										<img src="images/home/value2.jpg" alt="Ethics and Integrity">
+										<div class="overlay"></div>
+									</div>
 									<div class="text">
-										<h5><a href="#">Integrity Properties</a></h5>
-										<p>The Love Boat soon will be making other run plore strange tools.</p>
-									</div> <!-- /.text -->
-								</div> <!-- /.single-value-block -->
-							</div> <!-- /.col- -->
+										<h5>Ethics and Integrity</h5>
+										<p>Maintaining the highest standards of professional ethics and integrity in all our business dealings.</p>
+									</div>
+								</div>
+							</div>
 							<div class="item">
 								<div class="single-value-block">
 									<div class="image-box">
-										<img src="images/home/19.jpg" alt="">
-										<div class="overlay"><a href="#" class="theme-button-one">READ MORE</a></div>
-									</div> <!-- /.image-box -->
+										<img src="images/home/value3.jpg" alt="Client Confidentiality">
+										<div class="overlay"></div>
+									</div>
 									<div class="text">
-										<h5><a href="#">Innovation Solutions</a></h5>
-										<p>The Love Boat soon will be making other run plore strange tools.</p>
-									</div> <!-- /.text -->
-								</div> <!-- /.single-value-block -->
-							</div> <!-- /.col- -->
-						</div> <!-- /.core-value-slider -->
-					</div> <!-- /.wrapper -->
-				</div> <!-- /.container -->
-			</div> <!-- /.core-values -->
+										<h5>Confidentiality</h5>
+										<p>Ensuring complete confidentiality and security of our client and candidate information.</p>
+									</div>
+								</div>
+							</div>
+							<div class="item">
+								<div class="single-value-block">
+									<div class="image-box">
+										<img src="images/home/value4.jpg" alt="Continuous Improvement">
+										<div class="overlay"></div>
+									</div>
+									<div class="text">
+										<h5>Continuous Improvement</h5>
+										<p>Embracing innovation and continuously improving our processes and services.</p>
+									</div>
+								</div>
+							</div>
+							<div class="item">
+								<div class="single-value-block">
+									<div class="image-box">
+										<img src="images/home/value5.jpg" alt="Transparency and Fun">
+										<div class="overlay"></div>
+									</div>
+									<div class="text">
+										<h5>Transparency and Fun</h5>
+										<p>Maintaining transparency in our operations while creating an enjoyable work environment.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
+			<?php include 'include/partner.php'; ?>
+			<?php include_once 'include/footer.php'; ?>
+		</div>
 
-
-		<?php include 'include/partner.php'; ?>
-
-
-
-
-
-
-
-
-
-        <?php include_once 'include/footer.php'; ?>
+		<!-- Schema.org Markup for About Page -->
+		<script type="application/ld+json">
+		{
+			"@context": "http://schema.org",
+			"@type": "AboutPage",
+			"mainEntityOfPage": {
+				"@type": "WebPage",
+				"@id": "https://elitecorporatesolutions.com/about"
+			},
+			"headline": "About Elite Corporate Solutions - Leading Recruitment Agency in India",
+			"description": "Elite Corporate Solutions is a premier recruitment agency in India, specializing in IT and Non-IT recruitment services. Learn about our journey and expertise.",
+			"publisher": {
+				"@type": "Organization",
+				"name": "Elite Corporate Solutions",
+				"logo": {
+					"@type": "ImageObject",
+					"url": "https://elitecorporatesolutions.com/images/logo.png"
+				}
+			},
+			"image": {
+				"@type": "ImageObject",
+				"url": "https://elitecorporatesolutions.com/images/about-company.jpg"
+			}
+		}
+		</script>
