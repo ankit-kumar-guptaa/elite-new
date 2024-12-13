@@ -7,26 +7,26 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		
 		<!-- SEO Meta Tags -->
-		<title>About Elite Corporate Solutions - Leading Recruitment Agency in India</title>
-		<meta name="description" content="Learn about Elite Corporate Solutions, a premier recruitment agency in India. Discover our journey, mission, and commitment to connecting top talent with leading organizations.">
-		<meta name="keywords" content="about elite corporate solutions, recruitment company history, top recruitment agency india, HR solutions company, manpower consultancy background">
+		<title>Contact Elite Corporate Solutions - Recruitment Agency in India</title>
+		<meta name="description" content="Get in touch with Elite Corporate Solutions for expert recruitment services across India. Contact us via phone, email, or visit our offices.">
+		<meta name="keywords" content="contact elite corporate solutions, recruitment agency contact, HR consultancy India, manpower services, recruitment offices">
 		<meta name="author" content="Elite Corporate Solutions">
 		
 		<!-- Open Graph Meta Tags -->
-		<meta property="og:title" content="About Elite Corporate Solutions - Leading Recruitment Agency">
-		<meta property="og:description" content="Discover Elite Corporate Solutions' journey as India's trusted recruitment partner. Learn about our mission and expertise in talent acquisition.">
-		<meta property="og:image" content="https://elitecorporatesolutions.com/images/about-og-image.jpg">
-		<meta property="og:url" content="https://elitecorporatesolutions.com/about">
+		<meta property="og:title" content="Contact Elite Corporate Solutions - Recruitment Agency in India">
+		<meta property="og:description" content="Reach out to Elite Corporate Solutions for professional recruitment services. Find our contact details and office locations here.">
+		<meta property="og:image" content="https://elitecorporatesolutions.com/images/contact-og-image.jpg">
+		<meta property="og:url" content="https://elitecorporatesolutions.com/contact">
 		<meta property="og:type" content="website">
 		
 		<!-- Twitter Card Meta Tags -->
 		<meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:title" content="About Elite Corporate Solutions - Leading Recruitment Agency">
-		<meta name="twitter:description" content="Discover Elite Corporate Solutions' journey as India's trusted recruitment partner. Learn about our mission and expertise in talent acquisition.">
-		<meta name="twitter:image" content="https://elitecorporatesolutions.com/images/about-twitter-card.jpg">
+		<meta name="twitter:title" content="Contact Elite Corporate Solutions - Recruitment Agency in India">
+		<meta name="twitter:description" content="Connect with Elite Corporate Solutions for expert recruitment services. Find our contact information and office locations.">
+		<meta name="twitter:image" content="https://elitecorporatesolutions.com/images/contact-twitter-card.jpg">
 		
 		<!-- Canonical URL -->
-		<link rel="canonical" href="https://elitecorporatesolutions.com/about">
+		<link rel="canonical" href="https://elitecorporatesolutions.com/contact">
 
 		<?php include 'include/assets.php'; ?>
 	</head>
