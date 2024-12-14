@@ -6,18 +6,18 @@ $routes = [
     // '/home' => 'home.php',
     '/about' => 'about.php',
     '/contact' => 'contact.php',
-    '/services' => 'services.php',
-    '/services/learning-development' => 'services/learning-development.php',
-    '/services/hr-outsourcing' => 'services/hr-outsourcing.php',
-    '/services/welcome-india' => 'services/welcome-india.php',
-    '/services/startup-support' => 'services/startup-support.php',
-    '/services/bad-debts' => 'services/bad-debts.php',
-    '/solutions' => 'solutions.php',
-    '/jobs' => 'jobs.php',
-    '/jobs/current' => 'jobs/current.php',
-    '/jobs/submit-resume' => 'jobs/submit-resume.php',
-    '/jobs/login' => 'jobs/login.php',
-    // Add more routes as needed
+    // '/services' => 'services.php',
+    '/learning-development' => 'learning-development.php',
+    '/hr-outsourcing' => 'hr-outsourcing.php',
+    '/welcome-india' => 'welcome-india.php',
+    '/startup-support' => 'startup-support.php',
+    '/bad-debts' => 'bad-debts.php',
+    // '/solutions' => 'solutions.php',
+    // '/jobs' => 'jobs.php',
+    // '/jobs/current' => 'jobs/current.php',
+    // '/jobs/submit-resume' => 'jobs/submit-resume.php',
+    // '/jobs/login' => 'jobs/login.php',
+  
 ];
 
 function handleRequest($uri, $routes) {

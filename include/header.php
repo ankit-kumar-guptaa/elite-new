@@ -59,13 +59,13 @@ if (!function_exists('isActive')) {
 								   <ul class="clearfix">
 									    <li class="<?php echo isActive('/'); ?>"><a href="/">Home</a></li>
 									    <li class="<?php echo isActive('/about'); ?>"><a href="/about">About</a></li>
-									    <li class="<?php echo isActive('/services'); ?>"><a href="/services">Services</a>
+									    <li class="<?php echo isActive('/services'); ?>"><a href="#">Services</a>
 									    	<ul class="dropdown">
-									        	<li><a href="/services/learning-development">Learning & Development</a></li>
-									        	<li><a href="/services/hr-outsourcing">HR Outsourcing for Small Businesses</a></li>
-									        	<li><a href="/services/welcome-india">Welcome to India Services – End to End Support</a></li>
-									        	<li><a href="/services/startup-support">Start-up Support – Everything at one place</a></li>
-									        	<li><a href="/services/bad-debts">Bad Debts Collection</a></li>
+									        	<li><a href="/learning-development">Learning & Development</a></li>
+									        	<li><a href="/hr-outsourcing">HR Outsourcing for Small Businesses</a></li>
+									        	<li><a href="/welcome-india">Welcome to India Services – End to End Support</a></li>
+									        	<li><a href="/startup-support">Start-up Support – Everything at one place</a></li>
+									        	<li><a href="/bad-debts">Bad Debts Collection</a></li>
 									       </ul>
 									    </li>
 									    <li class="<?php echo isActive('/solutions'); ?>"><a href="/solutions">Solutions</a></li>
