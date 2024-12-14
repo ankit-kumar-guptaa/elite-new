@@ -29,18 +29,17 @@
 			<?php include_once 'include/slider.php'; ?>
 			
 		
-		<!-- 
-			=============================================
-				CallOut Banner 
-			============================================== 
-			-->
-			<div class="callout-banner mb-3">
-				<div class="container clearfix">
-					<h3 class="title">Top Manpower Recruitment Consultancy in India</h3>
-					<p>Elite Corporate Solutions offers tailored manpower services for IT and Non-IT sectors. Our expert recruiters provide quality candidates through a vast network across India, ensuring the right fit for your business needs quickly and efficiently.</p>
-					<a href="#" class="theme-button-one">GET A FREE QUOTE</a>
-				</div>
-			</div> <!-- /.callout-banner -->
+		
+
+
+
+			<section class="recruitment-section mb-5">
+        <div class="container">
+            <h2>India’s leading and growing recruitment company. <br>
+                We are serving our IT & Non IT clients since 2010.</h2>
+            <a href="#" class="btn btn-know-more">Know More →</a>
+        </div>
+    </section>
 
 
 
@@ -124,20 +123,6 @@
 			
 
 			
-			<!-- 
-			=============================================
-				Feature Banner
-			============================================== 
-			-->
-			<div class="feature-banner section-spacing">
-				<div class="opacity">
-					<div class="container">
-						<h2>India’s leading and growing recruitment company. We are serving our IT &amp; Non IT clients since 2010</h2>
-						<a href="#" class="theme-button-one">GET A QUOTES</a>
-					</div> <!-- /.container -->
-				</div> <!-- /.opacity -->
-			</div> <!-- /.feature-banner -->
-
 
 
 
@@ -147,51 +132,7 @@
 
 
 			
-			<!-- 
-			=============================================
-				About Company 
-			============================================== 
-			-->
-			<div class="about-compnay-two section-spacing">
-				<div class="overlay">
-					<div class="container">
-						<div class="row no-gutters">
-							<div class="col-lg-7 col-12 text">
-								<div class="theme-title-one">
-									<h2>ABOUT US</h2>
-								</div> 
-								<p>We are one of the best manpower recruitment consultancy Company and top placement consultant in India. We provide Manpower Services to all Industries, MNCs and Firms etc. for their IT & Non-IT Functions. We provides several human resource solutions to our clients & candidates catering to the entire employment and business process.</p>
-								<p>We do have a huge team of Expert and Professional Recruiters, who work on our client’s requirement and give them a Qualitative candidates. We are having vast database, professional portals & a huge online network reference in entire India.</p>
-								<img src="images/fav-icon/icon.png" alt="" class="sign">
-							</div> <!-- /.col- -->
-							<div class="col-lg-5 col-12">
-								<div class="quote-form">
-									<form action="#" class="theme-form-one">
-										<div class="row">
-											<div class="col-md-6"><input type="text" placeholder="Name *"></div>
-											<div class="col-md-6"><input type="text" placeholder="Phone *"></div>
-											<div class="col-md-6"><input type="email" placeholder="Email *"></div>
-											<div class="col-md-6">
-												<select class="form-control" id="exampleSelect1">
-											      <option>Choose Services?</option>
-											      <option>Learning & Development</option>
-											      <option>HR Outsourcing for Small Businesses</option>
-											      <option>Welcome to India Services– End to End Support</option>
-											      <option>Start-up Support - Everything at one place</option>
-											      <option>Bad Debts Collection</option>
-											    </select>
-											</div>
-											<div class="col-12"><textarea placeholder="Message"></textarea></div>
-										</div> <!-- /.row -->
-										<button class="theme-button-one">GET A QUOTES</button>
-									</form>
-								</div> <!-- /.quote-form -->
-							</div>
-						</div> <!-- /.row -->
-					</div> <!-- /.container -->
-				</div> <!-- /.overlay -->
-			</div> <!-- /.about-->
-
+		
 
 
 

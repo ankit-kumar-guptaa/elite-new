@@ -1,5 +1,9 @@
 
 
+
+
+<div class="hr" style="height: 2px; background-color: #011747; margin-top: 45px; margin-bottom: 1px;"></div>
+
 				<!--
 			=====================================================
 				Footer

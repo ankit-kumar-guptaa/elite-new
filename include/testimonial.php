@@ -1,4 +1,4 @@
-<section class="testimonial-section">
+<section class="testimonial-sectionn">
     <div class="container">
       <h2 class="testimonial-title">What Our Customers Say About Us</h2>
       <div class="row g-4">
@@ -45,7 +45,7 @@
 
 
   <style>
-    .testimonial-section {
+    .testimonial-sectionn {
       background-color: #f8f9fa;
       padding: 50px 0;
     }
@@ -54,7 +54,7 @@
       font-weight: bold;
       text-align: center;
       margin-bottom: 40px;
-      color: #fff;
+      color: #000;
     }
     .testimonial-card {
       background: #ffffff;

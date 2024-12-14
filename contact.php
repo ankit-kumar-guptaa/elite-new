@@ -86,7 +86,14 @@
 											required></div>
 									<div class="col-sm-6 col-12"><input type="email" placeholder="Email *" name="email"
 											required></div>
-									<div class="col-sm-6 col-12"><input type="text" placeholder="Website *" name="web">
+									<div class="col-sm-6 col-12"><select class="form-control" id="exampleSelect1">
+											      <option>Choose Services?</option>
+											      <option>Learning &amp; Development</option>
+											      <option>HR Outsourcing for Small Businesses</option>
+											      <option>Welcome to India Services– End to End Support</option>
+											      <option>Start-up Support - Everything at one place</option>
+											      <option>Bad Debts Collection</option>
+											    </select>
 									</div>
 									<div class="col-12"><textarea placeholder="Message" name="message"
 											required></textarea></div>

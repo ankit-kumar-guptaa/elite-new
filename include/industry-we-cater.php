@@ -113,7 +113,7 @@
         }
 
         .btn-enquiry-now {
-            background-color: #000f32;
+            background-color: #f7b52b;
             color: #fff;
             border: none;
             padding: 10px 20px;
