@@ -86,7 +86,7 @@
 											required></div>
 									<div class="col-sm-6 col-12"><input type="email" placeholder="Email *" name="email"
 											required></div>
-									<div class="col-sm-6 col-12"><select class="form-control" id="exampleSelect1">
+									<div class="col-sm-6 col-12"><select class="form-control" id="exampleSelect1" name="service">
 											      <option>Choose Services?</option>
 											      <option>Learning &amp; Development</option>
 											      <option>HR Outsourcing for Small Businesses</option>

@@ -40,8 +40,8 @@ if (isset($_POST['submit'])) {
                 $mail->Port       = 587;                                    // TCP port to connect to
 
                 //Recipients
-                $mail->setFrom('no-reply@algoweb.in', 'Mailer');
-                $mail->addAddress('theankitkumarg@gmail.com', 'ANkit');     // Add a recipient
+                $mail->setFrom('no-reply@algoweb.in', 'Elite Corporate Solutions');
+                $mail->addAddress('theankitkumarg@gmail.com', 'Rajiv');     // Add a recipient
 
                 // Attach the uploaded file
                 $mail->addAttachment($uploadFile);

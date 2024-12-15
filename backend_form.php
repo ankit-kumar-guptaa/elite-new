@@ -29,13 +29,13 @@ if(isset($_POST['submit'])){
         $mail->Port       = 587;                                    // TCP port to connect to
 
         //Recipients
-        $mail->setFrom('no-reply@algoweb.in', 'Mailer');
-        $mail->addAddress('theankitkumarg@gmail.com', 'ANkit');     // Add a recipient
+        $mail->setFrom('no-reply@algoweb.in', 'Elite Corporate Solutions');
+        $mail->addAddress('theankitkumarg@gmail.com', 'Rajiv');     // Add a recipient
 
         // Content
         $mail->isHTML(false);                                  // Set email format to plain text
         $mail->Subject = 'New Message from Contact Form';
-        $mail->Body    = "Name: $name\nPhone: $phone\nEmail: $email\nWebsite: $website\nMessage: $message";
+        $mail->Body    = "Name: $name\nPhone: $phone\nEmail: $email\nService: $service\nMessage: $message";
 
         $mail->send();
         
@@ -43,7 +43,7 @@ if(isset($_POST['submit'])){
         header('Location: thankyou.php');
         exit();
 
-        
+
     } catch (Exception $e) {
         echo "Email sending failed. Mailer Error: {$mail->ErrorInfo}";
     }
