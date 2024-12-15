@@ -136,91 +136,13 @@
 
 				</div>
 
-				<div class="row mt-5">
-					<!-- Head Office Address -->
-					<div class="col-lg-4 col-md-6 mb-4">
-						<div class="contact-card h-100 p-4 bg-light rounded shadow-sm">
-							<h4 class="mb-3"><i class="fa fa-building mr-2"></i>Head Office</h4>
-							<p class="mb-0">A-83, Okhla Industrial Area,</p>
-							<p class="mb-3">Phase - 2, New Delhi -110019</p>
-
-							<h5 class="mt-4 mb-3">Branch Offices:</h5>
-							<ul class="list-unstyled">
-								<li><i class="fa fa-map-marker mr-2"></i>Jammu</li>
-								<li><i class="fa fa-map-marker mr-2"></i>Chandigarh</li>
-								<li><i class="fa fa-map-marker mr-2"></i>Vijayawada</li>
-								<li><i class="fa fa-map-marker mr-2"></i>Nagpur</li>
-								<li><i class="fa fa-map-marker mr-2"></i>Bhopal</li>
-								<li><i class="fa fa-map-marker mr-2"></i>Bangalore</li>
-							</ul>
-						</div>
-					</div>
-
-					<!-- Contact Information -->
-					<div class="col-lg-4 col-md-6 mb-4">
-						<div class="contact-card h-100 p-4 bg-light rounded shadow-sm">
-							<h4 class="mb-3"><i class="fa fa-phone mr-2"></i>Contact Info</h4>
-
-							<div class="mb-4">
-								<h5 class="mb-3">Phone Numbers:</h5>
-								<p class="mb-2"><i class="fa fa-mobile mr-2"></i>+91 9870364340</p>
-								<p><i class="fa fa-phone mr-2"></i>011-40747520</p>
-							</div>
-
-							<div>
-								<h5 class="mb-3">Email:</h5>
-								<p class="mb-0"><i class="fa fa-envelope mr-2"></i>info@elitecorporatesolutions.com</p>
-							</div>
-						</div>
-					</div>
-
-					<!-- Business Hours -->
-					<div class="col-lg-4 col-md-12 mb-4">
-						<div class="contact-card h-100 p-4 bg-light rounded shadow-sm">
-							<h4 class="mb-3"><i class="fa fa-clock-o mr-2"></i>Business Hours</h4>
-							<ul class="list-unstyled">
-								<li class="mb-2">Monday - Friday: 9:00 AM - 6:00 PM</li>
-								<li class="mb-2">Saturday: 9:00 AM - 2:00 PM</li>
-								<li>Sunday: Closed</li>
-							</ul>
-
-							<div class="mt-4">
-								<h5 class="mb-3">Connect With Us:</h5>
-								<div class="social-icons">
-									<a href="#" class="mr-3"><i class="fa fa-linkedin"></i></a>
-									<a href="#" class="mr-3"><i class="fa fa-facebook"></i></a>
-									<a href="#" class="mr-3"><i class="fa fa-twitter"></i></a>
-									<a href="#"><i class="fa fa-instagram"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-
-		<!-- Google Map -->
-		<div class="google-map-two section-spacing">
-
-			<iframe
-				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.042758568287!2d77.26698727630705!3d28.5384344757164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d02e33efb8d29%3A0xcdab97ed4414cbfb!2sElite%20Corporate%20Solutions%20Private%20Limited!5e0!3m2!1sen!2sin!4v1734025540441!5m2!1sen!2sin"
-				width="100%" height="450" style="border:0;" loading="lazy"
-				referrerpolicy="no-referrer-when-downgrade"></iframe>
-		</div>
-	</div>
-
-	<!-- 
+				<!-- 
 			=============================================
 				Compnay Branch Address
 			============================================== 
 			-->
 	<div class="branch-address">
-		<div class="container">
-			<div class="theme-title-one  mb-4">
-				<h2>OUR BRANCHES AND TEAMS SPREAD ACROSS INDIA</h2>
-			</div>
-			<div class="row">
+		
 				<div class="address-slider">
 					<div class="item">
 						<div class="wrapper">
@@ -289,9 +211,71 @@
 						</div>
 					</div>
 				</div>
-			</div>
-		</div> <!-- /.container -->
+		 <!-- /.container -->
 	</div> <!-- /.branch-address -->
+
+				<div class="row mt-5">
+					<!-- Head Office Address -->
+					<div class="col-lg-4 col-md-6 mb-4">
+						<div class="contact-card h-100 p-4 bg-light rounded shadow-sm">
+							<h4 class="mb-3"><i class="fa fa-building mr-2"></i>Head Office</h4>
+							<p class="mb-0">A-83, Okhla Industrial Area,</p>
+							<p class="mb-3">Phase - 2, New Delhi -110019</p>
+
+							
+						</div>
+					</div>
+
+					<!-- Contact Information -->
+					<div class="col-lg-4 col-md-6 mb-4">
+						<div class="contact-card h-100 p-4 bg-light rounded shadow-sm">
+							<h4 class="mb-3"><i class="fa fa-phone mr-2"></i>Contact Info</h4>
+
+							<div class="mb-4">
+								<h5 class="mb-3">Phone Numbers:</h5>
+								<p class="mb-2"><i class="fa fa-mobile mr-2"></i>+91 9870364340</p>
+								<p><i class="fa fa-phone mr-2"></i>011-40747520</p>
+							</div>
+
+							<div>
+								<h5 class="mb-3">Email:</h5>
+								<p class="mb-0"><i class="fa fa-envelope mr-2"></i>info@elitecorporatesolutions.com</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Business Hours -->
+					<div class="col-lg-4 col-md-12 mb-4">
+						<div class="contact-card h-100 p-4 bg-light rounded shadow-sm">
+							<h4 class="mb-3"><i class="fa fa-clock-o mr-2"></i>Business Hours</h4>
+							<ul class="list-unstyled">
+								<li class="mb-2">Monday - Friday: 9:00 AM - 6:00 PM</li>
+								<li class="mb-2">Saturday: 9:00 AM - 2:00 PM</li>
+								<li>Sunday: Closed</li>
+							</ul>
+
+							<div class="mt-4">
+								<h5 class="mb-3">Connect With Us: <a href="#" class="mr-3 px-2"><i class="fa fa-linkedin"></i></a></h5>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- Google Map -->
+		<div class="google-map-two mt-5 ">
+
+			<iframe
+				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.042758568287!2d77.26698727630705!3d28.5384344757164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d02e33efb8d29%3A0xcdab97ed4414cbfb!2sElite%20Corporate%20Solutions%20Private%20Limited!5e0!3m2!1sen!2sin!4v1734025540441!5m2!1sen!2sin"
+				width="100%" height="450" style="border:0;" loading="lazy"
+				referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</div>
+	</div>
+
+	
 
 
 
