@@ -37,7 +37,7 @@
 								</div>  <!-- /.col- -->
 							</div> <!-- /.row -->
 						</div> <!-- /.cunter-wrapper -->
-						<a href="#" class="theme-button-one">ABOUT US</a>
+						<a href="/about" class="theme-button-one">ABOUT US</a>
 					</div> <!-- /.bg -->
 				</div> <!-- /.container -->
 			</div> <!-- /counter -->

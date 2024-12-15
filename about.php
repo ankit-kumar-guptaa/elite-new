@@ -66,7 +66,7 @@
 								<p>With a deep understanding of various industry sectors and a commitment to excellence, we have successfully placed thousands of professionals in roles that match their skills and aspirations. Our expertise spans across IT, manufacturing, healthcare, finance, and many other sectors.</p>
 							</div>
 							<div class="col-lg-6 col-12 order-lg-first">
-								<img src="https://elitecorporatesolutions.com/wp-content/uploads/2022/06/method-1.jpg" alt="Elite Corporate Solutions Office" class="left-img">
+								<img src="images/about.jpg" alt="Elite Corporate Solutions Office" class="left-img">
 							</div>
 						</div>
 					</div>
@@ -159,7 +159,7 @@
 			<div class="container mb-3">
 				<div class="row">
 					<div class="col-12">
-						<img width="100%" src="https://elitecorporatesolutions.com/wp-content/uploads/2022/06/stratergy.jpg" alt="Elite Corporate Solutions Office" class="left-img">
+						<img width="100%" src="images/about-3.jpg" alt="Elite Corporate Solutions Office" class="left-img">
 					</div>
 				</div>
 			</div>
@@ -176,7 +176,6 @@
 							<div class="item">
 								<div class="single-value-block">
 									<div class="image-box">
-										<img src="images/home/value1.jpg" alt="Customer Service Excellence">
 										<div class="overlay"></div>
 									</div>
 									<div class="text">
@@ -188,7 +187,6 @@
 							<div class="item">
 								<div class="single-value-block">
 									<div class="image-box">
-										<img src="images/home/value2.jpg" alt="Ethics and Integrity">
 										<div class="overlay"></div>
 									</div>
 									<div class="text">
@@ -200,7 +198,6 @@
 							<div class="item">
 								<div class="single-value-block">
 									<div class="image-box">
-										<img src="images/home/value3.jpg" alt="Client Confidentiality">
 										<div class="overlay"></div>
 									</div>
 									<div class="text">
@@ -212,7 +209,6 @@
 							<div class="item">
 								<div class="single-value-block">
 									<div class="image-box">
-										<img src="images/home/value4.jpg" alt="Continuous Improvement">
 										<div class="overlay"></div>
 									</div>
 									<div class="text">
@@ -224,7 +220,6 @@
 							<div class="item">
 								<div class="single-value-block">
 									<div class="image-box">
-										<img src="images/home/value5.jpg" alt="Transparency and Fun">
 										<div class="overlay"></div>
 									</div>
 									<div class="text">
@@ -237,6 +232,91 @@
 					</div>
 				</div>
 			</div>
+
+
+
+
+
+			<!-- Our Mission and Vision Section -->
+<div class="mission-vision section-spacing">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Our Mission -->
+            <div class="col-lg-6 mb-4">
+                <div class="mission-block text-center p-5">
+                    <h2 class="section-title mb-4">Our Mission</h2>
+                    <ul class="mission-list">
+                        <li>Consistently exceeding our customers’ expectations for high quality</li>
+                        <li>Fast and on-time delivery</li>
+                        <li>Low pricing</li>
+                        <li>Outstanding customer service</li>
+                        <li>Becoming strategic partners and an extension of their operations</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Our Vision -->
+            <div class="col-lg-6 mb-4">
+                <div class="vision-block text-center p-5">
+                    <h2 class="section-title mb-4">Our Vision</h2>
+                    <ul class="vision-list">
+                        <li>A Robust Operations Excellence Model</li>
+                        <li>A Young Company with enthusiastic personnel</li>
+                        <li>Quick, Flexible and Easy to do Business Company</li>
+                        <li>Maximum Results with speedy execution process</li>
+                        <li>Partner based approach</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .mission-vision {
+        padding: 80px 0;
+        background: linear-gradient(to right, #f7f7f7, #eaeaea);
+    }
+
+    .mission-block, .vision-block {
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .mission-block:hover, .vision-block:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .section-title {
+        font-size: 3rem;
+        font-weight: bold;
+        color: #000f32;
+    }
+
+    .mission-list, .vision-list {
+        font-size: 1.3rem;
+        color: #333;
+        line-height: 1.8;
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .mission-list li, .vision-list li {
+        margin-bottom: 15px;
+        position: relative;
+        padding-left: 25px;
+    }
+
+    .mission-list li:before, .vision-list li:before {
+        content: '✔';
+        position: absolute;
+        left: 0;
+        color: #000f32;
+        font-size: 1.5rem;
+    }
+</style>
 
 			<?php include 'include/partner.php'; ?>
 			<?php include_once 'include/footer.php'; ?>

@@ -1,4 +1,4 @@
-<div class="container py-5">
+<div id="service" class="container py-5">
     <div class="theme-title-one">
         <h2>Our Services</h2>
     </div>
@@ -11,7 +11,7 @@
                     <h5 class="card-title">Learning & Development</h5>
                     <p class="card-text">We believe in the philosophy of Training your assets which is the manpower the way any high performing sports team does when they are not playing any matches. We develop customized modules for each client and train teams cutting across all level in the organization. 
                     </p>
-                    <a href="#" class="btn btn-know-more">Know More</a>
+                    <a href="/learning-development" class="btn btn-know-more">Know More</a>
                 </div>
             </div>
         </div>
@@ -22,7 +22,7 @@
                 <div class="card-body">
                     <h5 class="card-title">HR Outsourcing for Small Businesses</h5>
                     <p class="card-text">Outsourcing HR can reduce your administration time and allow you to focus on growing your business. Outsourcing means obtaining work that was done by employees previously inside the company from sources outside the company. </p>
-                    <a href="#" class="btn btn-know-more">Know More</a>
+                    <a href="/hr-outsourcing" class="btn btn-know-more">Know More</a>
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Welcome to India Services– End to End Support</h5>
                     <p class="card-text">Setting up business operations internationally presents companies with enormous opportunities along with steep learning curve of business operations and unique challenges related to setting up a company, identifying skilled local talent, taxation, payroll, compliance and much more.</p>
-                    <a href="#" class="btn btn-know-more">Know More</a>
+                    <a href="/welcome-india" class="btn btn-know-more">Know More</a>
                 </div>
             </div>
         </div>
@@ -46,7 +46,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Start-up Support - Everything at one place</h5>
                     <p class="card-text">We understand new business need & challenges to get up and running on a fast mode. Our special package of corporate real estate needs and other professional services help you to identify shortlist and occupy the best real estate for your business. </p>
-                    <a href="#" class="btn btn-know-more">Know More</a>
+                    <a href="/startup-support" class="btn btn-know-more">Know More</a>
                 </div>
             </div>
         </div>
@@ -57,7 +57,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Bad Debts Collection</h5>
                     <p class="card-text">Business-to-Business (B2B) collections are vital to any company as collecting old & Bad dues will help you to optimize organization’s working capital position, lower DSO, write-offs and improve cash flow along with profits. </p>
-                    <a href="#" class="btn btn-know-more">Know More</a>
+                    <a href="/bad-debts" class="btn btn-know-more">Know More</a>
                 </div>
             </div>
         </div>

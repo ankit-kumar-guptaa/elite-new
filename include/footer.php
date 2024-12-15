@@ -29,9 +29,9 @@
 								<ul>
 									<li><a href="project.html">Home</a></li>
 									<li><a href="about">About us</a></li>
-									<li><a href="service.html">Our Solutions</a></li>
-									<li><a href="blog.html">Blog</a></li>
-									<li><a href="contact.html">Contact us</a></li>
+									<li><a href="/#service">Our Services</a></li>
+									<li><a href="#">Blog</a></li>
+									<li><a href="contact">Contact us</a></li>
 								</ul>
 							</div> <!-- /.footer-list -->
 							<div class="col-lg-3 col-sm-6 col-12 footer-list">
