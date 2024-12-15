@@ -15,6 +15,7 @@ if(isset($_POST['submit'])){
     $email = $_POST['email'];
     $website = $_POST['web'];
     $message = $_POST['message'];
+    $service = $_POST['service'];
 
     $mail = new PHPMailer(true);
 
