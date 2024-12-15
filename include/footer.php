@@ -70,6 +70,14 @@
 			</footer> <!-- /footer-two -->
 
 
+
+			<!-- WhatsApp Icon -->
+<a href="https://wa.me/9870364340" class="whatsapp-icon" target="_blank">
+    <i class="fa fa-whatsapp" aria-hidden="true"></i>
+</a>
+
+
+
 	        
 
 	        <!-- Scroll Top Button -->

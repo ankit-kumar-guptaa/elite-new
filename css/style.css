@@ -2111,3 +2111,24 @@ body .theme-button-one:hover {background:#000f32; }
   background-color: #e0a020; /* Darker shade for hover */
   color: #fff;
 }
+
+
+
+
+.whatsapp-icon {
+  position: fixed;
+  left: 10px;
+  bottom: 20px;
+  background-color: #25D366;
+  color: white;
+  border-radius: 50%;
+  padding: 7px 15px;
+  font-size: 30px;
+  z-index: 1000;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+.whatsapp-icon:hover {
+  color: white;
+  text-decoration: none;
+}
