@@ -1,33 +1,13 @@
 <div id="theme-main-banner" class="banner-one">
     <!-- Slider Content -->
-    <div data-src="https://images.unsplash.com/photo-1513530534585-c7b1394c6d51?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-        <div class="camera_caption">
-            <div class="container">
-                <p class="wow fadeInUp animated" style="color: #fff;">Trusted and Reliable Placement Service</p>
-                <h1 class="wow fadeInUp animated" data-wow-delay="0.2s">Your Career,<br> Our Commitment</h1>
-                <a href="about.html" class="theme-button-one wow fadeInUp animated" data-wow-delay="0.39s">ABOUT US</a>
-            </div> <!-- /.container -->
-        </div> <!-- /.camera_caption -->
-    </div>
-    <div data-src="https://images.pexels.com/photos/27406/pexels-photo-27406.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
-        <div class="camera_caption">
-            <div class="container">
-                <p class="wow fadeInUp animated">Client first approach With Dedicated Relationship Manager</p>
-                <h1 class="wow fadeInUp animated" data-wow-delay="0.2s">Experience Excellence <br> in Service</h1>
-                <a href="about.html" class="theme-button-one wow fadeInUp animated" data-wow-delay="0.39s">ABOUT US</a>
-            </div> <!-- /.container -->
-        </div> <!-- /.camera_caption -->
-    </div>
-    <div data-src="https://images.unsplash.com/photo-1431540015161-0bf868a2d407?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-        <div class="camera_caption">
-            <div class="container">
-                <p class="wow fadeInUp animated" style="color: #fff;">The government they survive artical of fortune</p>
-                <h1 class="wow fadeInUp animated" data-wow-delay="0.2s">HIGH-QUALITY MARKET <br> EXPERIENCES</h1>
-                <a href="about.html" class="theme-button-one wow fadeInUp animated" data-wow-delay="0.39s">ABOUT US</a>
-            </div> <!-- /.container -->
-        </div> <!-- /.camera_caption -->
-    </div>
-</div> <!-- /#theme-main-banner -->
+    <div data-src="images/slider/1.jpg" style="background-image: url('images/slider/1.jpg');"></div>
+    <div data-src="images/slider/2.jpg" style="background-image: url('images/slider/2.jpg');"></div>
+    <div data-src="images/slider/3.jpg" style="background-image: url('images/slider/3.jpg');"></div>
+</div>
+
+
+
+<!-- /#theme-main-banner -->
 
 <!-- Form Container (Above the Slider) -->
 <div id="form-container">
@@ -35,35 +15,45 @@
         <h2>Let's Connect</h2>
         <p>Building Careers. Building Organisations</p>
         <div class="tabs">
-            <button id="employerTab" onclick="switchTab('employer')">Employer</button>
+            <button id="employerTab" class="active" onclick="switchTab('employer')">Employer</button>
             <button id="jobSeekerTab" onclick="switchTab('jobseeker')">Job Seeker</button>
         </div>
         <div id="formContent">
-            <!-- Employer Form -->
-            <form id="employerForm" action="submit_employer.php" method="POST">
-                <input type="text" name="name" placeholder="Name" required />
-                <input type="email" name="email" placeholder="Email" required />
-                <input type="text" name="phone" placeholder="Phone" required />
-                <textarea name="message" placeholder="Message" required></textarea>
-                <button type="submit">Submit</button>
-            </form>
+          <!-- Employer Form -->
+
+
+          <div id="toaster" style="position: fixed; top: 20px; right: 20px; background-color: #f44336; color: white; padding: 15px; border-radius: 5px; display: none; z-index: 1000;">
+    Gmail addresses are not allowed. Please use a different email address.
+</div>
+<form id="employerForm" action="slider_Employer_Form.php" method="POST" onsubmit="return validateEmail(event)">
+    <input class="mt-3" type="text" name="name" placeholder="Name" required />
+    <input class="mt-3" type="email" name="email" placeholder="Email" required />
+    <input class="mt-3" type="text" name="phone" placeholder="Phone" required />
+    <textarea class="mt-3" name="message" placeholder="Message" required></textarea>
+    <button type="submit" name="submit">Submit</button>
+</form>
 
             <!-- Job Seeker Form -->
-            <form id="jobSeekerForm" action="submit_jobseeker.php" method="POST" enctype="multipart/form-data" style="display: none;">
-                <input type="text" name="name" placeholder="Name" required />
-                <input type="email" name="email" placeholder="Email" required />
-                <textarea name="message" placeholder="Message" required></textarea>
-                <input type="file" name="cv" required />
-                <button type="submit">Submit</button>
+            <form id="jobSeekerForm" action="slider_JobSeeker_form.php" method="POST" enctype="multipart/form-data" style="display: none;">
+                <input class="mt-3" type="text" name="name" placeholder="Name" required />
+                <input class="mt-3" type="email" name="email" placeholder="Email" required />
+                <textarea class="mt-3" name="message" placeholder="Message" required></textarea>
+                <input class="mt-3" type="file" name="cv" required />
+                <button type="submit" name="submit">Submit</button>
             </form>
         </div>
+        <!-- Loader -->
+        <div id="loader" style="display: none;">Loading...</div>
     </div>
 </div>
 
 <style>
-    #theme-main-banner {
-    position: relative; 
-}
+
+
+
+
+
+
 
 #form-container {
     position: absolute;
@@ -247,22 +237,54 @@ form button:active {
 
 <script>
     function switchTab(tab) {
-    const employerForm = document.getElementById('employerForm');
-    const jobSeekerForm = document.getElementById('jobSeekerForm');
-    const employerTab = document.getElementById('employerTab');
-    const jobSeekerTab = document.getElementById('jobSeekerTab');
+        const employerForm = document.getElementById('employerForm');
+        const jobSeekerForm = document.getElementById('jobSeekerForm');
+        const employerTab = document.getElementById('employerTab');
+        const jobSeekerTab = document.getElementById('jobSeekerTab');
 
-    if (tab === 'employer') {
-        employerForm.style.display = 'block';
-        jobSeekerForm.style.display = 'none';
-        employerTab.classList.add('active');
-        jobSeekerTab.classList.remove('active');
-    } else {
-        employerForm.style.display = 'none';
-        jobSeekerForm.style.display = 'block';
-        jobSeekerTab.classList.add('active');
-        employerTab.classList.remove('active');
+        if (tab === 'employer') {
+            employerForm.style.display = 'block';
+            jobSeekerForm.style.display = 'none';
+            employerTab.classList.add('active');
+            jobSeekerTab.classList.remove('active');
+        } else {
+            employerForm.style.display = 'none';
+            jobSeekerForm.style.display = 'block';
+            jobSeekerTab.classList.add('active');
+            employerTab.classList.remove('active');
+        }
     }
-}
 
+    function showLoader(event) {
+        event.preventDefault();
+        const loader = document.getElementById('loader');
+        loader.style.display = 'block';
+        // Simulate form submission delay
+        setTimeout(() => {
+            event.target.submit();
+        }, 2000);
+    }
+
+   
+
+
+
+    function validateEmail(event) {
+    const emailInput = document.querySelector('input[name="email"]');
+    const emailValue = emailInput.value;
+    const blockedDomain = 'gmail.com';
+    const toaster = document.getElementById('toaster');
+
+    const emailDomain = emailValue.split('@')[1];
+
+    if (emailDomain === blockedDomain) {
+        toaster.style.display = 'block';
+        setTimeout(() => {
+            toaster.style.display = 'none';
+        }, 3000); // Hide after 3 seconds
+        event.preventDefault(); // Stop form submission
+        return false;
+    }
+    return true; // Allow form submission
+}
 </script>

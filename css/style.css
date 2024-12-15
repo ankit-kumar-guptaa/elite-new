@@ -750,7 +750,7 @@ body .theme-button-one:hover {background:#000f32; }
 .theme-form-one .theme-button-one { font-family: 'Nunito Sans', sans-serif;}
 /*------------------- Partner Slider ------------------*/
 .partner-section {padding: 22px 0;}
-.partner-section.bg-color {background: #f8faff;}
+.partner-section.bg-color {background: #ffffff;}
 .partner-section h6 {
   font-size: 18px;
   font-weight: 700;
@@ -882,7 +882,7 @@ body .theme-button-one:hover {background:#000f32; }
 }
 .theme-footer-one .bottom-footer ul li a:hover  {color: #fff;}
 /*---------------------- Theme footer Two ------------------*/
-.theme-footer-two {background: #f4f5f7;padding-top: 75px;}
+.theme-footer-two {background: #ffffff;padding-top: 75px;}
 .theme-footer-two .logo-widget p {
   font-size: 17px;
   line-height: 25px;

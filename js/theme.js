@@ -81,7 +81,7 @@
             overlayer: true,
             loader: 'none',
             minHeight: '400px',
-            time: 6000,
+            time: 1000,
           });
         };
 
