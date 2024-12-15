@@ -1,9 +1,21 @@
-<div id="theme-main-banner" class="banner-one">
-    <!-- Slider Content -->
-    <div data-src="images/slider/1.jpg" style="background-image: url('images/slider/1.jpg');"></div>
-    <div data-src="images/slider/2.jpg" style="background-image: url('images/slider/2.jpg');"></div>
-    <div data-src="images/slider/3.jpg" style="background-image: url('images/slider/3.jpg');"></div>
+<!-- <div id="theme-main-banner" class="banner-one">
+
+  <div data-src="images/slider/1.jpg"></div>
+  <div data-src="images/slider/2.jpg"></div>
+  <div data-src="images/slider/3.jpg"></div>
+</div> -->
+
+
+<div class="slider">
+  <div class="slides">
+    <div class="slide active" style="background-image: url('images/slider/1.jpg');"></div>
+    <div class="slide" style="background-image: url('images/slider/2.jpg');"></div>
+    <div class="slide" style="background-image: url('images/slider/3.jpg');"></div>
+  </div>
 </div>
+
+
+
 
 
 
@@ -48,6 +60,62 @@
 </div>
 
 <style>
+
+
+
+
+
+/* Slider Container */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden;
+  background-color: #fff; /* Fallback background color */
+}
+
+/* Slides Wrapper */
+.slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Individual Slide */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: contain; /* Ensure full image display */
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1);
+  transition: opacity 1.5s ease, transform 1.5s ease; /* Smooth animation */
+}
+
+/* Active Slide */
+.slide.active {
+  opacity: 1;
+  transform: scale(1.05); /* Slight zoom for visual effect */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+  .slider {
+    height: 80vh; /* Adjust height for medium screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .slider {
+    height: 30vh; /* Adjust height for small screens */
+    width: 100%;
+  }
+}
+
 
 
 
@@ -236,6 +304,32 @@ form button:active {
 
 
 <script>
+
+// Select all slides
+const slides = document.querySelectorAll('.slide');
+let currentIndex = 0;
+
+// Function to show the next slide
+function showNextSlide() {
+  slides[currentIndex].classList.remove('active'); // Hide the current slide
+  currentIndex = (currentIndex + 1) % slides.length; // Move to the next slide
+  slides[currentIndex].classList.add('active'); // Show the next slide
+}
+
+// Automatically change slides every 4 seconds
+setInterval(showNextSlide, 4000);
+
+
+
+
+
+
+
+
+
+
+
+
     function switchTab(tab) {
         const employerForm = document.getElementById('employerForm');
         const jobSeekerForm = document.getElementById('jobSeekerForm');
@@ -262,7 +356,7 @@ form button:active {
         // Simulate form submission delay
         setTimeout(() => {
             event.target.submit();
-        }, 2000);
+        }, 1000);
     }
 
    
@@ -287,4 +381,10 @@ form button:active {
     }
     return true; // Allow form submission
 }
+
+
+
+
+
+
 </script>

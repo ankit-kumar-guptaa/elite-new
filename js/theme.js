@@ -66,24 +66,31 @@
 
 
 
-        // --------------------------- Theme Main Banner Slider One
-        var banner = $("#theme-main-banner");
-        if (banner.length) {
-          banner.camera({ //here I declared some settings, the height and the presence of the thumbnails 
-            height: '780px',
-            pagination: true,
-            navigation: false,
-            thumbnails: false,
-            playPause: false,
-            pauseOnClick: false,
-            autoPlay:true,
-            hover: false,
-            overlayer: true,
-            loader: 'none',
-            minHeight: '400px',
-            time: 1000,
-          });
-        };
+// --------------------------- Theme Main Banner Slider One
+var banner = $("#theme-main-banner");
+if (banner.length) {
+  banner.camera({
+    height: 'auto', // Make the slider height adapt to the container
+    pagination: true,
+    navigation: false,
+    thumbnails: false,
+    playPause: false,
+    pauseOnClick: false,
+    autoPlay: true,
+    hover: false,
+    overlayer: true,
+    loader: 'none',
+    minHeight: '400px', // Minimum height for small devices
+    time: 1000,
+  });
+
+  // Dynamically adjust the slider height based on viewport
+  $(window).on("resize", function () {
+    banner.height($(window).height()); // Match banner height to viewport height
+  }).trigger("resize");
+}
+
+
 
 
 
