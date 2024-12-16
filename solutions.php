@@ -58,7 +58,7 @@
                     </div>
                 </div>
                 <div class="col-lg-12">
-                    <p class="lead">
+                    <p>
                         Committed to establish and maintain a positive difference to your staffing needs, we at Elite
                         Corporate Solutions, are a headhunting and manpower recruitment firm of high repute and
                         acknowledgment. We have gained this recognition by providing exemplary customer service and
