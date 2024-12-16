@@ -45,8 +45,8 @@
 
 
 
-			<div class="alert alert-warning text-center" role="alert">
-    We Don't Charge money from Candidates, Be aware of fraudulent Agencies.
+			<div class="alert text-center" style="color:red;" role="alert">
+   <b> Alert:</b> We Don't Charge money from Candidates, Be aware of fraudulent Agencies.
 </div>
 
 
@@ -64,7 +64,10 @@
 					</div> <!-- /title-one -->
 
 
-					<div class="alert alert-info text-center" role="alert">
+					<div class="alert text-center" role="alert" style="
+    background-color: #f7b52b;
+    color: black;
+">
 						We offer professional services in identifying and fulfilling your staffing and recruitment needs.
 						<br>
 						Our recruitment experts with domain specialization ensure you hire the best talents from the industry to keep you ever ready for meeting your business challenges.
