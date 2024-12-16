@@ -2107,12 +2107,24 @@ body .theme-button-one:hover {background:#000f32; }
   text-decoration: none;
   display: inline-block;
 }
+
+
+
+
+
+
 .btn-know-more:hover {
   background-color: #e0a020; /* Darker shade for hover */
   color: #fff;
 }
 
 
+
+@media (max-width : 579px){
+  .recruitment-section h2{
+    font-size: 20px;
+  }
+}
 
 
 .whatsapp-icon {

@@ -32,7 +32,7 @@ if (!function_exists('isActive')) {
 				<div class="theme-menu-wrapper">
 					<div class="container">
 						<div class="bg-wrapper clearfix">
-							<div class="logo float-left"><a href="index.html"><img src="images/logo/logo.png" alt=""></a></div>
+							<div class="logo float-left"><a href="/"><img src="images/logo/logo.png" alt=""></a></div>
 							<!-- ============== Menu Warpper ================ -->
 					   		<div class="menu-wrapper float-left">
 					   			<nav id="mega-menu-holder" class="clearfix">

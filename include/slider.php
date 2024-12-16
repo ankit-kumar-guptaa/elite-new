@@ -102,6 +102,16 @@
   transform: scale(1.05); /* Slight zoom for visual effect */
 }
 
+@media (max-width: 1285px) {
+  .slider {
+    height: 82vh; /* Adjust height for small screens */
+    width: 100%;
+  }
+}
+
+
+
+
 /* Responsive Adjustments */
 @media (max-width: 991px) {
   .slider {
@@ -109,13 +119,13 @@
   }
 }
 
+
 @media (max-width: 576px) {
   .slider {
     height: 30vh; /* Adjust height for small screens */
     width: 100%;
   }
 }
-
 
 
 
@@ -192,6 +202,7 @@ form {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    height: 100%;
 }
 
 form input, form textarea, form button {
@@ -231,10 +242,11 @@ form button:active {
 }
 
 /* Add responsive design */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1285px) {
     #form-container {
         padding: 20px;
         max-width: 350px;
+        height: 70vh;
     }
 
     .form h2 {
