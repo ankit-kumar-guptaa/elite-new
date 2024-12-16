@@ -107,20 +107,6 @@
 
 
 
-/* Responsive Adjustments */
-@media (max-width: 991px) {
-  .slider {
-    height: 80vh; /* Adjust height for medium screens */
-  }
-}
-
-
-@media (max-width: 576px) {
-  .slider {
-    height: 30vh; /* Adjust height for small screens */
-    width: 100%;
-  }
-}
 
 
 
@@ -312,6 +298,23 @@ form button:active {
   form input, form textarea, form button {
     padding: 8px; /* Reduced padding */
     font-size: 14px; /* Reduced font size */
+  }
+}
+
+
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+  .slider {
+    height: 80vh; /* Adjust height for medium screens */
+  }
+}
+
+
+@media (max-width: 576px) {
+  .slider {
+    height: 30vh; /* Adjust height for small screens */
+    width: 100%;
   }
 }
 
