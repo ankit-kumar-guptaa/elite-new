@@ -102,12 +102,7 @@
   transform: scale(1.05); /* Slight zoom for visual effect */
 }
 
-@media (max-width: 1285px) {
-  .slider {
-    height: 82vh; /* Adjust height for small screens */
-    width: 100%;
-  }
-}
+
 
 
 
@@ -146,6 +141,8 @@
     width: 100%;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
     transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    height: auto;
 }
 
 #form-container:hover {
@@ -176,11 +173,11 @@
 }
 
 .tabs button {
-    padding: 12px 25px;
+    padding: 8px 15px;
     border: none;
     background-color: #f4f4f4;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     transition: all 0.3s ease;
     border-radius: 25px;
@@ -203,6 +200,7 @@ form {
     flex-direction: column;
     gap: 15px;
     height: 100%;
+    max-width: 100%;
 }
 
 form input, form textarea, form button {
@@ -212,6 +210,7 @@ form input, form textarea, form button {
     font-size: 16px;
     color: #333;
     transition: all 0.3s ease;
+    width: 100%;
 }
 
 form input:focus, form textarea:focus {
@@ -242,21 +241,7 @@ form button:active {
 }
 
 /* Add responsive design */
-@media screen and (max-width: 1285px) {
-    #form-container {
-        padding: 20px;
-        max-width: 350px;
-        height: 70vh;
-    }
 
-    .form h2 {
-        font-size: 24px;
-    }
-
-    .tabs button {
-        padding: 10px 20px;
-    }
-}
 
 
 /* Keeping the input fields and textareas size constant */
@@ -303,6 +288,31 @@ form button:hover {
 
 form button:active {
     background-color: #003d82;
+}
+
+@media (max-width: 1285px) {
+  .slider {
+    height: 82vh; /* Adjust height for small screens */
+    width: 100%;
+    padding-bottom: 20px; /* Add padding to ensure form fits */
+  }
+
+  #form-container {
+    padding: 10px; /* Reduced padding */
+    max-width: 280px; /* Reduced max-width */
+    top: 6%; /* Adjust top position */
+    
+    margin: 0 auto; /* Center form horizontally */
+  }
+
+  .form h2 {
+    font-size: 1px; /* Reduced font size */
+  }
+
+  form input, form textarea, form button {
+    padding: 8px; /* Reduced padding */
+    font-size: 14px; /* Reduced font size */
+  }
 }
 
 
