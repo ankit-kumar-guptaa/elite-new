@@ -44,6 +44,56 @@
 
 
 
+	 <!-- Card Section -->
+	 <div class="container">
+        <div class="card card-container">
+            <div class="card-body card-content">
+                <h2 style="line-height: 1.2em;">WE ENSURE YOU GET</h2>
+                <div class="ankit-text-container">
+                    <span class="ankit-text" id="rightText">Right</span>
+                    <span class="ankit-text" id="changingText"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+	<script>
+		 // Words to show after "Right"
+		 const words = ["Cost", "People", "Behaviour", "Skills", "Place"];
+        let index = 0; // Start with "Cost"
+
+        window.onload = function() {
+            // Show "Right" first
+            document.getElementById('rightText').style.opacity = 1;
+
+            // Function to cycle through words
+            function changeWord() {
+                const changingText = document.getElementById('changingText');
+                changingText.style.opacity = 0; // Hide current word
+
+                // After the current word is hidden, change it
+                setTimeout(function() {
+                    changingText.textContent = words[index]; // Set next word
+                    changingText.style.color = "red"; // Make it red
+                    changingText.style.opacity = 1; // Show the new word
+
+                    // Move to the next word in the array, looping back after the last word
+                    index = (index + 1) % words.length;
+                }, 1000); // Wait for the previous word to disappear
+
+            }
+
+            // Loop the word change every 3 seconds
+            setInterval(changeWord, 3000);
+        };
+	</script>
+
+
+
+
 
 			<div class="alert text-center" style="color:red;" role="alert">
    <b> Alert:</b> We Don't Charge money from Candidates, Be aware of fraudulent Agencies.

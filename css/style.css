@@ -2144,3 +2144,52 @@ body .theme-button-one:hover {background:#000f32; }
   color: white;
   text-decoration: none;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+.card-container {
+  margin: 50px auto;
+  max-width: 600px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.card-content {
+  padding: 30px;
+  text-align: center;
+}
+.ankit-text-container {
+  font-size: 38px;  /* Same as "WE ENSURE YOU GET" */
+  font-weight: bold;
+  color: #333;
+  display: inline-block;
+  
+}
+.ankit-text {
+  display: inline-block;
+  opacity: 0;
+  font-family: "Courier New", monospace;
+  white-space: nowrap;
+  color: #000;
+  transition: opacity 1s ease-in-out;
+}
+
+#rightText {
+
+  color: #2A2A68;
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 1px;
+}
+
+.ankit-text.red {
+  color: #F71634;
+  padding: 10px 10px 10px 10px;
+}
