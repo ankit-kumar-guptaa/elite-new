@@ -52,7 +52,7 @@ if (!function_exists('isActive')) {
 									    <li class="<?php echo isActive('/jobs'); ?>"><a href="/jobs">Jobs</a>
 									    	<ul class="dropdown">
 									        	<li><a href="/jobs/current">Current Jobs</a></li>
-									        	<li><a href="/jobs/submit-resume">Submit Resume</a></li>
+									        	<li><a href="/submit_cv">Submit CV</a></li>
 									        	<li><a href="/jobs/login">Login</a></li>
 									       </ul>
 									    </li>
