@@ -54,7 +54,11 @@
         <!-- CAPTCHA Section -->
         <div class="captcha-container">
             <img src="captcha.php" alt="CAPTCHA Image" id="captchaImage" />
-            <button type="button" id="refreshCaptcha"><i class="fa-solid fa-rotate-right"></i></button>
+            <button type="button" id="refreshCaptcha" style="
+    padding: 0;
+    margin: 0;
+    width: 59px;
+"><i class="fa-solid fa-rotate-right"></i></button>
             <input type="text" name="captcha" placeholder="Enter CAPTCHA" required />
         </div>
 
