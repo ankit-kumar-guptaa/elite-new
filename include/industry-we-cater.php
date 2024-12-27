@@ -124,7 +124,8 @@
         }
 
         .btn-enquiry-now:hover {
-            background-color: #0d1c4f;
+            background-color: #c28732;
+            color: white;
         }
 
         .enquiry-container {

@@ -37,8 +37,20 @@
 </head>
 
 <body>
-	<div class="main-page-wrapper">
+	<div class="main-page-wrapper" style="overflow-x : visible;">
 		<?php include_once 'include/header.php'; ?>
+
+
+		
+        <!-- Inner Banner -->
+        <div class="theme-inner-banner section-spacing">
+            <div class="overlay">
+                <div class="container">
+                    <h2>Contact Us</h2>
+                </div>
+            </div>
+        </div>
+
 
 
 

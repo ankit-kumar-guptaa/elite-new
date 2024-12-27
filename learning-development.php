@@ -41,6 +41,17 @@
     <div class="main-page-wrapper">
         <?php include 'include/header.php'; ?>
 
+        
+        <!-- Inner Banner -->
+        <div class="theme-inner-banner section-spacing">
+            <div class="overlay">
+                <div class="container">
+                    <h2>Learning & Development Philosophy</h2>
+                </div>
+            </div>
+        </div>
+
+
 
 
         <section class="container my-5">

@@ -114,6 +114,94 @@ button {
         flex: 0 0 100%;
         max-width: 100%;
     }
+
+
+
+
+}
+
+
+/* Captcha Container Styling */
+#captcha {
+    font-size: 18px;
+    font-weight: bold;
+    color: #444;
+    padding: 10px;
+    background-color: #fff;
+    border: 2px solid #28a745;
+    border-radius: 8px;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 3px;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Captcha Text Style */
+#captcha-text {
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(90deg, #1e90ff, #00bfff);
+    padding: 12px 20px;
+    border-radius: 6px;
+    border: 2px solid #007bff;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effect on Captcha Text */
+#captcha-text:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* Input Style for the User to Enter CAPTCHA */
+.form-control {
+    font-size: 16px;
+    color: #495057;
+    padding: 12px 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-left: 10px;
+    transition: border-color 0.3s ease;
+}
+
+/* Focus Effect for Input Field */
+#captcha:focus {
+    border-color: #28a745;
+    outline: none;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+}
+
+/* Captcha Error Message */
+#captcha-error {
+    display: none;
+    font-size: 14px;
+    color: #e74c3c;
+    margin-top: 8px;
+}
+
+/* Enhancing the Input Group */
+.input-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 5px;
+}
+
+/* Button Style or Submit Button if needed */
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #218838;
 }
 
   
@@ -140,7 +228,7 @@ button {
 
 
 <div class="container my-5">
-    <form action="" method="POST" enctype="multipart/form-data" onsubmit="return validation_form_course1()">
+    <form action="process_form.php" method="POST" enctype="multipart/form-data" onsubmit="return validation_form_course1()">
         <div class="row g-3">
             <div class="col-md-4">
                 <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name*">
@@ -315,6 +403,20 @@ button {
                     <span id="custom-text">No file chosen, yet.</span>
                 </div>
             </div>
+
+            <div class="col-md-4">
+    <label for="captcha" class="form-label">Captcha</label>
+    <div class="input-group">
+        <span class="input-group-text" id="captcha-text"><?php echo rand(1000, 9999); ?></span>
+        <input type="hidden" name="generated_captcha" value="<?php echo rand(1000, 9999); ?>">
+        <input type="text" class="form-control" id="captcha" name="captcha" placeholder="Enter Captcha*" required>
+    </div>
+    <span id="captcha-error" class="text-danger"></span>
+</div>
+
+
+
+
             <div class="col-12">
                 <button type="submit" class="btn btn-success w-100">Submit</button>
             </div>
@@ -322,6 +424,22 @@ button {
     </form>
 </div>
 
+
+
+
+
+<script>
+    document.querySelector('form').addEventListener('submit', function (e) {
+    const captcha = document.getElementById('captcha').value;
+    const generatedCaptcha = document.querySelector('input[name="generated_captcha"]').value;
+
+    if (captcha !== generatedCaptcha) {
+        e.preventDefault();
+        document.getElementById('captcha-error').textContent = "Captcha is incorrect!";
+    }
+});
+
+</script>
 <!-- Bootstrap JS -->
 
 <script>

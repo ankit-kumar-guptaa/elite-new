@@ -18,7 +18,6 @@
 
 
 
-
 <!-- /#theme-main-banner -->
 
 <!-- Form Container (Above the Slider) -->
@@ -46,13 +45,26 @@
 </form>
 
             <!-- Job Seeker Form -->
-            <form id="jobSeekerForm" action="slider_JobSeeker_form.php" method="POST" enctype="multipart/form-data" style="display: none;">
-                <input class="mt-3" type="text" name="name" placeholder="Name" required />
-                <input class="mt-3" type="email" name="email" placeholder="Email" required />
-                <textarea class="mt-3" name="message" placeholder="Message" required></textarea>
-                <input class="mt-3" type="file" name="cv" required />
-                <button type="submit" name="submit">Submit</button>
-            </form>
+    <form id="jobSeekerForm" method="POST" enctype="multipart/form-data" style="display: none;">
+        <input type="text" name="name" placeholder="Name" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <textarea name="message" placeholder="Message" required></textarea>
+        <input type="file" name="cv" required />
+
+        <!-- CAPTCHA Section -->
+        <div class="captcha-container">
+            <img src="captcha.php" alt="CAPTCHA Image" id="captchaImage" />
+            <button type="button" id="refreshCaptcha"><i class="fa-solid fa-rotate-right"></i></button>
+            <input type="text" name="captcha" placeholder="Enter CAPTCHA" required />
+        </div>
+
+        <!-- Display Error/Success Messages -->
+        <div id="responseMessage" class="error-message"></div>
+
+        <!-- Submit Button -->
+        <button type="submit" id="submitButton">Submit</button>
+    </form>
+
         </div>
         <!-- Loader -->
         <div id="loader" style="display: none;">Loading...</div>
@@ -61,6 +73,29 @@
 
 <style>
 
+
+.error-message {
+            color: red;
+            margin-top: 10px;
+        }
+        .success-message {
+            color: green;
+            margin-top: 10px;
+        }
+        .loading {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid transparent;
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-left: 10px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
 
 
 
@@ -413,3 +448,54 @@ setInterval(showNextSlide, 4000);
 
 
 </script>
+
+
+<script>
+        const form = document.getElementById('jobSeekerForm');
+        const responseMessage = document.getElementById('responseMessage');
+        const submitButton = document.getElementById('submitButton');
+        const captchaImage = document.getElementById('captchaImage');
+        const refreshCaptcha = document.getElementById('refreshCaptcha');
+
+        // Refresh CAPTCHA
+        refreshCaptcha.addEventListener('click', () => {
+            captchaImage.src = `captcha.php?rand=${Math.random()}`;
+        });
+
+        // Submit Form with AJAX
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Show loader
+            const loader = document.createElement('span');
+            loader.classList.add('loading');
+            submitButton.appendChild(loader);
+
+            const formData = new FormData(form);
+
+            fetch('slider_JobSeeker_form.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                loader.remove();
+                if (data.status) {
+                    responseMessage.classList.remove('error-message');
+                    responseMessage.classList.add('success-message');
+                } else {
+                    responseMessage.classList.remove('success-message');
+                    responseMessage.classList.add('error-message');
+                }
+                responseMessage.textContent = data.message;
+
+                // Refresh CAPTCHA on success or failure
+                captchaImage.src = `captcha.php?rand=${Math.random()}`;
+            })
+            .catch(error => {
+                loader.remove();
+                responseMessage.classList.add('error-message');
+                responseMessage.textContent = "An error occurred. Please try again.";
+            });
+        });
+    </script>

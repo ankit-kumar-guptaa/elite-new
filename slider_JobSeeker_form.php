@@ -1,5 +1,4 @@
 <?php
-
 // Include PHPMailer library
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -8,16 +7,29 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
-if (isset($_POST['submit'])) {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $message = $_POST['message'];
-    $cv = $_FILES['cv'];
+session_start();
 
-    // Check if file was uploaded without errors
-    if ($cv['error'] == 0) {
+$response = [
+    "status" => false,
+    "message" => ""
+];
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = $_POST['name'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $message = $_POST['message'] ?? '';
+    $user_captcha = $_POST['captcha'] ?? '';
+    $generated_captcha = $_SESSION['captcha'] ?? '';
+    $cv = $_FILES['cv'] ?? null;
+
+    // Validate CAPTCHA
+    if (empty($user_captcha)) {
+        $response["message"] = "CAPTCHA is required.";
+    } elseif ($user_captcha !== $generated_captcha) {
+        $response["message"] = "Invalid CAPTCHA. Please try again.";
+    } elseif ($cv && $cv['error'] === 0) {
         $uploadDir = 'uploads/';
-        
+
         // Ensure the directory exists
         if (!is_dir($uploadDir)) {
             mkdir($uploadDir, 0777, true); // Create the directory if it doesn't exist
@@ -25,47 +37,43 @@ if (isset($_POST['submit'])) {
 
         $uploadFile = $uploadDir . basename($cv['name']);
 
-        // Move the uploaded file to the desired directory
         if (move_uploaded_file($cv['tmp_name'], $uploadFile)) {
             $mail = new PHPMailer(true);
 
             try {
-                //Server settings
-                $mail->isSMTP();                                            // Send using SMTP
-                $mail->Host       = 'smtp.hostinger.com';                   // Set the SMTP server to send through
-                $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-                $mail->Username   = 'rajiv@greencarcarpool.com';                  // SMTP username
-                $mail->Password   = 'Rajiv@111@';                           // SMTP password
-                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption
-                $mail->Port       = 587;                                    // TCP port to connect to
+                // SMTP Configuration
+                $mail->isSMTP();
+                $mail->Host       = 'smtp.hostinger.com';
+                $mail->SMTPAuth   = true;
+                $mail->Username   = 'rajiv@greencarcarpool.com'; // SMTP username
+                $mail->Password   = 'Rajiv@111@';               // SMTP password
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+                $mail->Port       = 587;
 
-                //Recipients
+                // Email Configuration
                 $mail->setFrom('rajiv@greencarcarpool.com', 'Elite Corporate Solutions');
-                $mail->addAddress('Rajiv@elitecorporatesolutions.com', 'Rajiv');     // Add a recipient
-
-                // Attach the uploaded file
-                $mail->addAttachment($uploadFile);
-
-                // Content
-                $mail->isHTML(false);                                       // Set email format to plain text
+                $mail->addAddress('theankitkumarg@gmail.com', 'Rajiv'); // Add a recipient
+                $mail->addAttachment($uploadFile); // Attach the uploaded file
+                $mail->isHTML(false);
                 $mail->Subject = 'New Job Seeker Application';
                 $mail->Body    = "Name: $name\nEmail: $email\nMessage: $message";
 
                 $mail->send();
-
-                header('Location: thankyou.php');
-                exit();
-
+                $response["status"] = true;
+                $response["message"] = "Form submitted successfully!";
             } catch (Exception $e) {
-                echo "Email sending failed. Mailer Error: {$mail->ErrorInfo}";
+                $response["message"] = "Email sending failed. Mailer Error: {$mail->ErrorInfo}";
             }
         } else {
-            echo "Failed to upload file.";
+            $response["message"] = "Failed to upload file.";
         }
     } else {
-        echo "Error uploading file.";
+        $response["message"] = "Error uploading file.";
     }
-} else {
-    echo "Form not submitted";
 }
+
+// Return JSON response
+header("Content-Type: application/json");
+echo json_encode($response);
+exit();
 ?>

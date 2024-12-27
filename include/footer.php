@@ -17,17 +17,17 @@
 								<div class="logo"><a href="index.html"><img src="images/logo/logo.png" alt=""></a></div>
 								<p>We are one of the best manpower recruitment consultancy Company and top placement consultant in India. We provide Manpower Services to all Industries, MNCs and Firms etc. </p>
 								<ul class="social-icon">
-									<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+									<!-- <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li> -->
 									<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+									<!-- <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li> -->
 								</ul>
 							</div> <!-- /.logo-widget -->
 							<div class="col-lg-2 col-sm-6 col-12 footer-list">
 								<h6 class="title">EXPLORE</h6>
 								<ul>
-									<li><a href="project.html">Home</a></li>
+									<li><a href="/">Home</a></li>
 									<li><a href="about">About us</a></li>
 									<li><a href="/#service">Our Services</a></li>
 									<li><a href="#">Blog</a></li>
@@ -37,7 +37,7 @@
 							<div class="col-lg-3 col-sm-6 col-12 footer-list">
 								<h6 class="title">Policies</h6>
 								<ul>
-									<li><a href="privacy-policy.html">Privacy Policy</a></li>
+									<li><a href="privacy-policy.php">Privacy Policy</a></li>
 									<li><a href="terms-and-conditions.html">Terms and Conditions</a></li>
 								</ul>
 							</div> <!-- /.footer-list -->
