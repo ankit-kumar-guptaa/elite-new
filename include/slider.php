@@ -58,7 +58,7 @@
     padding: 0;
     margin: 0;
     width: 59px;
-"><i class="fa-solid fa-rotate-right"></i></button>
+"><i class="fa fa-solid fa-rotate-right"></i></button>
             <input type="text" name="captcha" placeholder="Enter CAPTCHA" required />
         </div>
 
