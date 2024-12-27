@@ -28,7 +28,7 @@ for ($i = 0; $i < 1000; $i++) {
 }
 
 // Add the CAPTCHA text using imagestring
-imagestring($image, 5, 35, 15, $captcha_code, $text_color);
+imagestring($image, 6, 35, 15, $captcha_code, $text_color);
 
 // Output the image
 header('Content-Type: image/png');

@@ -228,7 +228,7 @@ button:hover {
 
 
 <div class="container my-5">
-    <form action="process_form.php" method="POST" enctype="multipart/form-data" onsubmit="return validation_form_course1()">
+    <form action="process_form.php" method="POST" enctype="multipart/form-data" >
         <div class="row g-3">
             <div class="col-md-4">
                 <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name*">
