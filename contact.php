@@ -89,29 +89,36 @@
 					</div>
 					<div class="col-lg-7 col-12">
 						<div class="form-wrapper">
-							<form action="backend_form.php" class="theme-form-one form-validation" method="post"
-								autocomplete="off">
-								<div class="row">
-									<div class="col-sm-6 col-12"><input type="text" placeholder="Name *" name="name"
-											required></div>
-									<div class="col-sm-6 col-12"><input type="text" placeholder="Phone *" name="phone"
-											required></div>
-									<div class="col-sm-6 col-12"><input type="email" placeholder="Email *" name="email"
-											required></div>
-									<div class="col-sm-6 col-12"><select class="form-control" id="exampleSelect1" name="service">
-											      <option>Choose Services?</option>
-											      <option>Learning &amp; Development</option>
-											      <option>HR Outsourcing for Small Businesses</option>
-											      <option>Welcome to India Services– End to End Support</option>
-											      <option>Start-up Support - Everything at one place</option>
-											      <option>Bad Debts Collection</option>
-											    </select>
-									</div>
-									<div class="col-12"><textarea placeholder="Message" name="message"
-											required></textarea></div>
-								</div> <!-- /.row -->
-								<button class="theme-button-one" name="submit">SEND MESSAGE</button>
-							</form>
+						<form action="backend_form.php" class="theme-form-one form-validation" method="post" autocomplete="off">
+    <div class="row">
+        <div class="col-sm-6 col-12"><input type="text" placeholder="Name *" name="name" required></div>
+        <div class="col-sm-6 col-12"><input type="text" placeholder="Phone *" name="phone" required></div>
+        <div class="col-sm-6 col-12"><input type="email" placeholder="Email *" name="email" required></div>
+        <div class="col-sm-6 col-12">
+            <select class="form-control" id="exampleSelect1" name="service">
+                <option>Choose Services?</option>
+                <option>Learning &amp; Development</option>
+                <option>HR Outsourcing for Small Businesses</option>
+                <option>Welcome to India Services– End to End Support</option>
+                <option>Start-up Support - Everything at one place</option>
+                <option>Bad Debts Collection</option>
+            </select>
+        </div>
+        <div class="col-12"><textarea placeholder="Message" name="message" required></textarea></div>
+        <div class="col-sm-6 col-12">
+            <!-- CAPTCHA Image -->
+            <img src="captcha.php" alt="CAPTCHA" id="captcha-image" style="margin-bottom: 10px;">
+            <!-- Refresh CAPTCHA -->
+            <button type="button" onclick="document.getElementById('captcha-image').src='captcha.php?rand='+Math.random();" style="display: block;">Refresh CAPTCHA</button>
+        </div>
+        <div class="col-sm-6 col-12">
+            <!-- CAPTCHA Input -->
+            <input type="text" placeholder="Enter CAPTCHA *" name="captcha" required>
+        </div>
+    </div>
+    <button class="theme-button-one" name="submit">SEND MESSAGE</button>
+</form>
+
 						</div> <!-- /.form-wrapper -->
 					</div> <!-- /.col- -->
 				</div> <!-- /.main-content -->
