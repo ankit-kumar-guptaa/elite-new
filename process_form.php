@@ -17,14 +17,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
 
+    // Validate CAPTCHA
     if (!isset($_POST['captcha']) || $_POST['captcha'] !== $_SESSION['captcha']) {
         echo "<script>
-                document.getElementById('captcha-error').innerText = 'Incorrect CAPTCHA. Please try again.';
+                alert('Invalid CAPTCHA. Please try again.');
                 window.history.back();
               </script>";
-        exit;
+        exit();
     }
-    unset($_SESSION['captcha']);
+    unset($_SESSION['captcha']); 
 
     
     // Collect form data
