@@ -51,7 +51,7 @@
         <!-- Glowing Happy New Year Message -->
         <div id="newYearMessage"
             style="position: absolute; top: 30%; left: 50%; transform: translateX(-50%); text-align: center; font-size: 4rem; font-family: 'Arial', sans-serif; color: gold; font-weight: bold;">
-            🎉✨ Happy New Year ✨🎉
+            <!-- 🎉✨ Happy New Year ✨🎉 -->
         </div>
         <!-- Canvas for Fireworks -->
         <canvas id="fireworksCanvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></canvas>
@@ -89,12 +89,28 @@
                 style="position: fixed; top: 20px; right: 20px; background-color: #f44336; color: white; padding: 15px; border-radius: 5px; display: none; z-index: 1000;">
                 Gmail addresses are not allowed. Please use a different email address.
             </div>
-            <form id="employerForm" action="slider_Employer_Form.php" method="POST"
-                onsubmit="return validateEmail(event)">
-                <input class="mt-3" type="text" name="name" placeholder="Name" required />
-                <input class="mt-3" type="email" name="email" placeholder="Email" required />
-                <input class="mt-3" type="text" name="phone" placeholder="Phone" required />
-                <textarea class="mt-3" name="message" placeholder="Message" required></textarea>
+              <!-- Employer Form -->
+              <form id="employerForm" action="slider_Employer_Form.php" method="POST" onsubmit="return validateEmail(event)">
+                <input class="mt-1" type="text" name="name" placeholder="Name" required />
+                <input class="mt-1" type="email" name="email" placeholder="Email" required />
+                <input class="mt-1" type="text" name="phone" placeholder="Phone" required />
+                <textarea class="mt-1" name="message" placeholder="Message" required></textarea>
+
+                <!-- CAPTCHA Section -->
+                <div class="captcha-container">
+                    <img src="captcha.php" alt="CAPTCHA Image" id="captchaImageEmployer" />
+                    <button type="button" id="refreshCaptchaEmployer" style="
+    padding: 0;
+    margin: 0;
+    width: 59px;
+"><i class="fa fa-solid fa-rotate-right"></i></button>
+                    <input type="text" name="captcha" placeholder="Enter CAPTCHA" required />
+                </div>
+
+                <!-- Display Error/Success Messages -->
+                <div id="responseMessageEmployer" class="error-message"></div>
+
+                <!-- Submit Button -->
                 <button type="submit" name="submit">Submit</button>
             </form>
 
@@ -288,7 +304,7 @@
     form {
         display: flex;
         flex-direction: column;
-        gap: 15px;
+        gap: 0;
         height: 100%;
         max-width: 100%;
     }
@@ -732,5 +748,19 @@
                 responseMessage.classList.add('error-message');
                 responseMessage.textContent = "An error occurred. Please try again.";
             });
+    });
+</script>
+
+
+
+<script>
+    // Refresh CAPTCHA for Employer Form
+    document.getElementById('refreshCaptchaEmployer').addEventListener('click', function () {
+        document.getElementById('captchaImageEmployer').src = 'captcha.php?' + Date.now();
+    });
+
+    // Refresh CAPTCHA for Job Seeker Form
+    document.getElementById('refreshCaptcha').addEventListener('click', function () {
+        document.getElementById('captchaImage').src = 'captcha.php?' + Date.now();
     });
 </script>

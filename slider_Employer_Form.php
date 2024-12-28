@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 // Include PHPMailer library
 use PHPMailer\PHPMailer\PHPMailer;
@@ -9,6 +10,20 @@ require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
 if(isset($_POST['submit'])){
+
+
+     // Validate CAPTCHA
+     if (!isset($_POST['captcha']) || $_POST['captcha'] !== $_SESSION['captcha']) {
+        echo "<script>
+                alert('Invalid CAPTCHA. Please try again.');
+                window.history.back();
+              </script>";
+        exit();
+    }
+    unset($_SESSION['captcha']); // Clear CAPTCHA after validation
+
+
+
 
     $name = $_POST['name'];
     $phone = $_POST['phone'];
@@ -33,7 +48,7 @@ if(isset($_POST['submit'])){
 
         // Content
         $mail->isHTML(false);                                  // Set email format to plain text
-        $mail->Subject = 'New Message from Contact Form';
+        $mail->Subject = 'New Message from Slider Employer Form';
         $mail->Body    = "Name: $name\nPhone: $phone\nEmail: $email\nMessage: $message";
 
         $mail->send();
