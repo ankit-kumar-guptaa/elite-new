@@ -108,8 +108,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Send the email
         $mail->send();
 
-        header('Location: thankyou.php');
-                exit();
+        echo "<script>window.location.href='thankyou.php';</script>";
+        exit();
     } catch (Exception $e) {
         echo "Email sending failed: {$mail->ErrorInfo}";
     }
