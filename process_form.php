@@ -11,17 +11,16 @@ require 'include/db.php'; // Database connection
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
- // Retrieve submitted CAPTCHA and generated CAPTCHA
- $captcha = $_POST['captcha'];
- $generated_captcha = $_POST['generated_captcha'];
 
- // Validate CAPTCHA
- if ($captcha != $generated_captcha) {
-     echo "<script>alert('Invalid Captcha. Please try again.'); window.history.back();</script>";
-     exit;
- }
- 
 
+    if (!isset($_POST['captcha']) || $_POST['captcha'] !== $_SESSION['captcha']) {
+        echo "<script>
+                document.getElementById('captcha-error').innerText = 'Incorrect CAPTCHA. Please try again.';
+                window.history.back();
+              </script>";
+        exit;
+    }
+    unset($_SESSION['captcha']);
 
     
     // Collect form data

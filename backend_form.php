@@ -44,7 +44,7 @@ if (isset($_POST['submit'])) {
 
         // Content
         $mail->isHTML(false); // Set email format to plain text
-        $mail->Subject = 'New Message from Contact Form';
+        $mail->Subject = 'New Message from Contact Page Form';
         $mail->Body    = "Name: $name\nPhone: $phone\nEmail: $email\nService: $service\nMessage: $message";
 
         $mail->send();
