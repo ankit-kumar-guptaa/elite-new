@@ -409,11 +409,15 @@ button:hover {
             <div class="col-md-4">
     <label for="captcha-input">Enter CAPTCHA*</label>
     <div class="input-group">
-        <img src="captcha.php" alt="CAPTCHA" id="captcha-image" class="img-fluid">
-        <input type="text" class="form-control" id="captcha-input" name="captcha" placeholder="Enter CAPTCHA*" required>
+        <img src="captcha.php" alt="CAPTCHA" id="captcha-image" class="img-fluid" style="width: 150px; height: 50px;">
+        <button type="button" id="refresh-captcha" class="btn btn-outline-secondary ms-2">
+            <i class="fas fa-sync-alt"></i> Refresh
+        </button>
     </div>
+    <input type="text" class="form-control mt-2" id="captcha-input" name="captcha" placeholder="Enter CAPTCHA*" required>
     <span id="captcha-error" class="text-danger"></span>
 </div>
+
 
 
 
@@ -438,10 +442,12 @@ button:hover {
 
 
 <script>
-    document.getElementById('captcha-image').addEventListener('click', function () {
-        this.src = 'captcha.php?' + Date.now();
+    document.getElementById('refresh-captcha').addEventListener('click', function () {
+        const captchaImage = document.getElementById('captcha-image');
+        captchaImage.src = 'captcha.php?' + Date.now(); // Append a timestamp to prevent caching
     });
 </script>
+
 
 
 

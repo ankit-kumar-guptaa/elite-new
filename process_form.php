@@ -107,6 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Send the email
         $mail->send();
+
         header('Location: thankyou.php');
                 exit();
     } catch (Exception $e) {
