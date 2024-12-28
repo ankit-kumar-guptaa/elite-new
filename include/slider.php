@@ -6,12 +6,63 @@
 </div> -->
 
 
+
+<style>
+
+
+/* Glowing Happy New Year Text */
+#newYearMessage {
+    animation: glowEffect 1.5s infinite alternate;
+}
+
+@keyframes glowEffect {
+    0% {
+        text-shadow: 0 0 10px gold, 0 0 20px red, 0 0 30px blue;
+    }
+    100% {
+        text-shadow: 0 0 20px red, 0 0 40px green, 0 0 60px blue;
+    }
+}
+
+/* Celebration Disappear Effect */
+#celebration {
+    animation: fadeOut 1s ease forwards;
+    animation-delay: 15s; /* Disappear after 15 seconds */
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+</style>
+
 <div class="slider">
   <div class="slides">
     <div class="slide active" style="background-image: url('images/slider/1.jpg');"></div>
     <div class="slide" style="background-image: url('images/slider/2.jpg');"></div>
     <div class="slide" style="background-image: url('images/slider/3.jpg');"></div>
   </div>
+
+
+  <div id="celebration" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1000; pointer-events: none; overflow: hidden;">
+    <!-- Glowing Happy New Year Message -->
+    <div id="newYearMessage" style="position: absolute; top: 30%; left: 50%; transform: translateX(-50%); text-align: center; font-size: 4rem; font-family: 'Arial', sans-serif; color: gold; font-weight: bold;">
+        🎉✨ Happy New Year ✨🎉
+    </div>
+    <!-- Canvas for Fireworks -->
+    <canvas id="fireworksCanvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></canvas>
+</div>
+
+
+
+
+
+
+
+
 </div>
 
 
@@ -366,6 +417,152 @@ form button:active {
 
 </style>
 
+
+
+
+<script>
+    window.addEventListener('load', function () {
+    const canvas = document.getElementById('fireworksCanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const rockets = [];
+    const explosions = [];
+    const colors = ['#FFD700', '#FF4500', '#FFFFFF', '#FF69B4', '#ADFF2F'];
+
+    // Rocket Class
+    class Rocket {
+        constructor(x, y, targetY) {
+            this.x = x;
+            this.y = y;
+            this.targetY = targetY;
+            this.speed = Math.random() * 3 + 4;
+            this.color = colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, 4, 0, Math.PI * 2);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+        }
+
+        update() {
+            this.y -= this.speed;
+            if (this.y <= this.targetY) {
+                explosions.push(new Explosion(this.x, this.y, this.color));
+                return true; // Rocket exploded
+            }
+            return false;
+        }
+    }
+
+    // Explosion Class
+    class Explosion {
+        constructor(x, y, color) {
+            this.x = x;
+            this.y = y;
+            this.color = color;
+            this.particles = [];
+            this.createParticles();
+        }
+
+        createParticles() {
+            const particleCount = 60;
+            for (let i = 0; i < particleCount; i++) {
+                const angle = (Math.PI * 2) * (i / particleCount);
+                const speed = Math.random() * 3 + 2;
+                this.particles.push(new Particle(this.x, this.y, angle, speed, this.color));
+            }
+        }
+
+        draw() {
+            this.particles.forEach((particle) => particle.draw());
+        }
+
+        update() {
+            this.particles.forEach((particle, index) => {
+                particle.update();
+                if (particle.alpha <= 0) {
+                    this.particles.splice(index, 1);
+                }
+            });
+        }
+    }
+
+    // Particle Class
+    class Particle {
+        constructor(x, y, angle, speed, color) {
+            this.x = x;
+            this.y = y;
+            this.speedX = Math.cos(angle) * speed;
+            this.speedY = Math.sin(angle) * speed;
+            this.color = color;
+            this.alpha = 1;
+            this.radius = Math.random() * 2 + 1;
+        }
+
+        draw() {
+            ctx.save();
+            ctx.globalAlpha = this.alpha;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+            ctx.restore();
+        }
+
+        update() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+            this.alpha -= 0.02;
+        }
+    }
+
+    // Create Rocket
+    function createRocket() {
+        const x = Math.random() * canvas.width;
+        const y = canvas.height;
+        const targetY = Math.random() * canvas.height * 0.5;
+        rockets.push(new Rocket(x, y, targetY));
+    }
+
+    // Animation Loop
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Update and draw rockets
+        for (let i = rockets.length - 1; i >= 0; i--) {
+            const rocket = rockets[i];
+            if (rocket.update()) {
+                rockets.splice(i, 1);
+            } else {
+                rocket.draw();
+            }
+        }
+
+        // Update and draw explosions
+        for (let i = explosions.length - 1; i >= 0; i--) {
+            const explosion = explosions[i];
+            explosion.update();
+            explosion.draw();
+            if (explosion.particles.length === 0) {
+                explosions.splice(i, 1);
+            }
+        }
+
+        requestAnimationFrame(animate);
+    }
+
+    // Launch Rockets at Intervals
+    setInterval(createRocket, 1000);
+
+    // Start Animation
+    animate();
+});
+
+</script>
 
 <script>
 

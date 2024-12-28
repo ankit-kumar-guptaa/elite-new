@@ -224,7 +224,7 @@ button:hover {
         </div>
 
 
-
+      
 
 
 <div class="container my-5">
@@ -407,19 +407,24 @@ button:hover {
             <div class="col-md-4">
     <label for="captcha" class="form-label">Captcha</label>
     <div class="input-group">
-        <span class="input-group-text" id="captcha-text"><?php echo rand(1000, 9999); ?></span>
-        <input type="hidden" name="generated_captcha" value="<?php echo rand(1000, 9999); ?>">
-        <input type="text" class="form-control" id="captcha" name="captcha" placeholder="Enter Captcha*" required>
+        <!-- CAPTCHA Image -->
+        <img src="captcha.php" alt="CAPTCHA" id="captcha-image" class="me-2">
+        <!-- Refresh Button for CAPTCHA -->
+        <button type="button" id="refresh-captcha" class="btn btn-secondary btn-sm">Refresh</button>
+    </div>
+    <div class="mt-2">
+        <input type="text" class="form-control" id="user-captcha" name="user-captcha" placeholder="Enter Captcha*" required>
     </div>
     <span id="captcha-error" class="text-danger"></span>
 </div>
+<button type="button" class="btn" id="submit-btn">Submit</button>
 
 
 
 
-            <div class="col-12">
+            <!-- <div class="col-12">
                 <button type="submit" class="btn btn-success w-100">Submit</button>
-            </div>
+            </div> -->
         </div>
     </form>
 </div>
@@ -429,17 +434,40 @@ button:hover {
 
 
 <script>
-    document.querySelector('form').addEventListener('submit', function (e) {
-    const captcha = document.getElementById('captcha').value;
-    const generatedCaptcha = document.querySelector('input[name="generated_captcha"]').value;
+    // Refresh CAPTCHA image
+    document.getElementById('refresh-captcha').addEventListener('click', function () {
+        const captchaImage = document.getElementById('captcha-image');
+        captchaImage.src = 'captcha.php?' + new Date().getTime(); // Prevent caching by appending a timestamp
+    });
 
-    if (captcha !== generatedCaptcha) {
-        e.preventDefault();
-        document.getElementById('captcha-error').textContent = "Captcha is incorrect!";
-    }
-});
+    // Form submission handler
+    document.getElementById('submit-btn').addEventListener('click', function () {
+        const userCaptcha = document.getElementById('user-captcha').value.trim(); // User input
+        const errorMessage = document.getElementById('captcha-error'); // Error message span
 
+        // AJAX request to validate CAPTCHA
+        fetch('validate_captcha.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: 'user-captcha=' + encodeURIComponent(userCaptcha),
+        })
+        .then(response => response.text())
+        .then(data => {
+            if (data === 'success') {
+                errorMessage.textContent = ''; // Clear error
+                alert('Form submitted successfully!'); // Replace with actual form submission
+            } else {
+                errorMessage.textContent = 'Captcha is incorrect!'; // Show error
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    });
 </script>
+
+
+
 <!-- Bootstrap JS -->
 
 <script>
