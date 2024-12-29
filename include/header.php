@@ -39,7 +39,7 @@ if (!function_exists('isActive')) {
 								   <ul class="clearfix">
 									    <li class="<?php echo isActive('/'); ?>"><a href="/">Home</a></li>
 									    <li class="<?php echo isActive('/about'); ?>"><a href="/about">About</a></li>
-									    <li class="<?php echo isActive('/services'); ?>"><a href="#">Services</a>
+									    <li class="<?php echo isActive('/services'); ?>"><a href="/services">Services</a>
 									    	<ul class="dropdown">
 									        	<li><a href="/learning-development">Learning & Development</a></li>
 									        	<li><a href="/hr-outsourcing">HR Outsourcing for Small Businesses</a></li>
