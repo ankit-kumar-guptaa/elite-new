@@ -34,6 +34,23 @@
 	<link rel="canonical" href="https://elitecorporatesolutions.com/contact">
 
 	<?php include 'include/assets.php'; ?>
+
+
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-10893858085"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-10893858085');
+</script>
+
+
+<!-- Event snippet for Elite Corporate conversion page -->
+<script>
+  gtag('event', 'conversion', {'send_to': 'AW-10893858085/g5f4CLitibsDEKWqzMoo'});
+</script>
 </head>
 
 <body>

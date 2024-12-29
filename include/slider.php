@@ -11,6 +11,7 @@
     /* Glowing Happy New Year Text */
     #newYearMessage {
         animation: glowEffect 1.5s infinite alternate;
+        font-size: 25px !important;
     }
 
     @keyframes glowEffect {
@@ -51,7 +52,7 @@
         <!-- Glowing Happy New Year Message -->
         <div id="newYearMessage"
             style="position: absolute; top: 30%; left: 50%; transform: translateX(-50%); text-align: center; font-size: 4rem; font-family: 'Arial', sans-serif; color: gold; font-weight: bold;">
-            <!-- 🎉✨ Happy New Year ✨🎉 -->
+            🎉✨ Happy New Year 2025✨🎉
         </div>
         <!-- Canvas for Fireworks -->
         <canvas id="fireworksCanvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></canvas>

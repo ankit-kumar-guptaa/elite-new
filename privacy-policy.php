@@ -29,6 +29,23 @@
 		<link rel="canonical" href="https://elitecorporatesolutions.com/about">
 
 		<?php include 'include/assets.php'; ?>
+
+		<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-10893858085"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-10893858085');
+</script>
+
+
+
+<!-- Event snippet for Elite Corporate conversion page -->
+<script>
+  gtag('event', 'conversion', {'send_to': 'AW-10893858085/g5f4CLitibsDEKWqzMoo'});
+</script>
 	</head>
 
 	<body>
@@ -115,32 +132,7 @@ In addition to cookies, we may also use “web beacons” and other web technolo
 
 
 
-COOKIES DELIREVED BY THIRD PARTIES
-In addition to the cookies we deliver to your computer through our Website, certain third parties may deliver cookies to you for a variety of reasons. Other third parties may deliver cookies to your computer for the purpose of tracking your online behaviors across nonaffiliated websites and delivering targeted advertisements either on our Website or on other websites. You have choices about the collection of information by third parties on our Website. It may be that some of the third parties that collect interest-based information on our Website do not participate in the industry-developed opt-out website, in which case the best way to avoid third-party tracking of your online behaviors may be through your browser settings and deletion of cookies.
 
-USE OF PERSONAL INFORMATION WE COLLECT
-Your provision of your personal information to us means that you agree and consent that we may collect, use and disclose your personal information in accordance with this Policy. We use personal information we collect for purposes described in this Policy or as disclosed to you in other ways including on our Sites,. For example, we may use your information to:
-
-provide and deliver products and services;
-send you information related to products and services, including confirmations, invoices, technical notices, updates, security alerts, and support and administrative messages
-communicate with you about new contests, promotions and rewards, upcoming events, and other news about products and services offered by us and our selected partners
-operate and improve our Sites and services
-process and deliver contest entries and rewards
-manage and administer our community features and member programs and services
-respond to your comments and questions and provide customer service; and
-link or combine with other personal information we get from third parties, to help understand your needs and provide you with better service.
-improve our products and services
-improve our marketing and promotional efforts
-Third–Party Service Providers : We shares information collected through this Website with third-party service providers who act for or on its behalf. For example, we may use third-party vendors to design, operate, and/or host our Sites, to conduct surveys, and to help us with our promotional efforts. These third parties may need information about you to perform their functions. Typically, third-party service providers who receive PII are bound by contract to use it only on our behalf. However, some of our service providers, such as our advertising partners, are permitted to collect AAI through our Website and use that AAI in connection with providing services to nonaffiliated third parties. For more information about behavioral advertising and third-party cookies, read the Cookies Delivered by Third Parties section above.
-Other Users of This Website : The User-Generated Content you submit on or through our Website is available to others who visit our Website. Any PII contained in User-Generated Content you submit can be read, collected, or used by others, and could be used to send you unsolicited messages. In addition, we may use User-Generated Content you submit on or through our Website for advertising campaigns and other promotions. We may or may not use your name in connection with such use, and we may or may not seek your consent before using the User-Generated Content for such purposes. Therefore, you should have no expectation of privacy with respect to User-Generated Content you submit on or through our Website. You should not submit any User-Generated Content you do not wish to make available to the general public, and you must take special care to make sure your submissions comply with our Terms of Use. In particular, your submissions must not violate the privacy or other rights of others.
-Third-Party Social Media Platforms : We may provide functionality on our Website that allows you to automatically post information about the actions you take on our Website to a third-party social media platform. If you choose to take advantage of this functionality, people with access to your profile on the third-party platform may be able to see the actions you have taken—for example, the items you have purchased. Thus, you should have no expectation of privacy in those actions. Further, if you choose to link your profile on our Website with an account on a third-party social media platform, we may share the information in your profile with that third-party platform.
-Affiliates and Subsidiaries : We may share your information with our affiliates and subsidiaries for their own marketing purposes. Before doing so, however, we may offer you the opportunity to opt out or opt in as required by applicable law.
-Business Partners : From time to time, we may share your information with selected third parties (other than our service providers, affiliates, or subsidiaries) for their own marketing purposes. For example, in cases where a sweepstakes or promotional offer is co-branded with or sponsored by another party, we may share your information, with your consent, with that party. In some cases, you may not be able to participate in a contest or take advantage of a promotion unless you consent to disclosure to our business partner of the information you submit in connection with the contest or promotion.
-Business Negotiations : We may contemplate, for strategic or other reasons, selling, buying, merging, or otherwise reorganizing one or more of our businesses. In negotiating with a third party about entering into such an arrangement, we may need to disclose your information. In such cases, we will take reasonable measures to protect the information we disclose, for example, by requiring a prospective purchaser to sign a non-disclosure agreement limiting the use and protecting the confidentiality of the information.
-Business Transfers :We may transfer the information you submit on or through our Website to any organization that acquires or merges with us.
-Compliance with Laws and Protection of Our Rights and the Rights of Others : We may be obligated to cooperate with various law enforcement inquiries. We reserves the right to share or transfer PII to comply with a legal requirement, disclose any activities or PII about you to law enforcement or other government officials as we, in our sole discretion, determine necessary or appropriate, in connection with an investigation of fraud, for the administration of justice, intellectual property infringements, or other activity that is illegal or may expose us or you to legal liability.
-As Described in a Privacy Notice : We reserve the right to disclose your information as described in any privacy notice posted on a page of our Website where you provide that information. By providing your PII on that page you will be consenting to the disclosure of your PII as described in that privacy notice.
-As Described in a Click–Through Agreement : We reserve the right to disclose your information as described in any click–through agreement to which you have agreed.
 
 
 
