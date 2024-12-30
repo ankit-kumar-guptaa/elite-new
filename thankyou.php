@@ -40,18 +40,22 @@
 
 
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-10893858085"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-595925852"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'AW-10893858085');
+  gtag('config', 'AW-595925852');
 </script>
-<!-- Event snippet for Elite Corporate conversion page -->
+<!-- Event snippet for Thank You conversion page -->
 <script>
-  gtag('event', 'conversion', {'send_to': 'AW-10893858085/g5f4CLitibsDEKWqzMoo'});
+  gtag('event', 'conversion', {'send_to': 'AW-595925852/C3iUCP3X7NsZENy2lJwC'});
 </script>
+
+
+
+
 </head>
 <body>
 
