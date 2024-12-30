@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 // Email Configuration
                 $mail->setFrom('rajiv@greencarcarpool.com', 'Elite Corporate Solutions');
-                $mail->addAddress('theankitkumarg@gmail.com', 'Rajiv'); // Add a recipient
+                $mail->addAddress('Rajiv@elitecorporatesolutions.com', 'Rajiv'); // Add a recipient
                 $mail->addAttachment($uploadFile); // Attach the uploaded file
                 $mail->isHTML(false);
                 $mail->Subject = 'New Job Seeker Application';
