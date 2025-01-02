@@ -51,9 +51,9 @@ if (!function_exists('isActive')) {
 									    <li class="<?php echo isActive('/solutions'); ?>"><a href="/solutions">Solutions</a></li>
 									    <li class="<?php echo isActive('/jobs'); ?>"><a href="/jobs">Jobs</a>
 									    	<ul class="dropdown">
-									        	<li><a href="/jobs/current">Current Jobs</a></li>
-									        	<li><a href="/submit_cv">Submit CV</a></li>
-									        	<li><a href="/jobs/login">Login</a></li>
+									        	<li><a href="https://jobs.elitecorporatesolutions.com/jobseeker/currentjobs">Current Jobs</a></li>
+									        	<li><a href="https://jobs.elitecorporatesolutions.com/jobseeker/register">Submit CV</a></li>
+									        	<li><a href="https://jobs.elitecorporatesolutions.com/jobseeker/login">Login</a></li>
 									       </ul>
 									    </li>
 									    <li class="<?php echo isActive('/contact'); ?>"><a href="/contact">Contact</a></li>
