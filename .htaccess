@@ -1,4 +1,18 @@
+# RewriteEngine On
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^(.*)$ index.php?uri=$1 [L,QSA]
+
+
 RewriteEngine On
+
+# Ensure the trailing slash issue is handled
+RewriteCond %{REQUEST_URI} ^/[^/]+/$
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+# Check if the request is for a valid file or directory
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirect all other requests to index.php with the 'uri' query parameter
 RewriteRule ^(.*)$ index.php?uri=$1 [L,QSA]
