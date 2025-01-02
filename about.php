@@ -136,40 +136,7 @@
 			
 
 			<!-- Counter Section -->
-			<div class="theme-counter-two section-spacing">
-				<div class="container">
-					<div class="clearfix">
-						<div class="cunter-wrapper">
-							<div class="row">
-								<div class="col-md-3 col-6">
-									<div class="single-counter-box">
-										<div class="number"><span class="timer" data-from="0" data-to="13" data-speed="1200" data-refresh-interval="5">0</span>+</div>
-										<p>Years of Excellence</p>
-									</div>
-								</div>
-								<div class="col-md-3 col-6">
-									<div class="single-counter-box">
-										<div class="number"><span class="timer" data-from="0" data-to="100" data-speed="1200" data-refresh-interval="5">0</span>%</div>
-										<p>Client Satisfaction</p>
-									</div>
-								</div>
-								<div class="col-md-3 col-6">
-									<div class="single-counter-box">
-										<div class="number"><span class="timer" data-from="0" data-to="5000" data-speed="1200" data-refresh-interval="5">0</span>+</div>
-										<p>Successful Placements</p>
-									</div>
-								</div>
-								<div class="col-md-3 col-6">
-									<div class="single-counter-box">
-										<div class="number"><span class="timer" data-from="0" data-to="50" data-speed="1200" data-refresh-interval="5">0</span>+</div>
-										<p>Expert Consultants</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			<?php include 'include/counter.php'; ?>
 
 
 

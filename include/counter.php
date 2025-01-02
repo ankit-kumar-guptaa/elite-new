@@ -13,20 +13,20 @@
 							<div class="row">
 								<div class="col-md-3 col-6">
 									<div class="single-counter-box">
-				        				<div class="number"><span class="timer" data-from="0" data-to="30" data-speed="1200" data-refresh-interval="5">0</span>+</div>
-				        				<p>Years of Excellence</p>
+				        				<div class="number"><span class="timer" data-from="0" data-to="15" data-speed="1200" data-refresh-interval="5">0</span>+</div>
+				        				<p>Years</p>
 				        			</div> <!-- /.single-counter-box -->
 								</div>  <!-- /.col- -->
 								<div class="col-md-3 col-6">
 									<div class="single-counter-box">
-				        				<div class="number"><span class="timer" data-from="0" data-to="100" data-speed="1200" data-refresh-interval="5">0</span>%</div>
-				        				<p>Client Satisfaction</p>
+				        				<div class="number"><span class="timer" data-from="0" data-to="1200" data-speed="1800" data-refresh-interval="5">0</span></div>
+				        				<p>Candidates Placed</p>
 				        			</div> <!-- /.single-counter-box -->
 								</div>  <!-- /.col- -->
 								<div class="col-md-3 col-6">
 									<div class="single-counter-box">
-				        				<div class="number"><span class="timer" data-from="0" data-to="53" data-speed="1200" data-refresh-interval="5">0</span>k</div>
-				        				<p>Cases Completed</p>
+				        				<div class="number"><span class="timer" data-from="0" data-to="48" data-speed="1200" data-refresh-interval="5">0</span></div>
+				        				<p>hours express service</p>
 				        			</div> <!-- /.single-counter-box -->
 								</div>  <!-- /.col- -->
 								<div class="col-md-3 col-6">
