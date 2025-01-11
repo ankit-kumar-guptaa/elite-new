@@ -356,7 +356,7 @@ body .theme-button-one:hover {background:#000f32; }
 .header-two #mega-menu-holder>ul> li> a:before,
 .header-two #mega-menu-holder li .sub-toggle {line-height: 97px;}
 .header-two #mega-menu-holder li>ul.dropdown li:first-child {border-top:1px solid rgba(0,0,0,0.04);}
-.header-two .theme-menu-wrapper .bg-wrapper {position: relative;padding-left: 330px;}
+.header-two .theme-menu-wrapper .bg-wrapper {position: relative;padding-left: 440px;}
 .header-two .theme-menu-wrapper .bg-wrapper .logo {
   position: absolute;
   left:0;
@@ -2211,4 +2211,36 @@ body .theme-button-one:hover {background:#000f32; }
 
 .captcha-input {
   flex: 1;
+}
+
+
+
+
+
+
+/* Mobile Number Styling */
+.mobile-number {
+  margin-left: -280px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  top: 5%;
+  justify-content: center;
+  margin-top: 36px;
+}
+
+.mobile-number a {
+  text-decoration: none;
+  color: #333; /* Default text color */
+}
+
+.mobile-number a:hover {
+  color: #007bff; /* Hover color */
+}
+
+.mobile-number i {
+  margin-right: 8px; /* Space between icon and text */
+  color: #007bff; /* Icon color */
+  font-size: 18px;
 }
