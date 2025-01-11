@@ -427,7 +427,7 @@
         }
 
         .form h2 {
-            font-size: 1px;
+            font-size: 20px;
             /* Reduced font size */
         }
 
