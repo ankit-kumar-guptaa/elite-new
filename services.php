@@ -29,19 +29,15 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://elitecorporatesolutions.com/services">
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10893858085"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+   <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16878629802"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-        gtag('config', 'AW-10893858085');
-    </script>
-    <!-- Event snippet for Elite Corporate conversion page -->
-    <script>
-        gtag('event', 'conversion', {'send_to': 'AW-10893858085/g5f4CLitibsDEKWqzMoo'});
-    </script>
+  gtag('config', 'AW-16878629802');
+</script>
 
     <?php include 'include/assets.php'; ?>
 </head>

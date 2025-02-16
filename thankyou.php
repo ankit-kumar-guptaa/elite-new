@@ -40,17 +40,13 @@
 
 
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-595925852"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16878629802"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'AW-595925852');
-</script>
-<!-- Event snippet for Thank You conversion page -->
-<script>
-  gtag('event', 'conversion', {'send_to': 'AW-595925852/C3iUCP3X7NsZENy2lJwC'});
+  gtag('config', 'AW-16878629802');
 </script>
 
 

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        /* Basic Styling */
+        body {
+            background: #f4f7fc;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }
+
+        .timeline {
+            position: relative;
+            margin: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: linear-gradient(180deg, #3498db, #9b59b6);
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 30px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .timeline-item .content {
+            width: 45%;
+            padding: 20px;
+            background: #fff;
+            border: 2px solid #ddd;
+            border-radius: 12px;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Content Left */
+        .timeline-item.left .content {
+            text-align: right;
+            margin-right: auto;
+            background-color: #fafafa;
+        }
+
+        /* Content Right */
+        .timeline-item.right .content {
+            text-align: left;
+            margin-left: auto;
+            background-color: #f7f7f7;
+        }
+
+        /* User Icon */
+        .timeline-badge {
+            width: 60px;
+            height: 60px;
+            background: #3498db;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-badge i {
+            font-size: 48px;
+        }
+
+        /* Arrow icon */
+        .timeline-item.left .content:before {
+            content: '';
+            position: absolute;
+            top: 40%;
+            right: -20px;
+            border-style: solid;
+            border-width: 12px 15px 12px 0;
+            border-color: transparent #3498db transparent transparent;
+            z-index: 1;
+            transform: translateY(-50%);
+        }
+
+        .timeline-item.right .content:before {
+            content: '';
+            position: absolute;
+            top: 40%;
+            left: -20px;
+            border-style: solid;
+            border-width: 12px 0 12px 15px;
+            border-color: transparent transparent transparent #3498db;
+            z-index: 1;
+            transform: translateY(-50%);
+        }
+
+        .timeline-connector {
+            position: absolute;
+            width: 4px;
+            background: #3498db;
+            top: 50%;
+            left: 50%;
+            z-index: 2;
+            transform: translateX(-50%);
+        }
+
+        .timeline-time {
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+
+        .timeline-date {
+            text-align: center;
+            font-weight: bold;
+            margin: 10px 0;
+            background: #9b59b6;
+            padding: 8px 15px;
+            color: #fff;
+            border-radius: 20px;
+            display: inline-block;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* @media (max-width: 768px) {
+            .timeline-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .timeline-item .content {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-badge {
+                top: -10px;
+            }
+
+            .timeline-item.left .content:before, 
+            .timeline-item.right .content:before {
+                top: 25%;
+                left: auto;
+                right: auto;
+                margin-top: 10px;
+                border-width: 10px;
+            }
+
+            .timeline-date {
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .timeline-item .content {
+                width: 100%;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item.left .content:before, 
+            .timeline-item.right .content:before {
+                top: 20%;
+                border-width: 8px;
+            }
+        } */
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="timeline">
+            <!-- Date Section -->
+            <div class="text-center">
+                <span class="timeline-date">Dec 28, 2024</span>
+            </div>
+
+            <!--  Item 1 -->
+            <div class="timeline-item left">
+                <div class="content">
+                    <p><strong>RMA Initiated</strong></p>
+                    <span class="timeline-time">09:22:53 AM</span>
+                </div>
+                <div class="timeline-badge">
+                    <i class="bi bi-person-fill"></i>
+                </div>
+            </div>
+
+            <!-- Date Section -->
+            <div class="text-center">
+                <span class="timeline-date">Today</span>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="timeline-item right">
+                <div class="content">
+                    <p><strong>Item status changed from Initiated to Scanned</strong></p>
+                    <span class="timeline-time">06:54:30 AM</span>
+                </div>
+                <div class="timeline-badge">
+                    <i class="bi bi-person-fill"></i>
+                </div>
+            </div>
+
+            <!--  Item 3 -->
+            <div class="timeline-item left">
+                <div class="content">
+                    <p><strong>Item status changed from Scanned to Received</strong></p>
+                    <span class="timeline-time">06:54:39 AM</span>
+                </div>
+                <div class="timeline-badge">
+                    <i class="bi bi-person-fill"></i>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="timeline-item right">
+                <div class="content">
+                    <p><strong>Item graded</strong></p>
+                    <span class="timeline-time">06:54:53 AM</span>
+                </div>
+                <div class="timeline-badge">
+                    <i class="bi bi-person-fill"></i>
+                </div>
+            </div>
+
+            <!--  Item 5 -->
+            <div class="timeline-item left">
+                <div class="content">
+                    <p><strong>Item status changed from Received to Closed</strong></p>
+                    <span class="timeline-time">06:54:53 AM</span>
+                </div>
+                <div class="timeline-badge">
+                    <i class="bi bi-person-fill"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
