@@ -7,7 +7,7 @@
 
 
 
-<style>
+<!-- <style>
     /* Glowing Happy New Year Text */
     #newYearMessage {
         animation: glowEffect 1.5s infinite alternate;
@@ -37,7 +37,7 @@
             visibility: hidden;
         }
     }
-</style>
+</style> -->
 
 <div class="slider">
     <div class="slides">
@@ -47,16 +47,16 @@
     </div>
 
 
-    <div id="celebration"
+    <!-- <div id="celebration"
         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1000; pointer-events: none; overflow: hidden;">
-        <!-- Glowing Happy New Year Message -->
+       
         <div id="newYearMessage"
             style="position: absolute; top: 30%; left: 50%; transform: translateX(-50%); text-align: center; font-size: 4rem; font-family: 'Arial', sans-serif; color: gold; font-weight: bold;">
             🎉✨ Happy New Year 2025✨🎉
         </div>
-        <!-- Canvas for Fireworks -->
+    
         <canvas id="fireworksCanvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></canvas>
-    </div>
+    </div> -->
 
 
 
@@ -471,7 +471,7 @@
 
 
 
-<script>
+<!-- <script>
     window.addEventListener('load', function () {
         const canvas = document.getElementById('fireworksCanvas');
         const ctx = canvas.getContext('2d');
@@ -613,7 +613,7 @@
         animate();
     });
 
-</script>
+</script> -->
 
 <script>
 
