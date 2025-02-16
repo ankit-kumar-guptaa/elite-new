@@ -40,6 +40,24 @@
 
   gtag('config', 'AW-16878629802');
 </script>
+
+
+<script>
+  gtag('config', 'AW-16878629802/hZtJCKr48J4aEKrnrfA-', {
+    'phone_conversion_number': '9870364340'
+  });
+</script>
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2VDKKW0ZFF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2VDKKW0ZFF');
+</script>
 	</head>
 
 	<body>

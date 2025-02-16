@@ -72,8 +72,19 @@
 
 
 			<!-- WhatsApp Icon -->
-<a href="https://wa.me/9870364340" class="whatsapp-icon" target="_blank">
+<!-- <a href="https://wa.me/9870364340" class="whatsapp-icon" target="_blank">
     <i class="fa fa-whatsapp" aria-hidden="true"></i>
+</a> -->
+
+
+<!-- Call Icon with Ringing Effect -->
+<a href="tel:+919870364340" class="call-icon fixed-icon vibrate">
+  <i class="fas fa-phone-volume"></i> <!-- Call ring icon -->
+</a>
+
+<!-- WhatsApp Icon -->
+<a href="https://wa.me/+919870364340" class="whatsapp-icon fixed-icon" target="_blank">
+  <i class="fab fa-whatsapp"></i>
 </a>
 
 

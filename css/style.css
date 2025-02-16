@@ -2127,27 +2127,74 @@ body .theme-button-one:hover {background:#000f32; }
 }
 
 
-.whatsapp-icon {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Font Awesome Icons Styling */
+.fixed-icon {
   position: fixed;
-  left: 10px;
-  bottom: 20px;
-  background-color: #25D366;
-  color: white;
-  border-radius: 50%;
-  padding: 7px 15px;
-  font-size: 30px;
+  left: 20px;
   z-index: 1000;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-.whatsapp-icon:hover {
   color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
   text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
+/* WhatsApp Icon Position */
+.whatsapp-icon {
+  bottom: 30px; /* WhatsApp icon neeche */
+  background-color: #25D366; /* WhatsApp green */
+}
 
+/* Call Icon Position */
+.call-icon {
+  bottom: 100px; /* Call icon upar */
+  background-color: #4CAF50; /* Green background for call icon */
+}
 
+/* Vibrate Animation for Call Icon */
+.vibrate {
+  animation: vibrate 0.5s infinite;
+}
 
+@keyframes vibrate {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Hover Effect */
+.fixed-icon:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-icon:hover {
+  background-color: #128C7E !important; /* Darker WhatsApp green */
+}
+
+.call-icon:hover {
+  background-color: #45a049 !important; /* Darker green for call icon */
+}
 
 
 
