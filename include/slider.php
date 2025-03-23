@@ -139,6 +139,12 @@
                     <input type="text" name="captcha" placeholder="Enter CAPTCHA" required />
                 </div>
 
+                     <!-- Checkbox -->
+<div class="checkbox-container">
+    <input type="checkbox" id="consentCheckboxEmployer" name="consent" required>
+    <label for="consentCheckboxEmployer">I consent to receive SMS, email, and agree to the <a href="term-and-condition.php">terms and conditions</a></label>
+</div>
+
                 <!-- Display Error/Success Messages -->
                 <div id="responseMessage" class="error-message"></div>
 
