@@ -38,7 +38,7 @@
 								<h6 class="title">Policies</h6>
 								<ul>
 									<li><a href="privacy-policy.php">Privacy Policy</a></li>
-									<li><a href="terms-and-conditions.html">Terms and Conditions</a></li>
+									<li><a href="term-and-condition.php">Terms and Conditions</a></li>
 								</ul>
 							</div> <!-- /.footer-list -->
 							

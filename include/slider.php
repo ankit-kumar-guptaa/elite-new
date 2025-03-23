@@ -108,6 +108,12 @@
                     <input type="text" name="captcha" placeholder="Enter CAPTCHA" required />
                 </div>
 
+                <!-- Checkbox -->
+<div class="checkbox-container">
+    <input type="checkbox" id="consentCheckboxEmployer" name="consent" required>
+    <label for="consentCheckboxEmployer">I consent to receive SMS, email, and agree to the <a href="term-and-condition.php">terms and conditions</a></label>
+</div>
+
                 <!-- Display Error/Success Messages -->
                 <div id="responseMessageEmployer" class="error-message"></div>
 
@@ -149,12 +155,12 @@
 <style>
     .error-message {
         color: red;
-        margin-top: 10px;
+        margin-top: 2px;
     }
 
     .success-message {
         color: green;
-        margin-top: 10px;
+        margin-top: 2px;
     }
 
     .loading {
@@ -469,7 +475,36 @@
 </style>
 
 
+<style>
+    .checkbox-container {
+    margin: 2px 0;
+    display: flex;
+    align-items: center;
+}
 
+.checkbox-container input[type="checkbox"] {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #3498db; /* Blue color to match Elite theme */
+}
+
+.checkbox-container label {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.checkbox-container label a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.checkbox-container label a:hover {
+    text-decoration: underline;
+}
+</style>
 
 <!-- <script>
     window.addEventListener('load', function () {
@@ -765,3 +800,5 @@
         document.getElementById('captchaImage').src = 'captcha.php?' + Date.now();
     });
 </script>
+
+
