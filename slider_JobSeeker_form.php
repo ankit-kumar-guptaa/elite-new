@@ -9,11 +9,6 @@ require 'PHPMailer/src/SMTP.php';
 
 session_start();
 
-$response = [
-    "status" => false,
-    "message" => ""
-];
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST['name'] ?? '';
     $email = $_POST['email'] ?? '';
@@ -52,15 +47,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 // Email Configuration
                 $mail->setFrom('rajiv@greencarcarpool.com', 'Elite Corporate Solutions');
-                $mail->addAddress('Rajiv@elitecorporatesolutions.com', 'Rajiv'); // Add a recipient
+                $mail->addAddress('theankitkumarg@gmail.com', 'Rajiv'); // Add a recipient
                 $mail->addAttachment($uploadFile); // Attach the uploaded file
                 $mail->isHTML(false);
                 $mail->Subject = 'New Job Seeker Application';
                 $mail->Body    = "Name: $name\nEmail: $email\nMessage: $message";
 
                 $mail->send();
-                $response["status"] = true;
-                $response["message"] = "Form submitted successfully!";
+                // Redirect to thankyou.php on success
+                header("Location: thankyou.php");
+                exit();
             } catch (Exception $e) {
                 $response["message"] = "Email sending failed. Mailer Error: {$mail->ErrorInfo}";
             }
@@ -70,10 +66,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         $response["message"] = "Error uploading file.";
     }
-}
 
-// Return JSON response
-header("Content-Type: application/json");
-echo json_encode($response);
-exit();
+    // Return JSON response for errors
+    $response["status"] = false;
+    header("Content-Type: application/json");
+    echo json_encode($response);
+    exit();
+}
 ?>
