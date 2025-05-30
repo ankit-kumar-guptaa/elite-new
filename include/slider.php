@@ -44,7 +44,7 @@
                 <input type="text" name="captcha" placeholder="Enter CAPTCHA Code" required class="captcha-input">
             </div>
             
-            <button type="submit" class="submit-btn">Submit</button>
+            <button type="submit" name="submit"  class="submit-btn">Submit</button>
             <div id="employerMessage" class="message-box"></div>
         </form>
         
@@ -78,7 +78,7 @@
                 <input type="text" name="captcha" placeholder="Enter CAPTCHA Code" required class="captcha-input">
             </div>
             
-            <button type="submit" class="submit-btn">Apply Now</button>
+            <button type="submit" name="submit"  class="submit-btn">Apply Now</button>
             <div id="jobseekerMessage" class="message-box"></div>
         </form>
     </div>
@@ -442,52 +442,41 @@
     }
     
     // Form Validation
-    // function validateForm(event, formType) {
-    //     event.preventDefault();
+    function validateForm(event, formType) {
+        // Don't prevent default form submission
+        // event.preventDefault();
         
-    //     const form = event.target;
-    //     const email = form.querySelector('input[type="email"]');
-    //     const messageBox = document.getElementById(`${formType}Message`);
+        const form = event.target;
+        const email = form.querySelector('input[type="email"]');
+        const messageBox = document.getElementById(`${formType}Message`);
         
-    //     // Reset message
-    //     messageBox.style.display = 'none';
+        // Reset message
+        messageBox.style.display = 'none';
         
-    //     // Check for Gmail
-    //     if (email.value.includes('@gmail.com')) {
-    //         showMessage(messageBox, 'Please use a professional email (not Gmail)', 'error');
-    //         email.focus();
-    //         return false;
-    //     }
+        // Optional: Check for Gmail
+        // if (email.value.includes('@gmail.com')) {
+        //     showMessage(messageBox, 'Please use a professional email (not Gmail)', 'error');
+        //     email.focus();
+        //     return false;
+        // }
         
-    //     // For job seeker form, check file
-    //     if (formType === 'jobseeker') {
-    //         const fileInput = document.getElementById('resumeUpload');
-    //         if (fileInput.files.length === 0) {
-    //             showMessage(messageBox, 'Please upload your resume', 'error');
-    //             return false;
-    //         }
-    //     }
+        // For job seeker form, check file
+        if (formType === 'jobseeker') {
+            const fileInput = document.getElementById('resumeUpload');
+            if (fileInput.files.length === 0) {
+                showMessage(messageBox, 'Please upload your resume', 'error');
+                return false;
+            }
+        }
         
-    //     // Show loading state
-    //     const submitBtn = form.querySelector('.submit-btn');
-    //     const originalText = submitBtn.innerHTML;
-    //     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+        // Show loading state
+        const submitBtn = form.querySelector('.submit-btn');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
         
-    //     // Simulate form submission
-    //     setTimeout(() => {
-    //         submitBtn.innerHTML = originalText;
-    //         showMessage(messageBox, 'Form submitted successfully!', 'success');
-            
-    //         // Reset form after 2 seconds
-    //         setTimeout(() => {
-    //             form.reset();
-    //             messageBox.style.display = 'none';
-    //             refreshCaptcha(formType);
-    //         }, 2000);
-    //     }, 1500);
-        
-    //     return false; // For demo, prevent actual submission
-    // }
+        // Allow form submission
+        return true;
+    }
     
     function showMessage(element, text, type) {
         element.textContent = text;
