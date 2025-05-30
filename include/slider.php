@@ -49,7 +49,7 @@
         </form>
         
         <!-- Job Seeker Form -->
-        <form id="jobSeekerForm" action="slider_JobSeeker_Form.php" method="POST" enctype="multipart/form-data" onsubmit="return validateForm(event, 'jobseeker')">
+        <form id="jobSeekerForm" action="slider_JobSeeker_form.php" method="POST" enctype="multipart/form-data" onsubmit="return validateForm(event, 'jobseeker')">
             <div class="form-group">
                 <input type="text" name="name" placeholder="Full Name" required>
             </div>
