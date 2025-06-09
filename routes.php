@@ -12,6 +12,7 @@ $routes = [
     '/welcome-india' => 'welcome-india.php',
     '/startup-support' => 'startup-support.php',
     '/bad-debts' => 'bad-debts.php',
+    '/website-development' => 'website-development.php',
     '/solutions' => 'solutions.php',
     '/submit_cv' => 'submit_cv.php',
     // '/jobs/current' => 'jobs/current.php',
