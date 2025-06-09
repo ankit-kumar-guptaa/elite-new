@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TVS Carpool Admin</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --tvs-red: #E31937;
+            --tvs-light: #f8f9fa;
+            --tvs-gray: #e9ecef;
+            --tvs-dark: #343a40;
+            --tvs-blue: #16213E;
+            --tvs-accent: #00B4D8;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--tvs-light);
+            color: var(--tvs-dark);
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            background: white;
+            border-right: 1px solid var(--tvs-gray);
+            height: 100vh;
+            position: fixed;
+            width: 250px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+        
+        .sidebar .nav-link {
+            color: var(--tvs-dark);
+            border-radius: 5px;
+            margin: 3px 0;
+            transition: all 0.3s;
+        }
+        
+        .sidebar .nav-link:hover, .sidebar .nav-link.active {
+            background-color: rgba(227, 25, 55, 0.1);
+            color: var(--tvs-red) !important;
+        }
+        
+        .sidebar .nav-link.active {
+            font-weight: 500;
+        }
+        
+        .sidebar .nav-link i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        /* Main Content */
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        /* Card Styling */
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+        
+        .card-header {
+            background-color: white;
+            border-bottom: 1px solid var(--tvs-gray);
+            font-weight: 600;
+        }
+        
+        /* Badges */
+        .badge-completed { background: #28a745; }
+        .badge-inprogress { background: #ffc107; color: #212529; }
+        .badge-scheduled { background: #17a2b8; }
+        .badge-active { background: #28a745; }
+        .badge-inactive { background: #6c757d; }
+        
+        /* Table */
+        .table-custom th {
+            background-color: var(--tvs-gray);
+            color: var(--tvs-dark);
+        }
+        
+        /* Map Placeholder */
+        .map-placeholder {
+            height: 300px;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #6c757d;
+        }
+        
+        /* Stats Cards */
+        .stat-card {
+            border-left: 4px solid;
+            transition: all 0.3s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .stat-card.rides { border-left-color: var(--tvs-red); }
+        .stat-card.employees { border-left-color: var(--tvs-accent); }
+        .stat-card.pending { border-left-color: #FFD700; }
+        .stat-card.co2 { border-left-color: #4CAF50; }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .sidebar {
+                width: 70px;
+                overflow: hidden;
+            }
+            .sidebar .nav-link span {
+                display: none;
+            }
+            .sidebar .nav-link i {
+                margin-right: 0;
+                font-size: 1.2rem;
+            }
+            .main-content {
+                margin-left: 70px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div class="sidebar p-3">
+            <div class="text-center mb-4">
+                <img src="https://www.tvsmotor.com/-/media/Feature/Header/TVSLogo-hr.svg" alt="TVS Logo" style="height: 40px;">
+                <h6 class="mt-2">Carpool Admin</h6>
+            </div>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="#dashboard" onclick="showPage('dashboard')">
+                        <i class="fas fa-tachometer-alt"></i> <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#employees" onclick="showPage('employees')">
+                        <i class="fas fa-users"></i> <span>Employees</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#rides" onclick="showPage('rides')">
+                        <i class="fas fa-route"></i> <span>Rides</span>
+                    </a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="#hotspots" onclick="showPage('hotspots')">
+                        <i class="fas fa-map-marked-alt"></i> <span>Hotspots</span>
+                    </a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#analytics" onclick="showPage('analytics')">
+                        <i class="fas fa-chart-pie"></i> <span>Analytics</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#settings" onclick="showPage('settings')">
+                        <i class="fas fa-cog"></i> <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Dashboard Page -->
+            <div id="dashboard-page" class="page-content">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h3><i class="fas fa-tachometer-alt me-2"></i> Dashboard</h3>
+                    <div>
+                        <button class="btn btn-sm btn-outline-secondary me-2">
+                            <i class="fas fa-download"></i> Report
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="row mb-4">
+                    <div class="col-md-3 mb-3">
+                        <div class="card stat-card rides h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h6 class="text-muted">TOTAL RIDES</h6>
+                                        <h3 class="mb-0">48</h3>
+                                    </div>
+                                    <div class="icon-circle bg-danger text-white rounded-circle p-2">
+                                        <i class="fas fa-car"></i>
+                                    </div>
+                                </div>
+                                <div class="mt-2 text-success">
+                                    <small><i class="fas fa-arrow-up"></i> 12% from yesterday</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="card stat-card employees h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h6 class="text-muted">REGISTERED EMPLOYEES</h6>
+                                        <h3 class="mb-0">124</h3>
+                                    </div>
+                                    <div class="icon-circle bg-info text-white rounded-circle p-2">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                </div>
+                                <div class="mt-2 text-success">
+                                    <small><i class="fas fa-arrow-up"></i> 8% this week</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="card stat-card pending h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h6 class="text-muted">PENDING REQUESTS</h6>
+                                        <h3 class="mb-0">15</h3>
+                                    </div>
+                                    <div class="icon-circle bg-warning text-white rounded-circle p-2">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                </div>
+                                <div class="mt-2 text-danger">
+                                    <small><i class="fas fa-arrow-down"></i> 3% from last week</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="card stat-card co2 h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h6 class="text-muted">CO2 SAVED (LIKELY)</h6>
+                                        <h3 class="mb-0">142.8</h3>
+                                    </div>
+                                    <div class="icon-circle bg-success text-white rounded-circle p-2">
+                                        <i class="fas fa-leaf"></i>
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <small>Equivalent to <strong>12 trees</strong></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Rides -->
+                <div class="card mb-4">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0"><i class="fas fa-list me-2"></i> Recent Rides</h5>
+                        <a href="#rides" onclick="showPage('rides')" class="btn btn-sm btn-outline-primary">View All</a>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-custom table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Employee</th>
+                                        <th>From → To</th>
+                                        <th>Time</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle me-2" width="32">
+                                                <div>
+                                                    <strong>Rahul Sharma</strong><br>
+                                                    <small>rahul.s@tvs.com</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Hosur → Corporate Office</td>
+                                        <td>08:30 AM</td>
+                                        <td><span class="badge badge-completed">Completed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle me-2" width="32">
+                                                <div>
+                                                    <strong>Priya Patel</strong><br>
+                                                    <small>priya.p@tvs.com</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Electronic City → TVS Plant</td>
+                                        <td>09:15 AM</td>
+                                        <td><span class="badge badge-completed">Completed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <img src="https://randomuser.me/api/portraits/men/22.jpg" class="rounded-circle me-2" width="32">
+                                                <div>
+                                                    <strong>Vikram Joshi</strong><br>
+                                                    <small>vikram.j@tvs.com</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Whitefield → Corporate Office</td>
+                                        <td>09:45 AM</td>
+                                        <td><span class="badge badge-inprogress">In Progress</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <img src="https://randomuser.me/api/portraits/women/68.jpg" class="rounded-circle me-2" width="32">
+                                                <div>
+                                                    <strong>Neha Gupta</strong><br>
+                                                    <small>neha.g@tvs.com</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Koramangala → R&D Center</td>
+                                        <td>10:30 AM</td>
+                                        <td><span class="badge badge-scheduled">Scheduled</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ride Frequency Chart -->
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-chart-line me-2"></i> Weekly Ride Frequency</h5>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="dashboardChart" height="250"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Employees Page -->
+            <div id="employees-page" class="page-content" style="display: none;">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h3><i class="fas fa-users me-2"></i> Employees</h3>
+                    <div>
+                        <button class="btn btn-sm btn-outline-secondary me-2">
+                            <i class="fas fa-download"></i> Export
+                        </button>
+                        <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#addEmployeeModal">
+                            <i class="fas fa-plus"></i> Add Employee
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Filters -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label class="form-label">Department</label>
+                                <select class="form-select">
+                                    <option>All Departments</option>
+                                    <option>Engineering</option>
+                                    <option>Manufacturing</option>
+                                    <option>HR</option>
+                                    <option>Finance</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Location</label>
+                                <select class="form-select">
+                                    <option>All Locations</option>
+                                    <option>Hosur</option>
+                                    <option>Corporate Office</option>
+                                    <option>R&D Center</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Status</label>
+                                <select class="form-select">
+                                    <option>All Statuses</option>
+                                    <option>Active</option>
+                                    <option>Inactive</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 d-flex align-items-end">
+                                <button class="btn btn-primary w-100">
+                                    <i class="fas fa-filter"></i> Filter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Employees Table -->
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <span>All Employees (124)</span>
+                        <div class="input-group" style="width: 300px;">
+                            <input type="text" class="form-control" placeholder="Search employees...">
+                            <button class="btn btn-outline-secondary" type="button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-custom table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Employee</th>
+                                        <th>Department</th>
+                                        <th>Location</th>
+                                        <th>Rides</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle me-2" width="32">
+                                                <div>
+                                                    <strong>Rahul Sharma</strong><br>
+                                                    <small>rahul.s@tvs.com</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Engineering</td>
+                                        <td>Hosur</td>
+                                        <td>24</td>
+                                        <td><span class="badge bg-success">Active</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-secondary">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <!-- More employee rows -->
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <!-- Pagination -->
+                        <nav class="mt-3">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                </li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rides Page -->
+            <div id="rides-page" class="page-content" style="display: none;">
+                <!-- Similar structure with rides data -->
+            </div>
+
+            <!-- Hotspots Page -->
+            <div id="hotspots-page" class="page-content" style="display: none;">
+                <!-- Similar structure with map and location data -->
+            </div>
+
+            <!-- Analytics Page -->
+            <div id="analytics-page" class="page-content" style="display: none;">
+                <!-- Similar structure with charts -->
+            </div>
+
+            <!-- Settings Page -->
+            <div id="settings-page" class="page-content" style="display: none;">
+                <!-- Similar structure with settings forms -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Employee Modal -->
+    <div class="modal fade" id="addEmployeeModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add New Employee</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-control" placeholder="Enter full name">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" placeholder="Enter email">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Department</label>
+                            <select class="form-select">
+                                <option>Select Department</option>
+                                <option>Engineering</option>
+                                <option>Manufacturing</option>
+                                <option>HR</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Location</label>
+                            <select class="form-select">
+                                <option>Select Location</option>
+                                <option>Hosur</option>
+                                <option>Corporate Office</option>
+                                <option>R&D Center</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger">Save Employee</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Page Navigation
+        function showPage(pageId) {
+            document.querySelectorAll('.page-content').forEach(page => {
+                page.style.display = 'none';
+            });
+            document.getElementById(pageId + '-page').style.display = 'block';
+            
+            // Update active nav link
+            document.querySelectorAll('.sidebar .nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+
+        // Initialize dashboard chart
+        const ctx = document.getElementById('dashboardChart').getContext('2d');
+        const dashboardChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'Rides',
+                    data: [35, 42, 48, 45, 52, 20, 15],
+                    borderColor: '#E31937',
+                    backgroundColor: 'rgba(227, 25, 55, 0.1)',
+                    tension: 0.3,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { display: false } },
+                scales: { y: { beginAtZero: true } }
+            }
+        });
+
+        // Show dashboard by default
+        document.addEventListener('DOMContentLoaded', function() {
+            showPage('dashboard');
+        });
+    </script>
+</body>
+</html>

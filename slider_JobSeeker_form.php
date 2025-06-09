@@ -40,13 +40,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $mail->isSMTP();
                 $mail->Host       = 'smtp.hostinger.com';
                 $mail->SMTPAuth   = true;
-                $mail->Username   = 'rajiv@greencarcarpool.com'; // SMTP username
+                $mail->Username   = 'no-reply@greencarcarpool.com'; // SMTP username
                 $mail->Password   = 'Rajiv@111@';               // SMTP password
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                 $mail->Port       = 587;
 
                 // Email Configuration
-                $mail->setFrom('rajiv@greencarcarpool.com', 'Elite Corporate Solutions');
+                $mail->setFrom('no-reply@greencarcarpool.com', 'Elite Corporate Solutions');
                 $mail->addAddress('theankitkumarg@gmail.com', 'Rajiv'); // Add a recipient
                 $mail->addAttachment($uploadFile); // Attach the uploaded file
                 $mail->isHTML(false);
