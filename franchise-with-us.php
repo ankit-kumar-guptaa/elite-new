@@ -911,7 +911,7 @@
                     <div class="testimonial-card h-100">
                         <p>"Joining Elite Corporate Solutions as a franchise partner was the best business decision I've made. The training and ongoing support have been exceptional, and I was profitable within the first six months."</p>
                         <div class="testimonial-author">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rajesh Mehta">
+                            <!-- <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rajesh Mehta"> -->
                             <div>
                                 <h5 class="mb-0">Rajesh Mehta</h5>
                                 <small class="text-muted">Delhi Franchise</small>
@@ -923,7 +923,7 @@
                     <div class="testimonial-card h-100">
                         <p>"The recruitment industry is booming, and with Elite's brand reputation and systems, I've been able to build a sustainable business that gives me both financial freedom and professional satisfaction."</p>
                         <div class="testimonial-author">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Sharma">
+                            <!-- <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Sharma"> -->
                             <div>
                                 <h5 class="mb-0">Priya Sharma</h5>
                                 <small class="text-muted">Bangalore Franchise</small>
@@ -935,7 +935,7 @@
                     <div class="testimonial-card h-100">
                         <p>"What impressed me most was the transparency in operations and the fair revenue sharing model. The corporate team truly treats franchisees as partners, not just another number."</p>
                         <div class="testimonial-author">
-                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Amit Patel">
+                            <!-- <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Amit Patel"> -->
                             <div>
                                 <h5 class="mb-0">Amit Patel</h5>
                                 <small class="text-muted">Hyderabad Franchise</small>
