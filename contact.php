@@ -37,29 +37,29 @@
 
 
 	<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16878629802"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+	<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16878629802"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
 
-  gtag('config', 'AW-16878629802');
-</script>
+		gtag('config', 'AW-16878629802');
+	</script>
 
-<script>
-  gtag('config', 'AW-16878629802/hZtJCKr48J4aEKrnrfA-', {
-    'phone_conversion_number': '9870364340'
-  });
-</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2VDKKW0ZFF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+	<script>
+		gtag('config', 'AW-16878629802/hZtJCKr48J4aEKrnrfA-', {
+			'phone_conversion_number': '9870364340'
+		});
+	</script>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-2VDKKW0ZFF"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
 
-  gtag('config', 'G-2VDKKW0ZFF');
-</script>
+		gtag('config', 'G-2VDKKW0ZFF');
+	</script>
 </head>
 
 <body>
@@ -67,15 +67,15 @@
 		<?php include_once 'include/header.php'; ?>
 
 
-		
-        <!-- Inner Banner -->
-        <div class="theme-inner-banner section-spacing">
-            <div class="overlay">
-                <div class="container">
-                    <h2>Contact Us</h2>
-                </div>
-            </div>
-        </div>
+
+		<!-- Inner Banner -->
+		<div class="theme-inner-banner section-spacing">
+			<div class="overlay">
+				<div class="container">
+					<h2>Contact Us</h2>
+				</div>
+			</div>
+		</div>
 
 
 
@@ -109,41 +109,59 @@
 					<p>Connect with us to discuss your recruitment needs and discover how we can help you find the
 						perfect talent for your organization.</p>
 				</div> <!-- /.theme-title-one -->
-				<div class="clearfix main-content no-gutters row">
+				<div class="clearfix main-content no-gutters row" style="
+    padding-bottom: 130px;
+">
 					<div class="col-lg-5 col-12">
 						<div class="img-box"></div>
 					</div>
 					<div class="col-lg-7 col-12">
 						<div class="form-wrapper">
-						<form action="backend_form.php" class="theme-form-one form-validation" method="post" autocomplete="off">
-    <div class="row">
-        <div class="col-sm-6 col-12"><input type="text" placeholder="Name *" name="name" required></div>
-        <div class="col-sm-6 col-12"><input type="text" placeholder="Phone *" name="phone" required></div>
-        <div class="col-sm-6 col-12"><input type="email" placeholder="Email *" name="email" required></div>
-        <div class="col-sm-6 col-12">
-            <select class="form-control" id="exampleSelect1" name="service">
-                <option>Choose Services?</option>
-                <option>Learning &amp; Development</option>
-                <option>HR Outsourcing for Small Businesses</option>
-                <option>Welcome to India Services– End to End Support</option>
-                <option>Start-up Support - Everything at one place</option>
-                <option>Bad Debts Collection</option>
-            </select>
-        </div>
-        <div class="col-12"><textarea placeholder="Message" name="message" required></textarea></div>
-        <div class="col-sm-6 col-12">
-            <!-- CAPTCHA Image -->
-            <img src="captcha.php" alt="CAPTCHA" id="captcha-image" style="margin-bottom: 10px;">
-            <!-- Refresh CAPTCHA -->
-            <button type="button" onclick="document.getElementById('captcha-image').src='captcha.php?rand='+Math.random();" style="display: block;">Refresh CAPTCHA</button>
-        </div>
-        <div class="col-sm-6 col-12">
-            <!-- CAPTCHA Input -->
-            <input type="text" placeholder="Enter CAPTCHA *" name="captcha" required>
-        </div>
-    </div>
-    <button class="theme-button-one" name="submit">SEND MESSAGE</button>
-</form>
+							<form action="backend_form.php" class="theme-form-one form-validation" method="post"
+								autocomplete="off">
+								<div class="row">
+									<div class="col-sm-6 col-12"><input type="text" placeholder="Name *" name="name"
+											required></div>
+									<div class="col-sm-6 col-12"><input type="text" placeholder="Phone *" name="phone"
+											required></div>
+									<div class="col-sm-6 col-12"><input type="email" placeholder="Email *" name="email"
+											required></div>
+									<div class="col-sm-6 col-12">
+										<select class="form-control" id="exampleSelect1" name="service">
+											<option>Choose Services?</option>
+											<option>Learning &amp; Development</option>
+											<option>HR Outsourcing for Small Businesses</option>
+											<option>Welcome to India Services– End to End Support</option>
+											<option>Start-up Support - Everything at one place</option>
+											<option>Bad Debts Collection</option>
+										</select>
+									</div>
+									<div class="col-12"><textarea placeholder="Message" name="message"
+											required></textarea></div>
+									<div class="col-sm-6 col-12">
+										<!-- CAPTCHA Image -->
+										<img src="captcha.php" alt="CAPTCHA" id="captcha-image"
+											style="margin-bottom: 10px;">
+										<!-- Refresh CAPTCHA -->
+										<button type="button"
+											onclick="document.getElementById('captcha-image').src='captcha.php?rand='+Math.random();"
+											style="display: block;">Refresh CAPTCHA</button>
+									</div>
+									<div class="col-sm-6 col-12">
+										<!-- CAPTCHA Input -->
+										<input type="text" placeholder="Enter CAPTCHA *" name="captcha" required>
+									</div>
+									<div class="col-12 mb-3">
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" id="agree" name="agree" required>
+											<label class="form-check-label" for="agree">
+												I agree to be contacted by Elite Corporate Solutions Private Limited for promotions and SMS alerts.
+											</label>
+										</div>
+									</div>
+								</div>
+								<button class="theme-button-one" name="submit">SEND MESSAGE</button>
+							</form>
 
 						</div> <!-- /.form-wrapper -->
 					</div> <!-- /.col- -->
@@ -174,7 +192,8 @@
 
 
 		<!-- Contact Details Section -->
-		<div class="contact-details section-spacing">
+		<div class="contact-details section-spacing" style="
+    margin-top: 150px;">
 			<div class="container">
 				<div class="theme-title-one">
 					<h2>Connect with us for all your recruitment needs</h2>
@@ -186,78 +205,78 @@
 				Compnay Branch Address
 			============================================== 
 			-->
-	<div class="branch-address">
-		
-				<div class="address-slider">
-					<div class="item">
-						<div class="wrapper">
-							<h6>Kashmir Branch</h6>
-							<p><i class="fa fa-address-book-o" aria-hidden="true"></i> Srinagar - 199001</p>
+				<div class="branch-address">
+
+					<div class="address-slider">
+						<div class="item">
+							<div class="wrapper">
+								<h6>Kashmir Branch</h6>
+								<p><i class="fa fa-address-book-o" aria-hidden="true"></i> Srinagar - 199001</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="wrapper">
+								<h6>Delhi Branch</h6>
+								<p><i class="fa fa-address-book-o" aria-hidden="true"></i> BadarPur - 110044</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="wrapper">
+								<h6>Andhra Pradesh Branch</h6>
+								<p><i class="fa fa-address-book-o" aria-hidden="true"></i> Rajahmundry - 533103</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="wrapper">
+								<h6>Maharashtra Branch</h6>
+								<p><i class="fa fa-address-book-o" aria-hidden="true"></i> Durgapur - 442404</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="wrapper">
+								<h6>Haryana Branch</h6>
+								<p><i class="fa fa-address-book-o" aria-hidden="true"></i> Gurgaon - 122002</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="wrapper">
+								<h6>Uttar Pradesh Branch</h6>
+								<p><i class="fa fa-address-book-o" aria-hidden="true"></i> Noida - 201309</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="wrapper">
+								<h6>Punjab Branch</h6>
+								<p><i class="fa fa-address-book-o" aria-hidden="true"></i> Hoshiarpur - 144208</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="wrapper">
+								<h6>Telangana Branch</h6>
+								<p><i class="fa fa-address-book-o" aria-hidden="true"></i> Adilabad - 504001</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="wrapper">
+								<h6>Madhya Pradesh Branch</h6>
+								<p><i class="fa fa-address-book-o" aria-hidden="true"></i> Ratlam - 457001</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="wrapper">
+								<h6>Bihar Branch</h6>
+								<p><i class="fa fa-address-book-o" aria-hidden="true"></i> Patna - 800024</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="wrapper">
+								<h6>Uttrakhand Branch</h6>
+								<p><i class="fa fa-address-book-o" aria-hidden="true"></i> Dehradun - 248001</p>
+							</div>
 						</div>
 					</div>
-					<div class="item">
-						<div class="wrapper">
-							<h6>Delhi Branch</h6>
-							<p><i class="fa fa-address-book-o" aria-hidden="true"></i> BadarPur - 110044</p>
-						</div>
-					</div>
-					<div class="item">
-						<div class="wrapper">
-							<h6>Andhra Pradesh Branch</h6>
-							<p><i class="fa fa-address-book-o" aria-hidden="true"></i> Rajahmundry - 533103</p>
-						</div>
-					</div>
-					<div class="item">
-						<div class="wrapper">
-							<h6>Maharashtra Branch</h6>
-							<p><i class="fa fa-address-book-o" aria-hidden="true"></i> Durgapur - 442404</p>
-						</div>
-					</div>
-					<div class="item">
-						<div class="wrapper">
-							<h6>Haryana Branch</h6>
-							<p><i class="fa fa-address-book-o" aria-hidden="true"></i> Gurgaon - 122002</p>
-						</div>
-					</div>
-					<div class="item">
-						<div class="wrapper">
-							<h6>Uttar Pradesh Branch</h6>
-							<p><i class="fa fa-address-book-o" aria-hidden="true"></i> Noida - 201309</p>
-						</div>
-					</div>
-					<div class="item">
-						<div class="wrapper">
-							<h6>Punjab Branch</h6>
-							<p><i class="fa fa-address-book-o" aria-hidden="true"></i> Hoshiarpur - 144208</p>
-						</div>
-					</div>
-					<div class="item">
-						<div class="wrapper">
-							<h6>Telangana Branch</h6>
-							<p><i class="fa fa-address-book-o" aria-hidden="true"></i> Adilabad - 504001</p>
-						</div>
-					</div>
-					<div class="item">
-						<div class="wrapper">
-							<h6>Madhya Pradesh Branch</h6>
-							<p><i class="fa fa-address-book-o" aria-hidden="true"></i> Ratlam - 457001</p>
-						</div>
-					</div>
-					<div class="item">
-						<div class="wrapper">
-							<h6>Bihar Branch</h6>
-							<p><i class="fa fa-address-book-o" aria-hidden="true"></i> Patna - 800024</p>
-						</div>
-					</div>
-					<div class="item">
-						<div class="wrapper">
-							<h6>Uttrakhand Branch</h6>
-							<p><i class="fa fa-address-book-o" aria-hidden="true"></i> Dehradun - 248001</p>
-						</div>
-					</div>
-				</div>
-		 <!-- /.container -->
-	</div> <!-- /.branch-address -->
+					<!-- /.container -->
+				</div> <!-- /.branch-address -->
 
 				<div class="row mt-5">
 					<!-- Head Office Address -->
@@ -267,7 +286,7 @@
 							<p class="mb-0">A-83, Okhla Industrial Area,</p>
 							<p class="mb-3">Phase - 2, New Delhi -110019</p>
 
-							
+
 						</div>
 					</div>
 
@@ -300,8 +319,9 @@
 							</ul>
 
 							<div class="mt-4">
-								<h5 class="mb-3">Connect With Us: <a href="#" class="mr-3 px-2"><i class="fa fa-linkedin"></i></a></h5>
-								
+								<h5 class="mb-3">Connect With Us: <a href="#" class="mr-3 px-2"><i
+											class="fa fa-linkedin"></i></a></h5>
+
 							</div>
 						</div>
 					</div>
@@ -320,9 +340,29 @@
 		</div>
 	</div>
 
-	
 
 
+	<style>
+.form-check {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.form-check-input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    accent-color: #007bff;
+    cursor: pointer;
+}
+.form-check-label {
+    font-size: 15px;
+    color: #333;
+    cursor: pointer;
+    user-select: none;
+}
+</style>
 
 
 
