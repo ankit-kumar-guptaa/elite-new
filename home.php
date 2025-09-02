@@ -122,9 +122,135 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 			<div class="alert text-center" style="color:red;" role="alert">
    <b> Alert:</b> We Don't Charge money from Candidates, Be aware of fraudulent Agencies.
 </div>
+
+<!-- Latest Job Section -->
+<section class="latest-jobs-section ">
+    <div class="container">
+        <div class="theme-title-one">
+            <h2>LATEST JOB OPENINGS</h2>
+        </div>
+        <div class="row">
+            <!-- Job Card 1 -->
+            <div class="col-lg-6 col-md-12 mb-4">
+                <div class="job-card">
+                    <div class="job-header">
+                        <h3>Assistant General Manager (AGM)</h3>
+                        <span class="job-openings">1 Opening(s)</span>
+                    </div>
+                    <div class="job-details">
+                        <div class="job-info">
+                            <p><strong>Work Experience:</strong> 10.0 Year(s) To 15.0 Year(s)</p>
+                            <p><strong>CTC Salary:</strong> 10.00 LPA TO 12.00 LPA</p>
+                        </div>
+                        <div class="job-description">
+                            <p><strong>Job Responsibilities:</strong> Develop and execute sales & business strategies for welding consumables in the Gujarat region. Handle key accounts and build long-term relationships with Public Sector Undertakings (PSUs). Expand business by identifying and developing new opportunities with PSU clients and industrial customers. Drive revenue growth through effective sales planning, channel management, and team leadership. Coordinate ...</p>
+                        </div>
+                        <div class="job-footer">
+                            <p class="job-date">Posted On: 29th Aug, 2025 | Job ID: 115310 | Hiring Now</p>
+                            <div class="apply-button-container mt-3">
+                                <a href="https://jobs.elitecorporatesolutions.com/jobseeker/currentjobs" class="btn btn-primary apply-btn" target="_blank">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Job Card 2 -->
+            <div class="col-lg-6 col-md-12 mb-4">
+                <div class="job-card">
+                    <div class="job-header">
+                        <h3>GST Accountant</h3>
+                        <span class="job-openings">1 Opening(s)</span>
+                    </div>
+                    <div class="job-details">
+                        <div class="job-info">
+                            <p><strong>Work Experience:</strong> 2.0 Year(s) To 5.0 Year(s)</p>
+                            <p><strong>CTC Salary:</strong> 3.00 LPA TO 5.00 LPA</p>
+                        </div>
+                        <div class="job-description">
+                            <p><strong>Job Responsibilities:</strong> Key Responsibilities: 1. GST Return Filing: Prepare and file monthly GST returns (GSTR-1 and GSTR-3B) accurately and within deadlines. Ensure timely filing of annual returns (GSTR-9) and reconciliation statements (GSTR-9C). File refund claims (RFD-01) as applicable. 2. Reconciliation Activities: Reconcile the purchase register with GSTR-2B to ensure accurate Input Tax Credit (ITC) claims. Reconcile ...</p>
+                        </div>
+                        <div class="job-footer">
+                            <p class="job-date">Posted On: 29th Aug, 2025 | Job ID: 114713 | Hiring Now</p>
+                            <div class="apply-button-container mt-3">
+                                <a href="https://jobs.elitecorporatesolutions.com/jobseeker/currentjobs" class="btn btn-primary apply-btn" target="_blank">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Job Card 3 -->
+            <div class="col-lg-6 col-md-12 mb-4">
+                <div class="job-card">
+                    <div class="job-header">
+                        <h3>Lead Structural Health Monitoring</h3>
+                        <span class="job-openings">2 Opening(s)</span>
+                    </div>
+                    <div class="job-details">
+                        <div class="job-info">
+                            <p><strong>Work Experience:</strong> 7.0 Year(s) To 15.0 Year(s)</p>
+                            <p><strong>CTC Salary:</strong> Not Disclosed by Recruiter</p>
+                        </div>
+                        <div class="job-description">
+                            <p><strong>Job Responsibilities:</strong> Position Name: Lead Structural Health Monitoring We are the Indian subsidiary of the global group, a leading international supplier of bridge components such as bearings, expansion joints, hydraulic dampers, seismic devices and monitoring systems. We're in India with its office in Kolkata is currently seeking motivated Professional to work as Marketing ...</p>
+                        </div>
+                        <div class="job-footer">
+                            <p class="job-date">Posted On: 29th Aug, 2025 | Job ID: 112969 | Hiring Now</p>
+                            <div class="apply-button-container mt-3">
+                                <a href="https://jobs.elitecorporatesolutions.com/jobseeker/currentjobs" class="btn btn-primary apply-btn" target="_blank">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Job Card 4 -->
+            <div class="col-lg-6 col-md-12 mb-4">
+                <div class="job-card">
+                    <div class="job-header">
+                        <h3>Dot Net Developer</h3>
+                        <span class="job-openings">1 Opening(s)</span>
+                    </div>
+                    <div class="job-details">
+                        <div class="job-info">
+                            <p><strong>Work Experience:</strong> 2.0 Year(s) To 6.0 Year(s)</p>
+                            <p><strong>CTC Salary:</strong> Not Disclosed by Recruiter</p>
+                        </div>
+                        <div class="job-description">
+                            <p><strong>Job Responsibilities:</strong> The Opportunity: We are looking for candidates who are smart, innovative and love the challenge of solving business problems that makes happen exceed the customer expectations, who can deliver beyond capability to ensure their success as part of the high performing and growing team. A wide variety of new experiences in ...</p>
+                        </div>
+                        <div class="job-footer">
+                            <p class="job-date">Posted On: 29th Aug, 2025 | Job ID: 112969 | Hiring Now</p>
+                            <div class="apply-button-container mt-3">
+                                <a href="https://jobs.elitecorporatesolutions.com/jobseeker/currentjobs" class="btn btn-primary apply-btn" target="_blank">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-4 mb-5">
+            <a href="https://jobs.elitecorporatesolutions.com/jobseeker/currentjobs" class="theme-button-one view-all-jobs">View All Jobs</a>
+        </div>
+    </div>
+</section>
 
 
 
@@ -246,11 +372,117 @@
 			</div>
 		</div>
 
+		<!-- Employer Services Section -->
+		<section class="employer-services-section">
+			<div class="container">
+				<div class="theme-title-one">
+					<h2>WHY PARTNER WITH US</h2>
+				</div>
+				
+				<div class="employer-services-intro text-center mb-5">
+					<h3>Transform Your Hiring Process with Elite Corporate Solutions</h3>
+					<p class="lead">We connect you with top talent across industries, saving you time and resources while ensuring the perfect match for your organization.</p>
+				</div>
+				
+				<div class="row">
+					<div class="col-lg-4 col-md-6 mb-4">
+						<div class="employer-service-card">
+							<div class="service-icon">
+								<i class="fa fa-line-chart"></i>
+							</div>
+							<h4>Reduce Hiring Costs</h4>
+							<p>Cut your recruitment expenses by up to 40% while improving candidate quality through our streamlined processes.</p>
+							<div class="service-stat">
+								<span class="stat-number">40%</span>
+								<span class="stat-label">Cost Reduction</span>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-lg-4 col-md-6 mb-4">
+						<div class="employer-service-card">
+							<div class="service-icon">
+								<i class="fa fa-clock-o"></i>
+							</div>
+							<h4>Faster Time-to-Hire</h4>
+							<p>Fill positions 60% faster than traditional methods with our extensive pre-screened talent database and industry connections.</p>
+							<div class="service-stat">
+								<span class="stat-number">60%</span>
+								<span class="stat-label">Faster Hiring</span>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-lg-4 col-md-6 mb-4">
+						<div class="employer-service-card">
+							<div class="service-icon">
+								<i class="fa fa-check-circle"></i>
+							</div>
+							<h4>Higher Retention Rate</h4>
+							<p>Our rigorous matching process results in 85% of placed candidates remaining with companies beyond the first year.</p>
+							<div class="service-stat">
+								<span class="stat-number">85%</span>
+								<span class="stat-label">Retention Rate</span>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-lg-4 col-md-6 mb-4">
+						<div class="employer-service-card">
+							<div class="service-icon">
+								<i class="fa fa-users"></i>
+							</div>
+							<h4>Industry Expertise</h4>
+							<p>Our specialized recruiters understand the unique requirements of your industry, ensuring candidates with the right technical and cultural fit.</p>
+							<div class="service-stat">
+								<span class="stat-number">15+</span>
+								<span class="stat-label">Industries Served</span>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-lg-4 col-md-6 mb-4">
+						<div class="employer-service-card">
+							<div class="service-icon">
+								<i class="fa fa-search"></i>
+							</div>
+							<h4>Extensive Talent Network</h4>
+							<p>Access our database of over 100,000 qualified professionals across IT, finance, engineering, healthcare, and more.</p>
+							<div class="service-stat">
+								<span class="stat-number">100K+</span>
+								<span class="stat-label">Candidates</span>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-lg-4 col-md-6 mb-4">
+						<div class="employer-service-card">
+							<div class="service-icon">
+								<i class="fa fa-handshake-o"></i>
+							</div>
+							<h4>Risk-Free Recruitment</h4>
+							<p>Our success-based fee structure means you only pay when we successfully place the right candidate in your organization.</p>
+							<div class="service-stat">
+								<span class="stat-number">100%</span>
+								<span class="stat-label">Satisfaction</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="employer-cta text-center mt-4">
+					<h3>Ready to Transform Your Hiring Process?</h3>
+					<p>Join hundreds of successful companies who trust Elite Corporate Solutions for their staffing needs</p>
+					<a href="contact.php" class="theme-button-one employer-cta-button">Schedule a Consultation</a>
+				</div>
+			</div>
+		</section>
 
-
-			
+	
 		<?php include 'include/counter.php'; ?>
 			
+
+
 
 
 
