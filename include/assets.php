@@ -1,5 +1,5 @@
 <!-- Favicon -->
-<link rel="icon" type="image/png" sizes="56x56" href="images/fav-icon/icon.png">
+<link rel="icon" type="image/png" sizes="56x56" href="images/logo/logo.png">
 		<!-- Main style sheet -->
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<!-- responsive style sheet -->
