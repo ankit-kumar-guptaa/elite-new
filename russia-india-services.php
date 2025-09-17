@@ -3,7 +3,7 @@
 session_start();
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <!-- Basic Meta Tags -->
@@ -12,22 +12,22 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- SEO Meta Tags -->
-    <title>Russia-India Business Services - Elite Corporate Solutions</title>
-    <meta name="description" content="Elite Corporate Solutions offers specialized Russia-India business services, connecting talent and opportunities between both countries. Explore our recruitment, visa assistance, and cultural training services.">
-    <meta name="keywords" content="Russia-India business, international recruitment, healthcare recruitment Russia, IT professionals India, engineering talent, visa assistance, cultural training, business consulting">
+    <title>[translate:Бизнес-услуги Россия-Индия - Elite Corporate Solutions]</title>
+    <meta name="description" content="[translate:Elite Corporate Solutions предлагает специализированные бизнес-услуги Россия-Индия, связывая таланты и возможности между обеими странами. Изучите наши услуги по рекрутингу, визовой поддержке и культурному обучению.]">
+    <meta name="keywords" content="[translate:бизнес Россия-Индия, международный рекрутинг, рекрутинг медперсонала Россия, ИТ-специалисты Индия, инженерные таланты, визовая поддержка, культурное обучение, бизнес-консалтинг]">
     <meta name="author" content="Elite Corporate Solutions">
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Russia-India Business Services - Elite Corporate Solutions">
-    <meta property="og:description" content="Bridging talent between India & Russia. Elite Corporate Solutions offers specialized recruitment, visa assistance, and cultural training services.">
+    <meta property="og:title" content="[translate:Бизнес-услуги Россия-Индия - Elite Corporate Solutions]">
+    <meta property="og:description" content="[translate:Соединяем таланты между Индией и Россией. Elite Corporate Solutions предлагает специализированный рекрутинг, визовую поддержку и услуги культурного обучения.]">
     <meta property="og:image" content="https://elitecorporatesolutions.com/images/russia-india-og-image.jpg">
     <meta property="og:url" content="https://elitecorporatesolutions.com/russia-india-services">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Russia-India Business Services - Elite Corporate Solutions">
-    <meta name="twitter:description" content="Bridging talent between India & Russia. Elite Corporate Solutions offers specialized recruitment, visa assistance, and cultural training services.">
+    <meta name="twitter:title" content="[translate:Бизнес-услуги Россия-Индия - Elite Corporate Solutions]">
+    <meta name="twitter:description" content="[translate:Соединяем таланты между Индией и Россией. Elite Corporate Solutions предлагает специализированный рекрутинг, визовую поддержку и услуги культурного обучения.]">
     <meta name="twitter:image" content="https://elitecorporatesolutions.com/images/russia-india-twitter-card.jpg">
 
     <!-- Canonical URL -->
@@ -655,21 +655,21 @@ session_start();
                         <!-- Left Content -->
                         <div class="ecs-hero-text">
                             <h1 class="ecs-hero-title">
-                                Connect <span class="highlight">Elite Talent</span> Between India & Russia
+                                [translate:Объединяем] <span class="highlight">[translate:элитные таланты]</span> [translate:между Индией и Россией]
                             </h1>
                             
                             <p class="ecs-hero-subtitle">
-                                Premier recruitment platform bridging top Indian professionals with leading Russian companies. Fast, reliable, and professionally managed placements across all industries.
+                                [translate:Премиальная платформа для рекрутинга, соединяющая лучших индийских специалистов с ведущими российскими компаниями. Быстрое, надежное и профессионально управляемое трудоустройство во всех отраслях.]
                             </p>
 
                             <div class="ecs-flag-container">
                                 <div class="ecs-flag-item">
                                     <img src="https://flagcdn.com/w40/in.png" alt="India Flag" class="ecs-flag-icon">
-                                    <span class="ecs-flag-text">India</span>
+                                    <span class="ecs-flag-text">[translate:Индия]</span>
                                 </div>
                                 <div class="ecs-flag-item">
                                     <img src="https://flagcdn.com/w40/ru.png" alt="Russia Flag" class="ecs-flag-icon">
-                                    <span class="ecs-flag-text">Russia</span>
+                                    <span class="ecs-flag-text">[translate:Россия]</span>
                                 </div>
                             </div>
 
@@ -678,21 +678,21 @@ session_start();
                                     <div class="ecs-feature-icon">
                                         <i class="fa fa-check"></i>
                                     </div>
-                                    <div class="ecs-feature-text">Visa Support</div>
+                                    <div class="ecs-feature-text">[translate:Визовая поддержка]</div>
                                 </div>
                                 
                                 <div class="ecs-feature-item">
                                     <div class="ecs-feature-icon">
                                         <i class="fa fa-check"></i>
                                     </div>
-                                    <div class="ecs-feature-text">Cultural Training</div>
+                                    <div class="ecs-feature-text">[translate:Культурное обучение]</div>
                                 </div>
                                 
                                 <div class="ecs-feature-item">
                                     <div class="ecs-feature-icon">
                                         <i class="fa fa-check"></i>
                                     </div>
-                                    <div class="ecs-feature-text">24/7 Support</div>
+                                    <div class="ecs-feature-text">[translate:Поддержка 24/7]</div>
                                 </div>
                             </div>
                         </div>
@@ -704,123 +704,123 @@ session_start();
                                 <div class="ecs-tab-nav">
                                     <button class="ecs-tab-button active" data-tab="employer">
                                         <i class="fa fa-building" style="margin-right: 8px;"></i>
-                                        For Employers
+                                        [translate:Для работодателей]
                                     </button>
                                     <button class="ecs-tab-button" data-tab="jobseeker">
                                         <i class="fa fa-user" style="margin-right: 8px;"></i>
-                                        For Job Seekers
+                                        [translate:Для соискателей]
                                     </button>
                                 </div>
 
                                 <!-- Employer Form Tab -->
                                 <div class="ecs-tab-content active" id="employer-tab">
-                                    <h3 class="ecs-form-title">Hire Top Talent</h3>
-                                    <p class="ecs-form-subtitle">Post your requirements and get matched with qualified candidates</p>
+                                    <h3 class="ecs-form-title">[translate:Найдите лучшие таланты]</h3>
+                                    <p class="ecs-form-subtitle">[translate:Разместите свои требования и получите подходящих кандидатов]</p>
                                     
                                     <form action="backend_form.php" method="post">
                                         <input type="hidden" name="form_type" value="employer">
                                         
                                         <div class="ecs-form-row">
-                                            <input type="text" class="ecs-form-control" name="company" placeholder="Company Name *" required>
-                                            <input type="text" class="ecs-form-control" name="contact" placeholder="Contact Person *" required>
+                                            <input type="text" class="ecs-form-control" name="company" placeholder="[translate:Название компании *]" required>
+                                            <input type="text" class="ecs-form-control" name="contact" placeholder="[translate:Контактное лицо *]" required>
                                         </div>
                                         
                                         <div class="ecs-form-row">
-                                            <input type="tel" class="ecs-form-control" name="phone" placeholder="Phone Number *" required>
-                                            <input type="email" class="ecs-form-control" name="email" placeholder="Email Address *" required>
+                                            <input type="tel" class="ecs-form-control" name="phone" placeholder="[translate:Номер телефона *]" required>
+                                            <input type="email" class="ecs-form-control" name="email" placeholder="[translate:Email адрес *]" required>
                                         </div>
                                         
                                         <div class="ecs-form-group">
                                             <select class="ecs-form-control ecs-form-select" name="industry" required>
-                                                <option value="">Select Industry *</option>
-                                                <option>Healthcare & Medical</option>
-                                                <option>Information Technology</option>
-                                                <option>Engineering & Construction</option>
-                                                <option>Manufacturing</option>
-                                                <option>Energy & Oil Gas</option>
-                                                <option>Finance & Banking</option>
-                                                <option>Other</option>
+                                                <option value="">[translate:Выберите отрасль *]</option>
+                                                <option>[translate:Здравоохранение и медицина]</option>
+                                                <option>[translate:Информационные технологии]</option>
+                                                <option>[translate:Инженерия и строительство]</option>
+                                                <option>[translate:Производство]</option>
+                                                <option>[translate:Энергетика и нефтегаз]</option>
+                                                <option>[translate:Финансы и банковское дело]</option>
+                                                <option>[translate:Другое]</option>
                                             </select>
                                         </div>
                                         
                                         <div class="ecs-form-group">
                                             <select class="ecs-form-control ecs-form-select" name="positions" required>
-                                                <option value="">Number of Positions *</option>
-                                                <option>1-5 Professionals</option>
-                                                <option>6-15 Professionals</option>
-                                                <option>16-30 Professionals</option>
-                                                <option>31+ Professionals</option>
+                                                <option value="">[translate:Количество позиций *]</option>
+                                                <option>[translate:1-5 специалистов]</option>
+                                                <option>[translate:6-15 специалистов]</option>
+                                                <option>[translate:16-30 специалистов]</option>
+                                                <option>[translate:31+ специалистов]</option>
                                             </select>
                                         </div>
                                         
                                         <div class="ecs-form-group">
-                                            <textarea class="ecs-form-control ecs-form-textarea" name="requirements" placeholder="Job requirements, skills, and qualifications needed *" required></textarea>
+                                            <textarea class="ecs-form-control ecs-form-textarea" name="requirements" placeholder="[translate:Требования к работе, навыки и квалификация *]" required></textarea>
                                         </div>
                                         
                                         <button type="submit" class="ecs-form-submit">
                                             <i class="fa fa-paper-plane" style="margin-right: 8px;"></i>
-                                            Get Candidates
+                                            [translate:Получить кандидатов]
                                         </button>
                                         
                                         <p class="ecs-form-note">
-                                            We'll contact you within 24 hours with suitable candidate profiles
+                                            [translate:Мы свяжемся с вами в течение 24 часов с подходящими профилями кандидатов]
                                         </p>
                                     </form>
                                 </div>
 
                                 <!-- Job Seeker Form Tab -->
                                 <div class="ecs-tab-content" id="jobseeker-tab">
-                                    <h3 class="ecs-form-title">Find Your Dream Job</h3>
-                                    <p class="ecs-form-subtitle">Apply now for exciting opportunities in Russia</p>
+                                    <h3 class="ecs-form-title">[translate:Найдите работу мечты]</h3>
+                                    <p class="ecs-form-subtitle">[translate:Подайте заявку на интересные возможности в России]</p>
                                     
                                     <form action="backend_form.php" method="post" enctype="multipart/form-data">
                                         <input type="hidden" name="form_type" value="jobseeker">
                                         
                                         <div class="ecs-form-row">
-                                            <input type="text" class="ecs-form-control" name="name" placeholder="Full Name *" required>
-                                            <input type="email" class="ecs-form-control" name="email" placeholder="Email Address *" required>
+                                            <input type="text" class="ecs-form-control" name="name" placeholder="[translate:Полное имя *]" required>
+                                            <input type="email" class="ecs-form-control" name="email" placeholder="[translate:Email адрес *]" required>
                                         </div>
                                         
                                         <div class="ecs-form-row">
-                                            <input type="tel" class="ecs-form-control" name="phone" placeholder="Phone Number *" required>
-                                            <input type="text" class="ecs-form-control" name="experience" placeholder="Experience (Years)">
+                                            <input type="tel" class="ecs-form-control" name="phone" placeholder="[translate:Номер телефона *]" required>
+                                            <input type="text" class="ecs-form-control" name="experience" placeholder="[translate:Опыт работы (годы)]">
                                         </div>
                                         
                                         <div class="ecs-form-group">
                                             <select class="ecs-form-control ecs-form-select" name="category" required>
-                                                <option value="">Job Category *</option>
-                                                <option>Doctor/Medical Professional</option>
-                                                <option>Nurse/Healthcare Assistant</option>
-                                                <option>Software Engineer/Developer</option>
-                                                <option>Data Scientist/Analyst</option>
-                                                <option>Mechanical Engineer</option>
-                                                <option>Civil Engineer</option>
-                                                <option>Business/Management</option>
-                                                <option>Finance Professional</option>
-                                                <option>Other</option>
+                                                <option value="">[translate:Категория работы *]</option>
+                                                <option>[translate:Врач/медицинский специалист]</option>
+                                                <option>[translate:Медсестра/помощник здравоохранения]</option>
+                                                <option>[translate:Инженер-программист/разработчик]</option>
+                                                <option>[translate:Специалист по данным/аналитик]</option>
+                                                <option>[translate:Инженер-механик]</option>
+                                                <option>[translate:Инженер-строитель]</option>
+                                                <option>[translate:Бизнес/менеджмент]</option>
+                                                <option>[translate:Финансовый специалист]</option>
+                                                <option>[translate:Другое]</option>
                                             </select>
                                         </div>
                                         
                                         <div class="ecs-form-group">
-                                            <textarea class="ecs-form-control ecs-form-textarea" name="skills" placeholder="Key skills, qualifications, and achievements"></textarea>
+                                            <textarea class="ecs-form-control ecs-form-textarea" name="skills" placeholder="[translate:Ключевые навыки, квалификация и достижения]"></textarea>
                                         </div>
                                         
                                         <div class="ecs-form-group">
                                             <div class="ecs-form-file" onclick="document.getElementById('resume').click()">
                                                 <i class="fa fa-upload" style="font-size: 1.5rem; color: #3b82f6; margin-bottom: 8px;"></i>
-                                                <div>Click to upload your CV/Resume</div>
-                                                <div class="ecs-file-text">PDF, DOC, DOCX (Max 5MB)</div>
+                                                <div>[translate:Нажмите, чтобы загрузить ваше CV/Резюме]</div>
+                                                <div class="ecs-file-text">[translate:PDF, DOC, DOCX (Максимум 5МБ)]</div>
                                                 <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx">
                                             </div>
                                         </div>
                                         
                                         <button type="submit" class="ecs-form-submit">
                                             <i class="fa fa-rocket" style="margin-right: 8px;"></i>
-                                            Apply Now
+                                            [translate:Подать заявку сейчас]
                                         </button>
                                         
                                         <p class="ecs-form-note">
-                                            Only shortlisted candidates will be contacted by our recruitment team
+                                            [translate:Только отобранные кандидаты будут связываться нашей командой по подбору персонала]
                                         </p>
                                     </form>
                                 </div>
@@ -831,48 +831,14 @@ session_start();
             </div>
         </section>
 
-        <!-- Statistics Section -->
-        <!-- <section class="ecs-stats-section">
-            <div class="container">
-                <div class="ecs-stats-grid">
-                    <div class="ecs-stat-card">
-                        <div class="ecs-stat-icon">
-                            <i class="fa fa-users"></i>
-                        </div>
-                        <div class="ecs-stat-number" data-count="5200">0</div>
-                        <div class="ecs-stat-label">Professionals Placed</div>
-                    </div>
-                    <div class="ecs-stat-card">
-                        <div class="ecs-stat-icon">
-                            <i class="fa fa-handshake"></i>
-                        </div>
-                        <div class="ecs-stat-number" data-count="85">0</div>
-                        <div class="ecs-stat-label">Russian Partners</div>
-                    </div>
-                    <div class="ecs-stat-card">
-                        <div class="ecs-stat-icon">
-                            <i class="fa fa-chart-line"></i>
-                        </div>
-                        <div class="ecs-stat-number" data-count="97">0</div>
-                        <div class="ecs-stat-label">Success Rate %</div>
-                    </div>
-                    <div class="ecs-stat-card">
-                        <div class="ecs-stat-icon">
-                            <i class="fa fa-calendar-check"></i>
-                        </div>
-                        <div class="ecs-stat-number" data-count="16">0</div>
-                        <div class="ecs-stat-label">Years Excellence</div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
+      
 
         <!-- Services Grid Section -->
         <section id="services" class="services-grid">
             <div class="container">
                 <div class="theme-title-one">
-                    <h2>Our Russia-India Services</h2>
-                    <p>Comprehensive solutions tailored for cross-border business success</p>
+                    <h2>[translate:Наши услуги Россия-Индия]</h2>
+                    <p>[translate:Комплексные решения, адаптированные для успешного кросс-граничного бизнеса]</p>
                 </div>
                 <div class="row mt-5">
                     <!-- Service 1 -->
@@ -881,10 +847,10 @@ session_start();
                             <div class="service-icon">
                                 <i class="fa fa-heartbeat"></i>
                             </div>
-                            <h3 class="service-title">Healthcare Recruitment</h3>
+                            <h3 class="service-title">[translate:Рекрутинг в здравоохранении]</h3>
                             <div class="service-description">
-                                <p>Connecting skilled Indian healthcare professionals with Russian medical institutions. We handle licensing, credentialing, and cultural integration.</p>
-                                <a href="#contact" class="service-link">Learn More</a>
+                                <p>[translate:Соединяем квалифицированных индийских медицинских специалистов с российскими медицинскими учреждениями. Мы занимаемся лицензированием, аккредитацией и культурной интеграцией.]</p>
+                                <a href="#contact" class="service-link">[translate:Узнать больше]</a>
                             </div>
                         </div>
                     </div>
@@ -894,10 +860,10 @@ session_start();
                             <div class="service-icon">
                                 <i class="fa fa-laptop-code"></i>
                             </div>
-                            <h3 class="service-title">IT Professionals</h3>
+                            <h3 class="service-title">[translate:ИТ-специалисты]</h3>
                             <div class="service-description">
-                                <p>Sourcing top Indian IT talent for Russian tech companies. Expertise in software development, cybersecurity, data science, and emerging technologies.</p>
-                                <a href="#contact" class="service-link">Learn More</a>
+                                <p>[translate:Поиск лучших индийских ИТ-талантов для российских технологических компаний. Экспертиза в разработке программного обеспечения, кибербезопасности, науке о данных и новых технологиях.]</p>
+                                <a href="#contact" class="service-link">[translate:Узнать больше]</a>
                             </div>
                         </div>
                     </div>
@@ -907,10 +873,10 @@ session_start();
                             <div class="service-icon">
                                 <i class="fa fa-cogs"></i>
                             </div>
-                            <h3 class="service-title">Engineering Talent</h3>
+                            <h3 class="service-title">[translate:Инженерные таланты]</h3>
                             <div class="service-description">
-                                <p>Specialized recruitment of Indian engineers for Russian infrastructure, manufacturing, and energy projects. Technical expertise with cross-cultural competence.</p>
-                                <a href="#contact" class="service-link">Learn More</a>
+                                <p>[translate:Специализированный рекрутинг индийских инженеров для российских проектов в области инфраструктуры, производства и энергетики. Техническая экспертиза с кросс-культурной компетентностью.]</p>
+                                <a href="#contact" class="service-link">[translate:Узнать больше]</a>
                             </div>
                         </div>
                     </div>
@@ -920,10 +886,10 @@ session_start();
                             <div class="service-icon">
                                 <i class="fa fa-briefcase"></i>
                             </div>
-                            <h3 class="service-title">Business Consulting</h3>
+                            <h3 class="service-title">[translate:Бизнес-консалтинг]</h3>
                             <div class="service-description">
-                                <p>Strategic guidance for companies expanding between India and Russia. Market entry strategies, regulatory compliance, and business development support.</p>
-                                <a href="#contact" class="service-link">Learn More</a>
+                                <p>[translate:Стратегическое руководство для компаний, расширяющихся между Индией и Россией. Стратегии выхода на рынок, соблюдение нормативных требований и поддержка развития бизнеса.]</p>
+                                <a href="#contact" class="service-link">[translate:Узнать больше]</a>
                             </div>
                         </div>
                     </div>
@@ -933,10 +899,10 @@ session_start();
                             <div class="service-icon">
                                 <i class="fa fa-passport"></i>
                             </div>
-                            <h3 class="service-title">Visa Assistance</h3>
+                            <h3 class="service-title">[translate:Визовая поддержка]</h3>
                             <div class="service-description">
-                                <p>End-to-end visa and work permit processing for professionals moving between India and Russia. Expert guidance through complex immigration requirements.</p>
-                                <a href="#contact" class="service-link">Learn More</a>
+                                <p>[translate:Комплексная обработка виз и рабочих разрешений для специалистов, переезжающих между Индией и Россией. Экспертное руководство через сложные иммиграционные требования.]</p>
+                                <a href="#contact" class="service-link">[translate:Узнать больше]</a>
                             </div>
                         </div>
                     </div>
@@ -946,10 +912,10 @@ session_start();
                             <div class="service-icon">
                                 <i class="fa fa-globe"></i>
                             </div>
-                            <h3 class="service-title">Cultural Training</h3>
+                            <h3 class="service-title">[translate:Культурное обучение]</h3>
                             <div class="service-description">
-                                <p>Comprehensive cultural integration programs for professionals relocating between India and Russia. Language training, cultural etiquette, and practical adaptation support.</p>
-                                <a href="#contact" class="service-link">Learn More</a>
+                                <p>[translate:Комплексные программы культурной интеграции для специалистов, переезжающих между Индией и Россией. Языковое обучение, культурный этикет и практическая поддержка адаптации.]</p>
+                                <a href="#contact" class="service-link">[translate:Узнать больше]</a>
                             </div>
                         </div>
                     </div>
@@ -961,8 +927,8 @@ session_start();
         <section class="why-choose-section">
             <div class="container">
                 <div class="theme-title-one">
-                    <h2>Why Choose Us</h2>
-                    <p>Your trusted partner for Russia-India business success</p>
+                    <h2>[translate:Почему выбирают нас]</h2>
+                    <p>[translate:Ваш надежный партнер для успешного бизнеса Россия-Индия]</p>
                 </div>
                 <div class="row mt-5 align-items-center">
                     <div class="col-lg-6">
@@ -978,8 +944,8 @@ session_start();
                                     <i class="fa fa-check"></i>
                                 </div>
                                 <div class="benefit-content">
-                                    <h4>Expert Market Knowledge</h4>
-                                    <p>Our team possesses deep understanding of both Russian and Indian business environments, regulations, and cultural nuances that impact successful cross-border operations.</p>
+                                    <h4>[translate:Экспертное знание рынка]</h4>
+                                    <p>[translate:Наша команда обладает глубоким пониманием российской и индийской бизнес-сред, нормативной базы и культурных нюансов, которые влияют на успешные трансграничные операции.]</p>
                                 </div>
                             </div>
                             <!-- Benefit 2 -->
@@ -988,8 +954,8 @@ session_start();
                                     <i class="fa fa-check"></i>
                                 </div>
                                 <div class="benefit-content">
-                                    <h4>Seamless Process</h4>
-                                    <p>We handle every aspect of talent mobility between Russia and India, from initial recruitment to relocation, documentation, and cultural integration.</p>
+                                    <h4>[translate:Бесшовный процесс]</h4>
+                                    <p>[translate:Мы обрабатываем каждый аспект мобильности талантов между Россией и Индией, от первоначального рекрутинга до переезда, документооборота и культурной интеграции.]</p>
                                 </div>
                             </div>
                             <!-- Benefit 3 -->
@@ -998,8 +964,8 @@ session_start();
                                     <i class="fa fa-check"></i>
                                 </div>
                                 <div class="benefit-content">
-                                    <h4>Cultural Bridge</h4>
-                                    <p>Our bicultural team facilitates smooth communication and understanding between Russian employers and Indian talent, minimizing misunderstandings and maximizing productivity.</p>
+                                    <h4>[translate:Культурный мост]</h4>
+                                    <p>[translate:Наша бикультурная команда способствует плавной коммуникации и пониманию между российскими работодателями и индийскими талантами, минимизируя недопонимания и максимизируя продуктивность.]</p>
                                 </div>
                             </div>
                             <!-- Benefit 4 -->
@@ -1008,8 +974,8 @@ session_start();
                                     <i class="fa fa-check"></i>
                                 </div>
                                 <div class="benefit-content">
-                                    <h4>Legal Support</h4>
-                                    <p>We ensure full compliance with both Russian and Indian regulations regarding employment, immigration, taxation, and professional licensing.</p>
+                                    <h4>[translate:Юридическая поддержка]</h4>
+                                    <p>[translate:Мы обеспечиваем полное соблюдение российского и индийского законодательства в области трудоустройства, иммиграции, налогообложения и профессионального лицензирования.]</p>
                                 </div>
                             </div>
                             <!-- Benefit 5 -->
@@ -1018,8 +984,8 @@ session_start();
                                     <i class="fa fa-check"></i>
                                 </div>
                                 <div class="benefit-content">
-                                    <h4>24/7 Communication</h4>
-                                    <p>Our dedicated support team is available around the clock to address any concerns from both employers and candidates, spanning multiple time zones.</p>
+                                    <h4>[translate:Круглосуточная связь]</h4>
+                                    <p>[translate:Наша специализированная служба поддержки доступна круглосуточно для решения любых вопросов как от работодателей, так и от кандидатов, охватывая множественные часовые пояса.]</p>
                                 </div>
                             </div>
                         </div>
@@ -1032,15 +998,15 @@ session_start();
         <section class="testimonials-section">
             <div class="container">
                 <div class="theme-title-one">
-                    <h2>Client Testimonials</h2>
-                    <p>What our Russian partners say about our services</p>
+                    <h2>[translate:Отзывы клиентов]</h2>
+                    <p>[translate:Что наши российские партнеры говорят о наших услугах]</p>
                 </div>
                 <div class="row mt-5">
                     <!-- Testimonial 1 -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="testimonial-card">
                             <div class="testimonial-content">
-                                <p>"Elite Corporate Solutions has transformed our IT department by providing exceptional Indian talent. Their understanding of both cultures made the integration seamless."</p>
+                                <p>"[translate:Elite Corporate Solutions преобразила наш ИТ-отдел, предоставив исключительные индийские таланты. Их понимание обеих культур сделало интеграцию бесшовной.]"</p>
                             </div>
                             <div class="testimonial-rating">
                                 <i class="fa fa-star"></i>
@@ -1054,8 +1020,8 @@ session_start();
                                     <img src="images/team/1.jpg" alt="Testimonial Author">
                                 </div>
                                 <div class="author-info">
-                                    <h5>Mikhail Petrov</h5>
-                                    <p>CTO, TechRus Solutions</p>
+                                    <h5>[translate:Михаил Петров]</h5>
+                                    <p>[translate:ИТ-директор, TechRus Solutions]</p>
                                 </div>
                             </div>
                         </div>
@@ -1064,7 +1030,7 @@ session_start();
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="testimonial-card">
                             <div class="testimonial-content">
-                                <p>"The healthcare professionals recruited by Elite Corporate Solutions have significantly improved our hospital's capabilities. Their visa assistance service was particularly valuable."</p>
+                                <p>"[translate:Медицинские специалисты, привлеченные Elite Corporate Solutions, значительно улучшили возможности нашей больницы. Их услуги визовой поддержки были особенно ценными.]"</p>
                             </div>
                             <div class="testimonial-rating">
                                 <i class="fa fa-star"></i>
@@ -1078,8 +1044,8 @@ session_start();
                                     <img src="images/team/2.jpg" alt="Testimonial Author">
                                 </div>
                                 <div class="author-info">
-                                    <h5>Dr. Elena Sorokina</h5>
-                                    <p>Medical Director, Moscow Central Hospital</p>
+                                    <h5>[translate:Доктор Елена Сорокина]</h5>
+                                    <p>[translate:Медицинский директор, Центральная больница Москвы]</p>
                                 </div>
                             </div>
                         </div>
@@ -1088,7 +1054,7 @@ session_start();
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="testimonial-card">
                             <div class="testimonial-content">
-                                <p>"The engineering talent provided by Elite Corporate Solutions has been instrumental in our energy project's success. Their cultural training program ensured smooth team integration."</p>
+                                <p>"[translate:Инженерные таланты, предоставленные Elite Corporate Solutions, сыграли ключевую роль в успехе нашего энергетического проекта. Их программа культурного обучения обеспечила плавную интеграцию команды.]"</p>
                             </div>
                             <div class="testimonial-rating">
                                 <i class="fa fa-star"></i>
@@ -1102,8 +1068,8 @@ session_start();
                                     <img src="images/team/3.jpg" alt="Testimonial Author">
                                 </div>
                                 <div class="author-info">
-                                    <h5>Alexei Ivanov</h5>
-                                    <p>Project Director, RusEnergy Group</p>
+                                    <h5>[translate:Алексей Иванов]</h5>
+                                    <p>[translate:Директор проекта, RusEnergy Group]</p>
                                 </div>
                             </div>
                         </div>
@@ -1116,8 +1082,8 @@ session_start();
         <section id="contact" class="cta-section">
             <div class="container">
                 <div class="theme-title-one">
-                    <h2>Contact Us</h2>
-                    <p>Get in touch to discuss your Russia-India business needs</p>
+                    <h2>[translate:Свяжитесь с нами]</h2>
+                    <p>[translate:Свяжитесь с нами, чтобы обсудить ваши бизнес-потребности Россия-Индия]</p>
                 </div>
                 <div class="row mt-5">
                     <div class="col-lg-7">
@@ -1138,61 +1104,61 @@ session_start();
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+                                            <input type="text" class="form-control" name="name" placeholder="[translate:Ваше имя]" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="phone" placeholder="Your Phone" required>
+                                            <input type="text" class="form-control" name="phone" placeholder="[translate:Ваш телефон]" required>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                                            <input type="email" class="form-control" name="email" placeholder="[translate:Ваш Email]" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="web" placeholder="Your Website (Optional)">
+                                            <input type="text" class="form-control" name="web" placeholder="[translate:Ваш веб-сайт (по желанию)]">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <select class="form-control" name="service" required>
-                                        <option value="" selected disabled>Select Service Interest</option>
-                                        <option value="Healthcare Recruitment">Healthcare Recruitment</option>
-                                        <option value="IT Professionals">IT Professionals</option>
-                                        <option value="Engineering Talent">Engineering Talent</option>
-                                        <option value="Business Consulting">Business Consulting</option>
-                                        <option value="Visa Assistance">Visa Assistance</option>
-                                        <option value="Cultural Training">Cultural Training</option>
+                                        <option value="" selected disabled>[translate:Выберите интересующую услугу]</option>
+                                        <option value="Healthcare Recruitment">[translate:Рекрутинг в здравоохранении]</option>
+                                        <option value="IT Professionals">[translate:ИТ-специалисты]</option>
+                                        <option value="Engineering Talent">[translate:Инженерные таланты]</option>
+                                        <option value="Business Consulting">[translate:Бизнес-консалтинг]</option>
+                                        <option value="Visa Assistance">[translate:Визовая поддержка]</option>
+                                        <option value="Cultural Training">[translate:Культурное обучение]</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <textarea class="form-control" name="message" rows="5" placeholder="Your Message" required></textarea>
+                                    <textarea class="form-control" name="message" rows="5" placeholder="[translate:Ваше сообщение]" required></textarea>
                                 </div>
                                 <div class="form-group">
                                     <div class="captcha-container">
                                         <img src="captcha.php" alt="CAPTCHA Image" class="captcha-image">
-                                        <input type="text" class="form-control" name="captcha" placeholder="Enter CAPTCHA code" required>
+                                        <input type="text" class="form-control" name="captcha" placeholder="[translate:Введите код CAPTCHA]" required>
                                     </div>
                                 </div>
-                                <button type="submit" name="submit" class="submit-btn">Send Message</button>
+                                <button type="submit" name="submit" class="submit-btn">[translate:Отправить сообщение]</button>
                             </form>
                         </div>
                     </div>
                     <div class="col-lg-5">
                         <div class="contact-info">
-                            <h3>Get In Touch</h3>
+                            <h3>[translate:Связаться с нами]</h3>
                             <div class="contact-item">
                                 <div class="contact-icon">
                                     <i class="fa fa-phone"></i>
                                 </div>
                                 <div class="contact-text">
                                     <p>+91 9870364340</p>
-                                    <!-- <p>+7 (495) 123-4567</p> -->
+                                    <p>+7 (495) 123-4567</p>
                                 </div>
                             </div>
                             <div class="contact-item">
@@ -1209,8 +1175,8 @@ session_start();
                                     <i class="fa fa-map-marker-alt"></i>
                                 </div>
                                 <div class="contact-text">
-                                    <p>A-83, Okhla Phase II, New Delhi – 110020, India</p>
-                                    <p>Moscow Office: Prospekt Mira 101, Moscow, Russia</p>
+                                    <p>A-83, Okhla Phase II, New Delhi – 110020, [translate:Индия]</p>
+                                    <p>[translate:Московский офис]: [translate:Проспект Мира 101, Москва, Россия]</p>
                                 </div>
                             </div>
                             <div class="social-links">
@@ -1288,12 +1254,12 @@ session_start();
                 const fileInput = document.getElementById('resume');
                 if (fileInput) {
                     fileInput.addEventListener('change', function() {
-                        const fileName = this.files?.name;
+                        const fileName = this.files[0]?.name;
                         const fileContainer = this.parentElement;
                         const fileText = fileContainer.querySelector('.ecs-file-text');
                         
                         if (fileName) {
-                            fileText.textContent = `Selected: ${fileName}`;
+                            fileText.textContent = `[translate:Выбран]: ${fileName}`;
                             fileContainer.style.borderColor = '#3b82f6';
                             fileContainer.style.background = '#eff6ff';
                         }
@@ -1321,7 +1287,7 @@ session_start();
                         const submitBtn = form.querySelector('button[type="submit"]');
                         if (submitBtn) {
                             const originalText = submitBtn.innerHTML;
-                            submitBtn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Sending...';
+                            submitBtn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> [translate:Отправка...]';
                             submitBtn.disabled = true;
                             
                             // Re-enable after 10 seconds in case of issues
