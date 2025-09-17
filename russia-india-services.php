@@ -832,7 +832,7 @@ session_start();
         </section>
 
         <!-- Statistics Section -->
-        <section class="ecs-stats-section">
+        <!-- <section class="ecs-stats-section">
             <div class="container">
                 <div class="ecs-stats-grid">
                     <div class="ecs-stat-card">
@@ -865,7 +865,7 @@ session_start();
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <!-- Services Grid Section -->
         <section id="services" class="services-grid">
@@ -1192,7 +1192,7 @@ session_start();
                                 </div>
                                 <div class="contact-text">
                                     <p>+91 9870364340</p>
-                                    <p>+7 (495) 123-4567</p>
+                                    <!-- <p>+7 (495) 123-4567</p> -->
                                 </div>
                             </div>
                             <div class="contact-item">
