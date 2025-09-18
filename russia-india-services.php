@@ -712,8 +712,9 @@ session_start();
                                     <h3 class="ecs-form-title">Нанять Лучших Талантов</h3>
                                     <p class="ecs-form-subtitle">Разместите свои требования и получите квалифицированных кандидатов</p>
                                     
-                                    <form action="backend_form.php" method="post">
+                                    <form action="backend_russia_form.php" method="post">
                                         <input type="hidden" name="form_type" value="employer">
+                                        <input type="hidden" id="g-recaptcha-response-employer" name="g-recaptcha-response">
                                         
                                         <div class="ecs-form-row">
                                             <input type="text" class="ecs-form-control" name="company" placeholder="Название Компании *" required>
@@ -768,8 +769,9 @@ session_start();
                                     <h3 class="ecs-form-title">Найдите Работу Мечты</h3>
                                     <p class="ecs-form-subtitle">Подайте заявку на интересные возможности в России</p>
                                     
-                                    <form action="backend_form.php" method="post" enctype="multipart/form-data">
+                                    <form action="backend_russia_form.php" method="post" enctype="multipart/form-data">
                                         <input type="hidden" name="form_type" value="jobseeker">
+                                        <input type="hidden" id="g-recaptcha-response-jobseeker" name="g-recaptcha-response">
                                         
                                         <div class="ecs-form-row">
                                             <input type="text" class="ecs-form-control" name="name" placeholder="Полное Имя *" required>
@@ -1250,6 +1252,28 @@ session_start();
                             }, 10000);
                         }
                     });
+                });
+            });
+        </script>
+
+        <!-- Google reCAPTCHA v3 -->
+        <script src="https://www.google.com/recaptcha/api.js?render=6Ledy8UrAAAAAGLUn3toR4y2awVaNUkt0iyOlVLU"></script>
+        <script>
+            // Execute reCAPTCHA on employer form submission
+            document.querySelector('#employer-tab form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                grecaptcha.execute('6Ledy8UrAAAAAGLUn3toR4y2awVaNUkt0iyOlVLU', {action: 'employer_form'}).then(function(token) {
+                    document.getElementById('g-recaptcha-response-employer').value = token;
+                    e.target.submit();
+                });
+            });
+
+            // Execute reCAPTCHA on jobseeker form submission
+            document.querySelector('#jobseeker-tab form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                grecaptcha.execute('6Ledy8UrAAAAAGLUn3toR4y2awVaNUkt0iyOlVLU', {action: 'jobseeker_form'}).then(function(token) {
+                    document.getElementById('g-recaptcha-response-jobseeker').value = token;
+                    e.target.submit();
                 });
             });
         </script>
