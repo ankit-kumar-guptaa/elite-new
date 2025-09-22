@@ -1301,7 +1301,7 @@ session_start();
             </div>
         </section>
 
-        <?php include_once 'include/footer.php'; ?>
+  
 
         <!-- Professional JavaScript with Unique Scope -->
         <script>
@@ -1407,6 +1407,8 @@ session_start();
             });
         </script>
     </div>
+
+          <?php include_once 'include/footer.php'; ?>
 </body>
 
 </html>
