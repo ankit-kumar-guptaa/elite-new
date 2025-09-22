@@ -961,41 +961,7 @@ session_start();
             </div>
         </section>
 
-        <!-- Statistics Section -->
-        <section class="usa-india-stats-section">
-            <div class="usa-india-container">
-                <div class="usa-india-stats-grid">
-                    <div class="usa-india-stat-card">
-                        <div class="usa-india-stat-icon">
-                            <i class="fa fa-users"></i>
-                        </div>
-                        <div class="usa-india-stat-number" data-count="8500">0</div>
-                        <div class="usa-india-stat-label">Professionals Placed in USA</div>
-                    </div>
-                    <div class="usa-india-stat-card">
-                        <div class="usa-india-stat-icon">
-                            <i class="fa fa-building"></i>
-                        </div>
-                        <div class="usa-india-stat-number" data-count="350">0</div>
-                        <div class="usa-india-stat-label">Fortune 500 Partners</div>
-                    </div>
-                    <div class="usa-india-stat-card">
-                        <div class="usa-india-stat-icon">
-                            <i class="fa fa-chart-line"></i>
-                        </div>
-                        <div class="usa-india-stat-number" data-count="96">0</div>
-                        <div class="usa-india-stat-label">H1B Success Rate %</div>
-                    </div>
-                    <div class="usa-india-stat-card">
-                        <div class="usa-india-stat-icon">
-                            <i class="fa fa-award"></i>
-                        </div>
-                        <div class="usa-india-stat-number" data-count="18">0</div>
-                        <div class="usa-india-stat-label">Years of Excellence</div>
-                    </div>
-                </div>
-            </div>
-        </section>
+       
 
         <!-- Services Grid Section -->
         <section id="services" class="usa-india-services-grid">
