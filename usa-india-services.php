@@ -59,6 +59,43 @@ session_start();
     <style>
         /* Reset & Base Styles - Unique Prefix */
         .usa-india-wrapper * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        /* Slider Styles */
+        .usa-india-hero-slider { position: relative; overflow: hidden; margin-bottom: 1.8rem; }
+        .usa-india-slide { display: none; animation-duration: 0.8s; animation-fill-mode: both; }
+        .usa-india-slide.active { display: block; }
+        .usa-india-slide:first-child { display: block; } /* Show first slide by default */
+        
+        .usa-india-slide-in { animation-name: usaIndiaSlideIn; }
+        .usa-india-slide-out { animation-name: usaIndiaSlideOut; }
+        
+        @keyframes usaIndiaSlideIn {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes usaIndiaSlideOut {
+            from { opacity: 1; transform: translateX(0); }
+            to { opacity: 0; transform: translateX(-50px); }
+        }
+        
+        .usa-india-slider-nav { display: flex; justify-content: center; gap: 8px; margin-top: 20px; }
+        .usa-india-slider-dot { width: 10px; height: 10px; border-radius: 50%; background-color: #cbd5e1; cursor: pointer; transition: all 0.3s ease; }
+        .usa-india-slider-dot.active { background-color: #1e3a8a; transform: scale(1.2); }
+        
+        /* Cost Comparison Styles */
+        .usa-india-cost-comparison { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
+        .usa-india-cost-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 15px; background-color: #f8fafc; border-radius: 8px; border-left: 4px solid #64748b; }
+        .usa-india-cost-role { font-weight: 600; color: #334155; }
+        .usa-india-cost-amount { font-weight: 700; font-size: 1.2rem; color: #1e293b; }
+        .usa-india-cost-saving { border-left-color: #10b981; background-color: #ecfdf5; }
+        .usa-india-cost-saving .usa-india-cost-role { color: #065f46; }
+        .usa-india-cost-saving .usa-india-cost-amount { color: #047857; }
+        
+        /* Services Tags Styles */
+        .usa-india-services-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+        .usa-india-service-tag { display: inline-block; padding: 6px 12px; background-color: #f1f5f9; border-radius: 20px; font-size: 0.9rem; font-weight: 500; color: #334155; transition: all 0.3s ease; }
+        .usa-india-service-tag:hover { background-color: #1e3a8a; color: white; transform: translateY(-2px); }
 
         .usa-india-wrapper {
             font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
@@ -756,15 +793,73 @@ session_start();
             <div class="usa-india-container">
                 <div class="usa-india-hero-content">
                     <div class="usa-india-hero-grid">
-                        <!-- Left Content - Professional Theme -->
+                        <!-- Left Content - Professional Theme with Slider -->
                         <div class="usa-india-hero-text">
-                            <h1 class="usa-india-hero-title">
-                                Connect <span class="usa-india-title-highlight">Elite Talent</span> Between India & USA
-                            </h1>
-                            
-                            <p class="usa-india-hero-subtitle">
-                                Premier recruitment platform bridging top Indian professionals with leading American companies. Specialized in H1B visa support, Silicon Valley placements, and Fortune 500 corporate recruitment across all industries.
-                            </p>
+                            <!-- Hero Content Slider -->
+                            <div class="usa-india-hero-slider">
+                                <!-- Slide 1 -->
+                                <div class="usa-india-slide">
+                                    <h1 class="usa-india-hero-title">
+                                        Connect <span class="usa-india-title-highlight">Elite Talent</span> Between India & USA
+                                    </h1>
+                                    
+                                    <p class="usa-india-hero-subtitle">
+                                        Premier recruitment platform bridging top Indian professionals with leading American companies. Specialized in H1B visa support, Silicon Valley placements, and Fortune 500 corporate recruitment across all industries.
+                                    </p>
+                                </div>
+                                
+                                <!-- Slide 2 -->
+                                <div class="usa-india-slide">
+                                    <h1 class="usa-india-hero-title">
+                                        <span class="usa-india-title-highlight">Remote Working</span> (7+ years' experience)
+                                    </h1>
+                                    
+                                    <div class="usa-india-cost-comparison">
+                                        <div class="usa-india-cost-item">
+                                            <span class="usa-india-cost-role">Senior Accountant in US</span>
+                                            <span class="usa-india-cost-amount">$80,000</span>
+                                        </div>
+                                        <div class="usa-india-cost-item">
+                                            <span class="usa-india-cost-role">Senior Accountant in India</span>
+                                            <span class="usa-india-cost-amount">$20,000</span>
+                                        </div>
+                                        <div class="usa-india-cost-item usa-india-cost-saving">
+                                            <span class="usa-india-cost-role">Saving to your business</span>
+                                            <span class="usa-india-cost-amount">$60,000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Slide 3 -->
+                                <div class="usa-india-slide">
+                                    <h1 class="usa-india-hero-title">
+                                        Hire <span class="usa-india-title-highlight">Remote Workers</span> from India at 1/4th of the cost
+                                    </h1>
+                                    
+                                    <p class="usa-india-hero-subtitle">
+                                        Have less work? Now Get Part Shared work resource who will work with different clients
+                                    </p>
+                                    
+                                    <div class="usa-india-services-tags">
+                                        <span class="usa-india-service-tag">Software Development</span>
+                                        <span class="usa-india-service-tag">Digital Marketing</span>
+                                        <span class="usa-india-service-tag">Customer Support</span>
+                                        <span class="usa-india-service-tag">Graphic Design</span>
+                                        <span class="usa-india-service-tag">Medical Coding</span>
+                                        <span class="usa-india-service-tag">Human Resource</span>
+                                        <span class="usa-india-service-tag">AI / ML</span>
+                                        <span class="usa-india-service-tag">Finance</span>
+                                        <span class="usa-india-service-tag">Any other</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Slider Navigation -->
+                                <div class="usa-india-slider-nav">
+                                    <span class="usa-india-slider-dot active" data-slide="0"></span>
+                                    <span class="usa-india-slider-dot" data-slide="1"></span>
+                                    <span class="usa-india-slider-dot" data-slide="2"></span>
+                                </div>
+                            </div>
 
                             <div class="usa-india-flag-container">
                                 <div class="usa-india-flag-item">
@@ -1409,6 +1504,74 @@ session_start();
     </div>
 
           <?php include_once 'include/footer.php'; ?>
+    <!-- USA-India Hero Slider Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize slider
+            const slides = document.querySelectorAll('.usa-india-slide');
+            const dots = document.querySelectorAll('.usa-india-slider-dot');
+            let currentSlide = 0;
+            let slideInterval;
+            
+            // Show initial slide
+            slides[0].classList.add('active');
+            
+            // Function to change slide
+            function goToSlide(index) {
+                // Hide current slide
+                slides[currentSlide].classList.add('usa-india-slide-out');
+                
+                setTimeout(() => {
+                    slides[currentSlide].classList.remove('active', 'usa-india-slide-in', 'usa-india-slide-out');
+                    
+                    // Update current slide index
+                    currentSlide = index;
+                    
+                    // Show new slide
+                    slides[currentSlide].classList.add('active', 'usa-india-slide-in');
+                    
+                    // Update dots
+                    dots.forEach((dot, i) => {
+                        dot.classList.toggle('active', i === currentSlide);
+                    });
+                }, 400);
+            }
+            
+            // Function for next slide
+            function nextSlide() {
+                let next = currentSlide + 1;
+                if (next >= slides.length) next = 0;
+                goToSlide(next);
+            }
+            
+            // Start automatic sliding
+            function startSlideShow() {
+                slideInterval = setInterval(nextSlide, 4000); // Change slide every 4 seconds
+            }
+            
+            // Stop automatic sliding
+            function stopSlideShow() {
+                clearInterval(slideInterval);
+            }
+            
+            // Add click events to dots
+            dots.forEach((dot, i) => {
+                dot.addEventListener('click', () => {
+                    stopSlideShow();
+                    goToSlide(i);
+                    startSlideShow();
+                });
+            });
+            
+            // Start the slideshow
+            startSlideShow();
+            
+            // Pause slideshow on hover
+            const sliderContainer = document.querySelector('.usa-india-hero-slider');
+            sliderContainer.addEventListener('mouseenter', stopSlideShow);
+            sliderContainer.addEventListener('mouseleave', startSlideShow);
+        });
+    </script>
 </body>
 
 </html>
