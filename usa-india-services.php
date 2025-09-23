@@ -968,6 +968,7 @@ session_start();
                                             <textarea class="usa-india-form-control usa-india-form-textarea" name="requirements" placeholder="Job requirements, skills, and qualifications needed *" required></textarea>
                                         </div>
                                         
+                                        <input type="hidden" id="g-recaptcha-response-employer" name="g-recaptcha-response">
                                         <button type="submit" class="usa-india-form-submit">
                                             <i class="fa fa-paper-plane" style="margin-right: 6px;"></i>
                                             Get Indian Talent
@@ -1039,6 +1040,7 @@ session_start();
                                             </div>
                                         </div>
                                         
+                                        <input type="hidden" id="g-recaptcha-response-jobseeker" name="g-recaptcha-response">
                                         <button type="submit" class="usa-india-form-submit">
                                             <i class="fa fa-rocket" style="margin-right: 6px;"></i>
                                             Apply for USA Jobs
@@ -1215,7 +1217,7 @@ session_start();
         </section>
 
         <!-- Testimonials Section -->
-        <section class="usa-india-testimonials-section">
+        <!-- <section class="usa-india-testimonials-section">
             <div class="usa-india-container">
                 <div class="usa-india-theme-title">
                     <h2>Success Stories from USA</h2>
@@ -1281,7 +1283,7 @@ session_start();
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <!-- Contact Section -->
         <section id="contact" class="usa-india-cta-section">
@@ -1570,6 +1572,28 @@ session_start();
             const sliderContainer = document.querySelector('.usa-india-hero-slider');
             sliderContainer.addEventListener('mouseenter', stopSlideShow);
             sliderContainer.addEventListener('mouseleave', startSlideShow);
+        });
+    </script>
+    
+    <!-- Google reCAPTCHA v3 -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6Ledy8UrAAAAAGLUn3toR4y2awVaNUkt0iyOlVLU"></script>
+    <script>
+        // Execute reCAPTCHA on employer form submission
+        document.querySelector('#employer-tab form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            grecaptcha.execute('6Ledy8UrAAAAAGLUn3toR4y2awVaNUkt0iyOlVLU', {action: 'employer_form'}).then(function(token) {
+                document.getElementById('g-recaptcha-response-employer').value = token;
+                e.target.submit();
+            });
+        });
+
+        // Execute reCAPTCHA on jobseeker form submission
+        document.querySelector('#jobseeker-tab form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            grecaptcha.execute('6Ledy8UrAAAAAGLUn3toR4y2awVaNUkt0iyOlVLU', {action: 'jobseeker_form'}).then(function(token) {
+                document.getElementById('g-recaptcha-response-jobseeker').value = token;
+                e.target.submit();
+            });
         });
     </script>
 </body>
