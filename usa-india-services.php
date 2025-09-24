@@ -41,7 +41,7 @@ session_start();
         gtag('js', new Date());
         gtag('config', 'AW-16878629802');
         gtag('config', 'AW-16878629802/hZtJCKr48J4aEKrnrfA-', {
-            'phone_conversion_number': '9870364340'
+            'phone_conversion_number': '971582348005'
         });
     </script>
     
@@ -53,18 +53,242 @@ session_start();
         gtag('config', 'G-2VDKKW0ZFF');
     </script>
 
-    <?php include 'include/assets.php'; ?>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
 
     <!-- Professional USA-India Theme with Unique Classes -->
     <style>
         /* Reset & Base Styles - Unique Prefix */
         .usa-india-wrapper * { margin: 0; padding: 0; box-sizing: border-box; }
         
+        /* Vibrating Animation for Call Icon */
+        @keyframes vibrate {
+            0% { transform: rotate(0deg); }
+            10% { transform: rotate(-1deg); }
+            20% { transform: rotate(1deg); }
+            30% { transform: rotate(0deg); }
+            40% { transform: rotate(1deg); }
+            50% { transform: rotate(-1deg); }
+            60% { transform: rotate(0deg); }
+            70% { transform: rotate(-1deg); }
+            80% { transform: rotate(1deg); }
+            90% { transform: rotate(0deg); }
+            100% { transform: rotate(-1deg); }
+        }
+
+        /* Fixed Corner Icons */
+        .elite-call-icon {
+            left: 20px;
+            position: fixed;
+            bottom: 20px;
+            z-index: 9999;
+        }
+
+        .elite-whatsapp-icon {
+            right: 20px;
+            position: fixed;
+            bottom: 20px;
+            z-index: 9999;
+        }
+
+        .elite-call-icon a, .elite-whatsapp-icon a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.8rem;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .elite-call-icon a {
+            background: linear-gradient(135deg, #10b981, #059669);
+            animation: vibrate 1.5s infinite;
+        }
+
+        .elite-whatsapp-icon a {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+        }
+
+        .elite-call-icon a:hover, .elite-whatsapp-icon a:hover {
+            transform: scale(1.15);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+        }
+
+        /* Professional White Header - Logo Left, Phone Center, Nav Right */
+        .elite-header-main {
+            background: #ffffff;
+            color: #1e293b;
+            padding: 0.8rem 0;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 500;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .elite-header-wrapper {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            align-items: center;
+            padding: 0 1.5rem;
+            gap: 1rem;
+        }
+
+        /* Logo Section - Left */
+        .elite-brand-logo {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .elite-brand-logo img {
+            height: 45px;
+            width: auto;
+            max-width: 280px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+            transition: all 0.3s ease;
+        }
+
+        .elite-brand-logo img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Phone Section - Center */
+        .elite-phone-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #1e3a8a, #475569);
+            color: #ffffff;
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(30, 58, 138, 0.2);
+        }
+
+        .elite-phone-center:hover {
+            background: linear-gradient(135deg, #3b82f6, #64748b);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .elite-phone-center i {
+            font-size: 0.9rem;
+        }
+
+        /* Navigation Section - Right */
+        .elite-nav-desktop {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .elite-nav-link {
+            color: #374151;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .elite-nav-link:hover {
+            color: #1e3a8a;
+        }
+
+        .elite-nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #1e3a8a, #475569);
+            transition: width 0.3s ease;
+        }
+
+        .elite-nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile Header Toggle */
+        .elite-mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #374151;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .elite-mobile-nav-panel {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #ffffff;
+            border-top: 1px solid #e2e8f0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            z-index: 999;
+        }
+
+        .elite-mobile-nav-panel.active {
+            display: block;
+            animation: eliteSlideDown 0.3s ease;
+        }
+
+        .elite-mobile-nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            padding: 1rem 0;
+        }
+
+        .elite-mobile-nav-links .elite-nav-link {
+            display: block;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #f1f5f9;
+            text-align: center;
+        }
+
+        .elite-mobile-nav-links .elite-nav-link:hover {
+            background: #f8fafc;
+        }
+
+        .elite-mobile-phone {
+            display: none;
+            justify-content: center;
+            padding: 1rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        @keyframes eliteSlideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         /* Slider Styles */
         .usa-india-hero-slider { position: relative; overflow: hidden; margin-bottom: 1.8rem; }
         .usa-india-slide { display: none; animation-duration: 0.8s; animation-fill-mode: both; }
         .usa-india-slide.active { display: block; }
-        .usa-india-slide:first-child { display: block; } /* Show first slide by default */
+        .usa-india-slide:first-child { display: block; }
         
         .usa-india-slide-in { animation-name: usaIndiaSlideIn; }
         .usa-india-slide-out { animation-name: usaIndiaSlideOut; }
@@ -692,7 +916,6 @@ session_start();
 
         /* Professional Benefits & Other Sections */
         .usa-india-why-section { padding: 80px 0; background: #fff; }
-        .usa-india-testimonials-section { padding: 80px 0; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); }
         .usa-india-cta-section { padding: 80px 0; background: #fff; }
 
         .usa-india-why-image { border-radius: 16px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); position: relative; }
@@ -706,17 +929,6 @@ session_start();
         .usa-india-benefit-item:hover .usa-india-benefit-icon { background: linear-gradient(135deg, #3b82f6, #64748b); transform: rotateY(180deg); box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3); }
         .usa-india-benefit-content h4 { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; color: #1e293b; }
         .usa-india-benefit-content p { color: #64748b; line-height: 1.6; }
-
-        .usa-india-testimonial-card { background: #fff; border-radius: 16px; padding: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); margin: 15px; position: relative; border: 1px solid #f1f5f9; }
-        .usa-india-testimonial-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #1e3a8a, #475569); border-radius: 16px 16px 0 0; }
-        .usa-india-testimonial-card:after { content: '\201C'; font-size: 4rem; font-family: Georgia, serif; color: rgba(30, 58, 138, 0.1); position: absolute; top: 15px; left: 20px; line-height: 1; }
-        .usa-india-testimonial-content { position: relative; z-index: 1; font-style: italic; color: #64748b; margin-bottom: 20px; }
-        .usa-india-testimonial-rating { color: #60a5fa; font-size: 1.1rem; margin-bottom: 15px; }
-        .usa-india-testimonial-author { display: flex; align-items: center; }
-        .usa-india-author-image { width: 50px; height: 50px; border-radius: 50%; overflow: hidden; margin-right: 15px; border: 3px solid #1e3a8a; }
-        .usa-india-author-image img { width: 100%; height: 100%; object-fit: cover; }
-        .usa-india-author-info h5 { font-size: 1rem; font-weight: 700; margin-bottom: 5px; color: #1e293b; }
-        .usa-india-author-info p { font-size: 0.9rem; color: #64748b; }
 
         .usa-india-contact-form { background: #fff; padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: 1px solid #f1f5f9; }
         .usa-india-contact-info { background: linear-gradient(135deg, #1e293b, #334155); padding: 30px; border-radius: 16px; color: #fff; height: 100%; position: relative; overflow: hidden; }
@@ -737,13 +949,58 @@ session_start();
         .usa-india-submit-btn { background: linear-gradient(135deg, #1e3a8a, #475569); color: #fff; border: none; padding: 12px 30px; font-size: 1rem; font-weight: 700; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; }
         .usa-india-submit-btn:hover { background: linear-gradient(135deg, #3b82f6, #64748b); }
 
-        .usa-india-captcha-container { display: flex; align-items: center; margin-bottom: 15px; }
-        .usa-india-captcha-image { height: 45px; margin-right: 15px; border-radius: 5px; border: 2px solid #e5e7eb; }
-        .usa-india-captcha-container .form-control { flex: 1; }
-
         .usa-india-alert { padding: 15px; margin-bottom: 20px; border: 1px solid transparent; border-radius: 8px; }
         .usa-india-alert-success { color: #065f46; background-color: #d1fae5; border-color: #a7f3d0; }
         .usa-india-alert-danger { color: #991b1b; background-color: #fee2e2; border-color: #fca5a5; }
+
+        /* Footer Custom Styles */
+        .elegant-footer {
+            background: #1e293b;
+            color: #f1f5f9;
+            padding: 2.5rem 0 3.5rem 0;
+            border-radius: 14px 14px 0 0;
+            position: relative;
+            min-height: 180px;
+            box-shadow: 0 -4px 32px 2px rgba(30,41,59,0.09);
+            margin-top: 3rem;
+        }
+
+        .elegant-footer-container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 1.8rem;
+            position: relative;
+            padding: 0 1rem;
+        }
+
+        .elegant-footer-contact {
+            text-align: center;
+        }
+
+        .elegant-footer-address, .elegant-footer-phone {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.7rem;
+            font-size: 1.03rem;
+            margin-bottom: 1rem;
+        }
+
+        .elegant-footer-address i,
+        .elegant-footer-phone i {
+            color: #38bdf8;
+            min-width: 18px;
+        }
+
+        .elegant-footer-phone a {
+            color: #f1f5f9;
+            text-decoration: none;
+            font-weight: 600;
+        }
 
         /* Mobile Responsive */
         @media (max-width: 1024px) {
@@ -760,6 +1017,27 @@ session_start();
         }
 
         @media (max-width: 768px) {
+            .elite-header-wrapper {
+                grid-template-columns: 1fr auto;
+                gap: 1rem;
+            }
+            
+            .elite-nav-desktop {
+                display: none;
+            }
+            
+            .elite-phone-center {
+                display: none;
+            }
+            
+            .elite-mobile-menu-btn {
+                display: block;
+            }
+            
+            .elite-mobile-phone {
+                display: flex;
+            }
+            
             .usa-india-hero-section { min-height: 55vh; padding: 35px 0; }
             .usa-india-hero-title { font-size: 2.2rem; }
             .usa-india-hero-subtitle { font-size: 1rem; }
@@ -768,25 +1046,101 @@ session_start();
             .usa-india-flag-container { justify-content: center; flex-wrap: wrap; }
             .usa-india-stats-grid { grid-template-columns: repeat(2, 1fr); }
             .usa-india-tab-content { padding: 1.5rem; }
+            .elegant-footer-container { flex-direction: column; align-items: center; gap: 1.2rem; }
+            
+            .elite-call-icon { left: 15px; bottom: 15px; }
+            .elite-whatsapp-icon { right: 15px; bottom: 15px; }
         }
 
         @media (max-width: 480px) {
+            .elite-header-wrapper {
+                grid-template-columns: 1fr auto;
+                padding: 0 1rem;
+            }
+            
+            .elite-brand-logo img { 
+                height: 35px; 
+                max-width: 200px; 
+            }
+            
+            .elite-header-main { 
+                padding: 0.6rem 0; 
+            }
+            
             .usa-india-hero-section { min-height: 50vh; padding: 30px 0; }
             .usa-india-hero-title { font-size: 1.9rem; }
             .usa-india-form-wrapper { margin: 0 0.5rem; }
             .usa-india-stats-grid { grid-template-columns: 1fr; }
             .usa-india-tab-content { padding: 1.2rem; }
+            
+            .elite-call-icon { left: 10px; bottom: 10px; }
+            .elite-whatsapp-icon { right: 10px; bottom: 10px; }
+            .elite-call-icon a, .elite-whatsapp-icon a { width: 50px; height: 50px; font-size: 1.5rem; }
         }
     </style>
 </head>
 
 <body>
-     <?php include_once 'include/header.php'; ?>
-    <div class="usa-india-wrapper">
-       
+    <!-- Fixed Corner Icons -->
+    <div class="elite-call-icon">
+        <a href="tel:+971582348005" aria-label="Call Now">
+            <i class="fas fa-phone"></i>
+        </a>
+    </div>
+    <div class="elite-whatsapp-icon">
+        <a href="https://wa.me/971582348005" target="_blank" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
 
+    <!-- Custom Professional White Header - Logo Left, Phone Center, Nav Right -->
+    <header class="elite-header-main">
+        <div class="elite-header-wrapper">
+            <!-- Logo Section - Left -->
+            <div class="elite-brand-logo">
+                <img src="https://elitecorporatesolutions.com/images/logo/logo.png" alt="Elite Corporate Solutions Logo">
+            </div>
+            
+            <!-- Phone Section - Center -->
+            <a href="tel:+971582348005" class="elite-phone-center">
+                <i class="fas fa-phone"></i>
+                +971 58 234 8005 / +91 98719 16980
+            </a>
+            
+            <!-- Navigation Section - Right -->
+            <nav class="elite-nav-desktop">
+                <a href="#home" class="elite-nav-link">Home</a>
+                <a href="#services" class="elite-nav-link">Services</a>
+                <a href="#why" class="elite-nav-link">Why Us</a>
+                <a href="#contact" class="elite-nav-link">Contact</a>
+            </nav>
+            
+            <!-- Mobile Toggle Button -->
+            <button class="elite-mobile-menu-btn" onclick="toggleEliteMobileNav()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation Panel -->
+        <div class="elite-mobile-nav-panel" id="eliteMobileNav">
+            <div class="elite-mobile-phone">
+                <a href="tel:+971582348005" class="elite-phone-center">
+                    <i class="fas fa-phone"></i>
+                    +971 58 234 8005
+                </a>
+            </div>
+            <nav class="elite-mobile-nav-links">
+                <a href="#home" class="elite-nav-link" onclick="closeEliteMobileNav()">Home</a>
+                <a href="#services" class="elite-nav-link" onclick="closeEliteMobileNav()">Services</a>
+                <a href="#why" class="elite-nav-link" onclick="closeEliteMobileNav()">Why Us</a>
+                <a href="#contact" class="elite-nav-link" onclick="closeEliteMobileNav()">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="usa-india-wrapper">
         <!-- Professional USA-India Hero Section -->
-        <section class="usa-india-hero-section">
+        <section class="usa-india-hero-section" id="home">
             <div class="usa-india-hero-bg"></div>
             <div class="usa-india-hero-pattern"></div>
             
@@ -1058,8 +1412,6 @@ session_start();
             </div>
         </section>
 
-       
-
         <!-- Services Grid Section -->
         <section id="services" class="usa-india-services-grid">
             <div class="usa-india-container">
@@ -1151,7 +1503,7 @@ session_start();
         </section>
 
         <!-- Why Choose Us Section -->
-        <section class="usa-india-why-section">
+        <section id="why" class="usa-india-why-section">
             <div class="usa-india-container">
                 <div class="usa-india-theme-title">
                     <h2>Why Choose Us for USA Opportunities</h2>
@@ -1216,75 +1568,6 @@ session_start();
             </div>
         </section>
 
-        <!-- Testimonials Section -->
-        <!-- <section class="usa-india-testimonials-section">
-            <div class="usa-india-container">
-                <div class="usa-india-theme-title">
-                    <h2>Success Stories from USA</h2>
-                    <p>What our American partners and placed professionals say about our services</p>
-                </div>
-                <div class="row mt-5">
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="usa-india-testimonial-card">
-                            <div class="usa-india-testimonial-content">
-                                <p>"Elite Corporate Solutions helped us hire exceptional Indian software engineers for our Silicon Valley office. Their understanding of both technical requirements and visa processes made everything seamless."</p>
-                            </div>
-                            <div class="usa-india-testimonial-rating">
-                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-                            </div>
-                            <div class="usa-india-testimonial-author">
-                                <div class="usa-india-author-image">
-                                    <img src="images/team/1.jpg" alt="Testimonial Author">
-                                </div>
-                                <div class="usa-india-author-info">
-                                    <h5>Sarah Johnson</h5>
-                                    <p>VP Engineering, TechFlow Inc.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="usa-india-testimonial-card">
-                            <div class="usa-india-testimonial-content">
-                                <p>"They helped me get my dream job at a Fortune 500 company in New York. The H1B process was smooth and their support throughout the relocation was incredible. Highly recommended!"</p>
-                            </div>
-                            <div class="usa-india-testimonial-rating">
-                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-                            </div>
-                            <div class="usa-india-testimonial-author">
-                                <div class="usa-india-author-image">
-                                    <img src="images/team/2.jpg" alt="Testimonial Author">
-                                </div>
-                                <div class="usa-india-author-info">
-                                    <h5>Priya Sharma</h5>
-                                    <p>Data Scientist, Goldman Sachs</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="usa-india-testimonial-card">
-                            <div class="usa-india-testimonial-content">
-                                <p>"Our biotech company needed specialized researchers from India. Elite Corporate delivered top-quality candidates and handled all immigration complexities professionally."</p>
-                            </div>
-                            <div class="usa-india-testimonial-rating">
-                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-alt"></i>
-                            </div>
-                            <div class="usa-india-testimonial-author">
-                                <div class="usa-india-author-image">
-                                    <img src="images/team/3.jpg" alt="Testimonial Author">
-                                </div>
-                                <div class="usa-india-author-info">
-                                    <h5>Dr. Michael Chen</h5>
-                                    <p>Research Director, BioTech Solutions</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-
         <!-- Contact Section -->
         <section id="contact" class="usa-india-cta-section">
             <div class="usa-india-container">
@@ -1346,12 +1629,7 @@ session_start();
                                 <div class="usa-india-form-group">
                                     <textarea class="form-control" name="message" rows="5" placeholder="Tell us about your USA expansion or job search requirements" required></textarea>
                                 </div>
-                                <div class="usa-india-form-group">
-                                    <div class="usa-india-captcha-container">
-                                        <img src="captcha.php" alt="CAPTCHA Image" class="usa-india-captcha-image">
-                                        <input type="text" class="form-control" name="captcha" placeholder="Enter CAPTCHA code" required>
-                                    </div>
-                                </div>
+                                <input type="hidden" id="g-recaptcha-response-contact" name="g-recaptcha-response">
                                 <button type="submit" name="submit" class="usa-india-submit-btn">Send Message</button>
                             </form>
                         </div>
@@ -1364,8 +1642,7 @@ session_start();
                                     <i class="fa fa-phone"></i>
                                 </div>
                                 <div class="usa-india-contact-text">
-                                    <p><strong>India Office:</strong><br>+91 9870364340</p>
-                                    <p><strong>USA Office:</strong><br>+1 (555) 123-4567</p>
+                                    <p><strong>UAE Office:</strong><br>+971 58 234 8005</p>
                                 </div>
                             </div>
                             <div class="usa-india-contact-item">
@@ -1374,7 +1651,6 @@ session_start();
                                 </div>
                                 <div class="usa-india-contact-text">
                                     <p>info@elitecorporatesolutions.com</p>
-                                    <p>usa@elitecorporatesolutions.com</p>
                                 </div>
                             </div>
                             <div class="usa-india-contact-item">
@@ -1382,8 +1658,7 @@ session_start();
                                     <i class="fa fa-map-marker-alt"></i>
                                 </div>
                                 <div class="usa-india-contact-text">
-                                    <p><strong>India Headquarters:</strong><br>A-83, Okhla Phase II<br>New Delhi – 110020, India</p>
-                                    <p><strong>USA Office:</strong><br>123 Silicon Valley Blvd<br>San Francisco, CA 94105</p>
+                                    <p><strong>UAE Headquarters:</strong><br>26th Floor, Amber Gem Tower,<br>Sheikh Khalifa Street,<br>Ajman Ventures Centre Free Zone</p>
                                 </div>
                             </div>
                             <div class="usa-india-social-links">
@@ -1397,8 +1672,6 @@ session_start();
                 </div>
             </div>
         </section>
-
-  
 
         <!-- Professional JavaScript with Unique Scope -->
         <script>
@@ -1416,38 +1689,6 @@ session_start();
                         document.getElementById(targetTab + '-tab').classList.add('active');
                     });
                 });
-
-                // Professional Counter Animation
-                function usaIndiaAnimateCounters() {
-                    const counters = document.querySelectorAll('.usa-india-stat-number');
-                    counters.forEach(counter => {
-                        const target = parseInt(counter.getAttribute('data-count'));
-                        const increment = target / 60;
-                        let current = 0;
-                        const timer = setInterval(() => {
-                            current += increment;
-                            if (current >= target) {
-                                counter.textContent = target.toLocaleString();
-                                clearInterval(timer);
-                            } else {
-                                counter.textContent = Math.floor(current).toLocaleString();
-                            }
-                        }, 25);
-                    });
-                }
-
-                // Intersection Observer for Stats
-                const usaIndiaObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting && entry.target.classList.contains('usa-india-stats-section')) {
-                            usaIndiaAnimateCounters();
-                            usaIndiaObserver.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.3 });
-
-                const usaIndiaStatsSection = document.querySelector('.usa-india-stats-section');
-                if (usaIndiaStatsSection) usaIndiaObserver.observe(usaIndiaStatsSection);
 
                 // File Upload Enhancement
                 const usaIndiaFileInput = document.getElementById('resume');
@@ -1502,10 +1743,52 @@ session_start();
                     });
                 });
             });
+
+            // Elite Mobile Navigation Functions
+            function toggleEliteMobileNav() {
+                const mobileNav = document.getElementById('eliteMobileNav');
+                const toggle = document.querySelector('.elite-mobile-menu-btn i');
+                
+                if (mobileNav.classList.contains('active')) {
+                    mobileNav.classList.remove('active');
+                    toggle.classList.remove('fa-times');
+                    toggle.classList.add('fa-bars');
+                } else {
+                    mobileNav.classList.add('active');
+                    toggle.classList.remove('fa-bars');
+                    toggle.classList.add('fa-times');
+                }
+            }
+
+            function closeEliteMobileNav() {
+                const mobileNav = document.getElementById('eliteMobileNav');
+                const toggle = document.querySelector('.elite-mobile-menu-btn i');
+                
+                mobileNav.classList.remove('active');
+                toggle.classList.remove('fa-times');
+                toggle.classList.add('fa-bars');
+            }
         </script>
     </div>
 
-          <?php include_once 'include/footer.php'; ?>
+    <!-- Custom Professional Footer -->
+    <footer class="elegant-footer">
+        <div class="elegant-footer-container">
+            <div class="elegant-footer-contact">
+                <div class="elegant-footer-address">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>26th Floor, Amber Gem Tower,<br>
+                     Sheikh Khalifa Street,<br>
+                     Ajman Ventures Centre Free Zone</span>
+                </div>
+                <div class="elegant-footer-phone">
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="tel:+971582348005">+971 58 234 8005</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <!-- USA-India Hero Slider Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -1595,7 +1878,19 @@ session_start();
                 e.target.submit();
             });
         });
+
+        // Execute reCAPTCHA on contact form submission
+        document.querySelector('#contact form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            grecaptcha.execute('6Ledy8UrAAAAAGLUn3toR4y2awVaNUkt0iyOlVLU', {action: 'contact_form'}).then(function(token) {
+                document.getElementById('g-recaptcha-response-contact').value = token;
+                e.target.submit();
+            });
+        });
     </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
