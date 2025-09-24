@@ -135,9 +135,9 @@ session_start();
         .elite-header-wrapper {
             max-width: 1200px;
             margin: auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            display: flex;
             align-items: center;
+            justify-content: space-evenly;
             padding: 0 1.5rem;
             gap: 1rem;
         }
@@ -1104,7 +1104,12 @@ session_start();
             <!-- Phone Section - Center -->
             <a href="tel:+971582348005" class="elite-phone-center">
                 <i class="fas fa-phone"></i>
-                +971 58 234 8005 / +91 98719 16980
+                +971 58 234 8005
+            </a>
+            <!-- Phone Section - Center -->
+            <a href="tel:+919871916980" class="elite-phone-center">
+                <i class="fas fa-phone"></i>
+                +91 98719 16980
             </a>
             
             <!-- Navigation Section - Right -->
