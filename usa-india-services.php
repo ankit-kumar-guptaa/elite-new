@@ -167,7 +167,7 @@ session_start();
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
-            background: linear-gradient(135deg, #1e3a8a, #475569);
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
             color: #ffffff;
             padding: 0.6rem 1.2rem;
             border-radius: 25px;
@@ -175,14 +175,14 @@ session_start();
             font-size: 1rem;
             text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 10px rgba(30, 58, 138, 0.2);
+            box-shadow: 0 2px 10px rgba(79, 70, 229, 0.2);
         }
 
         .elite-phone-center:hover {
-            background: linear-gradient(135deg, #3b82f6, #64748b);
+            background: linear-gradient(135deg, #4338ca, #4f46e5);
             color: #ffffff;
             transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 4px 15px rgba(67, 56, 202, 0.3);
         }
 
         .elite-phone-center i {
@@ -208,7 +208,7 @@ session_start();
         }
 
         .elite-nav-link:hover {
-            color: #1e3a8a;
+            color: #4f46e5;
         }
 
         .elite-nav-link::after {
@@ -218,7 +218,7 @@ session_start();
             left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, #1e3a8a, #475569);
+            background: linear-gradient(90deg, #4f46e5, #6366f1);
             transition: width 0.3s ease;
         }
 
@@ -284,12 +284,30 @@ session_start();
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Slider Styles */
-        .usa-india-hero-slider { position: relative; overflow: hidden; margin-bottom: 1.8rem; }
-        .usa-india-slide { display: none; animation-duration: 0.8s; animation-fill-mode: both; }
-        .usa-india-slide.active { display: block; }
-        .usa-india-slide:first-child { display: block; }
-        
+        /* Professional Slider Styles - Fixed */
+        .usa-india-hero-slider { 
+            position: relative; 
+            overflow: hidden; 
+            margin-bottom: 1.8rem; 
+            min-height: 350px;
+        }
+
+        .usa-india-slide { 
+            display: none; 
+            animation-duration: 0.8s; 
+            animation-fill-mode: both; 
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .usa-india-slide.active { 
+            display: block; 
+            position: relative;
+        }
+
         .usa-india-slide-in { animation-name: usaIndiaSlideIn; }
         .usa-india-slide-out { animation-name: usaIndiaSlideOut; }
         
@@ -303,23 +321,152 @@ session_start();
             to { opacity: 0; transform: translateX(-50px); }
         }
         
-        .usa-india-slider-nav { display: flex; justify-content: center; gap: 8px; margin-top: 20px; }
-        .usa-india-slider-dot { width: 10px; height: 10px; border-radius: 50%; background-color: #cbd5e1; cursor: pointer; transition: all 0.3s ease; }
-        .usa-india-slider-dot.active { background-color: #1e3a8a; transform: scale(1.2); }
+        .usa-india-slider-nav { 
+            display: flex; 
+            justify-content: center; 
+            gap: 8px; 
+            margin-top: 20px; 
+            position: relative;
+            z-index: 10;
+        }
+
+        .usa-india-slider-dot { 
+            width: 10px; 
+            height: 10px; 
+            border-radius: 50%; 
+            background-color: #cbd5e1; 
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+        }
+
+        .usa-india-slider-dot.active { 
+            background-color: #4f46e5; 
+            transform: scale(1.2); 
+        }
+
+        /* Professional Hero Stats Cards - Only for Slide 1 */
+        .usa-india-hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .usa-india-stat-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1.2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .usa-india-stat-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .usa-india-stat-icon {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.2);
+        }
+
+        .usa-india-stat-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .usa-india-stat-number {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #374151;
+            line-height: 1;
+        }
+
+        .usa-india-stat-text {
+            font-size: 0.85rem;
+            color: #6b7280;
+            font-weight: 500;
+        }
         
-        /* Cost Comparison Styles */
-        .usa-india-cost-comparison { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
-        .usa-india-cost-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 15px; background-color: #f8fafc; border-radius: 8px; border-left: 4px solid #64748b; }
-        .usa-india-cost-role { font-weight: 600; color: #334155; }
-        .usa-india-cost-amount { font-weight: 700; font-size: 1.2rem; color: #1e293b; }
-        .usa-india-cost-saving { border-left-color: #10b981; background-color: #ecfdf5; }
-        .usa-india-cost-saving .usa-india-cost-role { color: #065f46; }
-        .usa-india-cost-saving .usa-india-cost-amount { color: #047857; }
+        /* Professional Cost Comparison Styles */
+        .usa-india-cost-comparison { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 12px; 
+            margin: 20px 0; 
+        }
+
+        .usa-india-cost-item { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 12px 15px; 
+            background-color: #f8fafc; 
+            border-radius: 8px; 
+            border-left: 4px solid #6b7280; 
+        }
+
+        .usa-india-cost-role { 
+            font-weight: 500; 
+            color: #374151; 
+        }
+
+        .usa-india-cost-amount { 
+            font-weight: 600; 
+            font-size: 1.1rem; 
+            color: #1f2937; 
+        }
+
+        .usa-india-cost-saving { 
+            border-left-color: #10b981; 
+            background-color: #ecfdf5; 
+        }
+
+        .usa-india-cost-saving .usa-india-cost-role { 
+            color: #065f46; 
+        }
+
+        .usa-india-cost-saving .usa-india-cost-amount { 
+            color: #047857; 
+        }
         
-        /* Services Tags Styles */
-        .usa-india-services-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
-        .usa-india-service-tag { display: inline-block; padding: 6px 12px; background-color: #f1f5f9; border-radius: 20px; font-size: 0.9rem; font-weight: 500; color: #334155; transition: all 0.3s ease; }
-        .usa-india-service-tag:hover { background-color: #1e3a8a; color: white; transform: translateY(-2px); }
+        /* Professional Services Tags Styles */
+        .usa-india-services-tags { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 10px; 
+            margin-top: 15px; 
+        }
+
+        .usa-india-service-tag { 
+            display: inline-block; 
+            padding: 6px 12px; 
+            background-color: #f1f5f9; 
+            border-radius: 20px; 
+            font-size: 0.9rem; 
+            font-weight: 500; 
+            color: #374151; 
+            transition: all 0.3s ease; 
+        }
+
+        .usa-india-service-tag:hover { 
+            background-color: #4f46e5; 
+            color: white; 
+            transform: translateY(-2px); 
+        }
 
         .usa-india-wrapper {
             font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
@@ -335,7 +482,7 @@ session_start();
             padding: 0 1.5rem; 
         }
 
-        /* Professional Hero Section - Navy Blue & Gray Theme */
+        /* Professional Hero Section - Clean Theme */
         .usa-india-hero-section {
             background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
             min-height: 65vh;
@@ -353,8 +500,8 @@ session_start();
             width: 100%;
             height: 100%;
             background-image: 
-                radial-gradient(circle at 20% 30%, rgba(30, 58, 138, 0.04) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(71, 85, 105, 0.03) 0%, transparent 50%);
+                radial-gradient(circle at 20% 30%, rgba(79, 70, 229, 0.04) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(99, 102, 241, 0.03) 0%, transparent 50%);
             z-index: 1;
         }
 
@@ -364,7 +511,7 @@ session_start();
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="professionalPattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="0.5" fill="rgba(30,58,138,0.06)"/></pattern></defs><rect x="0" y="0" width="100%" height="100%" fill="url(%23professionalPattern)"/></svg>');
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="professionalPattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="0.5" fill="rgba(79,70,229,0.06)"/></pattern></defs><rect x="0" y="0" width="100%" height="100%" fill="url(%23professionalPattern)"/></svg>');
             opacity: 0.6;
             z-index: 2;
         }
@@ -405,15 +552,15 @@ session_start();
 
         .usa-india-hero-title {
             font-size: 2.7rem;
-            font-weight: 800;
+            font-weight: 700;
             line-height: 1.2;
-            color: #1e293b;
+            color: #1f2937;
             margin-bottom: 1.2rem;
             letter-spacing: -0.02em;
         }
 
         .usa-india-title-highlight {
-            background: linear-gradient(135deg, #1e3a8a, #475569);
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -421,7 +568,7 @@ session_start();
 
         .usa-india-hero-subtitle {
             font-size: 1.1rem;
-            color: #64748b;
+            color: #6b7280;
             margin-bottom: 1.8rem;
             line-height: 1.6;
             max-width: 95%;
@@ -447,7 +594,7 @@ session_start();
         .usa-india-feature-icon {
             width: 22px;
             height: 22px;
-            background: linear-gradient(135deg, #1e3a8a, #475569);
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -455,12 +602,12 @@ session_start();
             color: white;
             font-size: 0.75rem;
             flex-shrink: 0;
-            box-shadow: 0 2px 8px rgba(30, 58, 138, 0.2);
+            box-shadow: 0 2px 8px rgba(79, 70, 229, 0.2);
         }
 
         .usa-india-feature-text {
             font-size: 0.95rem;
-            font-weight: 600;
+            font-weight: 500;
             color: #374151;
         }
 
@@ -500,7 +647,7 @@ session_start();
 
         .usa-india-flag-text {
             font-size: 0.9rem;
-            font-weight: 600;
+            font-weight: 500;
             color: #374151;
         }
 
@@ -526,7 +673,7 @@ session_start();
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, #1e3a8a, #475569);
+            background: linear-gradient(90deg, #4f46e5, #6366f1);
         }
 
         .usa-india-tab-nav {
@@ -543,7 +690,7 @@ session_start();
             border: none;
             font-size: 0.95rem;
             font-weight: 600;
-            color: #64748b;
+            color: #6b7280;
             cursor: pointer;
             transition: all 0.3s ease;
             position: relative;
@@ -551,7 +698,7 @@ session_start();
         }
 
         .usa-india-tab-button.active {
-            color: #1e3a8a;
+            color: #4f46e5;
             background: rgba(255, 255, 255, 0.8);
         }
 
@@ -562,7 +709,7 @@ session_start();
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(90deg, #1e3a8a, #475569);
+            background: linear-gradient(90deg, #4f46e5, #6366f1);
         }
 
         .usa-india-tab-button:hover:not(.active) {
@@ -583,14 +730,14 @@ session_start();
 
         .usa-india-form-title {
             font-size: 1.4rem;
-            font-weight: 700;
-            color: #1e293b;
+            font-weight: 600;
+            color: #1f2937;
             margin-bottom: 0.5rem;
             text-align: center;
         }
 
         .usa-india-form-subtitle {
-            color: #64748b;
+            color: #6b7280;
             text-align: center;
             margin-bottom: 1.8rem;
             font-size: 0.9rem;
@@ -619,8 +766,8 @@ session_start();
         }
 
         .usa-india-form-control:focus {
-            border-color: #1e3a8a;
-            box-shadow: 0 0 0 4px rgba(30, 58, 138, 0.1);
+            border-color: #4f46e5;
+            box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
             transform: translateY(-1px);
             background: #ffffff;
         }
@@ -654,7 +801,7 @@ session_start();
         }
 
         .usa-india-form-file:hover {
-            border-color: #1e3a8a;
+            border-color: #4f46e5;
             background: linear-gradient(135deg, #eff6ff, #dbeafe);
             transform: translateY(-1px);
         }
@@ -664,14 +811,14 @@ session_start();
         }
 
         .usa-india-file-text {
-            color: #64748b;
+            color: #6b7280;
             font-size: 0.8rem;
             margin-top: 0.5rem;
         }
 
         .usa-india-form-submit {
             width: 100%;
-            background: linear-gradient(135deg, #1e3a8a 0%, #475569 100%);
+            background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
             color: white;
             border: none;
             padding: 0.9rem;
@@ -683,13 +830,13 @@ session_start();
             text-transform: uppercase;
             letter-spacing: 0.05em;
             margin-top: 1rem;
-            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.2);
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.2);
         }
 
         .usa-india-form-submit:hover {
-            background: linear-gradient(135deg, #1d4ed8 0%, #334155 100%);
+            background: linear-gradient(135deg, #4338ca 0%, #4f46e5 100%);
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(30, 58, 138, 0.3);
+            box-shadow: 0 8px 25px rgba(67, 56, 202, 0.3);
         }
 
         .usa-india-form-submit:active {
@@ -698,96 +845,10 @@ session_start();
 
         .usa-india-form-note {
             text-align: center;
-            color: #64748b;
+            color: #6b7280;
             font-size: 0.8rem;
             margin-top: 1rem;
             line-height: 1.4;
-        }
-
-        /* Professional Statistics Section */
-        .usa-india-stats-section {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-            color: white;
-            position: relative;
-        }
-
-        .usa-india-stats-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="statsPattern" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.08)"/></pattern></defs><rect x="0" y="0" width="100%" height="100%" fill="url(%23statsPattern)"/></svg>');
-            opacity: 0.3;
-            z-index: 1;
-        }
-
-        .usa-india-stats-section .usa-india-container {
-            position: relative;
-            z-index: 2;
-        }
-
-        .usa-india-stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .usa-india-stat-card {
-            text-align: center;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .usa-india-stat-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .usa-india-stat-card:hover::before {
-            left: 100%;
-        }
-
-        .usa-india-stat-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.12);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .usa-india-stat-icon {
-            font-size: 2.5rem;
-            color: #60a5fa;
-            margin-bottom: 1rem;
-            filter: drop-shadow(0 4px 8px rgba(96, 165, 250, 0.3));
-        }
-
-        .usa-india-stat-number {
-            font-size: 2.5rem;
-            font-weight: 900;
-            margin-bottom: 0.5rem;
-        }
-
-        .usa-india-stat-label {
-            font-size: 0.9rem;
-            color: #cbd5e1;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
         }
 
         /* Professional Services Section */
@@ -803,8 +864,8 @@ session_start();
 
         .usa-india-theme-title h2 {
             font-size: 2.5rem;
-            font-weight: 800;
-            color: #1e293b;
+            font-weight: 700;
+            color: #1f2937;
             margin-bottom: 1rem;
             position: relative;
         }
@@ -817,12 +878,12 @@ session_start();
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background: linear-gradient(90deg, #1e3a8a, #475569);
+            background: linear-gradient(90deg, #4f46e5, #6366f1);
             border-radius: 2px;
         }
 
         .usa-india-theme-title p {
-            color: #64748b;
+            color: #6b7280;
             font-size: 1.1rem;
             max-width: 600px;
             margin: 0 auto;
@@ -847,7 +908,7 @@ session_start();
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, #1e3a8a, #475569);
+            background: linear-gradient(90deg, #4f46e5, #6366f1);
             transform: scaleX(0);
             transition: transform 0.3s ease;
         }
@@ -868,50 +929,50 @@ session_start();
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #1e3a8a, #475569);
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
             border-radius: 50%;
             color: #fff;
             font-size: 2rem;
             transition: all 0.4s ease;
-            box-shadow: 0 8px 25px rgba(30, 58, 138, 0.2);
+            box-shadow: 0 8px 25px rgba(79, 70, 229, 0.2);
         }
 
         .usa-india-service-card:hover .usa-india-service-icon {
-            background: linear-gradient(135deg, #3b82f6, #64748b);
+            background: linear-gradient(135deg, #3730a3, #4f46e5);
             transform: rotateY(180deg);
-            box-shadow: 0 12px 35px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 12px 35px rgba(55, 48, 163, 0.3);
         }
 
         .usa-india-service-title {
             font-size: 1.25rem;
-            font-weight: 700;
+            font-weight: 600;
             margin-bottom: 15px;
-            color: #1e293b;
+            color: #1f2937;
         }
 
         .usa-india-service-description {
             padding: 0 25px 25px;
-            color: #64748b;
+            color: #6b7280;
         }
 
         .usa-india-service-link {
             display: inline-block;
             padding: 10px 25px;
-            background: linear-gradient(135deg, #1e3a8a, #475569);
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
             color: #fff;
             border-radius: 25px;
             text-decoration: none;
             font-weight: 600;
             margin-top: 15px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.2);
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.2);
         }
 
         .usa-india-service-link:hover {
-            background: linear-gradient(135deg, #3b82f6, #64748b);
+            background: linear-gradient(135deg, #3730a3, #4f46e5);
             color: #fff;
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 8px 25px rgba(55, 48, 163, 0.3);
         }
 
         /* Professional Benefits & Other Sections */
@@ -919,22 +980,22 @@ session_start();
         .usa-india-cta-section { padding: 80px 0; background: #fff; }
 
         .usa-india-why-image { border-radius: 16px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); position: relative; }
-        .usa-india-why-image::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(45deg, rgba(30, 58, 138, 0.05), rgba(71, 85, 105, 0.05)); opacity: 0; transition: opacity 0.3s ease; }
+        .usa-india-why-image::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(45deg, rgba(79, 70, 229, 0.05), rgba(99, 102, 241, 0.05)); opacity: 0; transition: opacity 0.3s ease; }
         .usa-india-why-image:hover::before { opacity: 1; }
         .usa-india-why-image img { width: 100%; height: auto; transition: all 0.5s ease; }
         .usa-india-why-image:hover img { transform: scale(1.05); }
 
         .usa-india-benefit-item { display: flex; align-items: flex-start; margin-bottom: 25px; }
-        .usa-india-benefit-icon { width: 50px; height: 50px; min-width: 50px; background: linear-gradient(135deg, #1e3a8a, #475569); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.2rem; margin-right: 20px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(30, 58, 138, 0.2); }
-        .usa-india-benefit-item:hover .usa-india-benefit-icon { background: linear-gradient(135deg, #3b82f6, #64748b); transform: rotateY(180deg); box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3); }
-        .usa-india-benefit-content h4 { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; color: #1e293b; }
-        .usa-india-benefit-content p { color: #64748b; line-height: 1.6; }
+        .usa-india-benefit-icon { width: 50px; height: 50px; min-width: 50px; background: linear-gradient(135deg, #4f46e5, #6366f1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.2rem; margin-right: 20px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(79, 70, 229, 0.2); }
+        .usa-india-benefit-item:hover .usa-india-benefit-icon { background: linear-gradient(135deg, #3730a3, #4f46e5); transform: rotateY(180deg); box-shadow: 0 8px 25px rgba(55, 48, 163, 0.3); }
+        .usa-india-benefit-content h4 { font-size: 1.2rem; font-weight: 600; margin-bottom: 10px; color: #1f2937; }
+        .usa-india-benefit-content p { color: #6b7280; line-height: 1.6; }
 
         .usa-india-contact-form { background: #fff; padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: 1px solid #f1f5f9; }
-        .usa-india-contact-info { background: linear-gradient(135deg, #1e293b, #334155); padding: 30px; border-radius: 16px; color: #fff; height: 100%; position: relative; overflow: hidden; }
-        .usa-india-contact-info::before { content: ''; position: absolute; top: 0; right: 0; width: 100px; height: 100px; background: linear-gradient(45deg, #1e3a8a, #475569); border-radius: 50%; transform: translate(50%, -50%); opacity: 0.1; }
-        .usa-india-contact-info h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 25px; color: #fff; position: relative; padding-bottom: 15px; }
-        .usa-india-contact-info h3:after { content: ''; position: absolute; bottom: 0; left: 0; width: 50px; height: 3px; background: linear-gradient(90deg, #60a5fa, #1e3a8a); }
+        .usa-india-contact-info { background: linear-gradient(135deg, #1f2937, #374151); padding: 30px; border-radius: 16px; color: #fff; height: 100%; position: relative; overflow: hidden; }
+        .usa-india-contact-info::before { content: ''; position: absolute; top: 0; right: 0; width: 100px; height: 100px; background: linear-gradient(45deg, #4f46e5, #6366f1); border-radius: 50%; transform: translate(50%, -50%); opacity: 0.1; }
+        .usa-india-contact-info h3 { font-size: 1.5rem; font-weight: 600; margin-bottom: 25px; color: #fff; position: relative; padding-bottom: 15px; }
+        .usa-india-contact-info h3:after { content: ''; position: absolute; bottom: 0; left: 0; width: 50px; height: 3px; background: linear-gradient(90deg, #60a5fa, #4f46e5); }
         .usa-india-contact-item { display: flex; align-items: flex-start; margin-bottom: 20px; position: relative; z-index: 1; }
         .usa-india-contact-icon { width: 40px; height: 40px; min-width: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #60a5fa; font-size: 1rem; margin-right: 15px; }
         .usa-india-contact-text { font-size: 0.95rem; line-height: 1.6; }
@@ -944,10 +1005,10 @@ session_start();
 
         .usa-india-form-group { margin-bottom: 20px; }
         .usa-india-contact-form .form-control { height: 45px; border-radius: 8px; border: 2px solid #e5e7eb; padding: 10px 15px; font-size: 0.95rem; transition: all 0.3s ease; }
-        .usa-india-contact-form .form-control:focus { border-color: #1e3a8a; box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1); }
+        .usa-india-contact-form .form-control:focus { border-color: #4f46e5; box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1); }
         .usa-india-contact-form textarea.form-control { height: 120px; }
-        .usa-india-submit-btn { background: linear-gradient(135deg, #1e3a8a, #475569); color: #fff; border: none; padding: 12px 30px; font-size: 1rem; font-weight: 700; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; }
-        .usa-india-submit-btn:hover { background: linear-gradient(135deg, #3b82f6, #64748b); }
+        .usa-india-submit-btn { background: linear-gradient(135deg, #4f46e5, #6366f1); color: #fff; border: none; padding: 12px 30px; font-size: 1rem; font-weight: 600; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; }
+        .usa-india-submit-btn:hover { background: linear-gradient(135deg, #3730a3, #4f46e5); }
 
         .usa-india-alert { padding: 15px; margin-bottom: 20px; border: 1px solid transparent; border-radius: 8px; }
         .usa-india-alert-success { color: #065f46; background-color: #d1fae5; border-color: #a7f3d0; }
@@ -955,13 +1016,13 @@ session_start();
 
         /* Footer Custom Styles */
         .elegant-footer {
-            background: #1e293b;
+            background: #1f2937;
             color: #f1f5f9;
             padding: 2.5rem 0 3.5rem 0;
             border-radius: 14px 14px 0 0;
             position: relative;
             min-height: 180px;
-            box-shadow: 0 -4px 32px 2px rgba(30,41,59,0.09);
+            box-shadow: 0 -4px 32px 2px rgba(31,41,55,0.09);
             margin-top: 3rem;
         }
 
@@ -1014,6 +1075,10 @@ session_start();
                 max-width: 500px;
                 margin: 0 auto;
             }
+
+            .usa-india-hero-slider {
+                min-height: 300px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1037,6 +1102,15 @@ session_start();
             .elite-mobile-phone {
                 display: flex;
             }
+
+            .usa-india-hero-stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .usa-india-hero-slider {
+                min-height: 280px;
+            }
             
             .usa-india-hero-section { min-height: 55vh; padding: 35px 0; }
             .usa-india-hero-title { font-size: 2.2rem; }
@@ -1044,8 +1118,6 @@ session_start();
             .usa-india-form-row { grid-template-columns: 1fr; gap: 0; }
             .usa-india-hero-features { justify-content: center; }
             .usa-india-flag-container { justify-content: center; flex-wrap: wrap; }
-            .usa-india-stats-grid { grid-template-columns: repeat(2, 1fr); }
-            .usa-india-tab-content { padding: 1.5rem; }
             .elegant-footer-container { flex-direction: column; align-items: center; gap: 1.2rem; }
             
             .elite-call-icon { left: 15px; bottom: 15px; }
@@ -1066,11 +1138,29 @@ session_start();
             .elite-header-main { 
                 padding: 0.6rem 0; 
             }
+
+            .usa-india-stat-item {
+                padding: 1rem;
+            }
+            
+            .usa-india-stat-icon {
+                width: 40px;
+                height: 40px;
+                min-width: 40px;
+                font-size: 1rem;
+            }
+            
+            .usa-india-stat-number {
+                font-size: 1.3rem;
+            }
+
+            .usa-india-hero-slider {
+                min-height: 250px;
+            }
             
             .usa-india-hero-section { min-height: 50vh; padding: 30px 0; }
             .usa-india-hero-title { font-size: 1.9rem; }
             .usa-india-form-wrapper { margin: 0 0.5rem; }
-            .usa-india-stats-grid { grid-template-columns: 1fr; }
             .usa-india-tab-content { padding: 1.2rem; }
             
             .elite-call-icon { left: 10px; bottom: 10px; }
@@ -1093,26 +1183,22 @@ session_start();
         </a>
     </div>
 
-    <!-- Custom Professional White Header - Logo Left, Phone Center, Nav Right -->
+    <!-- Custom Professional White Header -->
     <header class="elite-header-main">
         <div class="elite-header-wrapper">
-            <!-- Logo Section - Left -->
             <div class="elite-brand-logo">
                 <img src="https://elitecorporatesolutions.com/images/logo/logo.png" alt="Elite Corporate Solutions Logo">
             </div>
             
-            <!-- Phone Section - Center -->
             <a href="tel:+971582348005" class="elite-phone-center">
                 <i class="fas fa-phone"></i>
                 +971 58 234 8005
             </a>
-            <!-- Phone Section - Center -->
             <a href="tel:+919871916980" class="elite-phone-center">
                 <i class="fas fa-phone"></i>
                 +91 98719 16980
             </a>
             
-            <!-- Navigation Section - Right -->
             <nav class="elite-nav-desktop">
                 <a href="#home" class="elite-nav-link">Home</a>
                 <a href="#services" class="elite-nav-link">Services</a>
@@ -1120,13 +1206,11 @@ session_start();
                 <a href="#contact" class="elite-nav-link">Contact</a>
             </nav>
             
-            <!-- Mobile Toggle Button -->
             <button class="elite-mobile-menu-btn" onclick="toggleEliteMobileNav()">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
         
-        <!-- Mobile Navigation Panel -->
         <div class="elite-mobile-nav-panel" id="eliteMobileNav">
             <div class="elite-mobile-phone">
                 <a href="tel:+971582348005" class="elite-phone-center">
@@ -1152,22 +1236,53 @@ session_start();
             <div class="usa-india-container">
                 <div class="usa-india-hero-content">
                     <div class="usa-india-hero-grid">
-                        <!-- Left Content - Professional Theme with Slider -->
+                        <!-- Left Content - Professional Theme with Fixed Slider -->
                         <div class="usa-india-hero-text">
-                            <!-- Hero Content Slider -->
+                            <!-- Hero Content Slider - Fixed Structure -->
                             <div class="usa-india-hero-slider">
-                                <!-- Slide 1 -->
-                                <div class="usa-india-slide">
+                                <!-- Slide 1 - Main Landing Content with Stats ONLY -->
+                                <div class="usa-india-slide active">
                                     <h1 class="usa-india-hero-title">
-                                        Connect <span class="usa-india-title-highlight">Elite Talent</span> Between India & USA
+                                        Bridge <span class="usa-india-title-highlight">Elite Talent</span> Between India & USA
                                     </h1>
                                     
                                     <p class="usa-india-hero-subtitle">
-                                        Premier recruitment platform bridging top Indian professionals with leading American companies. Specialized in H1B visa support, Silicon Valley placements, and Fortune 500 corporate recruitment across all industries.
+                                        Premier recruitment platform connecting top Indian professionals with leading American companies. Your gateway to Silicon Valley success and Fortune 500 careers.
                                     </p>
+
+                                    <!-- Professional Stats Cards - ONLY IN SLIDE 1 -->
+                                    <div class="usa-india-hero-stats">
+                                        <div class="usa-india-stat-item">
+                                            <div class="usa-india-stat-icon">
+                                                <i class="fa fa-users"></i>
+                                            </div>
+                                            <div class="usa-india-stat-content">
+                                                <span class="usa-india-stat-number">10,000+</span>
+                                                <span class="usa-india-stat-text">Professionals Placed</span>
+                                            </div>
+                                        </div>
+                                        <div class="usa-india-stat-item">
+                                            <div class="usa-india-stat-icon">
+                                                <i class="fa fa-building"></i>
+                                            </div>
+                                            <div class="usa-india-stat-content">
+                                                <span class="usa-india-stat-number">500+</span>
+                                                <span class="usa-india-stat-text">Fortune Companies</span>
+                                            </div>
+                                        </div>
+                                        <div class="usa-india-stat-item">
+                                            <div class="usa-india-stat-icon">
+                                                <i class="fa fa-passport"></i>
+                                            </div>
+                                            <div class="usa-india-stat-content">
+                                                <span class="usa-india-stat-number">96%</span>
+                                                <span class="usa-india-stat-text">Visa Success Rate</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 
-                                <!-- Slide 2 -->
+                                <!-- Slide 2 - Cost Comparison ONLY -->
                                 <div class="usa-india-slide">
                                     <h1 class="usa-india-hero-title">
                                         <span class="usa-india-title-highlight">Remote Working</span> (7+ years' experience)
@@ -1189,7 +1304,7 @@ session_start();
                                     </div>
                                 </div>
                                 
-                                <!-- Slide 3 -->
+                                <!-- Slide 3 - Service Tags ONLY -->
                                 <div class="usa-india-slide">
                                     <h1 class="usa-india-hero-title">
                                         Hire <span class="usa-india-title-highlight">Remote Workers</span> from India at 1/4th of the cost
@@ -1220,6 +1335,7 @@ session_start();
                                 </div>
                             </div>
 
+                            <!-- Flag Container - Outside Slider -->
                             <div class="usa-india-flag-container">
                                 <div class="usa-india-flag-item">
                                     <img src="https://flagcdn.com/w40/in.png" alt="India Flag" class="usa-india-flag-icon">
@@ -1231,6 +1347,7 @@ session_start();
                                 </div>
                             </div>
 
+                            <!-- Features - Outside Slider -->
                             <div class="usa-india-hero-features">
                                 <div class="usa-india-feature-item">
                                     <div class="usa-india-feature-icon">
@@ -1392,7 +1509,7 @@ session_start();
                                         
                                         <div class="usa-india-form-group">
                                             <div class="usa-india-form-file" onclick="document.getElementById('resume').click()">
-                                                <i class="fa fa-upload" style="font-size: 1.3rem; color: #1e3a8a; margin-bottom: 6px;"></i>
+                                                <i class="fa fa-upload" style="font-size: 1.3rem; color: #4f46e5; margin-bottom: 6px;"></i>
                                                 <div>Click to upload your Resume/CV</div>
                                                 <div class="usa-india-file-text">PDF, DOC, DOCX (Max 5MB)</div>
                                                 <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx">
@@ -1704,7 +1821,7 @@ session_start();
                         const fileText = fileContainer.querySelector('.usa-india-file-text');
                         if (fileName) {
                             fileText.textContent = `Selected: ${fileName}`;
-                            fileContainer.style.borderColor = '#1e3a8a';
+                            fileContainer.style.borderColor = '#4f46e5';
                             fileContainer.style.background = 'linear-gradient(135deg, #eff6ff, #dbeafe)';
                         }
                     });
@@ -1794,7 +1911,7 @@ session_start();
         </div>
     </footer>
 
-    <!-- USA-India Hero Slider Script -->
+    <!-- USA-India Hero Slider Script - Fixed -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize slider
