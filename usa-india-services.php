@@ -1781,6 +1781,8 @@ session_start();
                                 </div>
                                 <div class="usa-india-contact-text">
                                     <p><strong>UAE Headquarters:</strong><br>26th Floor, Amber Gem Tower,<br>Sheikh Khalifa Street,<br>Ajman Ventures Centre Free Zone</p>
+                                    <p><strong>India Headquarters:</strong><br>A-83, Okhla Phase II, <br> New Delhi – 110020, India</p>
+
                                 </div>
                             </div>
                             <div class="usa-india-social-links">
@@ -1902,6 +1904,7 @@ session_start();
                     <span>26th Floor, Amber Gem Tower,<br>
                      Sheikh Khalifa Street,<br>
                      Ajman Ventures Centre Free Zone</span>
+                    <span>A-83, Okhla Phase II, <br> New Delhi – 110020, India</span>
                 </div>
                 <div class="elegant-footer-phone">
                     <i class="fas fa-phone-alt"></i>
