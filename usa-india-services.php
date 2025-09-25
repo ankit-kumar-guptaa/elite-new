@@ -13,6 +13,7 @@ session_start();
 
     <!-- SEO Meta Tags -->
     <title>USA-India Professional Services - Elite Corporate Solutions</title>
+    <link rel="shortcut icon" href="/fav.png" type="image/x-icon">
     <meta name="description" content="Elite Corporate Solutions connects top Indian talent with leading American companies. Professional recruitment services for USA-India business expansion, visa support, and cultural integration.">
     <meta name="keywords" content="USA-India recruitment, American jobs for Indians, H1B visa support, US IT jobs, Silicon Valley recruitment, professional services USA, Indian talent America">
     <meta name="author" content="Elite Corporate Solutions">
@@ -448,7 +449,9 @@ session_start();
             display: flex; 
             flex-wrap: wrap; 
             gap: 10px; 
-            margin-top: 15px; 
+            margin-top: 15px;
+            justify-content: flex-start;
+            align-items: center;
         }
 
         .usa-india-service-tag { 
@@ -459,7 +462,9 @@ session_start();
             font-size: 0.9rem; 
             font-weight: 500; 
             color: #374151; 
-            transition: all 0.3s ease; 
+            transition: all 0.3s ease;
+            margin-bottom: 3px;
+            text-align: center;
         }
 
         .usa-india-service-tag:hover { 
@@ -1088,6 +1093,12 @@ session_start();
             .usa-india-hero-slider {
                 min-height: 300px;
             }
+            
+            /* Improved service tags alignment for tablets */
+            .usa-india-services-tags {
+                justify-content: center;
+                gap: 8px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1128,6 +1139,19 @@ session_start();
             .usa-india-hero-features { justify-content: center; }
             .usa-india-flag-container { justify-content: center; flex-wrap: wrap; }
             .elegant-footer-container { flex-direction: column; align-items: center; gap: 1.2rem; }
+            
+            /* Improved service tags for tablets and mobile */
+            .usa-india-services-tags {
+                justify-content: center;
+                gap: 7px;
+                margin-top: 12px;
+            }
+            
+            .usa-india-service-tag {
+                padding: 5px 10px;
+                font-size: 0.85rem;
+                margin-bottom: 4px;
+            }
             
             .elite-call-icon { left: 15px; bottom: 15px; }
             .elite-whatsapp-icon { right: 15px; bottom: 15px; }
@@ -1171,6 +1195,19 @@ session_start();
             .usa-india-hero-title { font-size: 1.9rem; }
             .usa-india-form-wrapper { margin: 0 0.5rem; }
             .usa-india-tab-content { padding: 1.2rem; }
+            
+            /* Improved service tags for mobile */
+            .usa-india-services-tags {
+                justify-content: center;
+                gap: 6px;
+                margin-top: 12px;
+            }
+            
+            .usa-india-service-tag {
+                padding: 5px 10px;
+                font-size: 0.8rem;
+                margin-bottom: 5px;
+            }
             
             .elite-call-icon { left: 10px; bottom: 10px; }
             .elite-whatsapp-icon { right: 10px; bottom: 10px; }
@@ -1951,11 +1988,7 @@ session_start();
         <div class="elegant-footer-container">
             <div class="elegant-footer-contact">
                 <div class="elegant-footer-address">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>26th Floor, Amber Gem Tower,<br>
-                     Sheikh Khalifa Street,<br>
-                     Ajman Ventures Centre Free Zone</span>
-                    <span>A-83, Okhla Phase II, <br> New Delhi – 110020, India</span>
+                 	<p>&copy; Copyrights 2025. Elite Corporate Solutions - All Rights Reserved.</p>
                 </div>
                 <div class="elegant-footer-phone">
                     <i class="fas fa-phone-alt"></i>
