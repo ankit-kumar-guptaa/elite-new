@@ -485,11 +485,11 @@ session_start();
         /* Professional Hero Section - Clean Theme */
         .usa-india-hero-section {
             background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
-            min-height: 65vh;
+            min-height: 40vh;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             position: relative;
-            padding: 45px 0;
+            padding: 25px 0 10px 0;
             overflow: hidden;
         }
 
@@ -525,8 +525,8 @@ session_start();
         .usa-india-hero-grid {
             display: grid;
             grid-template-columns: 1fr 500px;
-            gap: 3.5rem;
-            align-items: center;
+            gap: 2.2rem;
+            align-items: flex-start;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -654,6 +654,10 @@ session_start();
         /* Professional Form Container */
         .usa-india-form-container {
             animation: usaIndiaSlideInRight 1s ease-out 0.4s both;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            height: auto;
         }
 
         .usa-india-form-wrapper {
@@ -664,6 +668,11 @@ session_start();
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.3);
             position: relative;
+            margin-top: 0;
+            min-height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
         }
 
         .usa-india-form-wrapper::before {
@@ -1239,7 +1248,7 @@ session_start();
                         <!-- Left Content - Professional Theme with Fixed Slider -->
                         <div class="usa-india-hero-text">
                             <!-- Hero Content Slider - Fixed Structure -->
-                            <div class="usa-india-hero-slider">
+                            <div class="usa-india-hero-slider mt-5">
                                 <!-- Slide 1 - Main Landing Content with Stats ONLY -->
                                 <div class="usa-india-slide active">
                                     <h1 class="usa-india-hero-title">
@@ -1327,11 +1336,53 @@ session_start();
                                     </div>
                                 </div>
                                 
+                                <!-- Slide 4 - Hire US Candidates -->
+                                <div class="usa-india-slide">
+                                    <h1 class="usa-india-hero-title">
+                                        Hire Top <span class="usa-india-title-highlight">US Candidates</span> — Local Talent, Faster Onboarding
+                                    </h1>
+                                    
+                                    <p class="usa-india-hero-subtitle">
+                                        Need candidates already located in the USA? We source experienced local professionals across tech, finance, healthcare and more — ready to join immediately with US work authorization.
+                                    </p>
+
+                                    <div class="usa-india-hero-stats">
+                                        <div class="usa-india-stat-item">
+                                            <div class="usa-india-stat-icon">
+                                                <i class="fa fa-map-marker"></i>
+                                            </div>
+                                            <div class="usa-india-stat-content">
+                                                <span class="usa-india-stat-number">Nationwide</span>
+                                                <span class="usa-india-stat-text">US Coverage</span>
+                                            </div>
+                                        </div>
+                                        <div class="usa-india-stat-item">
+                                            <div class="usa-india-stat-icon">
+                                                <i class="fa fa-clock-o"></i>
+                                            </div>
+                                            <div class="usa-india-stat-content">
+                                                <span class="usa-india-stat-number">2-3 weeks</span>
+                                                <span class="usa-india-stat-text">Avg Time to Hire</span>
+                                            </div>
+                                        </div>
+                                        <div class="usa-india-stat-item">
+                                            <div class="usa-india-stat-icon">
+                                                <i class="fa fa-check-circle"></i>
+                                            </div>
+                                            <div class="usa-india-stat-content">
+                                                <span class="usa-india-stat-number">Pre-screened</span>
+                                                <span class="usa-india-stat-text">Background & Skill Verified</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
                                 <!-- Slider Navigation -->
                                 <div class="usa-india-slider-nav">
                                     <span class="usa-india-slider-dot active" data-slide="0"></span>
                                     <span class="usa-india-slider-dot" data-slide="1"></span>
                                     <span class="usa-india-slider-dot" data-slide="2"></span>
+                                    <span class="usa-india-slider-dot" data-slide="4"></span>
                                 </div>
                             </div>
 
@@ -1363,12 +1414,12 @@ session_start();
                                     <div class="usa-india-feature-text">Silicon Valley Jobs</div>
                                 </div>
                                 
-                                <div class="usa-india-feature-item">
+                                <!-- <div class="usa-india-feature-item">
                                     <div class="usa-india-feature-icon">
                                         <i class="fa fa-check"></i>
                                     </div>
                                     <div class="usa-india-feature-text">Fortune 500 Companies</div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
 
