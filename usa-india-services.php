@@ -2006,12 +2006,18 @@ session_start();
             const dots = document.querySelectorAll('.usa-india-slider-dot');
             let currentSlide = 0;
             let slideInterval;
+            let isTransitioning = false;
+            const slideTransitionTime = 4000; // Fixed 4 seconds for all slides
             
             // Show initial slide
             slides[0].classList.add('active');
             
             // Function to change slide
             function goToSlide(index) {
+                // Prevent multiple transitions at once
+                if (isTransitioning) return;
+                isTransitioning = true;
+                
                 // Hide current slide
                 slides[currentSlide].classList.add('usa-india-slide-out');
                 
@@ -2028,6 +2034,11 @@ session_start();
                     dots.forEach((dot, i) => {
                         dot.classList.toggle('active', i === currentSlide);
                     });
+                    
+                    // Reset transition flag after animation completes
+                    setTimeout(() => {
+                        isTransitioning = false;
+                    }, 800); // Match animation-duration in CSS
                 }, 400);
             }
             
@@ -2040,7 +2051,9 @@ session_start();
             
             // Start automatic sliding
             function startSlideShow() {
-                slideInterval = setInterval(nextSlide, 4000); // Change slide every 4 seconds
+                // Clear any existing interval first to prevent multiple intervals
+                stopSlideShow();
+                slideInterval = setInterval(nextSlide, slideTransitionTime);
             }
             
             // Stop automatic sliding
