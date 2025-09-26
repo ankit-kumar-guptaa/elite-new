@@ -1477,7 +1477,7 @@ session_start();
 
                                 <!-- US Employer Form Tab -->
                                 <div class="usa-india-tab-content active" id="employer-tab">
-                                    <h3 class="usa-india-form-title">Hire Top Indian Talent</h3>
+                                    <h3 class="usa-india-form-title">Hire Top Indian or US Talent</h3>
                                     <p class="usa-india-form-subtitle">Post your requirements and get matched with qualified candidates</p>
                                     
                                     <form action="backend_usa_form.php" method="post">
@@ -1535,7 +1535,7 @@ session_start();
                                         <input type="hidden" id="g-recaptcha-response-employer" name="g-recaptcha-response">
                                         <button type="submit" class="usa-india-form-submit">
                                             <i class="fa fa-paper-plane" style="margin-right: 6px;"></i>
-                                            Get Indian Talent
+                                            Get Indian or US Talent
                                         </button>
                                         
                                         <p class="usa-india-form-note">
