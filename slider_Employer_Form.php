@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once 'include/db.php'; // Include database connection
 
 // Include PHPMailer library
 use PHPMailer\PHPMailer\PHPMailer;
@@ -9,26 +10,58 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
+// Google reCAPTCHA v3 verification function
+function verifyRecaptcha($recaptchaResponse) {
+    $secretKey = '6Ledy8UrAAAAAERlqjDOP4rshduNBcWdZ_l_n-av';
+    $url = 'https://www.google.com/recaptcha/api/siteverify';
+    
+    // Make the request
+    $data = [
+        'secret' => $secretKey,
+        'response' => $recaptchaResponse
+    ];
+    
+    $options = [
+        'http' => [
+            'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+            'method' => 'POST',
+            'content' => http_build_query($data)
+        ]
+    ];
+    
+    $context = stream_context_create($options);
+    $result = file_get_contents($url, false, $context);
+    $resultJson = json_decode($result);
+    
+    return $resultJson;
+}
+
 if(isset($_POST['submit'])){
-
-
-     // Validate CAPTCHA
-     if (!isset($_POST['captcha']) || $_POST['captcha'] !== $_SESSION['captcha']) {
-        echo "<script>
-                alert('Invalid CAPTCHA. Please try again.');
-                window.history.back();
-              </script>";
+    // Get reCAPTCHA response
+    $recaptchaResponse = $_POST['g-recaptcha-response'] ?? '';
+    
+    // Verify reCAPTCHA
+    $recaptchaResult = verifyRecaptcha($recaptchaResponse);
+    
+    // Check if reCAPTCHA verification failed
+    if (!$recaptchaResult->success || $recaptchaResult->score < 0.5) {
+        echo "<script>alert('Security verification failed. Please try again.'); window.history.back();</script>";
         exit();
     }
-    unset($_SESSION['captcha']); // Clear CAPTCHA after validation
-
-
-
 
     $name = $_POST['name'];
     $phone = $_POST['phone'];
     $email = $_POST['email'];
     $message = $_POST['message'];
+    
+    // Save to database
+    try {
+        $stmt = $pdo->prepare("INSERT INTO slider_employer_submissions (name, phone, email, message, submission_date) VALUES (?, ?, ?, ?, NOW())");
+        $stmt->execute([$name, $phone, $email, $message]);
+    } catch (PDOException $e) {
+        // Log error but continue with email sending
+        error_log("Database error: " . $e->getMessage());
+    }
 
     $mail = new PHPMailer(true);
 

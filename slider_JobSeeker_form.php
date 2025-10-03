@@ -1,4 +1,6 @@
 <?php
+require_once 'include/db.php'; // Include database connection
+
 // Include PHPMailer library
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -9,20 +11,54 @@ require 'PHPMailer/src/SMTP.php';
 
 session_start();
 
+// Google reCAPTCHA v3 verification function
+function verifyRecaptcha($recaptchaResponse) {
+    $secretKey = '6Ledy8UrAAAAAERlqjDOP4rshduNBcWdZ_l_n-av';
+    $url = 'https://www.google.com/recaptcha/api/siteverify';
+    
+    // Make the request
+    $data = [
+        'secret' => $secretKey,
+        'response' => $recaptchaResponse
+    ];
+    
+    $options = [
+        'http' => [
+            'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+            'method' => 'POST',
+            'content' => http_build_query($data)
+        ]
+    ];
+    
+    $context = stream_context_create($options);
+    $result = file_get_contents($url, false, $context);
+    $resultJson = json_decode($result);
+    
+    return $resultJson;
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST['name'] ?? '';
     $email = $_POST['email'] ?? '';
     $message = $_POST['message'] ?? '';
-    $user_captcha = $_POST['captcha'] ?? '';
-    $generated_captcha = $_SESSION['captcha'] ?? '';
     $cv = $_FILES['cv'] ?? null;
+    
+    // Get reCAPTCHA response
+    $recaptchaResponse = $_POST['g-recaptcha-response'] ?? '';
+    
+    // Verify reCAPTCHA
+    $recaptchaResult = verifyRecaptcha($recaptchaResponse);
+    
+    // Check if reCAPTCHA verification failed
+    if (!$recaptchaResult->success || $recaptchaResult->score < 0.5) {
+        $response["message"] = "Security verification failed. Please try again.";
+        $response["status"] = false;
+        header("Content-Type: application/json");
+        echo json_encode($response);
+        exit();
+    }
 
-    // Validate CAPTCHA
-    if (empty($user_captcha)) {
-        $response["message"] = "CAPTCHA is required.";
-    } elseif ($user_captcha !== $generated_captcha) {
-        $response["message"] = "Invalid CAPTCHA. Please try again.";
-    } elseif ($cv && $cv['error'] === 0) {
+    if ($cv && $cv['error'] === 0) {
         $uploadDir = 'uploads/';
 
         // Ensure the directory exists
@@ -31,8 +67,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         $uploadFile = $uploadDir . basename($cv['name']);
+        $cv_filename = basename($cv['name']);
 
         if (move_uploaded_file($cv['tmp_name'], $uploadFile)) {
+            // Save to database
+            try {
+                $stmt = $pdo->prepare("INSERT INTO slider_jobseeker_submissions (name, email, message, cv_filename, submission_date) VALUES (?, ?, ?, ?, NOW())");
+                $stmt->execute([$name, $email, $message, $cv_filename]);
+            } catch (PDOException $e) {
+                // Log error but continue with email sending
+                error_log("Database error: " . $e->getMessage());
+            }
+            
             $mail = new PHPMailer(true);
 
             try {

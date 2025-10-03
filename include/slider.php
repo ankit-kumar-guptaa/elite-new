@@ -34,17 +34,10 @@
                 <textarea name="message" placeholder="Your Requirements" required></textarea>
             </div>
             
-            <div class="captcha-group">
-                <div class="captcha-box">
-                    <img src="captcha.php" alt="CAPTCHA" id="employerCaptchaImg">
-                    <button type="button" onclick="refreshCaptcha('employer')" class="captcha-refresh">
-                        <i class="fas fa-redo"></i>
-                    </button>
-                </div>
-                <input type="text" name="captcha" placeholder="Enter CAPTCHA Code" required class="captcha-input">
-            </div>
+            <!-- Google reCAPTCHA v3 -->
+            <input type="hidden" id="g-recaptcha-response-employer-slider" name="g-recaptcha-response">
             
-            <button type="submit" name="submit"  class="submit-btn">Submit</button>
+            <button type="submit" name="submit" class="submit-btn">Submit</button>
             <div id="employerMessage" class="message-box"></div>
         </form>
         
@@ -68,19 +61,43 @@
                 </label>
             </div>
             
-            <div class="captcha-group">
-                <div class="captcha-box">
-                    <img src="captcha.php" alt="CAPTCHA" id="jobseekerCaptchaImg">
-                    <button type="button" onclick="refreshCaptcha('jobseeker')" class="captcha-refresh">
-                        <i class="fas fa-redo"></i>
-                    </button>
-                </div>
-                <input type="text" name="captcha" placeholder="Enter CAPTCHA Code" required class="captcha-input">
-            </div>
+            <!-- Google reCAPTCHA v3 -->
+            <input type="hidden" id="g-recaptcha-response-jobseeker-slider" name="g-recaptcha-response">
             
-            <button type="submit" name="submit"  class="submit-btn">Apply Now</button>
+            <button type="submit" name="submit" class="submit-btn">Apply Now</button>
             <div id="jobseekerMessage" class="message-box"></div>
         </form>
+        
+        <!-- Add Google reCAPTCHA v3 script -->
+        <script src="https://www.google.com/recaptcha/api.js?render=6Ledy8UrAAAAAJYkNLctT9GFhY7dILPgmMGYQnYP"></script>
+        <script>
+        function executeRecaptcha(formType) {
+            grecaptcha.execute('6Ledy8UrAAAAAJYkNLctT9GFhY7dILPgmMGYQnYP', {action: 'submit'}).then(function(token) {
+                if (formType === 'employer') {
+                    document.getElementById('g-recaptcha-response-employer-slider').value = token;
+                } else if (formType === 'jobseeker') {
+                    document.getElementById('g-recaptcha-response-jobseeker-slider').value = token;
+                }
+            });
+        }
+        
+        // Update the validateForm function to execute reCAPTCHA
+        function validateForm(event, formType) {
+            event.preventDefault();
+            executeRecaptcha(formType);
+            
+            // Submit the form after a short delay to ensure reCAPTCHA token is set
+            setTimeout(function() {
+                if (formType === 'employer') {
+                    document.getElementById('employerForm').submit();
+                } else if (formType === 'jobseeker') {
+                    document.getElementById('jobSeekerForm').submit();
+                }
+            }, 1000);
+            
+            return false;
+        }
+        </script>
     </div>
 </div>
 
