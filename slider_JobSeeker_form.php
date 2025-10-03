@@ -46,6 +46,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get reCAPTCHA response
     $recaptchaResponse = $_POST['g-recaptcha-response'] ?? '';
     
+    // Check if reCAPTCHA response is empty
+    if(empty($recaptchaResponse)) {
+        $response["message"] = "Security verification failed. Please try again.";
+        $response["status"] = false;
+        header("Content-Type: application/json");
+        echo json_encode($response);
+        exit();
+    }
+    
     // Verify reCAPTCHA
     $recaptchaResult = verifyRecaptcha($recaptchaResponse);
     

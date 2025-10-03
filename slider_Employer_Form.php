@@ -40,12 +40,18 @@ if(isset($_POST['submit'])){
     // Get reCAPTCHA response
     $recaptchaResponse = $_POST['g-recaptcha-response'] ?? '';
     
+    // Check if reCAPTCHA response is empty
+    if(empty($recaptchaResponse)) {
+        echo json_encode(['status' => false, 'message' => 'Security verification failed. Please try again.']);
+        exit();
+    }
+    
     // Verify reCAPTCHA
     $recaptchaResult = verifyRecaptcha($recaptchaResponse);
     
     // Check if reCAPTCHA verification failed
     if (!$recaptchaResult->success || $recaptchaResult->score < 0.5) {
-        echo "<script>alert('Security verification failed. Please try again.'); window.history.back();</script>";
+        echo json_encode(['status' => false, 'message' => 'Security verification failed. Please try again.']);
         exit();
     }
 
