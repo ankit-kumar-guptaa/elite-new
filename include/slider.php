@@ -35,7 +35,7 @@
             </div>
             
             <!-- Google reCAPTCHA v3 -->
-            <input type="hidden" id="g-recaptcha-response-employer-slider" name="g-recaptcha-response">
+            <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
             
             <button type="submit" name="submit" class="submit-btn">Submit</button>
             <div id="employerMessage" class="message-box"></div>
@@ -74,9 +74,9 @@
         function executeRecaptcha(formType) {
             grecaptcha.execute('6Ledy8UrAAAAAJYkNLctT9GFhY7dILPgmMGYQnYP', {action: 'submit'}).then(function(token) {
                 if (formType === 'employer') {
-                    document.getElementById('g-recaptcha-response-employer-slider').value = token;
+                    document.getElementById('g-recaptcha-response').value = token;
                 } else if (formType === 'jobseeker') {
-                    document.getElementById('g-recaptcha-response-jobseeker-slider').value = token;
+                    document.getElementById('g-recaptcha-response').value = token;
                 }
             });
         }
