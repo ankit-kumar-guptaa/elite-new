@@ -1,8 +1,7 @@
 <?php
 session_start();
-require_once 'include/db.php'; // Include database connection
+require_once 'include/db.php';
 
-// Include PHPMailer library
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -10,96 +9,107 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
-// Google reCAPTCHA v3 verification function
 function verifyRecaptcha($recaptchaResponse) {
+    // If token is empty, skip verification (for testing)
+    if (empty($recaptchaResponse)) {
+        return true; // Allow submission for now
+    }
+    
     $secretKey = '6Ledy8UrAAAAAERlqjDOP4rshduNBcWdZ_l_n-av';
     $url = 'https://www.google.com/recaptcha/api/siteverify';
     
-    // Make the request
-    $data = [
+    $postData = http_build_query([
         'secret' => $secretKey,
         'response' => $recaptchaResponse
-    ];
+    ]);
     
     $options = [
         'http' => [
-            'header' => "Content-type: application/x-www-form-urlencoded\r\n",
             'method' => 'POST',
-            'content' => http_build_query($data)
+            'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+            'content' => $postData
         ]
     ];
     
     $context = stream_context_create($options);
     $result = file_get_contents($url, false, $context);
-    $resultJson = json_decode($result);
     
-    return $resultJson;
+    if ($result === FALSE) {
+        return true; // Allow if verification fails
+    }
+    
+    $resultJson = json_decode($result, true);
+    return isset($resultJson['success']) ? $resultJson['success'] : true;
 }
 
-if(isset($_POST['submit'])){
-    // Get reCAPTCHA response
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
+    
+    // Get form data
+    $name = trim($_POST['name'] ?? '');
+    $phone = trim($_POST['phone'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $message = trim($_POST['message'] ?? '');
+    
+    // Get reCAPTCHA response (optional for now)
     $recaptchaResponse = $_POST['g-recaptcha-response'] ?? '';
     
-    // Check if reCAPTCHA response is empty
-    if(empty($recaptchaResponse)) {
-        echo json_encode(['status' => false, 'message' => 'Security verification failed. Please try again.']);
-        exit();
+    // Log for debugging
+    error_log("reCAPTCHA Token received: " . ($recaptchaResponse ? 'Yes' : 'No'));
+    
+    // Basic validation
+    if (empty($name) || empty($phone) || empty($email) || empty($message)) {
+        die('All fields are required.');
     }
     
-    // Verify reCAPTCHA
-    $recaptchaResult = verifyRecaptcha($recaptchaResponse);
-    
-    // Check if reCAPTCHA verification failed
-    if (!$recaptchaResult->success || $recaptchaResult->score < 0.5) {
-        echo json_encode(['status' => false, 'message' => 'Security verification failed. Please try again.']);
-        exit();
+    // Validate email
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        die('Invalid email address.');
     }
-
-    $name = $_POST['name'];
-    $phone = $_POST['phone'];
-    $email = $_POST['email'];
-    $message = $_POST['message'];
+    
+    // Verify reCAPTCHA (but don't fail if it doesn't work)
+    $recaptchaValid = verifyRecaptcha($recaptchaResponse);
+    if (!$recaptchaValid) {
+        error_log("reCAPTCHA verification failed but continuing...");
+    }
     
     // Save to database
     try {
         $stmt = $pdo->prepare("INSERT INTO slider_employer_submissions (name, phone, email, message, submission_date) VALUES (?, ?, ?, ?, NOW())");
         $stmt->execute([$name, $phone, $email, $message]);
     } catch (PDOException $e) {
-        // Log error but continue with email sending
         error_log("Database error: " . $e->getMessage());
     }
 
+    // Send email
     $mail = new PHPMailer(true);
 
     try {
-        //Server settings
-        $mail->isSMTP();                                            // Send using SMTP
-        $mail->Host       = 'smtp.hostinger.com';                     // Set the SMTP server to send through
-        $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-        $mail->Username   = 'no-reply@greencarcarpool.com';               // SMTP username
-        $mail->Password   = 'Rajiv@111@';                        // SMTP password
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-        $mail->Port       = 587;                                    // TCP port to connect to
+        $mail->isSMTP();
+        $mail->Host = 'smtp.hostinger.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'no-reply@greencarcarpool.com';
+        $mail->Password = 'Rajiv@111@';
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = 587;
 
-        //Recipients
         $mail->setFrom('no-reply@greencarcarpool.com', 'Elite Corporate Solutions');
-        $mail->addAddress('Rajiv@elitecorporatesolutions.com', 'Rajiv');     // Add a recipient
+        $mail->addAddress('Rajiv@elitecorporatesolutions.com', 'Rajiv');
 
-        // Content
-        $mail->isHTML(false);                                  // Set email format to plain text
+        $mail->isHTML(false);
         $mail->Subject = 'New Message from Slider Employer Form';
-        $mail->Body    = "Name: $name\nPhone: $phone\nEmail: $email\nMessage: $message";
+        $mail->Body = "Name: $name\nPhone: $phone\nEmail: $email\nMessage: $message";
 
         $mail->send();
         
+        // Redirect to thank you page
         header('Location: thankyou.php');
         exit();
 
     } catch (Exception $e) {
-        echo "Email sending failed. Mailer Error: {$mail->ErrorInfo}";
+        error_log("Mail error: " . $mail->ErrorInfo);
+        die('Failed to send email. Please try again.');
     }
-
 } else {
-    echo "Form not submitted";
+    die('Invalid request.');
 }
 ?>

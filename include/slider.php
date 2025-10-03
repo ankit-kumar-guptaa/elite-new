@@ -20,7 +20,9 @@
         </div>
         
         <!-- Employer Form -->
-        <form id="employerForm" class="active-form" action="slider_Employer_Form.php" method="POST" onsubmit="return validateForm(event, 'employer')">
+        <form id="employerForm" class="active-form" action="backend_slider_form.php" method="POST">
+            <input type="hidden" name="form_type" value="slider_employer">
+            
             <div class="form-group">
                 <input type="text" name="name" placeholder="Your Name" required>
             </div>
@@ -34,15 +36,22 @@
                 <textarea name="message" placeholder="Your Requirements" required></textarea>
             </div>
             
-            <!-- Google reCAPTCHA v3 -->
-            <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+            <input type="hidden" id="g-recaptcha-response-employer" name="g-recaptcha-response">
             
-            <button type="submit" name="submit" class="submit-btn">Submit</button>
+            <!-- Button with Loading Spinner -->
+            <button type="submit" name="submit_btn" class="submit-btn" id="employer-submit-btn">
+                <span class="btn-text">Submit</span>
+                <span class="btn-spinner" style="display: none;">
+                    <i class="fas fa-spinner fa-spin"></i> Processing...
+                </span>
+            </button>
             <div id="employerMessage" class="message-box"></div>
         </form>
         
         <!-- Job Seeker Form -->
-        <form id="jobSeekerForm" action="slider_JobSeeker_form.php" method="POST" enctype="multipart/form-data" onsubmit="return validateForm(event, 'jobseeker')">
+        <form id="jobSeekerForm" action="backend_slider_form.php" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="form_type" value="slider_jobseeker">
+            
             <div class="form-group">
                 <input type="text" name="name" placeholder="Full Name" required>
             </div>
@@ -61,45 +70,235 @@
                 </label>
             </div>
             
-            <!-- Google reCAPTCHA v3 -->
-            <input type="hidden" id="g-recaptcha-response-jobseeker-slider" name="g-recaptcha-response">
+            <input type="hidden" id="g-recaptcha-response-jobseeker" name="g-recaptcha-response">
             
-            <button type="submit" name="submit" class="submit-btn">Apply Now</button>
+            <!-- Button with Loading Spinner -->
+            <button type="submit" name="submit_btn" class="submit-btn" id="jobseeker-submit-btn">
+                <span class="btn-text">Apply Now</span>
+                <span class="btn-spinner" style="display: none;">
+                    <i class="fas fa-spinner fa-spin"></i> Processing...
+                </span>
+            </button>
             <div id="jobseekerMessage" class="message-box"></div>
         </form>
+    </div>
+</div>
+
+<!-- Loading Spinner CSS -->
+<style>
+.submit-btn {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.btn-spinner i {
+    margin-right: 8px;
+}
+
+.fa-spin {
+    animation: fa-spin 1s infinite linear;
+}
+
+@keyframes fa-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+</style>
+
+<!-- Google reCAPTCHA v3 Script -->
+<script src="https://www.google.com/recaptcha/api.js?render=6Ledy8UrAAAAAGLUn3toR4y2awVaNUkt0iyOlVLU"></script>
+
+<script>
+    // Simple loading functions
+    function showLoading(buttonId) {
+        const button = document.getElementById(buttonId);
+        if (button) {
+            const textSpan = button.querySelector('.btn-text');
+            const spinnerSpan = button.querySelector('.btn-spinner');
+            
+            if (textSpan) textSpan.style.display = 'none';
+            if (spinnerSpan) spinnerSpan.style.display = 'inline';
+            button.disabled = true;
+        }
+    }
+    
+    function hideLoading(buttonId) {
+        const button = document.getElementById(buttonId);
+        if (button) {
+            const textSpan = button.querySelector('.btn-text');
+            const spinnerSpan = button.querySelector('.btn-spinner');
+            
+            if (textSpan) textSpan.style.display = 'inline';
+            if (spinnerSpan) spinnerSpan.style.display = 'none';
+            button.disabled = false;
+        }
+    }
+    
+    // Simple validation function - NO PARAMETERS
+    function validateEmployerForm() {
+        const name = document.querySelector('#employerForm input[name="name"]').value.trim();
+        const email = document.querySelector('#employerForm input[name="email"]').value.trim();
+        const phone = document.querySelector('#employerForm input[name="phone"]').value.trim();
+        const message = document.querySelector('#employerForm textarea[name="message"]').value.trim();
         
-        <!-- Add Google reCAPTCHA v3 script -->
-        <script src="https://www.google.com/recaptcha/api.js?render=6Ledy8UrAAAAAJYkNLctT9GFhY7dILPgmMGYQnYP"></script>
-        <script>
-        function executeRecaptcha(formType) {
-            grecaptcha.execute('6Ledy8UrAAAAAJYkNLctT9GFhY7dILPgmMGYQnYP', {action: 'submit'}).then(function(token) {
-                if (formType === 'employer') {
-                    document.getElementById('g-recaptcha-response').value = token;
-                } else if (formType === 'jobseeker') {
-                    document.getElementById('g-recaptcha-response').value = token;
+        if (!name || !email || !phone || !message) {
+            alert('Please fill in all required fields.');
+            return false;
+        }
+        
+        // Simple email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert('Please enter a valid email address.');
+            return false;
+        }
+        
+        return true;
+    }
+    
+    function validateJobSeekerForm() {
+        const name = document.querySelector('#jobSeekerForm input[name="name"]').value.trim();
+        const email = document.querySelector('#jobSeekerForm input[name="email"]').value.trim();
+        const message = document.querySelector('#jobSeekerForm textarea[name="message"]').value.trim();
+        const fileInput = document.querySelector('#jobSeekerForm input[name="cv"]');
+        
+        if (!name || !email || !message) {
+            alert('Please fill in all required fields.');
+            return false;
+        }
+        
+        // Simple email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert('Please enter a valid email address.');
+            return false;
+        }
+        
+        // File validation
+        if (!fileInput.files || !fileInput.files[0]) {
+            alert('Please upload your resume.');
+            return false;
+        }
+        
+        const file = fileInput.files[0];
+        const fileName = file.name.toLowerCase();
+        
+        // Check file extension
+        if (!fileName.endsWith('.pdf') && !fileName.endsWith('.doc') && !fileName.endsWith('.docx')) {
+            alert('Please upload only PDF, DOC, or DOCX files.');
+            return false;
+        }
+        
+        // Check file size (5MB)
+        if (file.size > 5 * 1024 * 1024) {
+            alert('File size must be less than 5MB.');
+            return false;
+        }
+        
+        return true;
+    }
+    
+    // Wait for DOM to load
+    document.addEventListener('DOMContentLoaded', function() {
+        // Employer form handler
+        const employerForm = document.getElementById('employerForm');
+        if (employerForm) {
+            employerForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                console.log('Employer form submitted');
+                
+                // Validate form
+                if (!validateEmployerForm()) {
+                    return;
                 }
+                
+                // Show loading
+                showLoading('employer-submit-btn');
+                
+                // Execute reCAPTCHA
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('6Ledy8UrAAAAAGLUn3toR4y2awVaNUkt0iyOlVLU', {action: 'employer_form'})
+                        .then(function(token) {
+                            console.log('reCAPTCHA token received:', token ? 'Yes' : 'No');
+                            
+                            if (token && token.length > 0) {
+                                document.getElementById('g-recaptcha-response-employer').value = token;
+                                employerForm.submit();
+                            } else {
+                                hideLoading('employer-submit-btn');
+                                alert('Security verification failed. Please try again.');
+                            }
+                        })
+                        .catch(function(error) {
+                            console.error('reCAPTCHA error:', error);
+                            hideLoading('employer-submit-btn');
+                            alert('Security verification failed. Please refresh and try again.');
+                        });
+                });
             });
         }
         
-        // Update the validateForm function to execute reCAPTCHA
-        function validateForm(event, formType) {
-            event.preventDefault();
-            executeRecaptcha(formType);
-            
-            // Submit the form after a short delay to ensure reCAPTCHA token is set
-            setTimeout(function() {
-                if (formType === 'employer') {
-                    document.getElementById('employerForm').submit();
-                } else if (formType === 'jobseeker') {
-                    document.getElementById('jobSeekerForm').submit();
+        // Job seeker form handler
+        const jobSeekerForm = document.getElementById('jobSeekerForm');
+        if (jobSeekerForm) {
+            jobSeekerForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                console.log('Job seeker form submitted');
+                
+                // Validate form
+                if (!validateJobSeekerForm()) {
+                    return;
                 }
-            }, 1000);
-            
-            return false;
+                
+                // Show loading
+                showLoading('jobseeker-submit-btn');
+                
+                // Execute reCAPTCHA
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('6Ledy8UrAAAAAGLUn3toR4y2awVaNUkt0iyOlVLU', {action: 'jobseeker_form'})
+                        .then(function(token) {
+                            console.log('reCAPTCHA token received:', token ? 'Yes' : 'No');
+                            
+                            if (token && token.length > 0) {
+                                document.getElementById('g-recaptcha-response-jobseeker').value = token;
+                                jobSeekerForm.submit();
+                            } else {
+                                hideLoading('jobseeker-submit-btn');
+                                alert('Security verification failed. Please try again.');
+                            }
+                        })
+                        .catch(function(error) {
+                            console.error('reCAPTCHA error:', error);
+                            hideLoading('jobseeker-submit-btn');
+                            alert('Security verification failed. Please refresh and try again.');
+                        });
+                });
+            });
         }
-        </script>
-    </div>
-</div>
+    });
+    
+    // Reset loading states on page visibility change
+    document.addEventListener('visibilitychange', function() {
+        if (document.visibilityState === 'visible') {
+            hideLoading('employer-submit-btn');
+            hideLoading('jobseeker-submit-btn');
+        }
+    });
+    
+    // Reset loading states on page show (back button)
+    window.addEventListener('pageshow', function(event) {
+        hideLoading('employer-submit-btn');
+        hideLoading('jobseeker-submit-btn');
+    });
+</script>
+
 
 <style>
     /* Base Styles */

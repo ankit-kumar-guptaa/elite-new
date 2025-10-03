@@ -4,7 +4,7 @@
 // $user = 'root'; 
 // $pass = 'newpassword';    
 
-$host = 'localhost:3306';
+$host = '45.113.122.178';
 $db = 'recru2l1_submit_form_data';
 $user = 'recru2l1_elite_admin'; 
 $pass = 'Elite@123@';    
@@ -20,7 +20,3 @@ try {
 
 
 
-<!-- $host = 'localhost:3306';
-$db = 'recru2l1_submit_form_data';
-$user = 'recru2l1_elite_admin'; 
-$pass = 'Elite@123@';     -->
