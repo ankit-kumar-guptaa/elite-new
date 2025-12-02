@@ -197,10 +197,13 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <p>Manage and review submissions seamlessly</p>
 
         <div class="text-end mb-3">
-    <a href="logout.php" class="btn btn-danger">
-        <i class="fas fa-sign-out-alt"></i> Logout
-    </a>
-</div>
+            <a href="slider_dashboard.php" class="btn btn-info me-2">
+                <i class="fas fa-sliders-h"></i> Slider Forms
+            </a>
+            <a href="logout.php" class="btn btn-danger">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+        </div>
     </div>
 
 

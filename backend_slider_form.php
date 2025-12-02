@@ -1,4 +1,5 @@
 <?php
+ob_start(); // Start output buffering to prevent accidental output
 session_start();
 require_once 'include/db.php';
 
@@ -279,11 +280,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Send email
         if ($mail->send()) {
             error_log("Email sent successfully for form type: " . $formType);
+            // Clear any output before redirection
+            if (ob_get_length()) {
+                ob_end_clean();
+            }
             header('Location: thankyou.php');
             exit();
         } else {
             error_log("Email sending failed");
             echo "<script>alert('Message could not be sent. Please try again.'); window.history.back();</script>";
+            exit();
         }
         
     } catch (Exception $e) {
