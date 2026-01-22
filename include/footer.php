@@ -40,6 +40,7 @@
 									<li><a href="privacy-policy.php">Privacy Policy</a></li>
 									<li><a href="term-and-condition.php">Terms and Conditions</a></li>
 								</ul>
+								<script language="JavaScript" src="https://dunsregistered.dnb.com" type="text/javascript"></script>
 							</div> <!-- /.footer-list -->
 							
 							<div class="col-lg-3 col-sm-6 col-12 contact-widget">
