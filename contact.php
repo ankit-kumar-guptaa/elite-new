@@ -274,6 +274,26 @@
 								<p><i class="fa fa-address-book-o" aria-hidden="true"></i> Dehradun - 248001</p>
 							</div>
 						</div>
+						<div class="item">
+							<div class="wrapper">
+								<h6>Hyderabad Branch</h6>
+								<p><i class="fa fa-address-book-o" aria-hidden="true"></i> eSeva Ln, K P H B Phase 3, Kukatpally, Hyderabad, Telangana 500072<br>
+								<i class="fa fa-phone" aria-hidden="true"></i> +91 83282 06115</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="wrapper">
+								<h6>Pune Branch</h6>
+								<p><i class="fa fa-address-book-o" aria-hidden="true"></i> 2nd Floor, River side Business Bay, Plot no. 84, Wellesley Road, Near RTO (Sangam Bridge), Pune, Maharashtra 411001<br>
+								<i class="fa fa-phone" aria-hidden="true"></i> +91 87889 56738</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="wrapper">
+								<h6>Hapur Branch</h6>
+								<p><i class="fa fa-address-book-o" aria-hidden="true"></i> Ground Floor Ward 15/136/1, Railway Road, 2, Hapur, Uttar Pradesh</p>
+							</div>
+						</div>
 					</div>
 					<!-- /.container -->
 				</div> <!-- /.branch-address -->
