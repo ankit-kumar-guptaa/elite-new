@@ -91,8 +91,58 @@
 
 
 
+<div class="container">
+<div class="row mt-5">
+					<!-- Head Office Address -->
+					<div class="col-lg-4 col-md-6 mb-4">
+						<div class="contact-card h-100 p-4 bg-light rounded shadow-sm">
+							<h4 class="mb-3"><i class="fa fa-building mr-2"></i>Head Office</h4>
+							<p class="mb-0">A-83, Okhla Industrial Area,</p>
+							<p class="mb-3">Phase - 2, New Delhi -110019</p>
 
 
+						</div>
+					</div>
+
+					<!-- Contact Information -->
+					<div class="col-lg-4 col-md-6 mb-4">
+						<div class="contact-card h-100 p-4 bg-light rounded shadow-sm">
+							<h4 class="mb-3"><i class="fa fa-phone mr-2"></i>Contact Info</h4>
+
+							<div class="mb-4">
+								<h5 class="mb-3">Phone Numbers:</h5>
+								<p class="mb-2"><i class="fa fa-mobile mr-2"></i>+91 9870364340</p>
+								<p><i class="fa fa-phone mr-2"></i>011-40747520</p>
+							</div>
+
+							<div>
+								<h5 class="mb-3">Email:</h5>
+								<p class="mb-0"><i class="fa fa-envelope mr-2"></i>info@elitecorporatesolutions.com</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Business Hours -->
+					<div class="col-lg-4 col-md-12 mb-4">
+						<div class="contact-card h-100 p-4 bg-light rounded shadow-sm">
+							<h4 class="mb-3"><i class="fa fa-clock-o mr-2"></i>Business Hours</h4>
+							<ul class="list-unstyled">
+								<li class="mb-2">Monday - Friday: 9:00 AM - 6:00 PM</li>
+								<li class="mb-2">Saturday: 9:00 AM - 2:00 PM</li>
+								<li>Sunday: Closed</li>
+							</ul>
+
+							<div class="mt-4">
+								<h5 class="mb-3">Connect With Us: <a href="#" class="mr-3 px-2"><i
+											class="fa fa-linkedin"></i></a></h5>
+
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+				</div>
 
 
 
@@ -113,7 +163,39 @@
     padding-bottom: 130px;
 ">
 					<div class="col-lg-5 col-12">
-						<div class="img-box"></div>
+						<!-- Hyderabad Branch -->
+						<div class="contact-card p-4 bg-light rounded shadow-sm mb-4">
+							<h4 class="mb-3"><i class="fa fa-building mr-2"></i>Hyderabad Branch</h4>
+							<p class="mb-0">eSeva Ln, K P H B Phase 3,</p>
+							<p class="mb-0">Kukatpally, Hyderabad,</p>
+							<p class="mb-0">Telangana 500072</p>
+						</div>
+
+						<!-- Pune Branch -->
+						<div class="contact-card p-4 bg-light rounded shadow-sm mb-4">
+							<h4 class="mb-3"><i class="fa fa-building mr-2"></i>Pune Branch</h4>
+							<p class="mb-0">2nd Floor, River side Business Bay,</p>
+							<p class="mb-0">Plot no. 84, Wellesley Road,</p>
+							<p class="mb-0">Near RTO (Sangam Bridge),</p>
+							<p class="mb-0">Pune, Maharashtra 411001</p>
+						</div>
+
+						<!-- Hapur Branch -->
+						<div class="contact-card p-4 bg-light rounded shadow-sm mb-4">
+							<h4 class="mb-3"><i class="fa fa-building mr-2"></i>Hapur Branch</h4>
+							<p class="mb-0">Ground Floor Ward 15/136/1,</p>
+							<p class="mb-0">Railway Road, 2,</p>
+							<p class="mb-0">Hapur, Uttar Pradesh</p>
+						</div>
+
+						<!-- UAE Branch -->
+						<div class="contact-card p-4 bg-light rounded shadow-sm mb-4">
+							<h4 class="mb-3"><i class="fa fa-building mr-2"></i>UAE Branch</h4>
+							<p class="mb-0">BC-889265,</p>
+							<p class="mb-0">26th Floor, Amber Gem Tower,</p>
+							<p class="mb-3">Ajman, UAE</p>
+							<p class="mb-0"><i class="fa fa-phone mr-2"></i>+971582348005</p>
+						</div>
 					</div>
 					<div class="col-lg-7 col-12">
 						<div class="form-wrapper">
@@ -274,78 +356,12 @@
 								<p><i class="fa fa-address-book-o" aria-hidden="true"></i> Dehradun - 248001</p>
 							</div>
 						</div>
-						<div class="item">
-							<div class="wrapper">
-								<h6>Hyderabad Branch</h6>
-								<p><i class="fa fa-address-book-o" aria-hidden="true"></i> eSeva Ln, K P H B Phase 3, Kukatpally, Hyderabad, Telangana 500072<br>
-								<i class="fa fa-phone" aria-hidden="true"></i> +91 83282 06115</p>
-							</div>
-						</div>
-						<div class="item">
-							<div class="wrapper">
-								<h6>Pune Branch</h6>
-								<p><i class="fa fa-address-book-o" aria-hidden="true"></i> 2nd Floor, River side Business Bay, Plot no. 84, Wellesley Road, Near RTO (Sangam Bridge), Pune, Maharashtra 411001<br>
-								<i class="fa fa-phone" aria-hidden="true"></i> +91 87889 56738</p>
-							</div>
-						</div>
-						<div class="item">
-							<div class="wrapper">
-								<h6>Hapur Branch</h6>
-								<p><i class="fa fa-address-book-o" aria-hidden="true"></i> Ground Floor Ward 15/136/1, Railway Road, 2, Hapur, Uttar Pradesh</p>
-							</div>
-						</div>
+
 					</div>
 					<!-- /.container -->
 				</div> <!-- /.branch-address -->
 
-				<div class="row mt-5">
-					<!-- Head Office Address -->
-					<div class="col-lg-4 col-md-6 mb-4">
-						<div class="contact-card h-100 p-4 bg-light rounded shadow-sm">
-							<h4 class="mb-3"><i class="fa fa-building mr-2"></i>Head Office</h4>
-							<p class="mb-0">A-83, Okhla Industrial Area,</p>
-							<p class="mb-3">Phase - 2, New Delhi -110019</p>
-
-
-						</div>
-					</div>
-
-					<!-- Contact Information -->
-					<div class="col-lg-4 col-md-6 mb-4">
-						<div class="contact-card h-100 p-4 bg-light rounded shadow-sm">
-							<h4 class="mb-3"><i class="fa fa-phone mr-2"></i>Contact Info</h4>
-
-							<div class="mb-4">
-								<h5 class="mb-3">Phone Numbers:</h5>
-								<p class="mb-2"><i class="fa fa-mobile mr-2"></i>+91 9870364340</p>
-								<p><i class="fa fa-phone mr-2"></i>011-40747520</p>
-							</div>
-
-							<div>
-								<h5 class="mb-3">Email:</h5>
-								<p class="mb-0"><i class="fa fa-envelope mr-2"></i>info@elitecorporatesolutions.com</p>
-							</div>
-						</div>
-					</div>
-
-					<!-- Business Hours -->
-					<div class="col-lg-4 col-md-12 mb-4">
-						<div class="contact-card h-100 p-4 bg-light rounded shadow-sm">
-							<h4 class="mb-3"><i class="fa fa-clock-o mr-2"></i>Business Hours</h4>
-							<ul class="list-unstyled">
-								<li class="mb-2">Monday - Friday: 9:00 AM - 6:00 PM</li>
-								<li class="mb-2">Saturday: 9:00 AM - 2:00 PM</li>
-								<li>Sunday: Closed</li>
-							</ul>
-
-							<div class="mt-4">
-								<h5 class="mb-3">Connect With Us: <a href="#" class="mr-3 px-2"><i
-											class="fa fa-linkedin"></i></a></h5>
-
-							</div>
-						</div>
-					</div>
-				</div>
+				
 			</div>
 		</div>
 
