@@ -394,9 +394,12 @@
 
 /* ========== SOCIAL PROOF STRIP ========== */
 .ez-proof-strip {
-    background: #fff;
-    padding: 24px 20px;
-    border-bottom: 1px solid #f0f0f0;
+    background: #0f172a;
+    padding: 28px 20px;
+    border-top: 1px solid #1e293b;
+    border-bottom: 1px solid #1e293b;
+    position: relative;
+    z-index: 5;
 }
 .ez-proof-inner {
     max-width: 1000px;
@@ -410,31 +413,32 @@
 .ez-proof-item {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 .ez-proof-item .ez-pi-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 18px;
     flex-shrink: 0;
+    border: 1px solid rgba(255,255,255,0.05);
 }
-.ez-pi-green { background: rgba(52,211,153,0.1); color: #059669; }
-.ez-pi-blue { background: rgba(59,130,246,0.1); color: #2563eb; }
-.ez-pi-orange { background: rgba(245,158,11,0.1); color: #d97706; }
-.ez-pi-purple { background: rgba(139,92,246,0.1); color: #7c3aed; }
+.ez-pi-green { background: rgba(5,150,105,0.2); color: #34d399; }
+.ez-pi-blue { background: rgba(37,99,235,0.2); color: #60a5fa; }
+.ez-pi-orange { background: rgba(217,119,6,0.2); color: #fbbf24; }
+.ez-pi-purple { background: rgba(124,58,237,0.2); color: #a78bfa; }
 .ez-proof-item .ez-pi-text strong {
     display: block;
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 800;
-    color: #1a1a2e;
+    color: #ffffff;
     line-height: 1.2;
 }
 .ez-proof-item .ez-pi-text span {
-    font-size: 12px;
+    font-size: 13px;
     color: #94a3b8;
     font-weight: 500;
 }
