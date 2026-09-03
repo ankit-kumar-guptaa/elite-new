@@ -35,8 +35,8 @@
     </script>
 
 <style>
-/* ========== GLOBAL ========== */
-.ez-page * {
+/* ========== RESET & GLOBAL ========== */
+.ez-page *, .ez-page *::before, .ez-page *::after {
     margin: 0; padding: 0; box-sizing: border-box;
 }
 .ez-page {
@@ -45,272 +45,314 @@
     overflow-x: hidden;
 }
 
-/* ========== HERO SECTION ========== */
+/* ========== HERO — SPLIT LAYOUT ========== */
 .ez-hero {
     position: relative;
     min-height: 100vh;
-    background: linear-gradient(135deg, #0a0e27 0%, #1a1a4e 25%, #2d1b69 50%, #1e3a5f 75%, #0a2540 100%);
+    background: #0b0f1a;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 120px 20px 60px;
+    padding: 90px 0 40px;
     overflow: hidden;
 }
-
+/* Subtle animated mesh gradient */
 .ez-hero::before {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle at 30% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 70% 80%, rgba(236, 72, 153, 0.06) 0%, transparent 50%),
-                radial-gradient(circle at 50% 20%, rgba(59, 130, 246, 0.06) 0%, transparent 50%);
-    animation: ez-float 20s ease-in-out infinite;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 80% 60% at 10% 40%, rgba(99,102,241,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 80% at 85% 70%, rgba(195,37,40,0.07) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 50% at 50% 10%, rgba(59,130,246,0.06) 0%, transparent 50%);
+    animation: ez-mesh 18s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+@keyframes ez-mesh {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0.7; transform: scale(1.05); }
+}
+/* Grid pattern overlay */
+.ez-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
     pointer-events: none;
 }
 
-@keyframes ez-float {
-    0%, 100% { transform: translate(0, 0) rotate(0deg); }
-    33% { transform: translate(30px, -30px) rotate(2deg); }
-    66% { transform: translate(-20px, 20px) rotate(-1deg); }
-}
-
-/* Floating particles */
-.ez-particles {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    overflow: hidden;
-    pointer-events: none;
-}
-.ez-particle {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background: rgba(255,255,255,0.15);
-    border-radius: 50%;
-    animation: ez-particle-float linear infinite;
-}
-@keyframes ez-particle-float {
-    0% { transform: translateY(100vh) scale(0); opacity: 0; }
-    10% { opacity: 1; }
-    90% { opacity: 1; }
-    100% { transform: translateY(-100px) scale(1); opacity: 0; }
-}
-
-.ez-hero-content {
+.ez-hero-inner {
     position: relative;
     z-index: 2;
-    text-align: center;
-    margin-bottom: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    width: 100%;
 }
 
+/* ---- LEFT COLUMN: COPY ---- */
+.ez-hero-left {
+    flex: 1;
+    min-width: 0;
+}
 .ez-hero-badge {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    background: rgba(255,255,255,0.08);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.12);
-    padding: 8px 20px;
+    gap: 6px;
+    background: rgba(99,102,241,0.12);
+    border: 1px solid rgba(99,102,241,0.2);
+    padding: 6px 14px;
     border-radius: 50px;
     color: #a5b4fc;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 1px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
-    margin-bottom: 24px;
-    animation: ez-fadeUp 0.6s ease-out;
+    margin-bottom: 20px;
+    animation: ez-fadeIn 0.5s ease-out;
 }
-
-.ez-hero h1 {
-    font-size: clamp(32px, 5vw, 56px);
+.ez-hero-left h1 {
+    font-size: clamp(30px, 4vw, 48px);
     font-weight: 800;
     color: #fff;
     line-height: 1.15;
     margin-bottom: 16px;
-    animation: ez-fadeUp 0.6s ease-out 0.1s both;
+    animation: ez-fadeIn 0.5s ease-out 0.1s both;
 }
-.ez-hero h1 span.ez-gradient-text {
-    background: linear-gradient(135deg, #818cf8, #c084fc, #f472b6);
+.ez-hero-left h1 .ez-grad {
+    background: linear-gradient(135deg, #818cf8, #c084fc);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
-.ez-hero-sub {
-    font-size: clamp(16px, 2vw, 20px);
-    color: rgba(255,255,255,0.7);
-    max-width: 700px;
-    margin: 0 auto 20px;
-    line-height: 1.6;
-    animation: ez-fadeUp 0.6s ease-out 0.2s both;
+.ez-hero-left .ez-hero-desc {
+    font-size: 15px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+    margin-bottom: 28px;
+    max-width: 480px;
+    animation: ez-fadeIn 0.5s ease-out 0.2s both;
 }
-.ez-hero-stats {
+
+/* Trust bullets */
+.ez-trust-list {
+    list-style: none;
     display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-    animation: ez-fadeUp 0.6s ease-out 0.3s both;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+    animation: ez-fadeIn 0.5s ease-out 0.3s both;
 }
-.ez-hero-stat {
-    text-align: center;
-}
-.ez-hero-stat .ez-stat-icon {
-    font-size: 24px;
-    margin-bottom: 4px;
-}
-.ez-hero-stat .ez-stat-val {
+.ez-trust-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255,255,255,0.8);
     font-size: 14px;
-    font-weight: 600;
-    color: #a5b4fc;
+    font-weight: 500;
 }
-.ez-hero-stat .ez-stat-lbl {
-    font-size: 12px;
-    color: rgba(255,255,255,0.5);
-}
-
-@keyframes ez-fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* ========== FORM CARDS ========== */
-.ez-forms-wrapper {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    gap: 30px;
-    max-width: 900px;
-    width: 100%;
-    animation: ez-fadeUp 0.6s ease-out 0.4s both;
-}
-
-.ez-form-card {
-    flex: 1;
-    background: rgba(255,255,255,0.06);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 20px;
-    padding: 32px 28px;
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
-}
-.ez-form-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    border-radius: 20px 20px 0 0;
-}
-.ez-form-card.ez-elite-card::before {
-    background: linear-gradient(90deg, #c32528, #e74c3c, #ff6b6b);
-}
-.ez-form-card.ez-zneus-card::before {
-    background: linear-gradient(90deg, #4361ee, #6366f1, #818cf8);
-}
-
-.ez-form-card:hover {
-    background: rgba(255,255,255,0.1);
-    border-color: rgba(255,255,255,0.2);
-    transform: translateY(-4px);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-}
-
-.ez-form-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 14px;
+.ez-trust-list li .ez-check {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    background: rgba(52,211,153,0.15);
+    color: #34d399;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
-    margin-bottom: 16px;
+    font-size: 11px;
+    flex-shrink: 0;
 }
-.ez-elite-card .ez-form-icon {
-    background: linear-gradient(135deg, rgba(195,37,40,0.2), rgba(231,76,60,0.15));
-    color: #ff6b6b;
+
+/* Stats row */
+.ez-hero-stats-row {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    animation: ez-fadeIn 0.5s ease-out 0.4s both;
 }
-.ez-zneus-card .ez-form-icon {
-    background: linear-gradient(135deg, rgba(67,97,238,0.2), rgba(99,102,241,0.15));
+.ez-hs {
+    text-align: left;
+}
+.ez-hs-val {
+    font-size: 26px;
+    font-weight: 800;
+    color: #fff;
+}
+.ez-hs-val span {
     color: #818cf8;
 }
+.ez-hs-lbl {
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
 
-.ez-form-card h3 {
-    font-size: 20px;
+@keyframes ez-fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- RIGHT COLUMN: FORM ---- */
+.ez-hero-right {
+    width: 420px;
+    flex-shrink: 0;
+    animation: ez-fadeIn 0.6s ease-out 0.3s both;
+}
+
+.ez-form-card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.4);
+}
+
+/* Form header */
+.ez-form-header {
+    padding: 22px 24px 16px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.ez-form-header h3 {
+    font-size: 18px;
     font-weight: 700;
     color: #fff;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
 }
-.ez-form-card .ez-form-tagline {
-    font-size: 13px;
-    color: rgba(255,255,255,0.5);
-    margin-bottom: 20px;
+.ez-form-header p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
 }
 
-.ez-form-group {
-    margin-bottom: 14px;
+/* Form Tabs */
+.ez-form-tabs {
+    display: flex;
+    margin: 0 20px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+    padding: 3px;
+    margin-top: 14px;
+    position: relative;
 }
-.ez-form-group input,
-.ez-form-group select,
-.ez-form-group textarea {
+.ez-form-tab {
+    flex: 1;
+    padding: 10px 8px;
+    border: none;
+    background: transparent;
+    color: rgba(255,255,255,0.5);
+    font-size: 12.5px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    position: relative;
+    z-index: 2;
+}
+.ez-form-tab.ez-tab-active {
+    color: #fff;
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.ez-form-tab i {
+    font-size: 13px;
+}
+.ez-tab-elite.ez-tab-active {
+    background: linear-gradient(135deg, rgba(195,37,40,0.5), rgba(195,37,40,0.3));
+}
+.ez-tab-zneus.ez-tab-active {
+    background: linear-gradient(135deg, rgba(67,97,238,0.5), rgba(67,97,238,0.3));
+}
+
+/* Form Body */
+.ez-form-body {
+    padding: 20px 24px 24px;
+}
+.ez-form-panel {
+    display: none;
+}
+.ez-form-panel.ez-panel-active {
+    display: block;
+    animation: ez-fadeIn 0.3s ease-out;
+}
+
+.ez-fg {
+    margin-bottom: 12px;
+}
+.ez-fg input,
+.ez-fg select,
+.ez-fg textarea {
     width: 100%;
     padding: 11px 14px;
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
     border-radius: 10px;
     color: #fff;
     font-size: 13px;
     font-family: 'Inter', sans-serif;
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
     outline: none;
 }
-.ez-form-group input::placeholder,
-.ez-form-group textarea::placeholder {
-    color: rgba(255,255,255,0.4);
+.ez-fg input::placeholder,
+.ez-fg textarea::placeholder {
+    color: rgba(255,255,255,0.35);
 }
-.ez-form-group select {
-    color: rgba(255,255,255,0.4);
+.ez-fg select {
+    color: rgba(255,255,255,0.35);
     appearance: none;
     -webkit-appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='rgba(255,255,255,0.5)' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 01.753 1.659l-4.796 5.48a1 1 0 01-1.506 0z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='rgba(255,255,255,0.4)' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 01.753 1.659l-4.796 5.48a1 1 0 01-1.506 0z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 14px center;
-    padding-right: 36px;
+    padding-right: 32px;
 }
-.ez-form-group select option {
+.ez-fg select option {
     background: #1a1a2e;
-    color: #fff;
+    color: #eee;
 }
-.ez-form-group input:focus,
-.ez-form-group select:focus,
-.ez-form-group textarea:focus {
-    border-color: rgba(255,255,255,0.3);
-    background: rgba(255,255,255,0.1);
-    box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+.ez-fg input:focus,
+.ez-fg select:focus,
+.ez-fg textarea:focus {
+    border-color: rgba(99,102,241,0.5);
+    background: rgba(255,255,255,0.09);
+    box-shadow: 0 0 0 3px rgba(99,102,241,0.1);
 }
-.ez-form-group textarea {
-    min-height: 70px;
+.ez-fg textarea {
+    min-height: 60px;
     resize: vertical;
 }
-
-.ez-form-row {
+.ez-fg-row {
     display: flex;
     gap: 10px;
 }
-.ez-form-row .ez-form-group {
+.ez-fg-row .ez-fg {
     flex: 1;
 }
 
-.ez-submit-btn {
+/* Submit Buttons */
+.ez-submit {
     width: 100%;
-    padding: 12px;
+    padding: 13px;
     border: none;
     border-radius: 10px;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 700;
     font-family: 'Inter', sans-serif;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -318,150 +360,201 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    margin-top: 6px;
+    margin-top: 4px;
     position: relative;
-    overflow: hidden;
+    letter-spacing: 0.3px;
 }
-.ez-elite-card .ez-submit-btn {
+.ez-submit-elite {
     background: linear-gradient(135deg, #c32528, #e74c3c);
     color: #fff;
 }
-.ez-elite-card .ez-submit-btn:hover {
-    background: linear-gradient(135deg, #a01f22, #c0392b);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(195,37,40,0.4);
+.ez-submit-elite:hover {
+    box-shadow: 0 8px 24px rgba(195,37,40,0.45);
+    transform: translateY(-1px);
 }
-.ez-zneus-card .ez-submit-btn {
+.ez-submit-zneus {
     background: linear-gradient(135deg, #4361ee, #6366f1);
     color: #fff;
 }
-.ez-zneus-card .ez-submit-btn:hover {
-    background: linear-gradient(135deg, #3451de, #5558e0);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(67,97,238,0.4);
+.ez-submit-zneus:hover {
+    box-shadow: 0 8px 24px rgba(67,97,238,0.45);
+    transform: translateY(-1px);
 }
-.ez-submit-btn:disabled {
+.ez-submit:disabled {
     opacity: 0.7;
     cursor: not-allowed;
     transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Form footer trust line */
+.ez-form-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+.ez-form-footer i {
+    color: #34d399;
+    font-size: 12px;
+}
+.ez-form-footer span {
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+}
+
+/* ========== SOCIAL PROOF STRIP ========== */
+.ez-proof-strip {
+    background: #fff;
+    padding: 24px 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+.ez-proof-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+.ez-proof-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.ez-proof-item .ez-pi-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+.ez-pi-green { background: rgba(52,211,153,0.1); color: #059669; }
+.ez-pi-blue { background: rgba(59,130,246,0.1); color: #2563eb; }
+.ez-pi-orange { background: rgba(245,158,11,0.1); color: #d97706; }
+.ez-pi-purple { background: rgba(139,92,246,0.1); color: #7c3aed; }
+.ez-proof-item .ez-pi-text strong {
+    display: block;
+    font-size: 18px;
+    font-weight: 800;
+    color: #1a1a2e;
+    line-height: 1.2;
+}
+.ez-proof-item .ez-pi-text span {
+    font-size: 12px;
+    color: #94a3b8;
+    font-weight: 500;
 }
 
 /* ========== FEATURES SECTIONS ========== */
 .ez-section {
-    padding: 80px 20px;
+    padding: 72px 20px;
 }
-.ez-section-dark {
+.ez-section-alt {
     background: #f8f9fc;
 }
 .ez-container {
     max-width: 1140px;
     margin: 0 auto;
 }
-.ez-section-badge {
+.ez-sec-badge {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    padding: 6px 16px;
+    padding: 5px 14px;
     border-radius: 50px;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 1px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
 }
-.ez-badge-red {
-    background: rgba(195,37,40,0.08);
-    color: #c32528;
-}
-.ez-badge-blue {
-    background: rgba(67,97,238,0.08);
-    color: #4361ee;
-}
-.ez-section-title {
-    font-size: clamp(28px, 3.5vw, 42px);
+.ez-badge-r { background: rgba(195,37,40,0.07); color: #c32528; }
+.ez-badge-b { background: rgba(67,97,238,0.07); color: #4361ee; }
+
+.ez-sec-title {
+    font-size: clamp(26px, 3.5vw, 38px);
     font-weight: 800;
     color: #1a1a2e;
     line-height: 1.2;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
-.ez-section-sub {
-    font-size: 16px;
+.ez-sec-desc {
+    font-size: 15px;
     color: #64748b;
-    max-width: 600px;
-    line-height: 1.6;
-    margin-bottom: 48px;
+    max-width: 560px;
+    line-height: 1.65;
+    margin-bottom: 40px;
 }
-.ez-section-center {
-    text-align: center;
-}
-.ez-section-center .ez-section-sub {
-    margin-left: auto;
-    margin-right: auto;
-}
+.ez-sec-center { text-align: center; }
+.ez-sec-center .ez-sec-desc { margin-left: auto; margin-right: auto; }
 
-/* Feature Cards */
-.ez-features-grid {
+/* Feature Grid */
+.ez-feat-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 24px;
+    gap: 20px;
 }
-.ez-feature-card {
+.ez-feat {
     background: #fff;
-    border-radius: 16px;
-    padding: 28px 24px;
-    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 26px 22px;
+    border: 1px solid #e8ecf1;
     transition: all 0.3s ease;
     position: relative;
-    overflow: hidden;
 }
-.ez-feature-card:hover {
+.ez-section-alt .ez-feat {
+    background: #fff;
+}
+.ez-feat:hover {
     border-color: transparent;
-    transform: translateY(-6px);
-    box-shadow: 0 16px 48px rgba(0,0,0,0.08);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.07);
 }
-.ez-feature-card .ez-fc-num {
+.ez-feat .ez-feat-num {
     position: absolute;
-    top: 16px;
-    right: 20px;
-    font-size: 48px;
+    top: 14px;
+    right: 18px;
+    font-size: 44px;
     font-weight: 900;
-    color: rgba(0,0,0,0.04);
+    color: rgba(0,0,0,0.03);
     line-height: 1;
 }
-.ez-feature-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
+.ez-feat-ic {
+    width: 44px;
+    height: 44px;
+    border-radius: 11px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
-    margin-bottom: 16px;
+    font-size: 18px;
+    margin-bottom: 14px;
 }
-.ez-fi-red {
-    background: linear-gradient(135deg, rgba(195,37,40,0.1), rgba(231,76,60,0.08));
-    color: #c32528;
-}
-.ez-fi-blue {
-    background: linear-gradient(135deg, rgba(67,97,238,0.1), rgba(99,102,241,0.08));
-    color: #4361ee;
-}
-.ez-feature-card h4 {
-    font-size: 16px;
+.ez-fic-r { background: rgba(195,37,40,0.08); color: #c32528; }
+.ez-fic-b { background: rgba(67,97,238,0.08); color: #4361ee; }
+.ez-feat h4 {
+    font-size: 15px;
     font-weight: 700;
     color: #1a1a2e;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
-.ez-feature-card p {
-    font-size: 13.5px;
+.ez-feat p {
+    font-size: 13px;
     color: #64748b;
     line-height: 1.6;
 }
 
-/* ========== PRICING TEASER ========== */
+/* ========== PRICING ========== */
 .ez-pricing {
-    background: linear-gradient(135deg, #0a0e27, #1a1a4e, #2d1b69);
-    padding: 80px 20px;
+    background: linear-gradient(135deg, #0b0f1a, #141833, #1e1b4b);
+    padding: 72px 20px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -469,249 +562,191 @@
 .ez-pricing::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: radial-gradient(circle at 50% 50%, rgba(99,102,241,0.1) 0%, transparent 60%);
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(99,102,241,0.08) 0%, transparent 60%);
 }
-.ez-pricing-content {
+.ez-pricing-in {
     position: relative;
     z-index: 2;
 }
-.ez-price-tag {
-    font-size: clamp(40px, 6vw, 72px);
+.ez-price-big {
+    font-size: clamp(36px, 6vw, 64px);
     font-weight: 900;
     color: #fff;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
-.ez-price-tag span {
-    background: linear-gradient(135deg, #818cf8, #c084fc, #f472b6);
+.ez-price-big span {
+    background: linear-gradient(135deg, #818cf8, #c084fc);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 .ez-pricing h2 {
-    font-size: clamp(24px, 3vw, 36px);
+    font-size: clamp(20px, 3vw, 30px);
     font-weight: 700;
     color: #fff;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
-.ez-pricing .ez-price-sub {
-    color: rgba(255,255,255,0.5);
-    font-size: 14px;
-    margin-bottom: 32px;
+.ez-pricing .ez-price-note {
+    color: rgba(255,255,255,0.4);
+    font-size: 13px;
+    margin-bottom: 28px;
 }
-.ez-pricing-features {
+.ez-price-checks {
     display: flex;
     justify-content: center;
-    gap: 32px;
+    gap: 24px;
     flex-wrap: wrap;
-    margin-bottom: 40px;
+    margin-bottom: 32px;
 }
-.ez-pf-item {
+.ez-pc {
     display: flex;
     align-items: center;
-    gap: 8px;
-    color: rgba(255,255,255,0.8);
-    font-size: 14px;
+    gap: 6px;
+    color: rgba(255,255,255,0.75);
+    font-size: 13px;
+    font-weight: 500;
 }
-.ez-pf-item i {
-    color: #34d399;
-    font-size: 16px;
-}
-.ez-cta-btn {
+.ez-pc i { color: #34d399; }
+.ez-cta-main {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    padding: 14px 36px;
-    border-radius: 12px;
-    font-size: 15px;
-    font-weight: 600;
+    gap: 8px;
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
     text-decoration: none;
+    background: linear-gradient(135deg, #4361ee, #6366f1);
+    color: #fff;
     transition: all 0.3s ease;
     font-family: 'Inter', sans-serif;
 }
-.ez-cta-btn-primary {
-    background: linear-gradient(135deg, #4361ee, #6366f1);
-    color: #fff;
-}
-.ez-cta-btn-primary:hover {
+.ez-cta-main:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(67,97,238,0.4);
+    box-shadow: 0 10px 30px rgba(67,97,238,0.4);
     color: #fff;
     text-decoration: none;
 }
 
-/* ========== CTA / CONTACT ========== */
+/* ========== CONTACT ========== */
 .ez-contact {
-    padding: 80px 20px;
+    padding: 72px 20px;
     background: #fff;
 }
 .ez-contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 24px;
-    margin-top: 48px;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
 }
-.ez-contact-card {
+.ez-cc {
     text-align: center;
-    padding: 28px 20px;
-    border-radius: 16px;
-    border: 1px solid #e2e8f0;
+    padding: 24px 16px;
+    border-radius: 14px;
+    border: 1px solid #e8ecf1;
     transition: all 0.3s ease;
 }
-.ez-contact-card:hover {
+.ez-cc:hover {
     border-color: transparent;
-    box-shadow: 0 12px 36px rgba(0,0,0,0.06);
-    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    transform: translateY(-3px);
 }
-.ez-contact-card .ez-cc-icon {
-    width: 56px;
-    height: 56px;
-    border-radius: 16px;
+.ez-cc-ic {
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
-    margin: 0 auto 14px;
+    font-size: 20px;
+    margin: 0 auto 12px;
 }
-.ez-cc-green {
-    background: rgba(37,211,102,0.1);
-    color: #25d366;
-}
-.ez-cc-blue {
-    background: rgba(67,97,238,0.1);
-    color: #4361ee;
-}
-.ez-cc-red {
-    background: rgba(195,37,40,0.1);
-    color: #c32528;
-}
-.ez-cc-purple {
-    background: rgba(139,92,246,0.1);
-    color: #8b5cf6;
-}
-.ez-contact-card h4 {
-    font-size: 15px;
+.ez-cic-g { background: rgba(37,211,102,0.1); color: #25d366; }
+.ez-cic-r { background: rgba(195,37,40,0.1); color: #c32528; }
+.ez-cic-b { background: rgba(67,97,238,0.1); color: #4361ee; }
+.ez-cic-p { background: rgba(139,92,246,0.1); color: #8b5cf6; }
+.ez-cc h4 {
+    font-size: 14px;
     font-weight: 700;
     color: #1a1a2e;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
-.ez-contact-card a {
+.ez-cc a {
     display: block;
     color: #4361ee;
-    font-size: 13.5px;
+    font-size: 13px;
     text-decoration: none;
-    margin-bottom: 4px;
-    transition: color 0.3s ease;
+    margin-bottom: 3px;
 }
-.ez-contact-card a:hover {
-    color: #c32528;
-}
+.ez-cc a:hover { color: #c32528; }
 
-/* ========== FINAL CTA BANNER ========== */
-.ez-final-cta {
+/* ========== FINAL CTA ========== */
+.ez-final {
     background: linear-gradient(135deg, #261a6a, #1a1a4e);
-    padding: 60px 20px;
+    padding: 56px 20px;
     text-align: center;
 }
-.ez-final-cta h2 {
-    font-size: clamp(24px, 3vw, 36px);
+.ez-final h2 {
+    font-size: clamp(22px, 3vw, 32px);
     font-weight: 800;
     color: #fff;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
-.ez-final-cta p {
-    color: rgba(255,255,255,0.6);
-    font-size: 15px;
-    margin-bottom: 28px;
+.ez-final p {
+    color: rgba(255,255,255,0.55);
+    font-size: 14px;
+    margin-bottom: 24px;
 }
 .ez-final-btns {
     display: flex;
     justify-content: center;
-    gap: 16px;
+    gap: 12px;
     flex-wrap: wrap;
 }
-.ez-btn-outline {
+.ez-fb {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 12px 28px;
+    gap: 7px;
+    padding: 11px 24px;
     border-radius: 10px;
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.15);
     color: #fff;
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 13px;
+    font-weight: 600;
     text-decoration: none;
     transition: all 0.3s ease;
 }
-.ez-btn-outline:hover {
-    background: rgba(255,255,255,0.1);
-    border-color: rgba(255,255,255,0.4);
-    color: #fff;
-    text-decoration: none;
-}
-.ez-btn-wa {
-    background: #25d366;
-    border-color: #25d366;
-}
-.ez-btn-wa:hover {
-    background: #1ea952;
-    border-color: #1ea952;
-}
-.ez-btn-call {
-    background: linear-gradient(135deg, #c32528, #e74c3c);
-    border-color: #c32528;
-}
-.ez-btn-call:hover {
-    background: linear-gradient(135deg, #a01f22, #c0392b);
-}
+.ez-fb:hover { background: rgba(255,255,255,0.08); color: #fff; text-decoration: none; }
+.ez-fb-wa { background: #25d366; border-color: #25d366; }
+.ez-fb-wa:hover { background: #1ea952; }
+.ez-fb-call { background: linear-gradient(135deg, #c32528, #e74c3c); border-color: #c32528; }
 
 /* ========== RESPONSIVE ========== */
-@media (max-width: 768px) {
-    .ez-hero {
-        padding: 100px 16px 40px;
-    }
-    .ez-forms-wrapper {
+@media (max-width: 900px) {
+    .ez-hero-inner {
         flex-direction: column;
-        gap: 20px;
+        gap: 32px;
+        text-align: center;
     }
-    .ez-form-row {
-        flex-direction: column;
-        gap: 0;
-    }
-    .ez-hero-stats {
-        gap: 24px;
-    }
-    .ez-features-grid {
-        grid-template-columns: 1fr;
-    }
-    .ez-pricing-features {
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
-    }
+    .ez-hero-left .ez-hero-desc { margin-left: auto; margin-right: auto; }
+    .ez-trust-list { align-items: center; }
+    .ez-hero-stats-row { justify-content: center; }
+    .ez-hero-right { width: 100%; max-width: 420px; }
+    .ez-hero { padding: 100px 0 40px; }
 }
-
-/* ========== MESSAGE BOX ========== */
-.ez-msg-box {
-    margin-top: 10px;
-    padding: 8px 12px;
-    border-radius: 8px;
-    font-size: 12px;
-    text-align: center;
-    display: none;
+@media (max-width: 500px) {
+    .ez-fg-row { flex-direction: column; gap: 0; }
+    .ez-hero-right { max-width: 100%; }
+    .ez-proof-inner { gap: 20px; }
+    .ez-feat-grid { grid-template-columns: 1fr; }
+    .ez-price-checks { flex-direction: column; align-items: center; gap: 8px; }
 }
 
 /* ========== SPINNER ========== */
-.ez-btn-spinner i {
-    margin-right: 6px;
-}
-.fa-spin {
-    animation: fa-spin 1s infinite linear;
-}
-@keyframes fa-spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
+.ez-btn-spinner i { margin-right: 5px; }
+.fa-spin { animation: fa-spin 1s infinite linear; }
+@keyframes fa-spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 </style>
 </head>
 
@@ -722,178 +757,246 @@
 
 <div class="ez-page">
 
-<!-- ==================== HERO SECTION ==================== -->
+<!-- ==================== HERO — SPLIT LAYOUT ==================== -->
 <section class="ez-hero" id="hero">
-    <!-- Floating Particles -->
-    <div class="ez-particles" id="ez-particles"></div>
 
-    <div class="ez-hero-content">
-        <div class="ez-hero-badge">
-            ⚡ SMARTER HR. STRONGER BUSINESS.
-        </div>
-        <h1>End-to-End <span class="ez-gradient-text">HR Solutions</span><br>& Employee Monitoring</h1>
-        <p class="ez-hero-sub">Save Time. Cut Costs. Scale Faster. From HR outsourcing to AI-powered workforce productivity — we've got you covered.</p>
-        <div class="ez-hero-stats">
-            <div class="ez-hero-stat">
-                <div class="ez-stat-icon">🚀</div>
-                <div class="ez-stat-val">Save Time</div>
-                <div class="ez-stat-lbl">Automate HR</div>
+    <div class="ez-hero-inner">
+
+        <!-- LEFT: Compelling Copy -->
+        <div class="ez-hero-left">
+            <div class="ez-hero-badge">⚡ Trusted by 500+ Companies since 2010</div>
+
+            <h1>Smarter HR.<br><span class="ez-grad">Stronger Business.</span></h1>
+
+            <p class="ez-hero-desc">
+                End-to-end HR outsourcing, recruitment & AI-powered employee monitoring. 
+                We handle your people operations so you can focus on growth.
+            </p>
+
+            <ul class="ez-trust-list">
+                <li>
+                    <span class="ez-check"><i class="fas fa-check"></i></span>
+                    End-to-End Hiring & Recruitment (IT & Non-IT)
+                </li>
+                <li>
+                    <span class="ez-check"><i class="fas fa-check"></i></span>
+                    Payroll, Compliance & HR Outsourcing
+                </li>
+                <li>
+                    <span class="ez-check"><i class="fas fa-check"></i></span>
+                    Zneus AI Employee Monitoring — Boost Productivity 40%
+                </li>
+                <li>
+                    <span class="ez-check"><i class="fas fa-check"></i></span>
+                    Plans starting at just ₹999/month
+                </li>
+            </ul>
+
+            <div class="ez-hero-stats-row">
+                <div class="ez-hs">
+                    <div class="ez-hs-val">14<span>+</span></div>
+                    <div class="ez-hs-lbl">Years Experience</div>
+                </div>
+                <div class="ez-hs">
+                    <div class="ez-hs-val">500<span>+</span></div>
+                    <div class="ez-hs-lbl">Companies Served</div>
+                </div>
+                <div class="ez-hs">
+                    <div class="ez-hs-val">15<span>+</span></div>
+                    <div class="ez-hs-lbl">Industries</div>
+                </div>
+                <div class="ez-hs">
+                    <div class="ez-hs-val">100K<span>+</span></div>
+                    <div class="ez-hs-lbl">Candidates</div>
+                </div>
             </div>
-            <div class="ez-hero-stat">
-                <div class="ez-stat-icon">📈</div>
-                <div class="ez-stat-val">Cut Costs</div>
-                <div class="ez-stat-lbl">Up to 40%</div>
-            </div>
-            <div class="ez-hero-stat">
-                <div class="ez-stat-icon">👥</div>
-                <div class="ez-stat-val">Scale Faster</div>
-                <div class="ez-stat-lbl">Grow Rapid</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ======= TWO FORMS SIDE BY SIDE ======= -->
-    <div class="ez-forms-wrapper">
-
-        <!-- ELITE CORPORATE SOLUTIONS FORM -->
-        <div class="ez-form-card ez-elite-card">
-            <div class="ez-form-icon"><i class="fas fa-building"></i></div>
-            <h3>Elite Corporate Solutions</h3>
-            <p class="ez-form-tagline">HR Outsourcing & Recruitment Services</p>
-
-            <form id="eliteForm" action="backend_elite_zneus.php" method="POST">
-                <input type="hidden" name="form_type" value="elite_inquiry">
-
-                <div class="ez-form-row">
-                    <div class="ez-form-group">
-                        <input type="text" name="name" placeholder="Your Name *" required>
-                    </div>
-                    <div class="ez-form-group">
-                        <input type="tel" name="phone" placeholder="Phone Number *" required>
-                    </div>
-                </div>
-
-                <div class="ez-form-group">
-                    <input type="email" name="email" placeholder="Email Address *" required>
-                </div>
-
-                <div class="ez-form-group">
-                    <input type="text" name="company" placeholder="Company Name">
-                </div>
-
-                <div class="ez-form-group">
-                    <select name="service_needed" required>
-                        <option value="" disabled selected>Select Service Needed *</option>
-                        <option value="Recruitment / Hiring">Recruitment / Hiring</option>
-                        <option value="HR Outsourcing">HR Outsourcing</option>
-                        <option value="Payroll & Compliance">Payroll & Compliance</option>
-                        <option value="Training & Development">Training & Development</option>
-                        <option value="Exit Process / F&F">Exit Process / F&F</option>
-                        <option value="Policies & Documentation">Policies & Documentation</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
-
-                <div class="ez-form-group">
-                    <textarea name="message" placeholder="Tell us your requirements..." rows="3" required></textarea>
-                </div>
-
-                <input type="hidden" id="g-recaptcha-response-elite" name="g-recaptcha-response">
-
-                <button type="submit" class="ez-submit-btn" id="elite-submit-btn">
-                    <span class="ez-btn-text"><i class="fas fa-paper-plane"></i> Get HR Solutions</span>
-                    <span class="ez-btn-spinner" style="display:none;"><i class="fas fa-spinner fa-spin"></i> Sending...</span>
-                </button>
-                <div id="eliteMessage" class="ez-msg-box"></div>
-            </form>
         </div>
 
-        <!-- ZNEUS SOFTWARE FORM -->
-        <div class="ez-form-card ez-zneus-card">
-            <div class="ez-form-icon"><i class="fas fa-desktop"></i></div>
-            <h3>Zneus Software</h3>
-            <p class="ez-form-tagline">AI Employee Monitoring & Productivity</p>
+        <!-- RIGHT: Tabbed Form -->
+        <div class="ez-hero-right">
+            <div class="ez-form-card">
 
-            <form id="zneusForm" action="backend_elite_zneus.php" method="POST">
-                <input type="hidden" name="form_type" value="zneus_inquiry">
+                <div class="ez-form-header">
+                    <h3>Get a Free Consultation</h3>
+                    <p>Tell us what you need — we'll get back in 30 minutes</p>
+                </div>
 
-                <div class="ez-form-row">
-                    <div class="ez-form-group">
-                        <input type="text" name="name" placeholder="Your Name *" required>
+                <div class="ez-form-tabs">
+                    <button class="ez-form-tab ez-tab-elite ez-tab-active" id="tabElite" onclick="ezSwitchTab('elite')">
+                        <i class="fas fa-building"></i> HR Services
+                    </button>
+                    <button class="ez-form-tab ez-tab-zneus" id="tabZneus" onclick="ezSwitchTab('zneus')">
+                        <i class="fas fa-desktop"></i> Zneus Software
+                    </button>
+                </div>
+
+                <div class="ez-form-body">
+
+                    <!-- ===== ELITE FORM ===== -->
+                    <div class="ez-form-panel ez-panel-active" id="panelElite">
+                        <form id="eliteForm" action="backend_elite_zneus.php" method="POST">
+                            <input type="hidden" name="form_type" value="elite_inquiry">
+
+                            <div class="ez-fg-row">
+                                <div class="ez-fg">
+                                    <input type="text" name="name" placeholder="Your Name *" required>
+                                </div>
+                                <div class="ez-fg">
+                                    <input type="tel" name="phone" placeholder="Phone *" required>
+                                </div>
+                            </div>
+                            <div class="ez-fg">
+                                <input type="email" name="email" placeholder="Work Email *" required>
+                            </div>
+                            <div class="ez-fg">
+                                <input type="text" name="company" placeholder="Company Name">
+                            </div>
+                            <div class="ez-fg">
+                                <select name="service_needed" required>
+                                    <option value="" disabled selected>What do you need? *</option>
+                                    <option value="Recruitment / Hiring">Recruitment / Hiring</option>
+                                    <option value="HR Outsourcing">HR Outsourcing</option>
+                                    <option value="Payroll & Compliance">Payroll & Compliance</option>
+                                    <option value="Training & Development">Training & Development</option>
+                                    <option value="Exit Process / F&F">Exit Process / F&F</option>
+                                    <option value="Policies & Documentation">Policies & Documentation</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="ez-fg">
+                                <textarea name="message" placeholder="Briefly describe your requirement..." rows="2" required></textarea>
+                            </div>
+
+                            <input type="hidden" id="g-recaptcha-response-elite" name="g-recaptcha-response">
+
+                            <button type="submit" class="ez-submit ez-submit-elite" id="elite-submit-btn">
+                                <span class="ez-btn-text"><i class="fas fa-paper-plane"></i> Get Free Consultation</span>
+                                <span class="ez-btn-spinner" style="display:none;"><i class="fas fa-spinner fa-spin"></i> Sending...</span>
+                            </button>
+                        </form>
                     </div>
-                    <div class="ez-form-group">
-                        <input type="tel" name="phone" placeholder="Phone Number *" required>
+
+                    <!-- ===== ZNEUS FORM ===== -->
+                    <div class="ez-form-panel" id="panelZneus">
+                        <form id="zneusForm" action="backend_elite_zneus.php" method="POST">
+                            <input type="hidden" name="form_type" value="zneus_inquiry">
+
+                            <div class="ez-fg-row">
+                                <div class="ez-fg">
+                                    <input type="text" name="name" placeholder="Your Name *" required>
+                                </div>
+                                <div class="ez-fg">
+                                    <input type="tel" name="phone" placeholder="Phone *" required>
+                                </div>
+                            </div>
+                            <div class="ez-fg">
+                                <input type="email" name="email" placeholder="Work Email *" required>
+                            </div>
+                            <div class="ez-fg">
+                                <input type="text" name="company" placeholder="Company Name">
+                            </div>
+                            <div class="ez-fg">
+                                <select name="employee_count" required>
+                                    <option value="" disabled selected>Team Size *</option>
+                                    <option value="1-10">1 - 10 Employees</option>
+                                    <option value="11-50">11 - 50 Employees</option>
+                                    <option value="51-100">51 - 100 Employees</option>
+                                    <option value="101-500">101 - 500 Employees</option>
+                                    <option value="500+">500+ Employees</option>
+                                </select>
+                            </div>
+                            <div class="ez-fg">
+                                <textarea name="message" placeholder="What monitoring features interest you?" rows="2" required></textarea>
+                            </div>
+
+                            <input type="hidden" id="g-recaptcha-response-zneus" name="g-recaptcha-response">
+
+                            <button type="submit" class="ez-submit ez-submit-zneus" id="zneus-submit-btn">
+                                <span class="ez-btn-text"><i class="fas fa-rocket"></i> Get Free Zneus Demo</span>
+                                <span class="ez-btn-spinner" style="display:none;"><i class="fas fa-spinner fa-spin"></i> Sending...</span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="ez-form-footer">
+                        <i class="fas fa-lock"></i>
+                        <span>Your data is secure. We never share your info.</span>
                     </div>
                 </div>
 
-                <div class="ez-form-group">
-                    <input type="email" name="email" placeholder="Email Address *" required>
-                </div>
-
-                <div class="ez-form-group">
-                    <input type="text" name="company" placeholder="Company Name">
-                </div>
-
-                <div class="ez-form-group">
-                    <select name="employee_count" required>
-                        <option value="" disabled selected>Number of Employees *</option>
-                        <option value="1-10">1 - 10 Employees</option>
-                        <option value="11-50">11 - 50 Employees</option>
-                        <option value="51-100">51 - 100 Employees</option>
-                        <option value="101-500">101 - 500 Employees</option>
-                        <option value="500+">500+ Employees</option>
-                    </select>
-                </div>
-
-                <div class="ez-form-group">
-                    <textarea name="message" placeholder="Tell us your monitoring needs..." rows="3" required></textarea>
-                </div>
-
-                <input type="hidden" id="g-recaptcha-response-zneus" name="g-recaptcha-response">
-
-                <button type="submit" class="ez-submit-btn" id="zneus-submit-btn">
-                    <span class="ez-btn-text"><i class="fas fa-rocket"></i> Get Zneus Demo</span>
-                    <span class="ez-btn-spinner" style="display:none;"><i class="fas fa-spinner fa-spin"></i> Sending...</span>
-                </button>
-                <div id="zneusMessage" class="ez-msg-box"></div>
-            </form>
+            </div>
         </div>
 
     </div>
 </section>
 
 
+<!-- ==================== SOCIAL PROOF STRIP ==================== -->
+<div class="ez-proof-strip">
+    <div class="ez-proof-inner">
+        <div class="ez-proof-item">
+            <div class="ez-pi-icon ez-pi-green"><i class="fas fa-check-double"></i></div>
+            <div class="ez-pi-text">
+                <strong>14+ Years</strong>
+                <span>Industry Experience</span>
+            </div>
+        </div>
+        <div class="ez-proof-item">
+            <div class="ez-pi-icon ez-pi-blue"><i class="fas fa-users"></i></div>
+            <div class="ez-pi-text">
+                <strong>1,00,000+</strong>
+                <span>Candidates Placed</span>
+            </div>
+        </div>
+        <div class="ez-proof-item">
+            <div class="ez-pi-icon ez-pi-orange"><i class="fas fa-chart-line"></i></div>
+            <div class="ez-pi-text">
+                <strong>40% Boost</strong>
+                <span>In Productivity</span>
+            </div>
+        </div>
+        <div class="ez-proof-item">
+            <div class="ez-pi-icon ez-pi-purple"><i class="fas fa-star"></i></div>
+            <div class="ez-pi-text">
+                <strong>4.8/5 Rating</strong>
+                <span>Client Satisfaction</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <!-- ==================== ELITE HR FEATURES ==================== -->
 <section class="ez-section" id="hr-services">
     <div class="ez-container">
-        <div class="ez-section-badge ez-badge-red">🏢 HR OUTSOURCING SERVICES</div>
-        <h2 class="ez-section-title">Expert HR. Zero Headaches.</h2>
-        <p class="ez-section-sub">We Handle HR. You Grow Your Business. Complete end-to-end HR outsourcing for companies of all sizes.</p>
+        <div class="ez-sec-badge ez-badge-r">🏢 HR OUTSOURCING SERVICES</div>
+        <h2 class="ez-sec-title">We Handle HR. You Grow Business.</h2>
+        <p class="ez-sec-desc">Complete end-to-end HR outsourcing for companies of all sizes. From hiring to exit — everything managed professionally.</p>
 
-        <div class="ez-features-grid">
-            <div class="ez-feature-card">
-                <span class="ez-fc-num">01</span>
-                <div class="ez-feature-icon ez-fi-red"><i class="fas fa-user-plus"></i></div>
+        <div class="ez-feat-grid">
+            <div class="ez-feat">
+                <span class="ez-feat-num">01</span>
+                <div class="ez-feat-ic ez-fic-r"><i class="fas fa-user-plus"></i></div>
                 <h4>End-to-End Hiring</h4>
-                <p>From sourcing to onboarding — we find the right talent, faster. Complete recruitment process outsourcing.</p>
+                <p>From sourcing to onboarding — we find the right talent, faster. Complete recruitment outsourcing.</p>
             </div>
-            <div class="ez-feature-card">
-                <span class="ez-fc-num">02</span>
-                <div class="ez-feature-icon ez-fi-red"><i class="fas fa-file-invoice-dollar"></i></div>
+            <div class="ez-feat">
+                <span class="ez-feat-num">02</span>
+                <div class="ez-feat-ic ez-fic-r"><i class="fas fa-file-invoice-dollar"></i></div>
                 <h4>Payroll & Compliance</h4>
-                <p>Accurate payroll, statutory compliance & attendance management — all taken care of professionally.</p>
+                <p>Accurate payroll, statutory compliance & attendance — all taken care of professionally.</p>
             </div>
-            <div class="ez-feature-card">
-                <span class="ez-fc-num">03</span>
-                <div class="ez-feature-icon ez-fi-red"><i class="fas fa-sign-out-alt"></i></div>
+            <div class="ez-feat">
+                <span class="ez-feat-num">03</span>
+                <div class="ez-feat-ic ez-fic-r"><i class="fas fa-sign-out-alt"></i></div>
                 <h4>Exit Process</h4>
-                <p>Smooth resignations, F&F settlements & relieving letters — completely hassle-free exit management.</p>
+                <p>Smooth resignations, F&F settlements & relieving letters — hassle-free exit management.</p>
             </div>
-            <div class="ez-feature-card">
-                <span class="ez-fc-num">04</span>
-                <div class="ez-feature-icon ez-fi-red"><i class="fas fa-chalkboard-teacher"></i></div>
+            <div class="ez-feat">
+                <span class="ez-feat-num">04</span>
+                <div class="ez-feat-ic ez-fic-r"><i class="fas fa-chalkboard-teacher"></i></div>
                 <h4>Policies & Training</h4>
-                <p>Strong HR policies. Trained teams. Stay compliant always with our expert policy framework.</p>
+                <p>Strong policies. Trained teams. Stay compliant always with our expert framework.</p>
             </div>
         </div>
     </div>
@@ -901,58 +1004,58 @@
 
 
 <!-- ==================== ZNEUS FEATURES ==================== -->
-<section class="ez-section ez-section-dark" id="zneus-features">
+<section class="ez-section ez-section-alt" id="zneus-features">
     <div class="ez-container">
-        <div class="ez-section-badge ez-badge-blue">💻 AI WORKFORCE PRODUCTIVITY</div>
-        <h2 class="ez-section-title">Work Smarter. Achieve More.</h2>
-        <p class="ez-section-sub">Boost team productivity by 40% with Zneus — the AI-powered employee monitoring & productivity platform.</p>
+        <div class="ez-sec-badge ez-badge-b">💻 AI WORKFORCE PRODUCTIVITY</div>
+        <h2 class="ez-sec-title">Zneus — Work Smarter. Achieve More.</h2>
+        <p class="ez-sec-desc">Boost team productivity by 40% with AI-powered employee monitoring & productivity tools.</p>
 
-        <div class="ez-features-grid">
-            <div class="ez-feature-card">
-                <span class="ez-fc-num">01</span>
-                <div class="ez-feature-icon ez-fi-blue"><i class="fas fa-tv"></i></div>
+        <div class="ez-feat-grid">
+            <div class="ez-feat">
+                <span class="ez-feat-num">01</span>
+                <div class="ez-feat-ic ez-fic-b"><i class="fas fa-tv"></i></div>
                 <h4>Live Screen Monitoring</h4>
-                <p>Watch employee desktops in real-time with HD capture. Full visibility into daily work activities.</p>
+                <p>Watch employee desktops in real-time with HD capture. Full visibility into work.</p>
             </div>
-            <div class="ez-feature-card">
-                <span class="ez-fc-num">02</span>
-                <div class="ez-feature-icon ez-fi-blue"><i class="fas fa-camera"></i></div>
+            <div class="ez-feat">
+                <span class="ez-feat-num">02</span>
+                <div class="ez-feat-ic ez-fic-b"><i class="fas fa-camera"></i></div>
                 <h4>Automatic Screenshots</h4>
-                <p>Configurable activity timeline for total transparency. Track work progress throughout the day.</p>
+                <p>Configurable activity timeline for total transparency throughout the day.</p>
             </div>
-            <div class="ez-feature-card">
-                <span class="ez-fc-num">03</span>
-                <div class="ez-feature-icon ez-fi-blue"><i class="fas fa-chart-bar"></i></div>
+            <div class="ez-feat">
+                <span class="ez-feat-num">03</span>
+                <div class="ez-feat-ic ez-fic-b"><i class="fas fa-chart-bar"></i></div>
                 <h4>Smart App & Web Tracking</h4>
-                <p>Identify time-wasting apps and track active hours. Understand where your team's time goes.</p>
+                <p>Identify time-wasting apps and track active hours automatically.</p>
             </div>
-            <div class="ez-feature-card">
-                <span class="ez-fc-num">04</span>
-                <div class="ez-feature-icon ez-fi-blue"><i class="fas fa-cogs"></i></div>
+            <div class="ez-feat">
+                <span class="ez-feat-num">04</span>
+                <div class="ez-feat-ic ez-fic-b"><i class="fas fa-cogs"></i></div>
                 <h4>Automated HR Tools</h4>
-                <p>In-app attendance logging and instant digital leave approval. Streamline all HR operations.</p>
+                <p>In-app attendance logging and instant digital leave approval.</p>
             </div>
         </div>
     </div>
 </section>
 
 
-<!-- ==================== PRICING TEASER ==================== -->
+<!-- ==================== PRICING ==================== -->
 <section class="ez-pricing" id="pricing">
-    <div class="ez-pricing-content">
-        <div class="ez-section-badge" style="background:rgba(255,255,255,0.08);color:#a5b4fc;">⚡ TECH-POWERED. PEOPLE-FOCUSED.</div>
-        <div class="ez-price-tag">Starts at <span>₹999*</span></div>
-        <h2>Better People Management.<br>Bigger Business Impact.</h2>
-        <p class="ez-price-sub">*Per employee per month. Custom plans available for enterprises.</p>
-        
-        <div class="ez-pricing-features">
-            <div class="ez-pf-item"><i class="fas fa-check-circle"></i> No Setup Charges</div>
-            <div class="ez-pf-item"><i class="fas fa-check-circle"></i> Free Demo Available</div>
-            <div class="ez-pf-item"><i class="fas fa-check-circle"></i> Cancel Anytime</div>
-            <div class="ez-pf-item"><i class="fas fa-check-circle"></i> Dedicated Support</div>
+    <div class="ez-pricing-in">
+        <div class="ez-sec-badge" style="background:rgba(255,255,255,0.06);color:#a5b4fc;">⚡ AFFORDABLE PLANS</div>
+        <div class="ez-price-big">Starts at <span>₹999*</span></div>
+        <h2>Better People Management. Bigger Impact.</h2>
+        <p class="ez-price-note">*Per employee/month. Custom enterprise plans available.</p>
+
+        <div class="ez-price-checks">
+            <div class="ez-pc"><i class="fas fa-check-circle"></i> No Setup Charges</div>
+            <div class="ez-pc"><i class="fas fa-check-circle"></i> Free Demo</div>
+            <div class="ez-pc"><i class="fas fa-check-circle"></i> Cancel Anytime</div>
+            <div class="ez-pc"><i class="fas fa-check-circle"></i> Dedicated Support</div>
         </div>
-        
-        <a href="#hero" class="ez-cta-btn ez-cta-btn-primary">
+
+        <a href="#hero" class="ez-cta-main">
             <i class="fas fa-paper-plane"></i> Get Started Today
         </a>
     </div>
@@ -960,32 +1063,32 @@
 
 
 <!-- ==================== CONTACT ==================== -->
-<section class="ez-contact ez-section-center" id="contact">
+<section class="ez-contact ez-sec-center" id="contact">
     <div class="ez-container">
-        <div class="ez-section-badge ez-badge-blue">📞 GET IN TOUCH</div>
-        <h2 class="ez-section-title">Let's Connect</h2>
-        <p class="ez-section-sub">Reach out via call, WhatsApp, or email. We'd love to help you build a stronger workforce.</p>
-        
+        <div class="ez-sec-badge ez-badge-b">📞 GET IN TOUCH</div>
+        <h2 class="ez-sec-title">Let's Connect</h2>
+        <p class="ez-sec-desc">Reach out via call, WhatsApp, or email. We respond within 30 minutes.</p>
+
         <div class="ez-contact-grid">
-            <div class="ez-contact-card">
-                <div class="ez-cc-icon ez-cc-green"><i class="fab fa-whatsapp"></i></div>
+            <div class="ez-cc">
+                <div class="ez-cc-ic ez-cic-g"><i class="fab fa-whatsapp"></i></div>
                 <h4>WhatsApp</h4>
                 <a href="https://wa.me/917669073000" target="_blank">+91 76690 73000</a>
             </div>
-            <div class="ez-contact-card">
-                <div class="ez-cc-icon ez-cc-red"><i class="fas fa-phone-alt"></i></div>
+            <div class="ez-cc">
+                <div class="ez-cc-ic ez-cic-r"><i class="fas fa-phone-alt"></i></div>
                 <h4>Call Us</h4>
                 <a href="tel:+917669073000">+91 76690 73000</a>
                 <a href="tel:+919871916980">+91 98719 16980</a>
             </div>
-            <div class="ez-contact-card">
-                <div class="ez-cc-icon ez-cc-blue"><i class="fas fa-envelope"></i></div>
+            <div class="ez-cc">
+                <div class="ez-cc-ic ez-cic-b"><i class="fas fa-envelope"></i></div>
                 <h4>Email</h4>
                 <a href="mailto:info@elitecorporatesolutions.com">info@elitecorporatesolutions.com</a>
                 <a href="mailto:info@zneus.com">info@zneus.com</a>
             </div>
-            <div class="ez-contact-card">
-                <div class="ez-cc-icon ez-cc-purple"><i class="fas fa-globe"></i></div>
+            <div class="ez-cc">
+                <div class="ez-cc-ic ez-cic-p"><i class="fas fa-globe"></i></div>
                 <h4>Websites</h4>
                 <a href="https://www.elitecorporatesolutions.com" target="_blank">elitecorporatesolutions.com</a>
                 <a href="https://zneus.com" target="_blank">zneus.com</a>
@@ -996,17 +1099,17 @@
 
 
 <!-- ==================== FINAL CTA ==================== -->
-<section class="ez-final-cta">
+<section class="ez-final">
     <h2>Let's Build a Stronger Workforce, Together! 🚀</h2>
     <p>Choose Elite for HR. Choose Zneus for Productivity. Choose Both for Growth.</p>
     <div class="ez-final-btns">
-        <a href="https://www.elitecorporatesolutions.com" target="_blank" class="ez-btn-outline">
+        <a href="https://www.elitecorporatesolutions.com" target="_blank" class="ez-fb">
             <i class="fas fa-globe"></i> Visit Website
         </a>
-        <a href="tel:+917669073000" class="ez-btn-outline ez-btn-call">
+        <a href="tel:+917669073000" class="ez-fb ez-fb-call">
             <i class="fas fa-phone-alt"></i> Call Now
         </a>
-        <a href="https://wa.me/917669073000" target="_blank" class="ez-btn-outline ez-btn-wa">
+        <a href="https://wa.me/917669073000" target="_blank" class="ez-fb ez-fb-wa">
             <i class="fab fa-whatsapp"></i> WhatsApp
         </a>
     </div>
@@ -1014,24 +1117,29 @@
 
 </div><!-- .ez-page -->
 
-<!-- ===== Google reCAPTCHA v3 ===== -->
+<!-- ===== reCAPTCHA v3 ===== -->
 <script src="https://www.google.com/recaptcha/api.js?render=6Ledy8UrAAAAAGLUn3toR4y2awVaNUkt0iyOlVLU"></script>
 
 <script>
-// ===== PARTICLES =====
-(function() {
-    const container = document.getElementById('ez-particles');
-    if (!container) return;
-    for (let i = 0; i < 30; i++) {
-        const p = document.createElement('div');
-        p.className = 'ez-particle';
-        p.style.left = Math.random() * 100 + '%';
-        p.style.animationDuration = (Math.random() * 15 + 10) + 's';
-        p.style.animationDelay = (Math.random() * 10) + 's';
-        p.style.width = p.style.height = (Math.random() * 3 + 2) + 'px';
-        container.appendChild(p);
+// ===== TAB SWITCHING =====
+function ezSwitchTab(tab) {
+    const tabElite = document.getElementById('tabElite');
+    const tabZneus = document.getElementById('tabZneus');
+    const panelElite = document.getElementById('panelElite');
+    const panelZneus = document.getElementById('panelZneus');
+
+    if (tab === 'elite') {
+        tabElite.classList.add('ez-tab-active');
+        tabZneus.classList.remove('ez-tab-active');
+        panelElite.classList.add('ez-panel-active');
+        panelZneus.classList.remove('ez-panel-active');
+    } else {
+        tabZneus.classList.add('ez-tab-active');
+        tabElite.classList.remove('ez-tab-active');
+        panelZneus.classList.add('ez-panel-active');
+        panelElite.classList.remove('ez-panel-active');
     }
-})();
+}
 
 // ===== FORM HELPERS =====
 function ezShowLoading(btnId) {
@@ -1060,19 +1168,13 @@ function ezValidateForm(formId) {
         alert('Please fill in all required fields.');
         return false;
     }
-    const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRx.test(email)) {
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         alert('Please enter a valid email address.');
         return false;
     }
-    
-    // Check select fields
     const selects = form.querySelectorAll('select[required]');
     for (let s of selects) {
-        if (!s.value) {
-            alert('Please select all required options.');
-            return false;
-        }
+        if (!s.value) { alert('Please select all required options.'); return false; }
     }
     return true;
 }
@@ -1087,7 +1189,6 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             if (!ezValidateForm('eliteForm')) return;
             ezShowLoading('elite-submit-btn');
-
             grecaptcha.ready(function() {
                 grecaptcha.execute('6Ledy8UrAAAAAGLUn3toR4y2awVaNUkt0iyOlVLU', {action: 'elite_inquiry'})
                     .then(function(token) {
@@ -1098,11 +1199,9 @@ document.addEventListener('DOMContentLoaded', function() {
                             ezHideLoading('elite-submit-btn');
                             alert('Security verification failed. Please try again.');
                         }
-                    })
-                    .catch(function(err) {
-                        console.error('reCAPTCHA error:', err);
+                    }).catch(function() {
                         ezHideLoading('elite-submit-btn');
-                        alert('Security verification failed. Please refresh and try again.');
+                        alert('Security verification failed. Please refresh.');
                     });
             });
         });
@@ -1115,7 +1214,6 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             if (!ezValidateForm('zneusForm')) return;
             ezShowLoading('zneus-submit-btn');
-
             grecaptcha.ready(function() {
                 grecaptcha.execute('6Ledy8UrAAAAAGLUn3toR4y2awVaNUkt0iyOlVLU', {action: 'zneus_inquiry'})
                     .then(function(token) {
@@ -1126,18 +1224,16 @@ document.addEventListener('DOMContentLoaded', function() {
                             ezHideLoading('zneus-submit-btn');
                             alert('Security verification failed. Please try again.');
                         }
-                    })
-                    .catch(function(err) {
-                        console.error('reCAPTCHA error:', err);
+                    }).catch(function() {
                         ezHideLoading('zneus-submit-btn');
-                        alert('Security verification failed. Please refresh and try again.');
+                        alert('Security verification failed. Please refresh.');
                     });
             });
         });
     }
 });
 
-// Reset loading on back button
+// Reset on back/visibility
 window.addEventListener('pageshow', function() {
     ezHideLoading('elite-submit-btn');
     ezHideLoading('zneus-submit-btn');
@@ -1149,12 +1245,12 @@ document.addEventListener('visibilitychange', function() {
     }
 });
 
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        var t = document.querySelector(this.getAttribute('href'));
+        if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 });
 </script>
