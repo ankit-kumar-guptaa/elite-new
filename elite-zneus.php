@@ -45,150 +45,33 @@
     overflow-x: hidden;
 }
 
-/* ========== HERO — SPLIT LAYOUT ========== */
+/* ========== HERO — CLEAN WHITE PROFESSIONAL ========== */
 .ez-hero {
     position: relative;
     min-height: 100vh;
-    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 20%, #3730a3 40%, #1e3a5f 70%, #1e293b 100%);
+    background: #ffffff;
     display: flex;
     align-items: center;
     padding: 90px 0 40px;
     overflow: hidden;
 }
-
-/* Animated glowing orbs */
+/* Subtle top accent line */
 .ez-hero::before {
     content: '';
     position: absolute;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(99,102,241,0.25) 0%, rgba(99,102,241,0.05) 50%, transparent 70%);
-    top: -10%;
-    left: -5%;
-    animation: ez-orb1 12s ease-in-out infinite alternate;
-    pointer-events: none;
-    filter: blur(40px);
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #1e293b, #2563eb, #1e293b);
+    z-index: 10;
 }
+/* Very subtle pattern bg */
 .ez-hero::after {
     content: '';
     position: absolute;
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(236,72,153,0.15) 0%, rgba(236,72,153,0.03) 50%, transparent 70%);
-    bottom: -5%;
-    right: -3%;
-    animation: ez-orb2 14s ease-in-out infinite alternate;
-    pointer-events: none;
-    filter: blur(40px);
-}
-@keyframes ez-orb1 {
-    0% { transform: translate(0, 0) scale(1); }
-    50% { transform: translate(60px, 40px) scale(1.1); }
-    100% { transform: translate(20px, -20px) scale(0.95); }
-}
-@keyframes ez-orb2 {
-    0% { transform: translate(0, 0) scale(1); }
-    50% { transform: translate(-40px, -30px) scale(1.1); }
-    100% { transform: translate(-10px, 20px) scale(0.9); }
-}
-/* Third orb — green accent */
-.ez-hero-orb3 {
-    position: absolute;
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(52,211,153,0.12) 0%, transparent 60%);
-    top: 50%;
-    left: 45%;
-    animation: ez-orb1 16s ease-in-out infinite alternate-reverse;
-    pointer-events: none;
-    filter: blur(30px);
-}
-
-/* Floating Icons */
-.ez-floating-icons {
-    position: absolute;
     inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,0.02) 1px, transparent 0);
+    background-size: 32px 32px;
     pointer-events: none;
-    z-index: 1;
-}
-.ez-float-icon {
-    position: absolute;
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255,255,255,0.1);
-    animation: ez-icon-float 6s ease-in-out infinite;
-    opacity: 0.7;
-}
-.ez-float-icon:nth-child(1) {
-    background: rgba(99,102,241,0.2);
-    color: #a5b4fc;
-    top: 12%;
-    left: 8%;
-    animation-duration: 7s;
-    animation-delay: 0s;
-}
-.ez-float-icon:nth-child(2) {
-    background: rgba(236,72,153,0.15);
-    color: #f9a8d4;
-    top: 25%;
-    right: 6%;
-    animation-duration: 5.5s;
-    animation-delay: 1s;
-}
-.ez-float-icon:nth-child(3) {
-    background: rgba(52,211,153,0.2);
-    color: #6ee7b7;
-    bottom: 20%;
-    left: 5%;
-    animation-duration: 8s;
-    animation-delay: 2s;
-}
-.ez-float-icon:nth-child(4) {
-    background: rgba(251,191,36,0.15);
-    color: #fcd34d;
-    bottom: 30%;
-    right: 4%;
-    animation-duration: 6s;
-    animation-delay: 0.5s;
-}
-.ez-float-icon:nth-child(5) {
-    background: rgba(59,130,246,0.2);
-    color: #93c5fd;
-    top: 60%;
-    left: 15%;
-    animation-duration: 9s;
-    animation-delay: 3s;
-}
-.ez-float-icon:nth-child(6) {
-    background: rgba(139,92,246,0.2);
-    color: #c4b5fd;
-    top: 8%;
-    left: 42%;
-    animation-duration: 7.5s;
-    animation-delay: 1.5s;
-    width: 38px;
-    height: 38px;
-    font-size: 15px;
-}
-@keyframes ez-icon-float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    25% { transform: translateY(-15px) rotate(5deg); }
-    50% { transform: translateY(-8px) rotate(-3deg); }
-    75% { transform: translateY(-20px) rotate(3deg); }
-}
-
-@media (max-width: 900px) {
-    .ez-float-icon { display: none; }
 }
 
 .ez-hero-inner {
@@ -199,7 +82,7 @@
     padding: 0 24px;
     display: flex;
     align-items: center;
-    gap: 60px;
+    gap: 56px;
     width: 100%;
 }
 
@@ -212,16 +95,14 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.18);
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
     padding: 7px 16px;
     border-radius: 50px;
-    color: #e0e7ff;
+    color: #2563eb;
     font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
     text-transform: uppercase;
     margin-bottom: 20px;
     animation: ez-fadeIn 0.5s ease-out;
@@ -229,20 +110,18 @@
 .ez-hero-left h1 {
     font-size: clamp(30px, 4vw, 48px);
     font-weight: 800;
-    color: #fff;
+    color: #0f172a;
     line-height: 1.15;
     margin-bottom: 16px;
     animation: ez-fadeIn 0.5s ease-out 0.1s both;
 }
 .ez-hero-left h1 .ez-grad {
-    background: linear-gradient(135deg, #818cf8, #c084fc);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #2563eb;
+    -webkit-text-fill-color: #2563eb;
 }
 .ez-hero-left .ez-hero-desc {
     font-size: 15px;
-    color: rgba(255,255,255,0.6);
+    color: #64748b;
     line-height: 1.7;
     margin-bottom: 28px;
     max-width: 480px;
@@ -262,7 +141,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    color: rgba(255,255,255,0.8);
+    color: #334155;
     font-size: 14px;
     font-weight: 500;
 }
@@ -270,8 +149,8 @@
     width: 22px;
     height: 22px;
     border-radius: 6px;
-    background: rgba(52,211,153,0.15);
-    color: #34d399;
+    background: #ecfdf5;
+    color: #059669;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -285,7 +164,7 @@
     gap: 28px;
     flex-wrap: wrap;
     padding-top: 24px;
-    border-top: 1px solid rgba(255,255,255,0.08);
+    border-top: 1px solid #e2e8f0;
     animation: ez-fadeIn 0.5s ease-out 0.4s both;
 }
 .ez-hs {
@@ -294,14 +173,14 @@
 .ez-hs-val {
     font-size: 26px;
     font-weight: 800;
-    color: #fff;
+    color: #0f172a;
 }
 .ez-hs-val span {
-    color: #818cf8;
+    color: #2563eb;
 }
 .ez-hs-lbl {
     font-size: 12px;
-    color: rgba(255,255,255,0.4);
+    color: #94a3b8;
     font-weight: 500;
     letter-spacing: 0.5px;
 }
@@ -319,49 +198,47 @@
 }
 
 .ez-form-card {
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 20px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
     padding: 0;
     overflow: hidden;
-    box-shadow: 0 24px 80px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.04), 0 20px 50px rgba(0,0,0,0.06);
 }
 
 /* Form header */
 .ez-form-header {
-    padding: 22px 24px 16px;
+    padding: 20px 24px 14px;
     text-align: center;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid #f1f5f9;
+    background: #f8fafc;
 }
 .ez-form-header h3 {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 700;
-    color: #fff;
+    color: #0f172a;
     margin-bottom: 2px;
 }
 .ez-form-header p {
     font-size: 12px;
-    color: rgba(255,255,255,0.45);
+    color: #94a3b8;
 }
 
 /* Form Tabs */
 .ez-form-tabs {
     display: flex;
-    margin: 0 20px;
-    background: rgba(255,255,255,0.05);
+    margin: 0 16px;
+    background: #f1f5f9;
     border-radius: 10px;
     padding: 3px;
-    margin-top: 14px;
-    position: relative;
+    margin-top: 12px;
 }
 .ez-form-tab {
     flex: 1;
     padding: 10px 8px;
     border: none;
     background: transparent;
-    color: rgba(255,255,255,0.5);
+    color: #94a3b8;
     font-size: 12.5px;
     font-weight: 600;
     font-family: 'Inter', sans-serif;
@@ -372,27 +249,24 @@
     align-items: center;
     justify-content: center;
     gap: 6px;
-    position: relative;
-    z-index: 2;
 }
 .ez-form-tab.ez-tab-active {
     color: #fff;
-    background: rgba(255,255,255,0.1);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 .ez-form-tab i {
     font-size: 13px;
 }
 .ez-tab-elite.ez-tab-active {
-    background: linear-gradient(135deg, rgba(195,37,40,0.5), rgba(195,37,40,0.3));
+    background: #1e293b;
 }
 .ez-tab-zneus.ez-tab-active {
-    background: linear-gradient(135deg, rgba(67,97,238,0.5), rgba(67,97,238,0.3));
+    background: #2563eb;
 }
 
 /* Form Body */
 .ez-form-body {
-    padding: 20px 24px 24px;
+    padding: 18px 20px 22px;
 }
 .ez-form-panel {
     display: none;
@@ -403,17 +277,17 @@
 }
 
 .ez-fg {
-    margin-bottom: 12px;
+    margin-bottom: 11px;
 }
 .ez-fg input,
 .ez-fg select,
 .ez-fg textarea {
     width: 100%;
     padding: 11px 14px;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 10px;
-    color: #fff;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    color: #0f172a;
     font-size: 13px;
     font-family: 'Inter', sans-serif;
     transition: all 0.25s ease;
@@ -421,27 +295,28 @@
 }
 .ez-fg input::placeholder,
 .ez-fg textarea::placeholder {
-    color: rgba(255,255,255,0.35);
+    color: #94a3b8;
 }
 .ez-fg select {
-    color: rgba(255,255,255,0.35);
+    color: #64748b;
     appearance: none;
     -webkit-appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='rgba(255,255,255,0.4)' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 01.753 1.659l-4.796 5.48a1 1 0 01-1.506 0z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='%2394a3b8' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 01.753 1.659l-4.796 5.48a1 1 0 01-1.506 0z'/%3E%3C/svg%3E");
+    background-color: #f8fafc;
     background-repeat: no-repeat;
     background-position: right 14px center;
     padding-right: 32px;
 }
 .ez-fg select option {
-    background: #1a1a2e;
-    color: #eee;
+    background: #fff;
+    color: #0f172a;
 }
 .ez-fg input:focus,
 .ez-fg select:focus,
 .ez-fg textarea:focus {
-    border-color: rgba(99,102,241,0.5);
-    background: rgba(255,255,255,0.09);
-    box-shadow: 0 0 0 3px rgba(99,102,241,0.1);
+    border-color: #2563eb;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.08);
 }
 .ez-fg textarea {
     min-height: 60px;
@@ -460,7 +335,7 @@
     width: 100%;
     padding: 13px;
     border: none;
-    border-radius: 10px;
+    border-radius: 8px;
     font-size: 14px;
     font-weight: 700;
     font-family: 'Inter', sans-serif;
@@ -471,23 +346,24 @@
     justify-content: center;
     gap: 8px;
     margin-top: 4px;
-    position: relative;
     letter-spacing: 0.3px;
 }
 .ez-submit-elite {
-    background: linear-gradient(135deg, #c32528, #e74c3c);
+    background: #1e293b;
     color: #fff;
 }
 .ez-submit-elite:hover {
-    box-shadow: 0 8px 24px rgba(195,37,40,0.45);
+    background: #0f172a;
+    box-shadow: 0 6px 20px rgba(15,23,42,0.25);
     transform: translateY(-1px);
 }
 .ez-submit-zneus {
-    background: linear-gradient(135deg, #4361ee, #6366f1);
+    background: #2563eb;
     color: #fff;
 }
 .ez-submit-zneus:hover {
-    box-shadow: 0 8px 24px rgba(67,97,238,0.45);
+    background: #1d4ed8;
+    box-shadow: 0 6px 20px rgba(37,99,235,0.3);
     transform: translateY(-1px);
 }
 .ez-submit:disabled {
@@ -503,17 +379,17 @@
     align-items: center;
     justify-content: center;
     gap: 6px;
-    margin-top: 14px;
-    padding-top: 14px;
-    border-top: 1px solid rgba(255,255,255,0.06);
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #f1f5f9;
 }
 .ez-form-footer i {
-    color: #34d399;
+    color: #059669;
     font-size: 12px;
 }
 .ez-form-footer span {
     font-size: 11px;
-    color: rgba(255,255,255,0.35);
+    color: #94a3b8;
 }
 
 /* ========== SOCIAL PROOF STRIP ========== */
@@ -844,6 +720,7 @@
     .ez-hero-stats-row { justify-content: center; }
     .ez-hero-right { width: 100%; max-width: 420px; }
     .ez-hero { padding: 100px 0 40px; }
+    .ez-hero::before { display: none; }
 }
 @media (max-width: 500px) {
     .ez-fg-row { flex-direction: column; gap: 0; }
@@ -869,19 +746,6 @@
 
 <!-- ==================== HERO — SPLIT LAYOUT ==================== -->
 <section class="ez-hero" id="hero">
-
-    <!-- Glowing Orb 3 -->
-    <div class="ez-hero-orb3"></div>
-
-    <!-- Floating Icons -->
-    <div class="ez-floating-icons">
-        <div class="ez-float-icon"><i class="fas fa-users"></i></div>
-        <div class="ez-float-icon"><i class="fas fa-chart-line"></i></div>
-        <div class="ez-float-icon"><i class="fas fa-shield-alt"></i></div>
-        <div class="ez-float-icon"><i class="fas fa-laptop-code"></i></div>
-        <div class="ez-float-icon"><i class="fas fa-handshake"></i></div>
-        <div class="ez-float-icon"><i class="fas fa-bolt"></i></div>
-    </div>
 
     <div class="ez-hero-inner">
 
