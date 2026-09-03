@@ -49,38 +49,146 @@
 .ez-hero {
     position: relative;
     min-height: 100vh;
-    background: #0b0f1a;
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 20%, #3730a3 40%, #1e3a5f 70%, #1e293b 100%);
     display: flex;
     align-items: center;
     padding: 90px 0 40px;
     overflow: hidden;
 }
-/* Subtle animated mesh gradient */
+
+/* Animated glowing orbs */
 .ez-hero::before {
     content: '';
     position: absolute;
-    inset: 0;
-    background:
-        radial-gradient(ellipse 80% 60% at 10% 40%, rgba(99,102,241,0.12) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 80% at 85% 70%, rgba(195,37,40,0.07) 0%, transparent 55%),
-        radial-gradient(ellipse 50% 50% at 50% 10%, rgba(59,130,246,0.06) 0%, transparent 50%);
-    animation: ez-mesh 18s ease-in-out infinite alternate;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(99,102,241,0.25) 0%, rgba(99,102,241,0.05) 50%, transparent 70%);
+    top: -10%;
+    left: -5%;
+    animation: ez-orb1 12s ease-in-out infinite alternate;
     pointer-events: none;
+    filter: blur(40px);
 }
-@keyframes ez-mesh {
-    0% { opacity: 1; transform: scale(1); }
-    100% { opacity: 0.7; transform: scale(1.05); }
-}
-/* Grid pattern overlay */
 .ez-hero::after {
     content: '';
     position: absolute;
-    inset: 0;
-    background-image: 
-        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-    background-size: 60px 60px;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(236,72,153,0.15) 0%, rgba(236,72,153,0.03) 50%, transparent 70%);
+    bottom: -5%;
+    right: -3%;
+    animation: ez-orb2 14s ease-in-out infinite alternate;
     pointer-events: none;
+    filter: blur(40px);
+}
+@keyframes ez-orb1 {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(60px, 40px) scale(1.1); }
+    100% { transform: translate(20px, -20px) scale(0.95); }
+}
+@keyframes ez-orb2 {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-40px, -30px) scale(1.1); }
+    100% { transform: translate(-10px, 20px) scale(0.9); }
+}
+/* Third orb — green accent */
+.ez-hero-orb3 {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(52,211,153,0.12) 0%, transparent 60%);
+    top: 50%;
+    left: 45%;
+    animation: ez-orb1 16s ease-in-out infinite alternate-reverse;
+    pointer-events: none;
+    filter: blur(30px);
+}
+
+/* Floating Icons */
+.ez-floating-icons {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+.ez-float-icon {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.1);
+    animation: ez-icon-float 6s ease-in-out infinite;
+    opacity: 0.7;
+}
+.ez-float-icon:nth-child(1) {
+    background: rgba(99,102,241,0.2);
+    color: #a5b4fc;
+    top: 12%;
+    left: 8%;
+    animation-duration: 7s;
+    animation-delay: 0s;
+}
+.ez-float-icon:nth-child(2) {
+    background: rgba(236,72,153,0.15);
+    color: #f9a8d4;
+    top: 25%;
+    right: 6%;
+    animation-duration: 5.5s;
+    animation-delay: 1s;
+}
+.ez-float-icon:nth-child(3) {
+    background: rgba(52,211,153,0.2);
+    color: #6ee7b7;
+    bottom: 20%;
+    left: 5%;
+    animation-duration: 8s;
+    animation-delay: 2s;
+}
+.ez-float-icon:nth-child(4) {
+    background: rgba(251,191,36,0.15);
+    color: #fcd34d;
+    bottom: 30%;
+    right: 4%;
+    animation-duration: 6s;
+    animation-delay: 0.5s;
+}
+.ez-float-icon:nth-child(5) {
+    background: rgba(59,130,246,0.2);
+    color: #93c5fd;
+    top: 60%;
+    left: 15%;
+    animation-duration: 9s;
+    animation-delay: 3s;
+}
+.ez-float-icon:nth-child(6) {
+    background: rgba(139,92,246,0.2);
+    color: #c4b5fd;
+    top: 8%;
+    left: 42%;
+    animation-duration: 7.5s;
+    animation-delay: 1.5s;
+    width: 38px;
+    height: 38px;
+    font-size: 15px;
+}
+@keyframes ez-icon-float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-15px) rotate(5deg); }
+    50% { transform: translateY(-8px) rotate(-3deg); }
+    75% { transform: translateY(-20px) rotate(3deg); }
+}
+
+@media (max-width: 900px) {
+    .ez-float-icon { display: none; }
 }
 
 .ez-hero-inner {
@@ -104,11 +212,13 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: rgba(99,102,241,0.12);
-    border: 1px solid rgba(99,102,241,0.2);
-    padding: 6px 14px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.18);
+    padding: 7px 16px;
     border-radius: 50px;
-    color: #a5b4fc;
+    color: #e0e7ff;
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 1.5px;
@@ -759,6 +869,19 @@
 
 <!-- ==================== HERO — SPLIT LAYOUT ==================== -->
 <section class="ez-hero" id="hero">
+
+    <!-- Glowing Orb 3 -->
+    <div class="ez-hero-orb3"></div>
+
+    <!-- Floating Icons -->
+    <div class="ez-floating-icons">
+        <div class="ez-float-icon"><i class="fas fa-users"></i></div>
+        <div class="ez-float-icon"><i class="fas fa-chart-line"></i></div>
+        <div class="ez-float-icon"><i class="fas fa-shield-alt"></i></div>
+        <div class="ez-float-icon"><i class="fas fa-laptop-code"></i></div>
+        <div class="ez-float-icon"><i class="fas fa-handshake"></i></div>
+        <div class="ez-float-icon"><i class="fas fa-bolt"></i></div>
+    </div>
 
     <div class="ez-hero-inner">
 
