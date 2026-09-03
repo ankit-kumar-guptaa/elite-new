@@ -45,33 +45,36 @@
     overflow-x: hidden;
 }
 
-/* ========== HERO — CLEAN WHITE PROFESSIONAL ========== */
+/* ========== HERO — DARK PREMIUM PRICING-FIRST ========== */
 .ez-hero {
     position: relative;
     min-height: 100vh;
-    background: #ffffff;
+    background: linear-gradient(160deg, #0a0e1a 0%, #0f172a 35%, #111d35 60%, #0d1526 100%);
     display: flex;
     align-items: center;
-    padding: 90px 0 40px;
+    justify-content: center;
+    padding: 100px 0 50px;
     overflow: hidden;
 }
-/* Subtle top accent line */
+/* Ambient glow */
 .ez-hero::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #1e293b, #2563eb, #1e293b);
-    z-index: 10;
+    top: -40%; left: 50%; transform: translateX(-50%);
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(37,99,235,0.08) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
 }
-/* Very subtle pattern bg */
+/* Dot pattern overlay */
 .ez-hero::after {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,0.02) 1px, transparent 0);
-    background-size: 32px 32px;
+    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.03) 1px, transparent 0);
+    background-size: 28px 28px;
     pointer-events: none;
+    z-index: 0;
 }
 
 .ez-hero-inner {
@@ -81,12 +84,12 @@
     margin: 0 auto;
     padding: 0 24px;
     display: flex;
-    align-items: center;
-    gap: 56px;
+    align-items: flex-start;
+    gap: 48px;
     width: 100%;
 }
 
-/* ---- LEFT COLUMN: COPY ---- */
+/* ---- LEFT COLUMN: PRICING FIRST ---- */
 .ez-hero-left {
     flex: 1;
     min-width: 0;
@@ -95,94 +98,254 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: #eff6ff;
-    border: 1px solid #dbeafe;
+    background: rgba(37,99,235,0.12);
+    border: 1px solid rgba(37,99,235,0.2);
     padding: 7px 16px;
     border-radius: 50px;
-    color: #2563eb;
+    color: #60a5fa;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 1.2px;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
     animation: ez-fadeIn 0.5s ease-out;
 }
-.ez-hero-left h1 {
-    font-size: clamp(30px, 4vw, 48px);
+.ez-hero-tagline {
+    font-size: clamp(22px, 3vw, 32px);
     font-weight: 800;
-    color: #0f172a;
-    line-height: 1.15;
-    margin-bottom: 16px;
+    color: #ffffff;
+    line-height: 1.25;
+    margin-bottom: 8px;
     animation: ez-fadeIn 0.5s ease-out 0.1s both;
 }
-.ez-hero-left h1 .ez-grad {
-    color: #2563eb;
-    -webkit-text-fill-color: #2563eb;
+.ez-hero-tagline .ez-grad {
+    background: linear-gradient(135deg, #60a5fa, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
-.ez-hero-left .ez-hero-desc {
-    font-size: 15px;
-    color: #64748b;
-    line-height: 1.7;
-    margin-bottom: 28px;
-    max-width: 480px;
-    animation: ez-fadeIn 0.5s ease-out 0.2s both;
-}
-
-/* Trust bullets */
-.ez-trust-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 32px;
-    animation: ez-fadeIn 0.5s ease-out 0.3s both;
-}
-.ez-trust-list li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #334155;
+.ez-hero-sub {
     font-size: 14px;
-    font-weight: 500;
-}
-.ez-trust-list li .ez-check {
-    width: 22px;
-    height: 22px;
-    border-radius: 6px;
-    background: #ecfdf5;
-    color: #059669;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 11px;
-    flex-shrink: 0;
+    color: rgba(148,163,184,0.85);
+    line-height: 1.65;
+    margin-bottom: 28px;
+    max-width: 520px;
+    animation: ez-fadeIn 0.5s ease-out 0.15s both;
 }
 
-/* Stats row */
+/* Stats row — dark theme */
 .ez-hero-stats-row {
     display: flex;
     gap: 28px;
     flex-wrap: wrap;
-    padding-top: 24px;
-    border-top: 1px solid #e2e8f0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    margin-top: 6px;
     animation: ez-fadeIn 0.5s ease-out 0.4s both;
 }
 .ez-hs {
     text-align: left;
 }
 .ez-hs-val {
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 800;
-    color: #0f172a;
+    color: #ffffff;
 }
 .ez-hs-val span {
-    color: #2563eb;
+    color: #60a5fa;
 }
 .ez-hs-lbl {
+    font-size: 11px;
+    color: rgba(148,163,184,0.6);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* ---- HERO PRICING CARDS ---- */
+.ez-hero-pricing {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 28px;
+    animation: ez-fadeIn 0.5s ease-out 0.2s both;
+}
+.ez-price-card {
+    flex: 1;
+    position: relative;
+    background: #ffffff;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 24px 20px 20px;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    text-decoration: none;
+    display: block;
+}
+.ez-price-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    border-radius: 16px 16px 0 0;
+    transition: height 0.3s ease;
+}
+.ez-price-card-elite::before {
+    background: linear-gradient(90deg, #1e293b, #475569);
+}
+.ez-price-card-zneus::before {
+    background: linear-gradient(90deg, #2563eb, #818cf8);
+}
+.ez-price-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    border-color: rgba(255,255,255,0.15);
+}
+.ez-price-card:hover::before {
+    height: 4px;
+}
+/* Shimmer effect */
+.ez-price-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.6s ease;
+    pointer-events: none;
+}
+.ez-price-card:hover::after {
+    left: 100%;
+}
+.ez-pc-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+.ez-pc-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    flex-shrink: 0;
+}
+.ez-pc-icon-elite {
+    background: #f1f5f9;
+    color: #1e293b;
+}
+.ez-pc-icon-zneus {
+    background: #eff6ff;
+    color: #2563eb;
+}
+.ez-pc-label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.3;
+}
+.ez-pc-label small {
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+    color: #94a3b8;
+    letter-spacing: 0.3px;
+}
+.ez-pc-price {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin-bottom: 12px;
+}
+.ez-pc-price .ez-pc-amount {
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 1;
+}
+.ez-price-card-elite .ez-pc-amount {
+    color: #0f172a;
+}
+.ez-price-card-zneus .ez-pc-amount {
+    color: #2563eb;
+}
+.ez-pc-price .ez-pc-currency {
+    font-size: 18px;
+    font-weight: 700;
+    color: #64748b;
+}
+.ez-pc-price .ez-pc-period {
     font-size: 12px;
     color: #94a3b8;
     font-weight: 500;
+}
+.ez-pc-features {
+    list-style: none;
+    margin-bottom: 16px;
+}
+.ez-pc-features li {
+    font-size: 12px;
+    color: #475569;
+    padding: 3.5px 0;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+.ez-pc-features li i {
+    font-size: 9px;
+    color: #059669;
+    flex-shrink: 0;
+}
+.ez-pc-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 12.5px;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.3px;
+}
+.ez-pc-cta-elite {
+    background: #1e293b;
+    color: #fff;
+}
+.ez-pc-cta-elite:hover {
+    background: #0f172a;
+    box-shadow: 0 4px 14px rgba(15,23,42,0.25);
+}
+.ez-pc-cta-zneus {
+    background: #2563eb;
+    color: #fff;
+}
+.ez-pc-cta-zneus:hover {
+    background: #1d4ed8;
+    box-shadow: 0 4px 14px rgba(37,99,235,0.3);
+}
+.ez-pc-popular {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: linear-gradient(135deg, #f59e0b, #ef4444);
+    color: #fff;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 3px 9px;
+    border-radius: 4px;
     letter-spacing: 0.5px;
+    text-transform: uppercase;
+    animation: ez-pulse 2s ease-in-out infinite;
+}
+@keyframes ez-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
 }
 
 @keyframes ez-fadeIn {
@@ -199,7 +362,7 @@
 
 .ez-form-card {
     background: #ffffff;
-    border: 1px solid #e2e8f0;
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 16px;
     padding: 0;
     overflow: hidden;
@@ -719,15 +882,15 @@
         gap: 32px;
         text-align: center;
     }
-    .ez-hero-left .ez-hero-desc { margin-left: auto; margin-right: auto; }
-    .ez-trust-list { align-items: center; }
+    .ez-hero-sub { margin-left: auto; margin-right: auto; }
+    .ez-hero-pricing { flex-direction: column; max-width: 380px; margin-left: auto; margin-right: auto; }
     .ez-hero-stats-row { justify-content: center; }
     .ez-hero-right { width: 100%; max-width: 420px; }
     .ez-hero { padding: 100px 0 40px; }
-    .ez-hero::before { display: none; }
 }
 @media (max-width: 500px) {
     .ez-fg-row { flex-direction: column; gap: 0; }
+    .ez-hero-pricing { flex-direction: column; }
     .ez-hero-right { max-width: 100%; }
     .ez-proof-inner { gap: 20px; }
     .ez-feat-grid { grid-template-columns: 1fr; }
@@ -748,40 +911,65 @@
 
 <div class="ez-page">
 
-<!-- ==================== HERO — SPLIT LAYOUT ==================== -->
+<!-- ==================== HERO — PRICING FIRST ==================== -->
 <section class="ez-hero" id="hero">
 
     <div class="ez-hero-inner">
 
-        <!-- LEFT: Compelling Copy -->
+        <!-- LEFT: Pricing Cards First -->
         <div class="ez-hero-left">
             <div class="ez-hero-badge">⚡ Trusted by 500+ Companies since 2010</div>
 
-            <h1>Smarter HR.<br><span class="ez-grad">Stronger Business.</span></h1>
+            <h2 class="ez-hero-tagline">Choose Your Plan. <span class="ez-grad">Scale Faster.</span></h2>
+            <p class="ez-hero-sub">Professional HR outsourcing & AI-powered employee monitoring — everything your business needs to grow, starting at just ₹199/month.</p>
 
-            <p class="ez-hero-desc">
-                End-to-end HR outsourcing, recruitment & AI-powered employee monitoring. 
-                We handle your people operations so you can focus on growth.
-            </p>
+            <!-- PRICING CARDS -->
+            <div class="ez-hero-pricing">
+                <!-- Elite HR Services Card -->
+                <div class="ez-price-card ez-price-card-elite" onclick="ezSwitchTab('elite', true)">
+                    <div class="ez-pc-header">
+                        <div class="ez-pc-icon ez-pc-icon-elite"><i class="fas fa-building"></i></div>
+                        <div class="ez-pc-label">Elite HR Services<small>Complete HR Outsourcing</small></div>
+                    </div>
+                    <div class="ez-pc-price">
+                        <span class="ez-pc-currency">₹</span>
+                        <span class="ez-pc-amount">999</span>
+                        <span class="ez-pc-period">/employee/month*</span>
+                    </div>
+                    <ul class="ez-pc-features">
+                        <li><i class="fas fa-check"></i> End-to-End Recruitment</li>
+                        <li><i class="fas fa-check"></i> Payroll & Compliance</li>
+                        <li><i class="fas fa-check"></i> Policies & Training</li>
+                        <li><i class="fas fa-check"></i> Exit Process & F&F</li>
+                    </ul>
+                    <button class="ez-pc-cta ez-pc-cta-elite">
+                        <i class="fas fa-arrow-right"></i> Get Started
+                    </button>
+                </div>
 
-            <ul class="ez-trust-list">
-                <li>
-                    <span class="ez-check"><i class="fas fa-check"></i></span>
-                    End-to-End Hiring & Recruitment (IT & Non-IT)
-                </li>
-                <li>
-                    <span class="ez-check"><i class="fas fa-check"></i></span>
-                    Payroll, Compliance & HR Outsourcing
-                </li>
-                <li>
-                    <span class="ez-check"><i class="fas fa-check"></i></span>
-                    Zneus AI Employee Monitoring — Boost Productivity 40%
-                </li>
-                <li>
-                    <span class="ez-check"><i class="fas fa-check"></i></span>
-                    Plans starting at just ₹999/month
-                </li>
-            </ul>
+                <!-- Zneus Software Card -->
+                <div class="ez-price-card ez-price-card-zneus" onclick="ezSwitchTab('zneus', true)">
+                    <span class="ez-pc-popular">Popular</span>
+                    <div class="ez-pc-header">
+                        <div class="ez-pc-icon ez-pc-icon-zneus"><i class="fas fa-desktop"></i></div>
+                        <div class="ez-pc-label">Zneus Monitoring<small>AI Employee Productivity</small></div>
+                    </div>
+                    <div class="ez-pc-price">
+                        <span class="ez-pc-currency">₹</span>
+                        <span class="ez-pc-amount">199</span>
+                        <span class="ez-pc-period">/employee/month*</span>
+                    </div>
+                    <ul class="ez-pc-features">
+                        <li><i class="fas fa-check"></i> Live Screen Monitoring</li>
+                        <li><i class="fas fa-check"></i> App & Web Tracking</li>
+                        <li><i class="fas fa-check"></i> Attendance & Leave Mgmt</li>
+                        <li><i class="fas fa-check"></i> Smart Productivity Reports</li>
+                    </ul>
+                    <button class="ez-pc-cta ez-pc-cta-zneus">
+                        <i class="fas fa-arrow-right"></i> Get Free Demo
+                    </button>
+                </div>
+            </div>
 
             <div class="ez-hero-stats-row">
                 <div class="ez-hs">
@@ -1113,7 +1301,7 @@
 
 <script>
 // ===== TAB SWITCHING =====
-function ezSwitchTab(tab) {
+function ezSwitchTab(tab, scrollToForm) {
     const tabElite = document.getElementById('tabElite');
     const tabZneus = document.getElementById('tabZneus');
     const panelElite = document.getElementById('panelElite');
@@ -1129,6 +1317,19 @@ function ezSwitchTab(tab) {
         tabElite.classList.remove('ez-tab-active');
         panelZneus.classList.add('ez-panel-active');
         panelElite.classList.remove('ez-panel-active');
+    }
+
+    // Scroll to form when triggered from pricing cards
+    if (scrollToForm) {
+        var formCard = document.querySelector('.ez-form-card');
+        if (formCard) {
+            formCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            // Add a brief highlight animation
+            formCard.style.boxShadow = '0 0 0 3px ' + (tab === 'elite' ? 'rgba(30,41,59,0.3)' : 'rgba(37,99,235,0.3)') + ', 0 20px 50px rgba(0,0,0,0.1)';
+            setTimeout(function() {
+                formCard.style.boxShadow = '0 4px 6px rgba(0,0,0,0.04), 0 20px 50px rgba(0,0,0,0.06)';
+            }, 1500);
+        }
     }
 }
 
