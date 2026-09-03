@@ -17,6 +17,7 @@ $routes = [
     '/submit_cv' => 'submit_cv.php',
     '/russia-india' => 'russia-india-services.php',
     '/usa-india' => 'usa-india-services.php',
+    '/elite-zneus' => 'elite-zneus.php',
     // '/jobs/current' => 'jobs/current.php',
     // '/jobs/submit-resume' => 'jobs/submit-resume.php',
     // '/jobs/login' => 'jobs/login.php',

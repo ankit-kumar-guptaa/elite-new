@@ -197,6 +197,9 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <p>Manage and review submissions seamlessly</p>
 
         <div class="text-end mb-3">
+            <a href="elite_zneus_dashboard.php" class="btn btn-primary me-2">
+                <i class="fas fa-chart-pie"></i> Elite+Zneus Leads
+            </a>
             <a href="slider_dashboard.php" class="btn btn-info me-2">
                 <i class="fas fa-sliders-h"></i> Slider Forms
             </a>
