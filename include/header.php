@@ -33,12 +33,12 @@ if (!function_exists('isActive')) {
 		<div class="container">
 			<div class="bg-wrapper clearfix">
 				<div class="logo float-left"><a href="/"><img src="images/logo/logo.png" alt=""></a></div>
-				 <!-- Mobile Number -->
-				 <div class="mobile-number float-left">
-        <a href="tel:+919870364340">
-          <i class="fa fa-phone" aria-hidden="true"></i> +91 9870364340
-        </a>
-      </div>
+				<!-- Mobile Number -->
+				<div class="mobile-number float-left">
+					<a href="tel:+917669073000">
+						<i class="fa fa-phone" aria-hidden="true"></i> +91 7669073000
+					</a>
+				</div>
 				<!-- ============== Menu Warpper ================ -->
 				<div class="menu-wrapper float-left">
 					<nav id="mega-menu-holder" class="clearfix">
@@ -73,7 +73,7 @@ if (!function_exists('isActive')) {
 					<ul>
 
 
-					
+
 						<!-- <li class="cart-icon">
 										   <a href="#"><i class="flaticon-tool"></i> <span>2</span></a>
 									   </li> -->
