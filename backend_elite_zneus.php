@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 ob_start();
 session_start();
 require_once 'include/db.php';
@@ -131,7 +131,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit();
         }
         
-        // *** DB FIRST — Save to database BEFORE attempting email ***
+        // *** DB FIRST â€” Save to database BEFORE attempting email ***
         $submissionId = null;
         try {
             $stmt = $pdo->prepare("INSERT INTO elite_hr_inquiries (name, phone, email, company, service_needed, message, submission_date, status) VALUES (?, ?, ?, ?, ?, ?, NOW(), 'pending')");
@@ -142,18 +142,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             error_log("Database error (Elite HR): " . $e->getMessage());
         }
         
-        // *** THEN try email — if it fails, data is already saved ***
+        // *** THEN try email â€” if it fails, data is already saved ***
         try {
             $mail->isSMTP();
             $mail->Host = 'smtp.hostinger.com';
             $mail->SMTPAuth = true;
-            $mail->Username = 'no-reply@greencarcarpool.com';
+            $mail->Username = 'smtp@greencarcarpool.com';
             $mail->Password = 'Rajiv@111@';
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = 587;
             $mail->Timeout = 30;
             
-            $mail->setFrom('no-reply@greencarcarpool.com', 'Elite Corporate Solutions');
+            $mail->setFrom('smtp@greencarcarpool.com', 'Elite Corporate Solutions');
             $mail->addAddress('Rajiv@elitecorporatesolutions.com', 'Rajiv');
             
             $mail->isHTML(true);
@@ -162,7 +162,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $mail->Body = "
             <div style='font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;'>
                 <div style='background: linear-gradient(135deg, #261a6a, #c32528); padding: 20px; border-radius: 10px 10px 0 0; text-align: center;'>
-                    <h2 style='color: #fff; margin: 0;'>🏢 New Elite HR Inquiry</h2>
+                    <h2 style='color: #fff; margin: 0;'>ðŸ¢ New Elite HR Inquiry</h2>
                     <p style='color: rgba(255,255,255,0.8); margin: 5px 0 0; font-size: 14px;'>From Landing Page</p>
                 </div>
                 
@@ -215,7 +215,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $mail->send();
             error_log("Email sent successfully for Elite HR inquiry");
         } catch (Exception $e) {
-            // Email failed — but data is already in DB, so we're fine!
+            // Email failed â€” but data is already in DB, so we're fine!
             error_log("Email failed for Elite HR inquiry (data saved in DB): " . $e->getMessage());
         }
         
@@ -247,7 +247,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit();
         }
         
-        // *** DB FIRST — Save to database BEFORE attempting email ***
+        // *** DB FIRST â€” Save to database BEFORE attempting email ***
         $submissionId = null;
         try {
             $stmt = $pdo->prepare("INSERT INTO zneus_software_inquiries (name, phone, email, company, employee_count, message, submission_date, status) VALUES (?, ?, ?, ?, ?, ?, NOW(), 'pending')");
@@ -258,18 +258,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             error_log("Database error (Zneus): " . $e->getMessage());
         }
         
-        // *** THEN try email — if it fails, data is already saved ***
+        // *** THEN try email â€” if it fails, data is already saved ***
         try {
             $mail->isSMTP();
             $mail->Host = 'smtp.hostinger.com';
             $mail->SMTPAuth = true;
-            $mail->Username = 'no-reply@greencarcarpool.com';
+            $mail->Username = 'smtp@greencarcarpool.com';
             $mail->Password = 'Rajiv@111@';
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = 587;
             $mail->Timeout = 30;
             
-            $mail->setFrom('no-reply@greencarcarpool.com', 'Zneus Software');
+            $mail->setFrom('smtp@greencarcarpool.com', 'Zneus Software');
             $mail->addAddress('Rajiv@elitecorporatesolutions.com', 'Rajiv');
             
             $mail->isHTML(true);
@@ -278,7 +278,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $mail->Body = "
             <div style='font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;'>
                 <div style='background: linear-gradient(135deg, #4361ee, #6366f1); padding: 20px; border-radius: 10px 10px 0 0; text-align: center;'>
-                    <h2 style='color: #fff; margin: 0;'>💻 New Zneus Software Inquiry</h2>
+                    <h2 style='color: #fff; margin: 0;'>ðŸ’» New Zneus Software Inquiry</h2>
                     <p style='color: rgba(255,255,255,0.8); margin: 5px 0 0; font-size: 14px;'>From Landing Page</p>
                 </div>
                 
@@ -331,7 +331,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $mail->send();
             error_log("Email sent successfully for Zneus inquiry");
         } catch (Exception $e) {
-            // Email failed — but data is already in DB, so we're fine!
+            // Email failed â€” but data is already in DB, so we're fine!
             error_log("Email failed for Zneus inquiry (data saved in DB): " . $e->getMessage());
         }
         
@@ -352,3 +352,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit();
 }
 ?>
+

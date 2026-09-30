@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail->isSMTP();
         $mail->Host = 'smtp.hostinger.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'no-reply@greencarcarpool.com';
+        $mail->Username = 'smtp@greencarcarpool.com';
         $mail->Password = 'Rajiv@111@';
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail->Timeout = 30;
         
         // Set sender
-        $mail->setFrom('no-reply@greencarcarpool.com', 'Elite Corporate Solutions');
+        $mail->setFrom('smtp@greencarcarpool.com', 'Elite Corporate Solutions');
         
         // Process based on form type
         if ($formType === 'slider_employer') {
