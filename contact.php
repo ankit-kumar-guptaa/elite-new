@@ -110,9 +110,8 @@
 							<h4 class="mb-3"><i class="fa fa-phone mr-2"></i>Contact Info</h4>
 
 							<div class="mb-4">
-								<h5 class="mb-3">Phone Numbers:</h5>
-								<p class="mb-2"><i class="fa fa-mobile mr-2"></i>+91 9870364340</p>
-								<p><i class="fa fa-phone mr-2"></i>011-40747520</p>
+								<h5 class="mb-3">Phone Number:</h5>
+								<p><i class="fa fa-mobile mr-2"></i>+91 76690 73000</p>
 							</div>
 
 							<div>

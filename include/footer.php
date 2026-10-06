@@ -56,7 +56,7 @@
 									</li>
 									<li>
 										<i class="fa fa-phone" aria-hidden="true"></i>
-										<a href="tel:+91 9870364340">+91 9870364340</a>
+										<a href="tel:+917669073000">+91 76690 73000</a>
 									</li>
 								</ul>
 							</div> <!-- /.contact-widget -->
@@ -79,12 +79,12 @@
 
 
 <!-- Call Icon with Ringing Effect -->
-<a href="tel:+919870364340" class="call-icon fixed-icon vibrate">
+<a href="tel:+917669073000" class="call-icon fixed-icon vibrate">
   <i class="fas fa-phone-volume"></i> <!-- Call ring icon -->
 </a>
 
 <!-- WhatsApp Icon -->
-<a href="https://wa.me/+919870364340" class="whatsapp-icon fixed-icon" target="_blank">
+<a href="https://wa.me/917669073000" class="whatsapp-icon fixed-icon" target="_blank">
   <i class="fab fa-whatsapp"></i>
 </a>
 
